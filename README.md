@@ -7,7 +7,7 @@ This class was designed to provide shorter syntax for accomplishing a simple tas
 
 ## Installation
 
-Copy `TegKeychain.swift` into your project.
+Copy [TegKeychain.swift](https://raw.githubusercontent.com/exchangegroup/keychain-swift/master/keychain/TegKeychain.swift) into your project.
 
 ## Usage
 
