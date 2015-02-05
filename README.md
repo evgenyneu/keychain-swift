@@ -18,7 +18,7 @@ TegKeychain.getString("key 1")
 
 TegKeychain.delete("my key")
 
-TegKeychain.clear()
+TegKeychain.clear() // delete everything from Keychain
 ```
 
 In addition to strings one can set/get `NSData` objects.
