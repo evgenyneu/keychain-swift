@@ -5,6 +5,8 @@ This is a collection of helper functions for writing/reading text from a Keychai
 As you probably noticed Apple's keychain API is a bit verbose.
 This class was designed to provide shorter syntax for accomplishing a simple task: reading/writing text values for specified keys.
 
+Tested in iOS 7 and 8.
+
 ## Installation
 
 Copy [TegKeychain.swift](https://raw.githubusercontent.com/exchangegroup/keychain-swift/master/keychain/TegKeychain.swift) into your project.
