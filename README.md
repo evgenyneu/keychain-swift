@@ -1,9 +1,10 @@
 # iOS/Swift helper functions for storing text in Keychain
 
-This is a collection of helper functions for writing/reading text from a Keychain. Keychain is a secure storage on iOS device. You can use these function to store all kind of sensitive data: user passwords, credit card numbers, secret tokens etc. Once stored in a Keychain this information is only available to your app, other apps can't see it. Besides that iOS device makes sure this information is kept and processed securely. For example, text stored in Keychain can not be retried from iPhone backup or by examining its file system.
+This is a collection of helper functions for writing/reading text from a Keychain. As you probably noticed Apple's keychain API is a bit verbose. This class was designed to provide shorter syntax for accomplishing a simple task: reading/writing text values for specified keys.
 
-As you probably noticed Apple's keychain API is a bit verbose.
-This class was designed to provide shorter syntax for accomplishing a simple task: reading/writing text values for specified keys.
+## What's Keychain?
+
+Keychain is a secure storage on iOS device. You can use these function to store all kind of sensitive data: user passwords, credit card numbers, secret tokens etc. Once stored in a Keychain this information is only available to your app, other apps can't see it. Besides that iOS device makes sure this information is kept and processed securely. For example, text stored in Keychain can not be retried from iPhone backup or by examining its file system.
 
 Tested in iOS 7 and 8.
 
