@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var textField: UITextField!
+  
+  @IBOutlet weak var valueLabel: UILabel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +24,12 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
+  @IBAction func onSaveTapped(sender: AnyObject) {
+    
+  }
 
+  @IBAction func onDeleteTapped(sender: AnyObject) {
+  }
+  
 }
 

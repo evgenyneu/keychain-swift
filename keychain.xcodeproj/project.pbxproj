@@ -13,6 +13,8 @@
 		2BCB00991A83354D0022C93A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BCB00981A83354D0022C93A /* Images.xcassets */; };
 		2BCB009C1A83354D0022C93A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BCB009A1A83354D0022C93A /* LaunchScreen.xib */; };
 		2BCB00A81A83354D0022C93A /* keychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB00A71A83354D0022C93A /* keychainTests.swift */; };
+		2BCB00B21A8335740022C93A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BCB00B11A8335740022C93A /* Default-568h@2x.png */; };
+		2BCB00B51A8335AF0022C93A /* TegKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB00B41A8335AF0022C93A /* TegKeychain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		2BCB00A11A83354D0022C93A /* keychainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = keychainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCB00A61A83354D0022C93A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BCB00A71A83354D0022C93A /* keychainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keychainTests.swift; sourceTree = "<group>"; };
+		2BCB00B11A8335740022C93A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2BCB00B41A8335AF0022C93A /* TegKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 		2BCB00831A83354D0022C93A = {
 			isa = PBXGroup;
 			children = (
+				2BCB00B11A8335740022C93A /* Default-568h@2x.png */,
 				2BCB008E1A83354D0022C93A /* keychain */,
 				2BCB00A41A83354D0022C93A /* keychainTests */,
 				2BCB008D1A83354D0022C93A /* Products */,
@@ -77,6 +82,7 @@
 		2BCB008E1A83354D0022C93A /* keychain */ = {
 			isa = PBXGroup;
 			children = (
+				2BCB00B31A8335A20022C93A /* Lib */,
 				2BCB00911A83354D0022C93A /* AppDelegate.swift */,
 				2BCB00931A83354D0022C93A /* ViewController.swift */,
 				2BCB00951A83354D0022C93A /* Main.storyboard */,
@@ -110,6 +116,14 @@
 				2BCB00A61A83354D0022C93A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2BCB00B31A8335A20022C93A /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				2BCB00B41A8335AF0022C93A /* TegKeychain.swift */,
+			);
+			name = Lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BCB00971A83354D0022C93A /* Main.storyboard in Resources */,
+				2BCB00B21A8335740022C93A /* Default-568h@2x.png in Resources */,
 				2BCB009C1A83354D0022C93A /* LaunchScreen.xib in Resources */,
 				2BCB00991A83354D0022C93A /* Images.xcassets in Resources */,
 			);
@@ -214,6 +229,7 @@
 			files = (
 				2BCB00941A83354D0022C93A /* ViewController.swift in Sources */,
 				2BCB00921A83354D0022C93A /* AppDelegate.swift in Sources */,
+				2BCB00B51A8335AF0022C93A /* TegKeychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +305,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -326,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
