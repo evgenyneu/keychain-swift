@@ -4,7 +4,7 @@ This is a collection of helper functions for writing/reading text from a Keychai
 
 ## What's Keychain?
 
-Keychain is a secure storage on iOS device. You can use these functions to store all kind of sensitive data in it: user passwords, credit card numbers, secret tokens etc. Once stored in a Keychain this information is only available to your app, other apps can't see it. Besides that iOS device makes sure this information is kept and processed securely. For example, text stored in Keychain can not be retried from iPhone backup or by examining its file system.
+Keychain is a secure storage on iOS device. You can use these functions to store all kind of sensitive data in it: user passwords, credit card numbers, secret tokens etc. Once stored in a Keychain this information is only available to your app, other apps can't see it. Besides that, iOS device makes sure this information is kept and processed securely. For example, text stored in Keychain can not be retried from iPhone backup or by examining its file system.
 
 Tested in iOS 7 and 8.
 
