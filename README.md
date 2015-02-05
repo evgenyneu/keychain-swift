@@ -21,7 +21,7 @@ TegKeychain.delete("my key")
 TegKeychain.clear()
 ```
 
-In addition to String one can set/get `NSData` objects.
+In addition to strings one can set/get `NSData` objects.
 
 ```Swift
 TegKeychain.set("my key", value: nsDataObject)
