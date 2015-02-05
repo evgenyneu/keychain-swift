@@ -38,3 +38,7 @@ TegKeychain.getData("my key")
 ### Reference
 
 The code is based on this example: [https://gist.github.com/s-aska/e7ad24175fb7b04f78e7](https://gist.github.com/s-aska/e7ad24175fb7b04f78e7)
+
+### Repository home
+
+https://github.com/exchangegroup/keychain-swift
