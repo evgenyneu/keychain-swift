@@ -1,6 +1,7 @@
 # iOS/Swift library for storing data in Keychain
 
-This class was written to provide a simple way of writing to and reading from a Keychain.
+A helper class that provides a simple way of writing to and reading from a Keychain.
+The project also includes a demo app.
 
 ## Installation
 
