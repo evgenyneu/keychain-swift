@@ -20,8 +20,6 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     
     updateValueLabel()
-    
-    
   }
 
   override func didReceiveMemoryWarning() {

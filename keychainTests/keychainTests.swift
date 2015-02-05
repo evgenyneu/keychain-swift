@@ -8,29 +8,59 @@
 
 import UIKit
 import XCTest
+import keychain
 
 class keychainTests: XCTestCase {
+  override func setUp() {
+    super.setUp()
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    TegKeychain.clear()
+  }
+
+  // Set
+  // -----------------------
+
+  func testSet() {
+    XCTAssertTrue(TegKeychain.set("key 1", value: "hello :)"))
+    XCTAssertEqual("hello :)", TegKeychain.getString("key 1")!)
+  }
+
+  // Get
+  // -----------------------
+
+  func testGet_returnNilWhenValueNotSet() {
+    XCTAssert(TegKeychain.getString("key 1") == nil)
+  }
+
+  // Delete
+  // -----------------------
+
+  func testDelete() {
+    TegKeychain.set("key 1", value: "hello :)")
+    TegKeychain.delete("key 1")
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+    XCTAssert(TegKeychain.getString("key 1") == nil)
+  }
+
+  func testDelete_deleteOnSingleKey() {
+    TegKeychain.set("key 1", value: "hello :)")
+    TegKeychain.set("key 2", value: "hello two")
+
+    TegKeychain.delete("key 1")
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
+    XCTAssertEqual("hello two", TegKeychain.getString("key 2")!)
+  }
+
+  // Clear
+  // -----------------------
+
+  func testClear() {
+    TegKeychain.set("key 1", value: "hello :)")
+    TegKeychain.set("key 2", value: "hello two")
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    TegKeychain.clear()
     
+    XCTAssert(TegKeychain.getString("key 1") == nil)
+    XCTAssert(TegKeychain.getString("key 2") == nil)
+  }
 }
