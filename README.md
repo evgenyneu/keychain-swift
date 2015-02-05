@@ -14,7 +14,7 @@ Copy [TegKeychain.swift](https://raw.githubusercontent.com/exchangegroup/keychai
 ```Swift
 TegKeychain.set("my key", value: "hello world")
 
-TegKeychain.getString("my key")
+TegKeychain.get("my key")
 
 TegKeychain.delete("my key")
 

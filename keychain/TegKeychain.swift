@@ -32,7 +32,7 @@ public class TegKeychain {
     return status == noErr
   }
 
-  public class func getString(key: String) -> String? {
+  public class func get(key: String) -> String? {
     if let currentData = getData(key) {
       return NSString(data: currentData, encoding: NSUTF8StringEncoding)
     }
