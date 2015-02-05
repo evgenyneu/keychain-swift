@@ -8,6 +8,8 @@
 
 import UIKit
 
+let TegKeychainDemo_keyName = "my key"
+
 class ViewController: UIViewController {
 
   @IBOutlet weak var textField: UITextField!
@@ -16,7 +18,10 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    updateValueLabel()
+    
+    
   }
 
   override func didReceiveMemoryWarning() {
@@ -25,10 +30,21 @@ class ViewController: UIViewController {
   }
 
   @IBAction func onSaveTapped(sender: AnyObject) {
-    
+    TegKeychain.set(TegKeychainDemo_keyName, value: textField.text)
+    updateValueLabel()
   }
 
   @IBAction func onDeleteTapped(sender: AnyObject) {
+    TegKeychain.delete(TegKeychainDemo_keyName)
+    updateValueLabel()
+  }
+  
+  private func updateValueLabel() {
+    if let currentValue = TegKeychain.getString(TegKeychainDemo_keyName) {
+      valueLabel.text = "In Keychain: \(currentValue)"
+    } else {
+      valueLabel.text = "no value in keychain"
+    }
   }
   
 }

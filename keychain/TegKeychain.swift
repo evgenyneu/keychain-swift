@@ -9,13 +9,21 @@
 import UIKit
 import Security
 
-class Keychain {
+class TegKeychain {
   
-  class func save(key: String, data: NSData) -> Bool {
+  class func set(key: String, value: String) -> Bool {
+    if let currentData = value.dataUsingEncoding(NSUTF8StringEncoding) {
+      return set(key, value: currentData)
+    }
+    
+    return false
+  }
+  
+  class func set(key: String, value: NSData) -> Bool {
     let query = [
       kSecClass as String       : kSecClassGenericPassword as String,
       kSecAttrAccount as String : key,
-      kSecValueData as String   : data ]
+      kSecValueData as String   : value ]
     
     SecItemDelete(query as CFDictionaryRef)
     
@@ -24,7 +32,16 @@ class Keychain {
     return status == noErr
   }
   
-  class func load(key: String) -> NSData? {
+  class func getString(key: String) -> String? {
+    if let currentData = getData(key) {
+      return NSString(data: currentData, encoding: NSUTF8StringEncoding)
+    }
+    
+    return nil
+  }
+  
+  
+  class func getData(key: String) -> NSData? {
     let query = [
       kSecClass as String       : kSecClassGenericPassword,
       kSecAttrAccount as String : key,
@@ -36,10 +53,12 @@ class Keychain {
     let status: OSStatus = SecItemCopyMatching(query, &dataTypeRef)
     
     if status == noErr {
-      return (dataTypeRef!.takeRetainedValue() as NSData)
-    } else {
-      return nil
+      if let currentDataTypeRef = dataTypeRef {
+        return currentDataTypeRef.takeRetainedValue() as? NSData
+      }
     }
+    
+    return nil
   }
   
   class func delete(key: String) -> Bool {
