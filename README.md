@@ -1,4 +1,4 @@
-# iOS/Swift helper functions for storing data in Keychain
+# iOS/Swift helper functions for storing text in Keychain
 
 This is a collection of helper functions for writing/reading text from a Keychain.
 
