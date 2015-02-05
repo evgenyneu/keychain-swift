@@ -1,6 +1,10 @@
 # iOS/Swift library for storing data in Keychain
 
 A helper class that provides a simple way of writing to and reading from a Keychain.
+
+As you probably noticed Apple's keychain API is a bit verbose.
+This class was designed to provide shorter way of saving text in keychain by providing a key and its value.
+
 The project also includes a demo app.
 
 ## Installation
