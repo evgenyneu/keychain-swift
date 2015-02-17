@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B48E33A1A92F47800456D2F /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B48E3391A92F47800456D2F /* TegKeychainConstants.swift */; };
 		2BCB00921A83354D0022C93A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB00911A83354D0022C93A /* AppDelegate.swift */; };
 		2BCB00941A83354D0022C93A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB00931A83354D0022C93A /* ViewController.swift */; };
 		2BCB00971A83354D0022C93A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BCB00951A83354D0022C93A /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B48E3391A92F47800456D2F /* TegKeychainConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainConstants.swift; sourceTree = "<group>"; };
 		2BCB008C1A83354D0022C93A /* keychain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = keychain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCB00901A83354D0022C93A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BCB00911A83354D0022C93A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				2BCB00B41A8335AF0022C93A /* TegKeychain.swift */,
+				2B48E3391A92F47800456D2F /* TegKeychainConstants.swift */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				2BCB00941A83354D0022C93A /* ViewController.swift in Sources */,
 				2BCB00921A83354D0022C93A /* AppDelegate.swift in Sources */,
+				2B48E33A1A92F47800456D2F /* TegKeychainConstants.swift in Sources */,
 				2BCB00B51A8335AF0022C93A /* TegKeychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +427,7 @@
 				2BCB00AD1A83354D0022C93A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2BCB00AE1A83354D0022C93A /* Build configuration list for PBXNativeTarget "keychainTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +436,7 @@
 				2BCB00B01A83354D0022C93A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

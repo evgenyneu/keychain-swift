@@ -21,9 +21,9 @@ public class TegKeychain {
 
   public class func set(key: String, value: NSData) -> Bool {
     let query = [
-      kSecClass as String       : kSecClassGenericPassword as String,
-      kSecAttrAccount as String : key,
-      kSecValueData as String   : value ]
+      TegKeychainConstants.klass       : TegKeychainConstants.classGenericPassword,
+      TegKeychainConstants.attrAccount : key,
+      TegKeychainConstants.valueData   : value ]
     
     SecItemDelete(query as CFDictionaryRef)
     
@@ -34,18 +34,22 @@ public class TegKeychain {
 
   public class func get(key: String) -> String? {
     if let currentData = getData(key) {
-      return NSString(data: currentData, encoding: NSUTF8StringEncoding)
+      if let currentString = NSString(data: currentData,
+        encoding: NSUTF8StringEncoding) as? String {
+
+        return currentString
+      }
     }
-    
+
     return nil
   }
 
   public class func getData(key: String) -> NSData? {
     let query = [
-      kSecClass as String       : kSecClassGenericPassword,
-      kSecAttrAccount as String : key,
-      kSecReturnData as String  : kCFBooleanTrue,
-      kSecMatchLimit as String  : kSecMatchLimitOne ]
+      TegKeychainConstants.klass       : kSecClassGenericPassword,
+      TegKeychainConstants.attrAccount : key,
+      TegKeychainConstants.returnData  : kCFBooleanTrue,
+      TegKeychainConstants.matchLimit  : kSecMatchLimitOne ]
     
     var dataTypeRef :Unmanaged<AnyObject>?
     
@@ -62,8 +66,8 @@ public class TegKeychain {
 
   public class func delete(key: String) -> Bool {
     let query = [
-      kSecClass as String       : kSecClassGenericPassword,
-      kSecAttrAccount as String : key ]
+      TegKeychainConstants.klass       : kSecClassGenericPassword,
+      TegKeychainConstants.attrAccount : key ]
     
     let status: OSStatus = SecItemDelete(query as CFDictionaryRef)
     
