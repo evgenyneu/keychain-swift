@@ -51,14 +51,14 @@ public class TegKeychain {
       TegKeychainConstants.returnData  : kCFBooleanTrue,
       TegKeychainConstants.matchLimit  : kSecMatchLimitOne ]
     
-    var dataTypeRef :Unmanaged<AnyObject>?
+    var result: AnyObject?
     
-    let status: OSStatus = SecItemCopyMatching(query, &dataTypeRef)
+    let status = withUnsafeMutablePointer(&result) {
+      SecItemCopyMatching(query, UnsafeMutablePointer($0))
+    }
     
     if status == noErr {
-      if let currentDataTypeRef = dataTypeRef {
-        return currentDataTypeRef.takeRetainedValue() as? NSData
-      }
+      return result as? NSData
     }
     
     return nil
