@@ -57,9 +57,7 @@ public class TegKeychain {
       SecItemCopyMatching(query, UnsafeMutablePointer($0))
     }
     
-    if status == noErr {
-      return result as? NSData
-    }
+    if status == noErr { return result as? NSData }
     
     return nil
   }
