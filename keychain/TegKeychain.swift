@@ -1,11 +1,3 @@
-//
-//  TegKeychain.swift
-//  keychain
-//
-//  Created by Evgenii Neumerzhitckii on 5/02/2015.
-//  Copyright (c) 2015 The Exchange Group Pty Ltd. All rights reserved.
-//
-
 import UIKit
 import Security
 
