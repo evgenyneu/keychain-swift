@@ -4,8 +4,8 @@ import Security
 public class TegKeychain {
   
   public class func set(key: String, value: String) -> Bool {
-    if let currentData = value.dataUsingEncoding(NSUTF8StringEncoding) {
-      return set(key, value: currentData)
+    if let data = value.dataUsingEncoding(NSUTF8StringEncoding) {
+      return set(key, value: data)
     }
     
     return false
@@ -25,12 +25,10 @@ public class TegKeychain {
   }
 
   public class func get(key: String) -> String? {
-    if let currentData = getData(key) {
-      if let currentString = NSString(data: currentData,
-        encoding: NSUTF8StringEncoding) as? String {
+    if let data = getData(key),
+      let currentString = NSString(data: data, encoding: NSUTF8StringEncoding) as? String {
 
-        return currentString
-      }
+      return currentString
     }
 
     return nil

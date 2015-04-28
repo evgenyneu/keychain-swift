@@ -30,8 +30,8 @@ class ViewController: UIViewController {
   }
   
   private func updateValueLabel() {
-    if let currentValue = TegKeychain.get(TegKeychainDemo_keyName) {
-      valueLabel.text = "In Keychain: \(currentValue)"
+    if let value = TegKeychain.get(TegKeychainDemo_keyName) {
+      valueLabel.text = "In Keychain: \(value)"
     } else {
       valueLabel.text = "no value in keychain"
     }
