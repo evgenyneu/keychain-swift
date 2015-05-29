@@ -15,7 +15,8 @@ public class TegKeychain {
     let query = [
       TegKeychainConstants.klass       : TegKeychainConstants.classGenericPassword,
       TegKeychainConstants.attrAccount : key,
-      TegKeychainConstants.valueData   : value ]
+      TegKeychainConstants.valueData   : value,
+      TegKeychainConstants.accesibility: kSecAttrAccessibleAfterFirstUnlock  ]
     
     SecItemDelete(query as CFDictionaryRef)
     

@@ -8,6 +8,7 @@ struct TegKeychainConstants {
   static var valueData: String { return toString(kSecValueData) }
   static var returnData: String { return toString(kSecReturnData) }
   static var matchLimit: String { return toString(kSecMatchLimit) }
+  static var accesibility: String { return toString(kSecAttrAccessible) }
 
   private static func toString(value: CFStringRef) -> String {
     return (value as? String) ?? ""
