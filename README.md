@@ -1,6 +1,7 @@
 # iOS/Swift helper functions for storing text in Keychain
 
-This is a collection of helper functions for writing/reading text from a Keychain. As you probably noticed Apple's keychain API is a bit verbose. This class was designed to provide shorter syntax for accomplishing a simple task: reading/writing text values for specified keys. Tested in iOS 7 and 8.
+This is a collection of helper functions for saving text and data in the Keychain.
+ As you probably noticed Apple's keychain API is a bit verbose. This class was designed to provide shorter syntax for accomplishing a simple task: reading/writing text values for specified keys. Tested in iOS 7 and 8.
 
 ## What's Keychain?
 

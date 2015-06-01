@@ -18,12 +18,7 @@ class keychainTests: XCTestCase {
   }
   
   func testSetWithOptions() {
-    let value = TegKeychainConstants.classGenericPassword
-    println("!!!!!!!!! \(value)")
-//    TegKeychain.set("key 1", value: "hello :)", options: [
-//      TegKeychainConstants.accesibility: 
-//    ]
-//    )
+    TegKeychain.set("key 1", value: "hello :)", withAccess: .AccessibleAfterFirstUnlock)
   }
 
   // Get

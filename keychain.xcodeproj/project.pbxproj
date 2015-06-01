@@ -16,7 +16,7 @@
 		2BCB00A81A83354D0022C93A /* keychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB00A71A83354D0022C93A /* keychainTests.swift */; };
 		2BCB00B21A8335740022C93A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BCB00B11A8335740022C93A /* Default-568h@2x.png */; };
 		2BCB00B51A8335AF0022C93A /* TegKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB00B41A8335AF0022C93A /* TegKeychain.swift */; };
-		7E49F5341B1BDDCE00FBC3FF /* TegKeychainOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F5331B1BDDCE00FBC3FF /* TegKeychainOptions.swift */; };
+		7E49F5361B1BE41B00FBC3FF /* TegKeychainAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F5351B1BE41B00FBC3FF /* TegKeychainAccessOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 		2BCB00A71A83354D0022C93A /* keychainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keychainTests.swift; sourceTree = "<group>"; };
 		2BCB00B11A8335740022C93A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2BCB00B41A8335AF0022C93A /* TegKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychain.swift; sourceTree = "<group>"; };
-		7E49F5331B1BDDCE00FBC3FF /* TegKeychainOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainOptions.swift; sourceTree = "<group>"; };
+		7E49F5351B1BE41B00FBC3FF /* TegKeychainAccessOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainAccessOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				2BCB00B41A8335AF0022C93A /* TegKeychain.swift */,
+				7E49F5351B1BE41B00FBC3FF /* TegKeychainAccessOptions.swift */,
 				2B48E3391A92F47800456D2F /* TegKeychainConstants.swift */,
-				7E49F5331B1BDDCE00FBC3FF /* TegKeychainOptions.swift */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -233,9 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E49F5341B1BDDCE00FBC3FF /* TegKeychainOptions.swift in Sources */,
 				2BCB00941A83354D0022C93A /* ViewController.swift in Sources */,
 				2BCB00921A83354D0022C93A /* AppDelegate.swift in Sources */,
+				7E49F5361B1BE41B00FBC3FF /* TegKeychainAccessOptions.swift in Sources */,
 				2B48E33A1A92F47800456D2F /* TegKeychainConstants.swift in Sources */,
 				2BCB00B51A8335AF0022C93A /* TegKeychain.swift in Sources */,
 			);
