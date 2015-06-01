@@ -21,6 +21,14 @@
 		7E49F5451B1BF20A00FBC3FF /* TegKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F53F1B1BF1FE00FBC3FF /* TegKeychain.swift */; };
 		7E49F5461B1BF20C00FBC3FF /* TegKeychainAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F5401B1BF1FE00FBC3FF /* TegKeychainAccessOptions.swift */; };
 		7E49F5471B1BF20E00FBC3FF /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F5411B1BF1FE00FBC3FF /* TegKeychainConstants.swift */; };
+		7E49F5851B1C0ACF00FBC3FF /* KeychainSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E49F5841B1C0ACF00FBC3FF /* KeychainSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E49F58B1B1C0ACF00FBC3FF /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E49F5801B1C0ACF00FBC3FF /* KeychainSwift.framework */; };
+		7E49F5941B1C0ACF00FBC3FF /* KeychainSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F5931B1C0ACF00FBC3FF /* KeychainSwiftTests.swift */; };
+		7E49F5971B1C0ACF00FBC3FF /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E49F5801B1C0ACF00FBC3FF /* KeychainSwift.framework */; };
+		7E49F5991B1C0ACF00FBC3FF /* KeychainSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E49F5801B1C0ACF00FBC3FF /* KeychainSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E49F5A01B1C0AEB00FBC3FF /* TegKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F53F1B1BF1FE00FBC3FF /* TegKeychain.swift */; };
+		7E49F5A11B1C0AED00FBC3FF /* TegKeychainAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F5401B1BF1FE00FBC3FF /* TegKeychainAccessOptions.swift */; };
+		7E49F5A21B1C0AEF00FBC3FF /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F5411B1BF1FE00FBC3FF /* TegKeychainConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +39,42 @@
 			remoteGlobalIDString = 2BCB008B1A83354D0022C93A;
 			remoteInfo = keychain;
 		};
+		7E49F58C1B1C0ACF00FBC3FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2BCB00841A83354D0022C93A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E49F57F1B1C0ACF00FBC3FF;
+			remoteInfo = KeychainSwift;
+		};
+		7E49F58E1B1C0ACF00FBC3FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2BCB00841A83354D0022C93A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BCB008B1A83354D0022C93A;
+			remoteInfo = keychain;
+		};
+		7E49F5951B1C0ACF00FBC3FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2BCB00841A83354D0022C93A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E49F57F1B1C0ACF00FBC3FF;
+			remoteInfo = KeychainSwift;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7E49F5981B1C0ACF00FBC3FF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7E49F5991B1C0ACF00FBC3FF /* KeychainSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2BCB008C1A83354D0022C93A /* keychain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = keychain.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +93,12 @@
 		7E49F5401B1BF1FE00FBC3FF /* TegKeychainAccessOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainAccessOptions.swift; sourceTree = "<group>"; };
 		7E49F5411B1BF1FE00FBC3FF /* TegKeychainConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainConstants.swift; sourceTree = "<group>"; };
 		7E49F5491B1BF25F00FBC3FF /* TegKeychainDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainDistrib.swift; sourceTree = "<group>"; };
+		7E49F5801B1C0ACF00FBC3FF /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E49F5831B1C0ACF00FBC3FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E49F5841B1C0ACF00FBC3FF /* KeychainSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainSwift.h; sourceTree = "<group>"; };
+		7E49F58A1B1C0ACF00FBC3FF /* KeychainSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeychainSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E49F5921B1C0ACF00FBC3FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E49F5931B1C0ACF00FBC3FF /* KeychainSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainSwiftTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E49F5971B1C0ACF00FBC3FF /* KeychainSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +114,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E49F57C1B1C0ACF00FBC3FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E49F5871B1C0ACF00FBC3FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E49F58B1B1C0ACF00FBC3FF /* KeychainSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +143,8 @@
 				2BCB00A41A83354D0022C93A /* keychainTests */,
 				7E49F5481B1BF22600FBC3FF /* Distrib */,
 				7E49F53A1B1BF13B00FBC3FF /* scripts */,
+				7E49F5811B1C0ACF00FBC3FF /* KeychainSwift */,
+				7E49F5901B1C0ACF00FBC3FF /* KeychainSwiftTests */,
 				2BCB008D1A83354D0022C93A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,6 +154,8 @@
 			children = (
 				2BCB008C1A83354D0022C93A /* keychain.app */,
 				2BCB00A11A83354D0022C93A /* keychainTests.xctest */,
+				7E49F5801B1C0ACF00FBC3FF /* KeychainSwift.framework */,
+				7E49F58A1B1C0ACF00FBC3FF /* KeychainSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,7 +225,52 @@
 			path = Distrib;
 			sourceTree = "<group>";
 		};
+		7E49F5811B1C0ACF00FBC3FF /* KeychainSwift */ = {
+			isa = PBXGroup;
+			children = (
+				7E49F5841B1C0ACF00FBC3FF /* KeychainSwift.h */,
+				7E49F5821B1C0ACF00FBC3FF /* Supporting Files */,
+			);
+			path = KeychainSwift;
+			sourceTree = "<group>";
+		};
+		7E49F5821B1C0ACF00FBC3FF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E49F5831B1C0ACF00FBC3FF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7E49F5901B1C0ACF00FBC3FF /* KeychainSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E49F5931B1C0ACF00FBC3FF /* KeychainSwiftTests.swift */,
+				7E49F5911B1C0ACF00FBC3FF /* Supporting Files */,
+			);
+			path = KeychainSwiftTests;
+			sourceTree = "<group>";
+		};
+		7E49F5911B1C0ACF00FBC3FF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E49F5921B1C0ACF00FBC3FF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7E49F57D1B1C0ACF00FBC3FF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E49F5851B1C0ACF00FBC3FF /* KeychainSwift.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		2BCB008B1A83354D0022C93A /* keychain */ = {
@@ -167,10 +281,12 @@
 				2BCB00891A83354D0022C93A /* Frameworks */,
 				2BCB008A1A83354D0022C93A /* Resources */,
 				7E49F53D1B1BF15900FBC3FF /* Combine swift files into single file */,
+				7E49F5981B1C0ACF00FBC3FF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7E49F5961B1C0ACF00FBC3FF /* PBXTargetDependency */,
 			);
 			name = keychain;
 			productName = keychain;
@@ -195,6 +311,43 @@
 			productReference = 2BCB00A11A83354D0022C93A /* keychainTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		7E49F57F1B1C0ACF00FBC3FF /* KeychainSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E49F59E1B1C0ACF00FBC3FF /* Build configuration list for PBXNativeTarget "KeychainSwift" */;
+			buildPhases = (
+				7E49F57B1B1C0ACF00FBC3FF /* Sources */,
+				7E49F57C1B1C0ACF00FBC3FF /* Frameworks */,
+				7E49F57D1B1C0ACF00FBC3FF /* Headers */,
+				7E49F57E1B1C0ACF00FBC3FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeychainSwift;
+			productName = KeychainSwift;
+			productReference = 7E49F5801B1C0ACF00FBC3FF /* KeychainSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7E49F5891B1C0ACF00FBC3FF /* KeychainSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E49F59F1B1C0ACF00FBC3FF /* Build configuration list for PBXNativeTarget "KeychainSwiftTests" */;
+			buildPhases = (
+				7E49F5861B1C0ACF00FBC3FF /* Sources */,
+				7E49F5871B1C0ACF00FBC3FF /* Frameworks */,
+				7E49F5881B1C0ACF00FBC3FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E49F58D1B1C0ACF00FBC3FF /* PBXTargetDependency */,
+				7E49F58F1B1C0ACF00FBC3FF /* PBXTargetDependency */,
+			);
+			name = KeychainSwiftTests;
+			productName = KeychainSwiftTests;
+			productReference = 7E49F58A1B1C0ACF00FBC3FF /* KeychainSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -209,6 +362,13 @@
 					};
 					2BCB00A01A83354D0022C93A = {
 						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 2BCB008B1A83354D0022C93A;
+					};
+					7E49F57F1B1C0ACF00FBC3FF = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					7E49F5891B1C0ACF00FBC3FF = {
+						CreatedOnToolsVersion = 6.4;
 						TestTargetID = 2BCB008B1A83354D0022C93A;
 					};
 				};
@@ -228,6 +388,8 @@
 			targets = (
 				2BCB008B1A83354D0022C93A /* keychain */,
 				2BCB00A01A83354D0022C93A /* keychainTests */,
+				7E49F57F1B1C0ACF00FBC3FF /* KeychainSwift */,
+				7E49F5891B1C0ACF00FBC3FF /* KeychainSwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -246,6 +408,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2BCB009F1A83354D0022C93A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E49F57E1B1C0ACF00FBC3FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E49F5881B1C0ACF00FBC3FF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -295,6 +471,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7E49F57B1B1C0ACF00FBC3FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E49F5A01B1C0AEB00FBC3FF /* TegKeychain.swift in Sources */,
+				7E49F5A11B1C0AED00FBC3FF /* TegKeychainAccessOptions.swift in Sources */,
+				7E49F5A21B1C0AEF00FBC3FF /* TegKeychainConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E49F5861B1C0ACF00FBC3FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E49F5941B1C0ACF00FBC3FF /* KeychainSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -302,6 +496,21 @@
 			isa = PBXTargetDependency;
 			target = 2BCB008B1A83354D0022C93A /* keychain */;
 			targetProxy = 2BCB00A21A83354D0022C93A /* PBXContainerItemProxy */;
+		};
+		7E49F58D1B1C0ACF00FBC3FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E49F57F1B1C0ACF00FBC3FF /* KeychainSwift */;
+			targetProxy = 7E49F58C1B1C0ACF00FBC3FF /* PBXContainerItemProxy */;
+		};
+		7E49F58F1B1C0ACF00FBC3FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2BCB008B1A83354D0022C93A /* keychain */;
+			targetProxy = 7E49F58E1B1C0ACF00FBC3FF /* PBXContainerItemProxy */;
+		};
+		7E49F5961B1C0ACF00FBC3FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E49F57F1B1C0ACF00FBC3FF /* KeychainSwift */;
+			targetProxy = 7E49F5951B1C0ACF00FBC3FF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -359,7 +568,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -396,7 +605,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -458,6 +667,88 @@
 			};
 			name = Release;
 		};
+		7E49F59A1B1C0ACF00FBC3FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KeychainSwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7E49F59B1B1C0ACF00FBC3FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = KeychainSwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7E49F59C1B1C0ACF00FBC3FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KeychainSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/keychain.app/keychain";
+			};
+			name = Debug;
+		};
+		7E49F59D1B1C0ACF00FBC3FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = KeychainSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/keychain.app/keychain";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -487,6 +778,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7E49F59E1B1C0ACF00FBC3FF /* Build configuration list for PBXNativeTarget "KeychainSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E49F59A1B1C0ACF00FBC3FF /* Debug */,
+				7E49F59B1B1C0ACF00FBC3FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7E49F59F1B1C0ACF00FBC3FF /* Build configuration list for PBXNativeTarget "KeychainSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E49F59C1B1C0ACF00FBC3FF /* Debug */,
+				7E49F59D1B1C0ACF00FBC3FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
