@@ -7,11 +7,28 @@ This is a collection of helper functions for saving text and data in the Keychai
 
 Keychain is a secure storage on iOS device. You can store all kind of sensitive data in it: user passwords, credit card numbers, secret tokens etc. Once stored in Keychain this information is only available to your app, other apps can't see it. Besides that, iOS makes sure this information is kept and processed securely. For example, text stored in Keychain can not be extracted from iPhone backup or from its file system.
 
-## Installation
+## Setup
 
-Copy [KeychainSwift.swift](https://raw.githubusercontent.com/exchangegroup/keychain-swift/master/keychain/KeychainSwift.swift) into your project.
+There are three ways you can add KeychainSwift to your Xcode project.
+
+**Add source (iOS 7+)**
+
+Simply add [KeychainSwiftDistrib.swift](https://github.com/exchangegroup/keychain-swift/blob/master/Distrib/KeychainSwiftDistrib.swift) file into your Xcode project.
+
+**Setup with Carthage (iOS 8+)**
+
+Alternatively, add `github "exchangegroup/keychain-swift" ~> 0.1` to your Cartfile and run `carthage update`.
+
+**Setup with CocoaPods (iOS 8+)**
+
+If you are using CocoaPods add this text to your Podfile and run `pod install`.
+
+    use_frameworks!
+    pod 'KeychainSwift', '~> 0.1'
 
 ## Usage
+
+Add `import KeychainSwift` to your source code if you used Carthage or CocoaPods setup methods.
 
 ```Swift
 KeychainSwift.set("hello world", forKey: "my key")
