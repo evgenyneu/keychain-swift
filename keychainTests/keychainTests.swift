@@ -16,6 +16,15 @@ class keychainTests: XCTestCase {
     XCTAssertTrue(TegKeychain.set("key 1", value: "hello :)"))
     XCTAssertEqual("hello :)", TegKeychain.get("key 1")!)
   }
+  
+  func testSetWithOptions() {
+    let value = TegKeychainConstants.classGenericPassword
+    println("!!!!!!!!! \(value)")
+//    TegKeychain.set("key 1", value: "hello :)", options: [
+//      TegKeychainConstants.accesibility: 
+//    ]
+//    )
+  }
 
   // Get
   // -----------------------
