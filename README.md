@@ -9,26 +9,26 @@ Keychain is a secure storage on iOS device. You can store all kind of sensitive 
 
 ## Installation
 
-Copy [TegKeychain.swift](https://raw.githubusercontent.com/exchangegroup/keychain-swift/master/keychain/TegKeychain.swift) into your project.
+Copy [KeychainSwift.swift](https://raw.githubusercontent.com/exchangegroup/keychain-swift/master/keychain/KeychainSwift.swift) into your project.
 
 ## Usage
 
 ```Swift
-TegKeychain.set("hello world", forKey: "my key")
+KeychainSwift.set("hello world", forKey: "my key")
 
-TegKeychain.get("my key")
+KeychainSwift.get("my key")
 
-TegKeychain.delete("my key")
+KeychainSwift.delete("my key")
 
-TegKeychain.clear() // delete everything from app's Keychain
+KeychainSwift.clear() // delete everything from app's Keychain
 ```
 
 In addition to strings one can set/get `NSData` objects.
 
 ```Swift
-TegKeychain.set(nsDataObject, forKey: "my key")
+KeychainSwift.set(nsDataObject, forKey: "my key")
 
-TegKeychain.getData("my key")
+KeychainSwift.getData("my key")
 ```
 
 ## Advanced options
@@ -39,12 +39,12 @@ Use `withAccess` attribute to specify when your app needs access to the text in 
 By default the `.AccessibleWhenUnlocked` option is used. It is recommended to use most restrictive option that is suitable for you app in order provide the best data protection.
 
 ```
-TegKeychain.set("Hello world", forKey: "key 1", withAccess: .AccessibleWhenUnlocked)
+KeychainSwift.set("Hello world", forKey: "key 1", withAccess: .AccessibleWhenUnlocked)
 ```
 
 You can use `.AccessibleAfterFirstUnlock` if you need your app to access the keychain item while in the background. It may be needed for the Apple Watch apps.
 
-See the list of all available [access options](https://github.com/exchangegroup/keychain-swift/blob/master/keychain/TegKeychainAccessOptions.swift).
+See the list of all available [access options](https://github.com/exchangegroup/keychain-swift/blob/master/keychain/KeychainSwiftAccessOptions.swift).
 
 ## Demo app
 

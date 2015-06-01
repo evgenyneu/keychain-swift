@@ -9,7 +9,7 @@
 
 // ----------------------------
 //
-// TegKeychain.swift
+// KeychainSwift.swift
 //
 // ----------------------------
 
@@ -22,7 +22,7 @@ import Security
 A collection of helper functions for saving text and data in the keychain.
 
 */
-public class TegKeychain {
+public class KeychainSwift {
   
   static var lastQueryParameters: [String: NSObject]? // Used by unit tests
   
@@ -36,7 +36,7 @@ public class TegKeychain {
 
   */
   public class func set(value: String, forKey key: String,
-    withAccess access: TegKeychainAccessOptions? = nil) -> Bool {
+    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
     
     if let value = value.dataUsingEncoding(NSUTF8StringEncoding) {
       return set(value, forKey: key, withAccess: access)
@@ -57,15 +57,15 @@ public class TegKeychain {
   
   */
   public class func set(value: NSData, forKey key: String,
-    withAccess access: TegKeychainAccessOptions? = nil) -> Bool {
+    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
 
-    let accessible = access?.value ?? TegKeychainAccessOptions.defaultOption.value
+    let accessible = access?.value ?? KeychainSwiftAccessOptions.defaultOption.value
       
     let query = [
-      TegKeychainConstants.klass       : TegKeychainConstants.classGenericPassword,
-      TegKeychainConstants.attrAccount : key,
-      TegKeychainConstants.valueData   : value,
-      TegKeychainConstants.accessible  : accessible
+      KeychainSwiftConstants.klass       : KeychainSwiftConstants.classGenericPassword,
+      KeychainSwiftConstants.attrAccount : key,
+      KeychainSwiftConstants.valueData   : value,
+      KeychainSwiftConstants.accessible  : accessible
     ]
       
     lastQueryParameters = query
@@ -105,10 +105,10 @@ public class TegKeychain {
   */
   public class func getData(key: String) -> NSData? {
     let query = [
-      TegKeychainConstants.klass       : kSecClassGenericPassword,
-      TegKeychainConstants.attrAccount : key,
-      TegKeychainConstants.returnData  : kCFBooleanTrue,
-      TegKeychainConstants.matchLimit  : kSecMatchLimitOne ]
+      KeychainSwiftConstants.klass       : kSecClassGenericPassword,
+      KeychainSwiftConstants.attrAccount : key,
+      KeychainSwiftConstants.returnData  : kCFBooleanTrue,
+      KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne ]
     
     var result: AnyObject?
     
@@ -131,8 +131,8 @@ public class TegKeychain {
   */
   public class func delete(key: String) -> Bool {
     let query = [
-      TegKeychainConstants.klass       : kSecClassGenericPassword,
-      TegKeychainConstants.attrAccount : key ]
+      KeychainSwiftConstants.klass       : kSecClassGenericPassword,
+      KeychainSwiftConstants.attrAccount : key ]
     
     let status: OSStatus = SecItemDelete(query as CFDictionaryRef)
     
@@ -158,7 +158,7 @@ public class TegKeychain {
 
 // ----------------------------
 //
-// TegKeychainAccessOptions.swift
+// KeychainSwiftAccessOptions.swift
 //
 // ----------------------------
 
@@ -169,7 +169,7 @@ import Security
 These options are used to determine when a keychain item should be readable. The default value is AccessibleWhenUnlocked.
 
 */
-public enum TegKeychainAccessOptions {
+public enum KeychainSwiftAccessOptions {
   
   /**
   
@@ -236,7 +236,7 @@ public enum TegKeychainAccessOptions {
   */
   case AccessibleAlwaysThisDeviceOnly
   
-  static var defaultOption: TegKeychainAccessOptions {
+  static var defaultOption: KeychainSwiftAccessOptions {
     return .AccessibleWhenUnlocked
   }
   
@@ -266,7 +266,7 @@ public enum TegKeychainAccessOptions {
   }
   
   func toString(value: CFStringRef) -> String {
-    return TegKeychainConstants.toString(value)
+    return KeychainSwiftConstants.toString(value)
   }
 }
 
@@ -280,7 +280,7 @@ public enum TegKeychainAccessOptions {
 import Foundation
 import Security
 
-public struct TegKeychainConstants {
+public struct KeychainSwiftConstants {
   public static var klass: String { return toString(kSecClass) }
   public static var classGenericPassword: String { return toString(kSecClassGenericPassword) }
   public static var attrAccount: String { return toString(kSecAttrAccount) }
@@ -290,7 +290,7 @@ public struct TegKeychainConstants {
 
   /**
   
-  A value that indicates when your app needs access to the data in a keychain item. The default value is AccessibleWhenUnlocked. For a list of possible values, see TegKeychainAccessOptions.
+  A value that indicates when your app needs access to the data in a keychain item. The default value is AccessibleWhenUnlocked. For a list of possible values, see KeychainSwiftAccessOptions.
   
   */
   public static var accessible: String { return toString(kSecAttrAccessible) }

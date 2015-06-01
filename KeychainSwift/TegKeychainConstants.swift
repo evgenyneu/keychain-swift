@@ -1,7 +1,7 @@
 import Foundation
 import Security
 
-public struct TegKeychainConstants {
+public struct KeychainSwiftConstants {
   public static var klass: String { return toString(kSecClass) }
   public static var classGenericPassword: String { return toString(kSecClassGenericPassword) }
   public static var attrAccount: String { return toString(kSecAttrAccount) }
@@ -11,7 +11,7 @@ public struct TegKeychainConstants {
 
   /**
   
-  A value that indicates when your app needs access to the data in a keychain item. The default value is AccessibleWhenUnlocked. For a list of possible values, see TegKeychainAccessOptions.
+  A value that indicates when your app needs access to the data in a keychain item. The default value is AccessibleWhenUnlocked. For a list of possible values, see KeychainSwiftAccessOptions.
   
   */
   public static var accessible: String { return toString(kSecAttrAccessible) }

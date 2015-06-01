@@ -7,7 +7,7 @@ import Security
 A collection of helper functions for saving text and data in the keychain.
 
 */
-public class TegKeychain {
+public class KeychainSwift {
   
   static var lastQueryParameters: [String: NSObject]? // Used by unit tests
   
@@ -21,7 +21,7 @@ public class TegKeychain {
 
   */
   public class func set(value: String, forKey key: String,
-    withAccess access: TegKeychainAccessOptions? = nil) -> Bool {
+    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
     
     if let value = value.dataUsingEncoding(NSUTF8StringEncoding) {
       return set(value, forKey: key, withAccess: access)
@@ -42,15 +42,15 @@ public class TegKeychain {
   
   */
   public class func set(value: NSData, forKey key: String,
-    withAccess access: TegKeychainAccessOptions? = nil) -> Bool {
+    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
 
-    let accessible = access?.value ?? TegKeychainAccessOptions.defaultOption.value
+    let accessible = access?.value ?? KeychainSwiftAccessOptions.defaultOption.value
       
     let query = [
-      TegKeychainConstants.klass       : TegKeychainConstants.classGenericPassword,
-      TegKeychainConstants.attrAccount : key,
-      TegKeychainConstants.valueData   : value,
-      TegKeychainConstants.accessible  : accessible
+      KeychainSwiftConstants.klass       : KeychainSwiftConstants.classGenericPassword,
+      KeychainSwiftConstants.attrAccount : key,
+      KeychainSwiftConstants.valueData   : value,
+      KeychainSwiftConstants.accessible  : accessible
     ]
       
     lastQueryParameters = query
@@ -90,10 +90,10 @@ public class TegKeychain {
   */
   public class func getData(key: String) -> NSData? {
     let query = [
-      TegKeychainConstants.klass       : kSecClassGenericPassword,
-      TegKeychainConstants.attrAccount : key,
-      TegKeychainConstants.returnData  : kCFBooleanTrue,
-      TegKeychainConstants.matchLimit  : kSecMatchLimitOne ]
+      KeychainSwiftConstants.klass       : kSecClassGenericPassword,
+      KeychainSwiftConstants.attrAccount : key,
+      KeychainSwiftConstants.returnData  : kCFBooleanTrue,
+      KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne ]
     
     var result: AnyObject?
     
@@ -116,8 +116,8 @@ public class TegKeychain {
   */
   public class func delete(key: String) -> Bool {
     let query = [
-      TegKeychainConstants.klass       : kSecClassGenericPassword,
-      TegKeychainConstants.attrAccount : key ]
+      KeychainSwiftConstants.klass       : kSecClassGenericPassword,
+      KeychainSwiftConstants.attrAccount : key ]
     
     let status: OSStatus = SecItemDelete(query as CFDictionaryRef)
     

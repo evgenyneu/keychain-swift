@@ -5,7 +5,7 @@ import Security
 These options are used to determine when a keychain item should be readable. The default value is AccessibleWhenUnlocked.
 
 */
-public enum TegKeychainAccessOptions {
+public enum KeychainSwiftAccessOptions {
   
   /**
   
@@ -72,7 +72,7 @@ public enum TegKeychainAccessOptions {
   */
   case AccessibleAlwaysThisDeviceOnly
   
-  static var defaultOption: TegKeychainAccessOptions {
+  static var defaultOption: KeychainSwiftAccessOptions {
     return .AccessibleWhenUnlocked
   }
   
@@ -102,6 +102,6 @@ public enum TegKeychainAccessOptions {
   }
   
   func toString(value: CFStringRef) -> String {
-    return TegKeychainConstants.toString(value)
+    return KeychainSwiftConstants.toString(value)
   }
 }

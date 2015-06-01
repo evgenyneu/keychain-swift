@@ -21,17 +21,17 @@ class ViewController: UIViewController {
   }
   
   @IBAction func onSaveTapped(sender: AnyObject) {
-    TegKeychain.set(textField.text, forKey: TegKeychainDemo_keyName)
+    KeychainSwift.set(textField.text, forKey: TegKeychainDemo_keyName)
     updateValueLabel()
   }
   
   @IBAction func onDeleteTapped(sender: AnyObject) {
-    TegKeychain.delete(TegKeychainDemo_keyName)
+    KeychainSwift.delete(TegKeychainDemo_keyName)
     updateValueLabel()
   }
   
   private func updateValueLabel() {
-    if let value = TegKeychain.get(TegKeychainDemo_keyName) {
+    if let value = KeychainSwift.get(TegKeychainDemo_keyName) {
       valueLabel.text = "In Keychain: \(value)"
     } else {
       valueLabel.text = "no value in keychain"

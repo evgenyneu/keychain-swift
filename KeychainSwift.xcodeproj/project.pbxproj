@@ -10,12 +10,12 @@
 		7ED6C9721B1C118F00FE8090 /* KeychainSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED6C9711B1C118F00FE8090 /* KeychainSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7ED6C9781B1C118F00FE8090 /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED6C96C1B1C118F00FE8090 /* KeychainSwift.framework */; };
 		7ED6C98C1B1C126D00FE8090 /* keychain-swift-demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED6C98B1B1C126D00FE8090 /* keychain-swift-demo.png */; };
-		7ED6C9901B1C128100FE8090 /* TegKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98D1B1C128100FE8090 /* TegKeychain.swift */; };
-		7ED6C9911B1C128100FE8090 /* TegKeychainAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98E1B1C128100FE8090 /* TegKeychainAccessOptions.swift */; };
+		7ED6C9901B1C128100FE8090 /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98D1B1C128100FE8090 /* KeychainSwift.swift */; };
+		7ED6C9911B1C128100FE8090 /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98E1B1C128100FE8090 /* KeychainSwiftAccessOptions.swift */; };
 		7ED6C9921B1C128100FE8090 /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98F1B1C128100FE8090 /* TegKeychainConstants.swift */; };
 		7ED6C9951B1C12A200FE8090 /* KeychainSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C9941B1C12A200FE8090 /* KeychainSwiftTests.swift */; };
-		7ED6C9961B1C12B100FE8090 /* TegKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98D1B1C128100FE8090 /* TegKeychain.swift */; };
-		7ED6C9971B1C12B300FE8090 /* TegKeychainAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98E1B1C128100FE8090 /* TegKeychainAccessOptions.swift */; };
+		7ED6C9961B1C12B100FE8090 /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98D1B1C128100FE8090 /* KeychainSwift.swift */; };
+		7ED6C9971B1C12B300FE8090 /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98E1B1C128100FE8090 /* KeychainSwiftAccessOptions.swift */; };
 		7ED6C9981B1C12B500FE8090 /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98F1B1C128100FE8090 /* TegKeychainConstants.swift */; };
 		7ED6C9A21B1C133500FE8090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C9A11B1C133500FE8090 /* AppDelegate.swift */; };
 		7ED6C9A41B1C133500FE8090 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C9A31B1C133500FE8090 /* ViewController.swift */; };
@@ -66,8 +66,8 @@
 		7ED6C97D1B1C118F00FE8090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ED6C9881B1C125000FE8090 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7ED6C98B1B1C126D00FE8090 /* keychain-swift-demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keychain-swift-demo.png"; sourceTree = "<group>"; };
-		7ED6C98D1B1C128100FE8090 /* TegKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychain.swift; sourceTree = "<group>"; };
-		7ED6C98E1B1C128100FE8090 /* TegKeychainAccessOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainAccessOptions.swift; sourceTree = "<group>"; };
+		7ED6C98D1B1C128100FE8090 /* KeychainSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwift.swift; sourceTree = "<group>"; };
+		7ED6C98E1B1C128100FE8090 /* KeychainSwiftAccessOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftAccessOptions.swift; sourceTree = "<group>"; };
 		7ED6C98F1B1C128100FE8090 /* TegKeychainConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainConstants.swift; sourceTree = "<group>"; };
 		7ED6C9931B1C12A200FE8090 /* KeychainSwiftTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeychainSwiftTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		7ED6C9941B1C12A200FE8090 /* KeychainSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftTests.swift; sourceTree = "<group>"; };
@@ -136,8 +136,8 @@
 		7ED6C96E1B1C118F00FE8090 /* KeychainSwift */ = {
 			isa = PBXGroup;
 			children = (
-				7ED6C98D1B1C128100FE8090 /* TegKeychain.swift */,
-				7ED6C98E1B1C128100FE8090 /* TegKeychainAccessOptions.swift */,
+				7ED6C98D1B1C128100FE8090 /* KeychainSwift.swift */,
+				7ED6C98E1B1C128100FE8090 /* KeychainSwiftAccessOptions.swift */,
 				7ED6C98F1B1C128100FE8090 /* TegKeychainConstants.swift */,
 				7ED6C9711B1C118F00FE8090 /* KeychainSwift.h */,
 				7ED6C96F1B1C118F00FE8090 /* Supporting Files */,
@@ -377,8 +377,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7ED6C9911B1C128100FE8090 /* TegKeychainAccessOptions.swift in Sources */,
-				7ED6C9901B1C128100FE8090 /* TegKeychain.swift in Sources */,
+				7ED6C9911B1C128100FE8090 /* KeychainSwiftAccessOptions.swift in Sources */,
+				7ED6C9901B1C128100FE8090 /* KeychainSwift.swift in Sources */,
 				7ED6C9921B1C128100FE8090 /* TegKeychainConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,8 +387,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7ED6C9971B1C12B300FE8090 /* TegKeychainAccessOptions.swift in Sources */,
-				7ED6C9961B1C12B100FE8090 /* TegKeychain.swift in Sources */,
+				7ED6C9971B1C12B300FE8090 /* KeychainSwiftAccessOptions.swift in Sources */,
+				7ED6C9961B1C12B100FE8090 /* KeychainSwift.swift in Sources */,
 				7ED6C9981B1C12B500FE8090 /* TegKeychainConstants.swift in Sources */,
 				7ED6C9951B1C12A200FE8090 /* KeychainSwiftTests.swift in Sources */,
 			);
@@ -635,6 +635,7 @@
 				7ED6C9841B1C118F00FE8090 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7ED6C9851B1C118F00FE8090 /* Build configuration list for PBXNativeTarget "KeychainSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -643,6 +644,7 @@
 				7ED6C9871B1C118F00FE8090 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7ED6C9B91B1C133500FE8090 /* Build configuration list for PBXNativeTarget "Demo" */ = {
 			isa = XCConfigurationList;
@@ -651,6 +653,7 @@
 				7ED6C9BB1B1C133500FE8090 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
