@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7E49F57F1B1C0ACF00FBC3FF"
+               BlueprintIdentifier = "7ED6C96B1B1C118F00FE8090"
                BuildableName = "KeychainSwift.framework"
                BlueprintName = "KeychainSwift"
                ReferencedContainer = "container:KeychainSwift.xcodeproj">
@@ -29,6 +29,15 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "7ED6C96B1B1C118F00FE8090"
+            BuildableName = "KeychainSwift.framework"
+            BlueprintName = "KeychainSwift"
+            ReferencedContainer = "container:KeychainSwift.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -42,7 +51,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7E49F57F1B1C0ACF00FBC3FF"
+            BlueprintIdentifier = "7ED6C96B1B1C118F00FE8090"
             BuildableName = "KeychainSwift.framework"
             BlueprintName = "KeychainSwift"
             ReferencedContainer = "container:KeychainSwift.xcodeproj">
@@ -60,7 +69,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7E49F57F1B1C0ACF00FBC3FF"
+            BlueprintIdentifier = "7ED6C96B1B1C118F00FE8090"
             BuildableName = "KeychainSwift.framework"
             BlueprintName = "KeychainSwift"
             ReferencedContainer = "container:KeychainSwift.xcodeproj">

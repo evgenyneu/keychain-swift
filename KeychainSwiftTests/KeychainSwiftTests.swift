@@ -1,36 +1,93 @@
-//
-//  KeychainSwiftTests.swift
-//  KeychainSwiftTests
-//
-//  Created by Evgenii on 1/06/2015.
-//  Copyright (c) 2015 The Exchange Group Pty Ltd. All rights reserved.
-//
-
 import UIKit
 import XCTest
 
-class KeychainSwiftTests: XCTestCase {
+class keychainTests: XCTestCase {
+  override func setUp() {
+    super.setUp()
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    TegKeychain.clear()
+    TegKeychain.lastQueryParameters = nil
+  }
+
+  // MARK: - Set text
+  // -----------------------
+
+  func testSet() {
+    XCTAssertTrue(TegKeychain.set("hello :)", forKey: "key 1"))
+    XCTAssertEqual("hello :)", TegKeychain.get("key 1")!)
+  }
+  
+  func testSet_usesAccessibleWhenUnlockedByDefault() {
+    XCTAssertTrue(TegKeychain.set("hello :)", forKey: "key 1"))
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+    let accessValue = TegKeychain.lastQueryParameters?[TegKeychainConstants.accessible] as? String
+    XCTAssertEqual(TegKeychainAccessOptions.AccessibleWhenUnlocked.value, accessValue!)
+  }
+  
+  func testSetWithAccessOption() {
+    TegKeychain.set("hello :)", forKey: "key 1", withAccess: .AccessibleAfterFirstUnlock)
+    let accessValue = TegKeychain.lastQueryParameters?[TegKeychainConstants.accessible] as? String
+    XCTAssertEqual(TegKeychainAccessOptions.AccessibleAfterFirstUnlock.value, accessValue!)
+  }
+  
+  // MARK: - Set data
+  // -----------------------
+  
+  func testSetData() {
+    let data = "hello world".dataUsingEncoding(NSUTF8StringEncoding)!
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
+    XCTAssertTrue(TegKeychain.set(data, forKey: "key 123"))
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    let dataFromKeychain = TegKeychain.getData("key 123")!
+    let textFromKeychain = NSString(data: dataFromKeychain, encoding:NSUTF8StringEncoding) as! String
+    XCTAssertEqual("hello world", textFromKeychain)
+  }
+  
+  func testSetData_usesAccessibleWhenUnlockedByDefault() {
+    let data = "hello world".dataUsingEncoding(NSUTF8StringEncoding)!
     
+    TegKeychain.set(data, forKey: "key 123")
+    
+    let accessValue = TegKeychain.lastQueryParameters?[TegKeychainConstants.accessible] as? String
+    XCTAssertEqual(TegKeychainAccessOptions.AccessibleWhenUnlocked.value, accessValue!)
+  }
+
+  // MARK: - Get
+  // -----------------------
+
+  func testGet_returnNilWhenValueNotSet() {
+    XCTAssert(TegKeychain.get("key 1") == nil)
+  }
+
+  // MARK: - Delete
+  // -----------------------
+
+  func testDelete() {
+    TegKeychain.set("hello :)", forKey: "key 1")
+    TegKeychain.delete("key 1")
+    
+    XCTAssert(TegKeychain.get("key 1") == nil)
+  }
+
+  func testDelete_deleteOnSingleKey() {
+    TegKeychain.set("hello :)", forKey: "key 1")
+    TegKeychain.set("hello two", forKey: "key 2")
+
+    TegKeychain.delete("key 1")
+    
+    XCTAssertEqual("hello two", TegKeychain.get("key 2")!)
+  }
+
+  // MARK: - Clear
+  // -----------------------
+
+  func testClear() {
+    TegKeychain.set("hello :)", forKey: "key 1")
+    TegKeychain.set("hello two", forKey: "key 2")
+    
+    TegKeychain.clear()
+    
+    XCTAssert(TegKeychain.get("key 1") == nil)
+    XCTAssert(TegKeychain.get("key 2") == nil)
+  }
 }

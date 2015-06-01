@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWK-Bu-8u4">
+                                <rect key="frame" x="220" y="160" width="159" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Delete from Keychain">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDeleteTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AY0-oE-tv6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4T-JG-Zbo">
+                                <rect key="frame" x="236" y="108" width="128" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <state key="normal" title="Save in Keychain">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSaveTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="StT-Mn-tqX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDv-PR-OK3">
+                                <rect key="frame" x="24" y="215" width="544" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hello World!" borderStyle="roundedRect" placeholder="Text to save in KeychainSwift" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xkp-Od-gCQ">
+                                <rect key="frame" x="16" y="54" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NDv-PR-OK3" firstAttribute="top" secondItem="hWK-Bu-8u4" secondAttribute="bottom" constant="23" id="LBf-mg-NqE"/>
+                            <constraint firstAttribute="centerX" secondItem="hWK-Bu-8u4" secondAttribute="centerX" id="VJ4-XC-zFq"/>
+                            <constraint firstAttribute="centerX" secondItem="b4T-JG-Zbo" secondAttribute="centerX" id="cbI-es-jn6"/>
+                            <constraint firstItem="NDv-PR-OK3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="f2v-aI-fuD"/>
+                            <constraint firstItem="b4T-JG-Zbo" firstAttribute="top" secondItem="xkp-Od-gCQ" secondAttribute="bottom" constant="24" id="hTO-Zq-9F4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xkp-Od-gCQ" secondAttribute="trailing" id="jW7-wf-Lg2"/>
+                            <constraint firstItem="hWK-Bu-8u4" firstAttribute="top" secondItem="b4T-JG-Zbo" secondAttribute="bottom" constant="20" id="oVb-ZZ-R8a"/>
+                            <constraint firstItem="xkp-Od-gCQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="sBp-QB-I3r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NDv-PR-OK3" secondAttribute="trailing" constant="16" id="vAI-Yb-Kci"/>
+                            <constraint firstItem="xkp-Od-gCQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="zhk-dr-xC7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="xkp-Od-gCQ" id="lld-hT-WbW"/>
+                        <outlet property="valueLabel" destination="NDv-PR-OK3" id="O2G-6d-xCJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

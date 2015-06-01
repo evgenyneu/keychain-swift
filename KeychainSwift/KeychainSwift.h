@@ -1,10 +1,4 @@
-//
-//  KeychainSwift.h
-//  KeychainSwift
-//
-//  Created by Evgenii on 1/06/2015.
-//  Copyright (c) 2015 The Exchange Group Pty Ltd. All rights reserved.
-//
+
 
 #import <UIKit/UIKit.h>
 
