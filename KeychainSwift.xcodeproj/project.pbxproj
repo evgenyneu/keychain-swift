@@ -77,14 +77,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2BCB008C1A83354D0022C93A /* keychain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = keychain.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BCB008C1A83354D0022C93A /* KeychainSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeychainSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCB00901A83354D0022C93A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BCB00911A83354D0022C93A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BCB00931A83354D0022C93A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2BCB00961A83354D0022C93A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2BCB00981A83354D0022C93A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2BCB009B1A83354D0022C93A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		2BCB00A11A83354D0022C93A /* keychainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = keychainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BCB00A11A83354D0022C93A /* KeychainSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeychainSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCB00A61A83354D0022C93A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BCB00A71A83354D0022C93A /* keychainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keychainTests.swift; sourceTree = "<group>"; };
 		2BCB00B11A8335740022C93A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -152,8 +152,8 @@
 		2BCB008D1A83354D0022C93A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2BCB008C1A83354D0022C93A /* keychain.app */,
-				2BCB00A11A83354D0022C93A /* keychainTests.xctest */,
+				2BCB008C1A83354D0022C93A /* KeychainSwift.app */,
+				2BCB00A11A83354D0022C93A /* KeychainSwiftTests.xctest */,
 				7E49F5801B1C0ACF00FBC3FF /* KeychainSwift.framework */,
 				7E49F58A1B1C0ACF00FBC3FF /* KeychainSwiftTests.xctest */,
 			);
@@ -290,7 +290,7 @@
 			);
 			name = keychain;
 			productName = keychain;
-			productReference = 2BCB008C1A83354D0022C93A /* keychain.app */;
+			productReference = 2BCB008C1A83354D0022C93A /* KeychainSwift.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2BCB00A01A83354D0022C93A /* keychainTests */ = {
@@ -308,7 +308,7 @@
 			);
 			name = keychainTests;
 			productName = keychainTests;
-			productReference = 2BCB00A11A83354D0022C93A /* keychainTests.xctest */;
+			productReference = 2BCB00A11A83354D0022C93A /* KeychainSwiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		7E49F57F1B1C0ACF00FBC3FF /* KeychainSwift */ = {
@@ -373,7 +373,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2BCB00871A83354D0022C93A /* Build configuration list for PBXProject "keychain" */;
+			buildConfigurationList = 2BCB00871A83354D0022C93A /* Build configuration list for PBXProject "KeychainSwift" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -619,7 +619,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = keychain/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KeychainSwift;
 			};
 			name = Debug;
 		};
@@ -629,7 +629,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = keychain/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KeychainSwift;
 			};
 			name = Release;
 		};
@@ -647,7 +647,7 @@
 				);
 				INFOPLIST_FILE = keychainTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KeychainSwiftTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/keychain.app/keychain";
 			};
 			name = Debug;
@@ -662,7 +662,7 @@
 				);
 				INFOPLIST_FILE = keychainTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KeychainSwiftTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/keychain.app/keychain";
 			};
 			name = Release;
@@ -752,7 +752,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2BCB00871A83354D0022C93A /* Build configuration list for PBXProject "keychain" */ = {
+		2BCB00871A83354D0022C93A /* Build configuration list for PBXProject "KeychainSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BCB00A91A83354D0022C93A /* Debug */,
@@ -786,6 +786,7 @@
 				7E49F59B1B1C0ACF00FBC3FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E49F59F1B1C0ACF00FBC3FF /* Build configuration list for PBXNativeTarget "KeychainSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -794,6 +795,7 @@
 				7E49F59D1B1C0ACF00FBC3FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
