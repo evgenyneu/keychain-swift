@@ -14,7 +14,7 @@ Copy [TegKeychain.swift](https://raw.githubusercontent.com/exchangegroup/keychai
 ## Usage
 
 ```Swift
-TegKeychain.set("my key", value: "hello world")
+TegKeychain.set("hello world", forKey: "my key")
 
 TegKeychain.get("my key")
 
@@ -26,7 +26,7 @@ TegKeychain.clear() // delete everything from app's Keychain
 In addition to strings one can set/get `NSData` objects.
 
 ```Swift
-TegKeychain.set("my key", value: nsDataObject)
+TegKeychain.set(nsDataObject, forKey: "my key")
 
 TegKeychain.getData("my key")
 ```

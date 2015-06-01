@@ -20,7 +20,7 @@ class ViewController: UIViewController {
   }
 
   @IBAction func onSaveTapped(sender: AnyObject) {
-    TegKeychain.set(TegKeychainDemo_keyName, value: textField.text)
+    TegKeychain.set(textField.text, forKey: TegKeychainDemo_keyName)
     updateValueLabel()
   }
 

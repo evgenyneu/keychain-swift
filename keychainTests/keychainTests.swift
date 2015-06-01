@@ -13,12 +13,12 @@ class keychainTests: XCTestCase {
   // -----------------------
 
   func testSet() {
-    XCTAssertTrue(TegKeychain.set("key 1", value: "hello :)"))
+    XCTAssertTrue(TegKeychain.set("hello :)", forKey: "key 1"))
     XCTAssertEqual("hello :)", TegKeychain.get("key 1")!)
   }
   
   func testSetWithOptions() {
-    TegKeychain.set("key 1", value: "hello :)", withAccess: .AccessibleAfterFirstUnlock)
+    TegKeychain.set("hello :)", forKey: "key 1", withAccess: .AccessibleAfterFirstUnlock)
   }
 
   // Get
@@ -32,15 +32,15 @@ class keychainTests: XCTestCase {
   // -----------------------
 
   func testDelete() {
-    TegKeychain.set("key 1", value: "hello :)")
+    TegKeychain.set("hello :)", forKey: "key 1")
     TegKeychain.delete("key 1")
     
     XCTAssert(TegKeychain.get("key 1") == nil)
   }
 
   func testDelete_deleteOnSingleKey() {
-    TegKeychain.set("key 1", value: "hello :)")
-    TegKeychain.set("key 2", value: "hello two")
+    TegKeychain.set("hello :)", forKey: "key 1")
+    TegKeychain.set("hello two", forKey: "key 2")
 
     TegKeychain.delete("key 1")
     
@@ -51,8 +51,8 @@ class keychainTests: XCTestCase {
   // -----------------------
 
   func testClear() {
-    TegKeychain.set("key 1", value: "hello :)")
-    TegKeychain.set("key 2", value: "hello two")
+    TegKeychain.set("hello :)", forKey: "key 1")
+    TegKeychain.set("hello two", forKey: "key 2")
     
     TegKeychain.clear()
     

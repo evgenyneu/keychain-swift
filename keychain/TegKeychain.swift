@@ -11,18 +11,18 @@ public class TegKeychain {
   
   /**
   
-  Store text value in the keychain item.
+  Stores the text value in the keychain item under the given key.
   
   :param: key Key under which the text value is stored in the keychain.
   :param: value Text string to be written to the keychain.
   :param: withAccess Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
 
   */
-  public class func set(key: String, value: String,
+  public class func set(value: String, forKey key: String,
     withAccess access: TegKeychainAccessOptions? = nil) -> Bool {
     
-    if let data = value.dataUsingEncoding(NSUTF8StringEncoding) {
-      return set(key, value: data)
+    if let value = value.dataUsingEncoding(NSUTF8StringEncoding) {
+      return set(value, forKey: key)
     }
     
     return false
@@ -30,7 +30,7 @@ public class TegKeychain {
 
   /**
   
-  Store data in the keychain item.
+  Stores the data in the keychain item under the given key.
   
   :param: key Key under which the data is stored in the keychain.
   :param: value Data to be written to the keychain.
@@ -39,7 +39,7 @@ public class TegKeychain {
   :returns: True if the text was successfully written to the keychain.
   
   */
-  public class func set(key: String, value: NSData,
+  public class func set(value: NSData, forKey key: String,
     withAccess access: TegKeychainAccessOptions? = nil) -> Bool {
 
     let accessible = access?.value ?? TegKeychainAccessOptions.defaultOption.value
@@ -60,7 +60,7 @@ public class TegKeychain {
 
   /**
   
-  Retrieves the text value from the keychain.
+  Retrieves the text value from the keychain that corresponds to the given key.
   
   :param: key The key that is used to read the keychain item.
   :returns: The text value from the keychain. Returns nil if unable to read the item.
@@ -78,7 +78,7 @@ public class TegKeychain {
 
   /**
   
-  Retrieves the data from the keychain.
+  Retrieves the data from the keychain that corresponds to the given key.
   
   :param: key The key that is used to read the keychain item.
   :returns: The text value from the keychain. Returns nil if unable to read the item.
@@ -104,7 +104,7 @@ public class TegKeychain {
 
   /**
   
-  Deletes the keychain item.
+  Deletes the single keychain item specified by the key.
   
   :param: key The key that is used to delete the keychain item.
   :returns: True if the item was successfully deleted.
