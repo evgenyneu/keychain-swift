@@ -52,7 +52,7 @@ KeychainSwift.getData("my key")
 
 ### Keychain item access
 
-Use `withAccess` attribute to specify when your app needs access to the text in the keychain item.
+Use `withAccess` attribute to specify when your app needs access to the keychain item.
 By default the `.AccessibleWhenUnlocked` option is used. It is recommended to use most restrictive option that is suitable for you app in order provide the best data protection.
 
 ```
