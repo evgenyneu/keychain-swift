@@ -17,7 +17,7 @@ class keychainTests: XCTestCase {
     XCTAssertEqual("hello :)", TegKeychain.get("key 1")!)
   }
   
-  func testSetWithOptions() {
+  func testSetWithAccessOption() {
     TegKeychain.set("hello :)", forKey: "key 1", withAccess: .AccessibleAfterFirstUnlock)
   }
 

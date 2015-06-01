@@ -31,6 +31,19 @@ TegKeychain.set(nsDataObject, forKey: "my key")
 TegKeychain.getData("my key")
 ```
 
+## Advanced options
+
+### Keychain item access
+
+Use `withAccess` attribute to specify when your app needs access to the text in the keychain item.
+By default the `.AccessibleWhenUnlocked` option is used. It is recommended to use most restrictive option that is suitable for you app in order provide the best data protection.
+
+```
+TegKeychain.set("Hello world", forKey: "key 1", withAccess: .AccessibleWhenUnlocked)
+```
+
+[See the list of all available options](http://google.com)
+
 ## Demo app
 
 <img src="https://raw.githubusercontent.com/exchangegroup/keychain-swift/master/graphics/keychain-swift-demo.png" alt="Sacing and reading text from Keychaing in iOS and Swift" width="320">
