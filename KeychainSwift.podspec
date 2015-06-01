@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name        = "KeychainSwift"
-  s.version     = "0.1.5"
+  s.version     = "0.1.7"
   s.license     = { :type => "MIT" }
   s.homepage    = "https://github.com/exchangegroup/keychain-swift"
   s.summary     = "A library for saving text and data in the Keychain with Swift."
