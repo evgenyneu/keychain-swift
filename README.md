@@ -42,7 +42,7 @@ By default the `.AccessibleWhenUnlocked` option is used. It is recommended to us
 TegKeychain.set("Hello world", forKey: "key 1", withAccess: .AccessibleWhenUnlocked)
 ```
 
-[See the list of all available options](http://google.com)
+See the list of all available [access options](https://github.com/exchangegroup/keychain-swift/blob/master/keychain/TegKeychainAccessOptions.swift).
 
 ## Demo app
 
