@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B48E33A1A92F47800456D2F /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B48E3391A92F47800456D2F /* TegKeychainConstants.swift */; };
 		2BCB00921A83354D0022C93A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB00911A83354D0022C93A /* AppDelegate.swift */; };
 		2BCB00941A83354D0022C93A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB00931A83354D0022C93A /* ViewController.swift */; };
 		2BCB00971A83354D0022C93A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BCB00951A83354D0022C93A /* Main.storyboard */; };
@@ -15,11 +14,13 @@
 		2BCB009C1A83354D0022C93A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BCB009A1A83354D0022C93A /* LaunchScreen.xib */; };
 		2BCB00A81A83354D0022C93A /* keychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB00A71A83354D0022C93A /* keychainTests.swift */; };
 		2BCB00B21A8335740022C93A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BCB00B11A8335740022C93A /* Default-568h@2x.png */; };
-		2BCB00B51A8335AF0022C93A /* TegKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB00B41A8335AF0022C93A /* TegKeychain.swift */; };
-		7E49F5361B1BE41B00FBC3FF /* TegKeychainAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F5351B1BE41B00FBC3FF /* TegKeychainAccessOptions.swift */; };
-		7E49F5371B1BEE0B00FBC3FF /* TegKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCB00B41A8335AF0022C93A /* TegKeychain.swift */; };
-		7E49F5381B1BEE0D00FBC3FF /* TegKeychainAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F5351B1BE41B00FBC3FF /* TegKeychainAccessOptions.swift */; };
-		7E49F5391B1BEE0F00FBC3FF /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B48E3391A92F47800456D2F /* TegKeychainConstants.swift */; };
+		7E49F53C1B1BF14500FBC3FF /* concatenate_swift_files.sh in Resources */ = {isa = PBXBuildFile; fileRef = 7E49F53B1B1BF14500FBC3FF /* concatenate_swift_files.sh */; };
+		7E49F5421B1BF1FE00FBC3FF /* TegKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F53F1B1BF1FE00FBC3FF /* TegKeychain.swift */; };
+		7E49F5431B1BF1FE00FBC3FF /* TegKeychainAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F5401B1BF1FE00FBC3FF /* TegKeychainAccessOptions.swift */; };
+		7E49F5441B1BF1FE00FBC3FF /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F5411B1BF1FE00FBC3FF /* TegKeychainConstants.swift */; };
+		7E49F5451B1BF20A00FBC3FF /* TegKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F53F1B1BF1FE00FBC3FF /* TegKeychain.swift */; };
+		7E49F5461B1BF20C00FBC3FF /* TegKeychainAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F5401B1BF1FE00FBC3FF /* TegKeychainAccessOptions.swift */; };
+		7E49F5471B1BF20E00FBC3FF /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E49F5411B1BF1FE00FBC3FF /* TegKeychainConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +34,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2B48E3391A92F47800456D2F /* TegKeychainConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainConstants.swift; sourceTree = "<group>"; };
 		2BCB008C1A83354D0022C93A /* keychain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = keychain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCB00901A83354D0022C93A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BCB00911A83354D0022C93A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,8 +45,11 @@
 		2BCB00A61A83354D0022C93A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BCB00A71A83354D0022C93A /* keychainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keychainTests.swift; sourceTree = "<group>"; };
 		2BCB00B11A8335740022C93A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		2BCB00B41A8335AF0022C93A /* TegKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychain.swift; sourceTree = "<group>"; };
-		7E49F5351B1BE41B00FBC3FF /* TegKeychainAccessOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainAccessOptions.swift; sourceTree = "<group>"; };
+		7E49F53B1B1BF14500FBC3FF /* concatenate_swift_files.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = concatenate_swift_files.sh; sourceTree = "<group>"; };
+		7E49F53F1B1BF1FE00FBC3FF /* TegKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychain.swift; sourceTree = "<group>"; };
+		7E49F5401B1BF1FE00FBC3FF /* TegKeychainAccessOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainAccessOptions.swift; sourceTree = "<group>"; };
+		7E49F5411B1BF1FE00FBC3FF /* TegKeychainConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainConstants.swift; sourceTree = "<group>"; };
+		7E49F5491B1BF25F00FBC3FF /* TegKeychainDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainDistrib.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				2BCB00B11A8335740022C93A /* Default-568h@2x.png */,
 				2BCB008E1A83354D0022C93A /* keychain */,
 				2BCB00A41A83354D0022C93A /* keychainTests */,
+				7E49F5481B1BF22600FBC3FF /* Distrib */,
+				7E49F53A1B1BF13B00FBC3FF /* scripts */,
 				2BCB008D1A83354D0022C93A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,7 +94,7 @@
 		2BCB008E1A83354D0022C93A /* keychain */ = {
 			isa = PBXGroup;
 			children = (
-				2BCB00B31A8335A20022C93A /* Lib */,
+				7E49F53E1B1BF1F000FBC3FF /* Lib */,
 				2BCB00911A83354D0022C93A /* AppDelegate.swift */,
 				2BCB00931A83354D0022C93A /* ViewController.swift */,
 				2BCB00951A83354D0022C93A /* Main.storyboard */,
@@ -125,14 +130,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2BCB00B31A8335A20022C93A /* Lib */ = {
+		7E49F53A1B1BF13B00FBC3FF /* scripts */ = {
 			isa = PBXGroup;
 			children = (
-				2BCB00B41A8335AF0022C93A /* TegKeychain.swift */,
-				7E49F5351B1BE41B00FBC3FF /* TegKeychainAccessOptions.swift */,
-				2B48E3391A92F47800456D2F /* TegKeychainConstants.swift */,
+				7E49F53B1B1BF14500FBC3FF /* concatenate_swift_files.sh */,
 			);
-			name = Lib;
+			path = scripts;
+			sourceTree = "<group>";
+		};
+		7E49F53E1B1BF1F000FBC3FF /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				7E49F53F1B1BF1FE00FBC3FF /* TegKeychain.swift */,
+				7E49F5401B1BF1FE00FBC3FF /* TegKeychainAccessOptions.swift */,
+				7E49F5411B1BF1FE00FBC3FF /* TegKeychainConstants.swift */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		7E49F5481B1BF22600FBC3FF /* Distrib */ = {
+			isa = PBXGroup;
+			children = (
+				7E49F5491B1BF25F00FBC3FF /* TegKeychainDistrib.swift */,
+			);
+			path = Distrib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +166,7 @@
 				2BCB00881A83354D0022C93A /* Sources */,
 				2BCB00891A83354D0022C93A /* Frameworks */,
 				2BCB008A1A83354D0022C93A /* Resources */,
+				7E49F53D1B1BF15900FBC3FF /* Combine swift files into single file */,
 			);
 			buildRules = (
 			);
@@ -218,6 +240,7 @@
 				2BCB00971A83354D0022C93A /* Main.storyboard in Resources */,
 				2BCB00B21A8335740022C93A /* Default-568h@2x.png in Resources */,
 				2BCB009C1A83354D0022C93A /* LaunchScreen.xib in Resources */,
+				7E49F53C1B1BF14500FBC3FF /* concatenate_swift_files.sh in Resources */,
 				2BCB00991A83354D0022C93A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +254,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7E49F53D1B1BF15900FBC3FF /* Combine swift files into single file */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Combine swift files into single file";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/scripts/concatenate_swift_files.sh ${SRCROOT}/keychain/Lib ${SRCROOT}/Distrib/TegKeychainDistrib.swift '//\\n// Keychain helper for iOS/Swift.\\n//\\n// https://github.com/exchangegroup/keychain-swift\\n//\\n// This file was automatically generated by combining multiple Swift source files.\\n//'";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2BCB00881A83354D0022C93A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -238,9 +278,9 @@
 			files = (
 				2BCB00941A83354D0022C93A /* ViewController.swift in Sources */,
 				2BCB00921A83354D0022C93A /* AppDelegate.swift in Sources */,
-				7E49F5361B1BE41B00FBC3FF /* TegKeychainAccessOptions.swift in Sources */,
-				2B48E33A1A92F47800456D2F /* TegKeychainConstants.swift in Sources */,
-				2BCB00B51A8335AF0022C93A /* TegKeychain.swift in Sources */,
+				7E49F5421B1BF1FE00FBC3FF /* TegKeychain.swift in Sources */,
+				7E49F5431B1BF1FE00FBC3FF /* TegKeychainAccessOptions.swift in Sources */,
+				7E49F5441B1BF1FE00FBC3FF /* TegKeychainConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,9 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E49F5381B1BEE0D00FBC3FF /* TegKeychainAccessOptions.swift in Sources */,
-				7E49F5371B1BEE0B00FBC3FF /* TegKeychain.swift in Sources */,
-				7E49F5391B1BEE0F00FBC3FF /* TegKeychainConstants.swift in Sources */,
+				7E49F5461B1BF20C00FBC3FF /* TegKeychainAccessOptions.swift in Sources */,
+				7E49F5451B1BF20A00FBC3FF /* TegKeychain.swift in Sources */,
+				7E49F5471B1BF20E00FBC3FF /* TegKeychainConstants.swift in Sources */,
 				2BCB00A81A83354D0022C93A /* keychainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
