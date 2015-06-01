@@ -53,13 +53,13 @@ KeychainSwift.getData("my key")
 ### Keychain item access
 
 Use `withAccess` attribute to specify when your app needs access to the keychain item.
-By default the `.AccessibleWhenUnlocked` option is used. It is recommended to use most restrictive option that is suitable for you app in order provide the best data protection.
+By default the `.AccessibleWhenUnlocked` option is used. It is one of the most restrictive options and provides good data protection.
 
 ```
 KeychainSwift.set("Hello world", forKey: "key 1", withAccess: .AccessibleWhenUnlocked)
 ```
 
-You can use `.AccessibleAfterFirstUnlock` if you need your app to access the keychain item while in the background. It may be needed for the Apple Watch apps.
+You can use `.AccessibleAfterFirstUnlock` if you need your app to access the keychain item while in the background.  It may be needed for the Apple Watch apps. Note that it is less secure than the `.AccessibleWhenUnlocked` option.
 
 See the list of all available [access options](https://github.com/exchangegroup/keychain-swift/blob/master/keychain/KeychainSwiftAccessOptions.swift).
 
