@@ -7,9 +7,10 @@ class keychainTests: XCTestCase {
     super.setUp()
     
     TegKeychain.clear()
+    TegKeychain.lastQueryParameters = nil
   }
 
-  // Set
+  // MARK: - Set text
   // -----------------------
 
   func testSet() {
@@ -17,18 +18,49 @@ class keychainTests: XCTestCase {
     XCTAssertEqual("hello :)", TegKeychain.get("key 1")!)
   }
   
+  func testSet_usesAccessibleWhenUnlockedByDefault() {
+    XCTAssertTrue(TegKeychain.set("hello :)", forKey: "key 1"))
+    
+    let accessValue = TegKeychain.lastQueryParameters?[TegKeychainConstants.accessible] as? String
+    XCTAssertEqual(TegKeychainAccessOptions.AccessibleWhenUnlocked.value, accessValue!)
+  }
+  
   func testSetWithAccessOption() {
     TegKeychain.set("hello :)", forKey: "key 1", withAccess: .AccessibleAfterFirstUnlock)
+    let accessValue = TegKeychain.lastQueryParameters?[TegKeychainConstants.accessible] as? String
+    XCTAssertEqual(TegKeychainAccessOptions.AccessibleAfterFirstUnlock.value, accessValue!)
+  }
+  
+  // MARK: - Set data
+  // -----------------------
+  
+  func testSetData() {
+    let data = "hello world".dataUsingEncoding(NSUTF8StringEncoding)!
+    
+    XCTAssertTrue(TegKeychain.set(data, forKey: "key 123"))
+    
+    let dataFromKeychain = TegKeychain.getData("key 123")!
+    let textFromKeychain = NSString(data: dataFromKeychain, encoding:NSUTF8StringEncoding) as! String
+    XCTAssertEqual("hello world", textFromKeychain)
+  }
+  
+  func testSetData_usesAccessibleWhenUnlockedByDefault() {
+    let data = "hello world".dataUsingEncoding(NSUTF8StringEncoding)!
+    
+    TegKeychain.set(data, forKey: "key 123")
+    
+    let accessValue = TegKeychain.lastQueryParameters?[TegKeychainConstants.accessible] as? String
+    XCTAssertEqual(TegKeychainAccessOptions.AccessibleWhenUnlocked.value, accessValue!)
   }
 
-  // Get
+  // MARK: - Get
   // -----------------------
 
   func testGet_returnNilWhenValueNotSet() {
     XCTAssert(TegKeychain.get("key 1") == nil)
   }
 
-  // Delete
+  // MARK: - Delete
   // -----------------------
 
   func testDelete() {
@@ -47,7 +79,7 @@ class keychainTests: XCTestCase {
     XCTAssertEqual("hello two", TegKeychain.get("key 2")!)
   }
 
-  // Clear
+  // MARK: - Clear
   // -----------------------
 
   func testClear() {

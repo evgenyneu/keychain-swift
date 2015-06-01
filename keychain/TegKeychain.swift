@@ -9,6 +9,8 @@ A collection of helper functions for saving text and data in the keychain.
 */
 public class TegKeychain {
   
+  static var lastQueryParameters: [String: NSObject]? // Used by unit tests
+  
   /**
   
   Stores the text value in the keychain item under the given key.
@@ -22,7 +24,7 @@ public class TegKeychain {
     withAccess access: TegKeychainAccessOptions? = nil) -> Bool {
     
     if let value = value.dataUsingEncoding(NSUTF8StringEncoding) {
-      return set(value, forKey: key)
+      return set(value, forKey: key, withAccess: access)
     }
     
     return false
@@ -50,7 +52,9 @@ public class TegKeychain {
       TegKeychainConstants.valueData   : value,
       TegKeychainConstants.accessible  : accessible
     ]
-    
+      
+    lastQueryParameters = query
+          
     SecItemDelete(query as CFDictionaryRef)
     
     let status: OSStatus = SecItemAdd(query as CFDictionaryRef, nil)
