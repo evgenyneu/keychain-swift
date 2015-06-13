@@ -17,7 +17,7 @@ public struct KeychainSwiftConstants {
   public static var accessible: String { return toString(kSecAttrAccessible) }
 
   static func toString(value: CFStringRef) -> String {
-    return (value as? String) ?? ""
+    return value as String
   }
 }
 
