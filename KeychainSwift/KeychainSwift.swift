@@ -15,9 +15,9 @@ public class KeychainSwift {
   
   Stores the text value in the keychain item under the given key.
   
-  :param: key Key under which the text value is stored in the keychain.
-  :param: value Text string to be written to the keychain.
-  :param: withAccess Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
+  - parameter key: Key under which the text value is stored in the keychain.
+  - parameter value: Text string to be written to the keychain.
+  - parameter withAccess: Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
 
   */
   public class func set(value: String, forKey key: String,
@@ -34,11 +34,11 @@ public class KeychainSwift {
   
   Stores the data in the keychain item under the given key.
   
-  :param: key Key under which the data is stored in the keychain.
-  :param: value Data to be written to the keychain.
-  :param: withAccess Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
+  - parameter key: Key under which the data is stored in the keychain.
+  - parameter value: Data to be written to the keychain.
+  - parameter withAccess: Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
   
-  :returns: True if the text was successfully written to the keychain.
+  - returns: True if the text was successfully written to the keychain.
   
   */
   public class func set(value: NSData, forKey key: String,
@@ -66,8 +66,8 @@ public class KeychainSwift {
   
   Retrieves the text value from the keychain that corresponds to the given key.
   
-  :param: key The key that is used to read the keychain item.
-  :returns: The text value from the keychain. Returns nil if unable to read the item.
+  - parameter key: The key that is used to read the keychain item.
+  - returns: The text value from the keychain. Returns nil if unable to read the item.
   
   */
   public class func get(key: String) -> String? {
@@ -84,8 +84,8 @@ public class KeychainSwift {
   
   Retrieves the data from the keychain that corresponds to the given key.
   
-  :param: key The key that is used to read the keychain item.
-  :returns: The text value from the keychain. Returns nil if unable to read the item.
+  - parameter key: The key that is used to read the keychain item.
+  - returns: The text value from the keychain. Returns nil if unable to read the item.
   
   */
   public class func getData(key: String) -> NSData? {
@@ -110,8 +110,8 @@ public class KeychainSwift {
   
   Deletes the single keychain item specified by the key.
   
-  :param: key The key that is used to delete the keychain item.
-  :returns: True if the item was successfully deleted.
+  - parameter key: The key that is used to delete the keychain item.
+  - returns: True if the item was successfully deleted.
   
   */
   public class func delete(key: String) -> Bool {
@@ -128,7 +128,7 @@ public class KeychainSwift {
   
   Deletes all keychain items used by the app.
   
-  :returns: True if the keychain items were successfully deleted.
+  - returns: True if the keychain items were successfully deleted.
   
   */
   public class func clear() -> Bool {

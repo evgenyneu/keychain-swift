@@ -21,8 +21,10 @@ class ViewController: UIViewController {
   }
   
   @IBAction func onSaveTapped(sender: AnyObject) {
-    KeychainSwift.set(textField.text, forKey: TegKeychainDemo_keyName)
-    updateValueLabel()
+    if let text = textField.text {
+      KeychainSwift.set(text, forKey: TegKeychainDemo_keyName)
+      updateValueLabel()
+    }
   }
   
   @IBAction func onDeleteTapped(sender: AnyObject) {
