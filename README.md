@@ -72,6 +72,10 @@ See the list of all available [access options](https://github.com/exchangegroup/
 
 <img src="https://raw.githubusercontent.com/exchangegroup/keychain-swift/master/graphics/keychain-swift-demo.png" alt="Sacing and reading text from Keychaing in iOS and Swift" width="320">
 
-### Reference
+## Credits
 
 The code is based on this example: [https://gist.github.com/s-aska/e7ad24175fb7b04f78e7](https://gist.github.com/s-aska/e7ad24175fb7b04f78e7)
+
+## License
+
+Dodo is released under the [MIT License](LICENSE).
