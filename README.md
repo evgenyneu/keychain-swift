@@ -1,5 +1,12 @@
 # iOS/Swift helper functions for storing text in Keychain
 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)][carthage]
+[![CocoaPods Version](https://img.shields.io/cocoapods/v/KeychainSwift.svg?style=flat)][cocoadocs]
+[![License](https://img.shields.io/cocoapods/l/KeychainSwift.svg?style=flat)][cocoadocs]
+[![Platform](https://img.shields.io/cocoapods/p/KeychainSwift.svg?style=flat)][cocoadocs]
+[cocoadocs]: http://cocoadocs.org/docsets/KeychainSwift
+[carthage]: https://github.com/Carthage/Carthage
+
 This is a collection of helper functions for saving text and data in the Keychain.
  As you probably noticed Apple's keychain API is a bit verbose. This library was designed to provide shorter syntax for accomplishing a simple task: reading/writing text values for specified keys. Tested in iOS 7 and 8.
 
