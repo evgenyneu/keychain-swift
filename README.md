@@ -75,7 +75,3 @@ See the list of all available [access options](https://github.com/exchangegroup/
 ### Reference
 
 The code is based on this example: [https://gist.github.com/s-aska/e7ad24175fb7b04f78e7](https://gist.github.com/s-aska/e7ad24175fb7b04f78e7)
-
-### Repository home
-
-https://github.com/exchangegroup/keychain-swift
