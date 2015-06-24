@@ -85,4 +85,4 @@ The code is based on this example: [https://gist.github.com/s-aska/e7ad24175fb7b
 
 ## License
 
-Dodo is released under the [MIT License](LICENSE).
+Keychain Swift is released under the [MIT License](LICENSE).
