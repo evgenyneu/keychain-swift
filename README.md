@@ -64,7 +64,7 @@ KeychainSwift.getData("my key")
 
 ### Keychain item access
 
-Use `withAccess` parameter to specify when your app needs access to the keychain item.
+Use `withAccess` parameter to specify the security level of the keychain storage.
 By default the `.AccessibleWhenUnlocked` option is used. It is one of the most restrictive options and provides good data protection.
 
 ```
