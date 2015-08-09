@@ -9,7 +9,7 @@ A collection of helper functions for saving text and data in the keychain.
 */
 public class KeychainSwift {
   
-  static var lastQueryParameters: [String: NSObject]? // Used by unit tests
+  static var lastQueryParameters: [String: NSObject]? // Used by the unit tests
   
   /**
   
