@@ -83,7 +83,7 @@ See the list of all available [access options](https://github.com/exchangegroup/
 
 One can pass a `keyPrefix` argument when initializing a `KeychainSwift` object. The string passed in `keyPrefix` argument will be used as a prefix to the keys supplied in set, get, getData and delete methods. I use the prefixed keychain in tests. This prevents the tests from changing the Keychain keys that are used when the app is launched manually.
 
-Note that `clear` method still clears everything from the Keychain.
+Note that `clear` method still clears everything from the Keychain regardless of the prefix used.
 
 ```Swift
 let keychain = KeychainSwift(keyPrefix: "myTestKey_")
