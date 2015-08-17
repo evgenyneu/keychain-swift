@@ -24,14 +24,14 @@ Simply add [KeychainSwiftDistrib.swift](https://github.com/exchangegroup/keychai
 
 **Setup with Carthage (iOS 8+)**
 
-Alternatively, add `github "exchangegroup/keychain-swift" ~> 2.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "exchangegroup/keychain-swift" ~> 3.0` to your Cartfile and run `carthage update`.
 
 **Setup with CocoaPods (iOS 8+)**
 
 If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
-    pod 'KeychainSwift', '~> 2.0'
+    pod 'KeychainSwift', '~> 3.0'
 
 
 **Setup in Swift 1.2 project**
