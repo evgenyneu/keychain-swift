@@ -24,7 +24,20 @@ A collection of helper functions for saving text and data in the keychain.
 */
 public class KeychainSwift {
   
-  static var lastQueryParameters: [String: NSObject]? // Used by the unit tests
+  var lastQueryParameters: [String: NSObject]? // Used by the unit tests
+
+  var keyPrefix = "" // Can be useful in test.
+  
+  public init() { }
+  
+  /**
+  
+  - parameter keyPrefix: a prefix that is added before the key in get/set methods. Note that `clear` method still clears everything from the Keychain.
+
+  */
+  public init(keyPrefix: String) {
+    self.keyPrefix = keyPrefix
+  }
   
   /**
   
@@ -35,7 +48,7 @@ public class KeychainSwift {
   - parameter withAccess: Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
 
   */
-  public class func set(value: String, forKey key: String,
+  public func set(value: String, forKey key: String,
     withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
     
     if let value = value.dataUsingEncoding(NSUTF8StringEncoding) {
@@ -56,14 +69,16 @@ public class KeychainSwift {
   - returns: True if the text was successfully written to the keychain.
   
   */
-  public class func set(value: NSData, forKey key: String,
+  public func set(value: NSData, forKey key: String,
     withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
 
     let accessible = access?.value ?? KeychainSwiftAccessOptions.defaultOption.value
       
+    let prefixedKey = keyWithPrefix(key)
+      
     let query = [
       KeychainSwiftConstants.klass       : KeychainSwiftConstants.classGenericPassword,
-      KeychainSwiftConstants.attrAccount : key,
+      KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.valueData   : value,
       KeychainSwiftConstants.accessible  : accessible
     ]
@@ -85,7 +100,7 @@ public class KeychainSwift {
   - returns: The text value from the keychain. Returns nil if unable to read the item.
   
   */
-  public class func get(key: String) -> String? {
+  public func get(key: String) -> String? {
     if let data = getData(key),
       let currentString = NSString(data: data, encoding: NSUTF8StringEncoding) as? String {
 
@@ -103,10 +118,12 @@ public class KeychainSwift {
   - returns: The text value from the keychain. Returns nil if unable to read the item.
   
   */
-  public class func getData(key: String) -> NSData? {
+  public func getData(key: String) -> NSData? {
+    let prefixedKey = keyWithPrefix(key)
+    
     let query = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
-      KeychainSwiftConstants.attrAccount : key,
+      KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.returnData  : kCFBooleanTrue,
       KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne ]
     
@@ -129,10 +146,12 @@ public class KeychainSwift {
   - returns: True if the item was successfully deleted.
   
   */
-  public class func delete(key: String) -> Bool {
+  public func delete(key: String) -> Bool {
+    let prefixedKey = keyWithPrefix(key)
+
     let query = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
-      KeychainSwiftConstants.attrAccount : key ]
+      KeychainSwiftConstants.attrAccount : prefixedKey ]
     
     let status: OSStatus = SecItemDelete(query as CFDictionaryRef)
     
@@ -141,17 +160,22 @@ public class KeychainSwift {
 
   /**
   
-  Deletes all keychain items used by the app.
+  Deletes all Keychain items used by the app. Note that this method deletes all items regardless of the prefix settings used for initializing the class.
   
   - returns: True if the keychain items were successfully deleted.
   
   */
-  public class func clear() -> Bool {
+  public func clear() -> Bool {
     let query = [ kSecClass as String : kSecClassGenericPassword ]
     
     let status: OSStatus = SecItemDelete(query as CFDictionaryRef)
     
     return status == noErr
+  }
+  
+  /// Returns the key with currently set prefix.
+  func keyWithPrefix(key: String) -> String {
+    return "\(keyPrefix)\(key)"
   }
 }
 
