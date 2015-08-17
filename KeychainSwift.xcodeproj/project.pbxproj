@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B7E7C4D1B81A3EC00D1C3B9 /* KeychainSwiftPrefixedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E7C4C1B81A3EC00D1C3B9 /* KeychainSwiftPrefixedTests.swift */; };
 		7ED6C9721B1C118F00FE8090 /* KeychainSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED6C9711B1C118F00FE8090 /* KeychainSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7ED6C9781B1C118F00FE8090 /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED6C96C1B1C118F00FE8090 /* KeychainSwift.framework */; };
 		7ED6C9901B1C128100FE8090 /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98D1B1C128100FE8090 /* KeychainSwift.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B7E7C4C1B81A3EC00D1C3B9 /* KeychainSwiftPrefixedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftPrefixedTests.swift; sourceTree = "<group>"; };
 		7ED6C96C1B1C118F00FE8090 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED6C9701B1C118F00FE8090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ED6C9711B1C118F00FE8090 /* KeychainSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainSwift.h; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				7ED6C9941B1C12A200FE8090 /* KeychainSwiftTests.swift */,
+				2B7E7C4C1B81A3EC00D1C3B9 /* KeychainSwiftPrefixedTests.swift */,
 				7ED6C9931B1C12A200FE8090 /* KeychainSwiftTests-Bridging-Header.h */,
 				7ED6C97C1B1C118F00FE8090 /* Supporting Files */,
 			);
@@ -387,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B7E7C4D1B81A3EC00D1C3B9 /* KeychainSwiftPrefixedTests.swift in Sources */,
 				7ED6C9971B1C12B300FE8090 /* KeychainSwiftAccessOptions.swift in Sources */,
 				7ED6C9961B1C12B100FE8090 /* KeychainSwift.swift in Sources */,
 				7ED6C9981B1C12B500FE8090 /* TegKeychainConstants.swift in Sources */,

@@ -9,6 +9,8 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var valueLabel: UILabel!
   
+  let keychain = KeychainSwift()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -22,18 +24,18 @@ class ViewController: UIViewController {
   
   @IBAction func onSaveTapped(sender: AnyObject) {
     if let text = textField.text {
-      KeychainSwift.set(text, forKey: TegKeychainDemo_keyName)
+      keychain.set(text, forKey: TegKeychainDemo_keyName)
       updateValueLabel()
     }
   }
   
   @IBAction func onDeleteTapped(sender: AnyObject) {
-    KeychainSwift.delete(TegKeychainDemo_keyName)
+    keychain.delete(TegKeychainDemo_keyName)
     updateValueLabel()
   }
   
   private func updateValueLabel() {
-    if let value = KeychainSwift.get(TegKeychainDemo_keyName) {
+    if let value = keychain.get(TegKeychainDemo_keyName) {
       valueLabel.text = "In Keychain: \(value)"
     } else {
       valueLabel.text = "no value in keychain"

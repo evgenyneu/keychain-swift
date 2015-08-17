@@ -43,21 +43,25 @@ Use the [previous version of the library](https://github.com/exchangegroup/keych
 Add `import KeychainSwift` to your source code if you used Carthage or CocoaPods setup methods.
 
 ```Swift
-KeychainSwift.set("hello world", forKey: "my key")
+let keychain = KeychainSwift()
 
-KeychainSwift.get("my key")
+keychain.set("hello world", forKey: "my key")
 
-KeychainSwift.delete("my key")
+keychain.get("my key")
 
-KeychainSwift.clear() // delete everything from app's Keychain
+keychain.delete("my key")
+
+keychain.clear() // delete everything from app's Keychain
 ```
 
 In addition to strings one can set/get `NSData` objects.
 
 ```Swift
-KeychainSwift.set(nsDataObject, forKey: "my key")
+let keychain = KeychainSwift()
 
-KeychainSwift.getData("my key")
+keychain.set(nsDataObject, forKey: "my key")
+
+keychain.getData("my key")
 ```
 
 ## Advanced options
@@ -68,12 +72,22 @@ Use `withAccess` parameter to specify the security level of the keychain storage
 By default the `.AccessibleWhenUnlocked` option is used. It is one of the most restrictive options and provides good data protection.
 
 ```
-KeychainSwift.set("Hello world", forKey: "key 1", withAccess: .AccessibleWhenUnlocked)
+KeychainSwift().set("Hello world", forKey: "key 1", withAccess: .AccessibleWhenUnlocked)
 ```
 
 You can use `.AccessibleAfterFirstUnlock` if you need your app to access the keychain item while in the background.  It may be needed for the Apple Watch apps. Note that it is less secure than the `.AccessibleWhenUnlocked` option.
 
 See the list of all available [access options](https://github.com/exchangegroup/keychain-swift/blob/master/KeychainSwift/KeychainSwiftAccessOptions.swift).
+
+### Setting key prefix
+
+One can pass a `keyPrefix` argument when initializing a `KeychainSwift` object. The string passed in `keyPrefix` argument will be used as a prefix to the keys supplied in set, get, getData and delete methods. I use the prefixed keychain in test. This prevents the tests from changing the Keychain keys that are used when the app is launched manually.
+
+Note that `clear` method still clears everything from the Keychain.
+
+```Swift
+let keychain = KeychainSwift(keyPrefix: "myTestKey_")
+```
 
 ## Demo app
 
