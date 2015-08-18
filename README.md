@@ -8,7 +8,7 @@
 [carthage]: https://github.com/Carthage/Carthage
 
 This is a collection of helper functions for saving text and data in the Keychain.
- As you probably noticed Apple's keychain API is a bit verbose. This library was designed to provide shorter syntax for accomplishing a simple task: reading/writing text values for specified keys. Tested in iOS 7 and 8.
+ As you probably noticed Apple's keychain API is a bit verbose. This library was designed to provide shorter syntax for accomplishing a simple task: reading/writing text values for specified keys. Tested in iOS 7, 8 and 9.
 
 ## What's Keychain?
 
