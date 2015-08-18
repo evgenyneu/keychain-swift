@@ -88,8 +88,8 @@ Note that `clear` method still clears everything from the Keychain regardless of
 
 ```Swift
 let keychain = KeychainSwift(keyPrefix: "myTestKey_")
-keychain.set("hello world", forKey: "my key")
-// Value will be stored under "myTestKey_my key" key
+keychain.set("hello world", forKey: "hello")
+// Value will be stored under "myTestKey_hello" key
 ```
 
 ## Demo app
