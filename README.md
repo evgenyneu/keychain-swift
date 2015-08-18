@@ -81,12 +81,15 @@ See the list of all available [access options](https://github.com/exchangegroup/
 
 ### Setting key prefix
 
-One can pass a `keyPrefix` argument when initializing a `KeychainSwift` object. The string passed in `keyPrefix` argument will be used as a prefix to the keys supplied in set, get, getData and delete methods. I use the prefixed keychain in tests. This prevents the tests from changing the Keychain keys that are used when the app is launched manually.
+One can pass a `keyPrefix` argument when initializing a `KeychainSwift` object. The string passed in `keyPrefix` argument will be used as a prefix to **all the keys** used in `set`, `get`, `getData` and `delet`e methods. I use the prefixed keychain in tests. This prevents the tests from changing the Keychain keys that are used when the app is launched manually.
 
 Note that `clear` method still clears everything from the Keychain regardless of the prefix used.
 
+
 ```Swift
 let keychain = KeychainSwift(keyPrefix: "myTestKey_")
+keychain.set("hello world", forKey: "my key")
+// Value will be stored under "myTestKey_my key" key
 ```
 
 ## Demo app
