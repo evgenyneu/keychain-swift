@@ -1,6 +1,5 @@
-import UIKit
 import Security
-
+import Foundation
 
 /**
 
