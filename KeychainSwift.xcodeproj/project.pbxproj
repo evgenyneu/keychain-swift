@@ -599,7 +599,7 @@
 				INFOPLIST_FILE = "KeychainSwift-OSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.KeychainSwift-OSX";
 				PRODUCT_NAME = KeychainSwift;
 				SDKROOT = macosx;
@@ -619,7 +619,7 @@
 				INFOPLIST_FILE = "KeychainSwift-OSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.KeychainSwift-OSX";
 				PRODUCT_NAME = KeychainSwift;
 				SDKROOT = macosx;
@@ -878,6 +878,7 @@
 				232B4C811BC29950001F2B7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		232B4C8F1BC29984001F2B7A /* Build configuration list for PBXNativeTarget "KeychainSwift-watchOS" */ = {
 			isa = XCConfigurationList;
@@ -886,6 +887,7 @@
 				232B4C911BC29984001F2B7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7ED51A781B7734AF005B39C2 /* Build configuration list for PBXLegacyTarget "ConcatenateSwiftFiles" */ = {
 			isa = XCConfigurationList;
