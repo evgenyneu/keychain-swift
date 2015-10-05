@@ -599,7 +599,7 @@
 				INFOPLIST_FILE = "KeychainSwift-OSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.KeychainSwift-OSX";
 				PRODUCT_NAME = KeychainSwift;
 				SDKROOT = macosx;
@@ -619,7 +619,7 @@
 				INFOPLIST_FILE = "KeychainSwift-OSX/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.KeychainSwift-OSX";
 				PRODUCT_NAME = KeychainSwift;
 				SDKROOT = macosx;
