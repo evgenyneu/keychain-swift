@@ -33,6 +33,15 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
     use_frameworks!
     pod 'KeychainSwift', '~> 3.0'
 
+Here is how to use KeychainSwift in a *WatchKit extension* with CocoaPods.
+
+    use_frameworks!
+
+    target 'YourWatchApp Extension Target Name' do
+      platform :watchos, '2.0'
+      pod 'KeychainSwift', '~> 3.0'
+    end
+
 
 **Setup in Swift 1.2 project**
 
