@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "232B4C791BC29950001F2B7A"
-               BuildableName = "KeychainSwift-OSX.framework"
+               BuildableName = "KeychainSwift.framework"
                BlueprintName = "KeychainSwift-OSX"
                ReferencedContainer = "container:KeychainSwift.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "232B4C791BC29950001F2B7A"
-            BuildableName = "KeychainSwift-OSX.framework"
+            BuildableName = "KeychainSwift.framework"
             BlueprintName = "KeychainSwift-OSX"
             ReferencedContainer = "container:KeychainSwift.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "232B4C791BC29950001F2B7A"
-            BuildableName = "KeychainSwift-OSX.framework"
+            BuildableName = "KeychainSwift.framework"
             BlueprintName = "KeychainSwift-OSX"
             ReferencedContainer = "container:KeychainSwift.xcodeproj">
          </BuildableReference>

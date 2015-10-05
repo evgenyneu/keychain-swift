@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "232B4C891BC29984001F2B7A"
-               BuildableName = "KeychainSwift-watchOS.framework"
+               BuildableName = "KeychainSwift.framework"
                BlueprintName = "KeychainSwift-watchOS"
                ReferencedContainer = "container:KeychainSwift.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "232B4C891BC29984001F2B7A"
-            BuildableName = "KeychainSwift-watchOS.framework"
+            BuildableName = "KeychainSwift.framework"
             BlueprintName = "KeychainSwift-watchOS"
             ReferencedContainer = "container:KeychainSwift.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "232B4C891BC29984001F2B7A"
-            BuildableName = "KeychainSwift-watchOS.framework"
+            BuildableName = "KeychainSwift.framework"
             BlueprintName = "KeychainSwift-watchOS"
             ReferencedContainer = "container:KeychainSwift.xcodeproj">
          </BuildableReference>
