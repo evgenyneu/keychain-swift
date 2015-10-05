@@ -107,7 +107,8 @@ keychain.set("hello world", forKey: "hello")
 
 ## Credits
 
-The code is based on this example: [https://gist.github.com/s-aska/e7ad24175fb7b04f78e7](https://gist.github.com/s-aska/e7ad24175fb7b04f78e7)
+* The code is based on this example: [https://gist.github.com/s-aska/e7ad24175fb7b04f78e7](https://gist.github.com/s-aska/e7ad24175fb7b04f78e7)
+* Huge thanks to [pepibumur](https://github.com/pepibumur) for adding OS X and watchOS support.
 
 ## License
 
