@@ -105,6 +105,18 @@ keychain.set("hello world", forKey: "hello")
 
 <img src="https://raw.githubusercontent.com/exchangegroup/keychain-swift/master/graphics/keychain-swift-demo.png" alt="Sacing and reading text from Keychaing in iOS and Swift" width="320">
 
+## Alternative solutions
+
+Here are some other Keychain libraries for iOS.
+
+[DanielTomlinson/Latch](https://github.com/DanielTomlinson/Latch)
+[jrendel/SwiftKeychainWrapper](https://github.com/jrendel/SwiftKeychainWrapper)
+[kishikawakatsumi/KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess)
+[matthewpalmer/Locksmith](https://github.com/matthewpalmer/Locksmith)
+[phuonglm86/SwiftyKey](https://github.com/phuonglm86/SwiftyKey)
+[s-aska/KeyClip](https://github.com/s-aska/KeyClip)
+[yankodimitrov/SwiftKeychain](https://github.com/yankodimitrov/SwiftKeychain)
+
 ## Credits
 
 * The code is based on this example: [https://gist.github.com/s-aska/e7ad24175fb7b04f78e7](https://gist.github.com/s-aska/e7ad24175fb7b04f78e7)
