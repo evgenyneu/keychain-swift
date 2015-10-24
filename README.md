@@ -120,7 +120,7 @@ Here are some other Keychain libraries for iOS.
 ## Credits
 
 * The code is based on this example: [https://gist.github.com/s-aska/e7ad24175fb7b04f78e7](https://gist.github.com/s-aska/e7ad24175fb7b04f78e7)
-* Huge thanks to [pepibumur](https://github.com/pepibumur) for adding OS X and watchOS support.
+* Huge thanks to [pepibumur](https://github.com/pepibumur) for adding OS X, watchOS and tvOS support.
 
 ## License
 
