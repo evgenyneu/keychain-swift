@@ -27,6 +27,13 @@ public class KeychainSwift {
 
   var keyPrefix = "" // Can be useful in test.
   
+  /**
+
+  Specify an access group that will be used to access keychain items. Access groups can be used to share keychain items between applications. When access group value is nil all application access groups are being accessed. Access group name is used by all functions: set, get, delete and clear.
+
+  */
+  public var accessGroup: String?
+  
   public init() { }
   
   /**
@@ -75,13 +82,14 @@ public class KeychainSwift {
       
     let prefixedKey = keyWithPrefix(key)
       
-    let query = [
+    var query = [
       KeychainSwiftConstants.klass       : KeychainSwiftConstants.classGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.valueData   : value,
       KeychainSwiftConstants.accessible  : accessible
     ]
       
+    query = addAccessGroupWhenPresent(query)
     lastQueryParameters = query
           
     SecItemDelete(query as CFDictionaryRef)
@@ -120,11 +128,14 @@ public class KeychainSwift {
   public func getData(key: String) -> NSData? {
     let prefixedKey = keyWithPrefix(key)
     
-    let query = [
+    var query: [String: NSObject] = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.returnData  : kCFBooleanTrue,
       KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne ]
+    
+    query = addAccessGroupWhenPresent(query)
+    lastQueryParameters = query
     
     var result: AnyObject?
     
@@ -148,9 +159,12 @@ public class KeychainSwift {
   public func delete(key: String) -> Bool {
     let prefixedKey = keyWithPrefix(key)
 
-    let query = [
+    var query: [String: NSObject] = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey ]
+    
+    query = addAccessGroupWhenPresent(query)
+    lastQueryParameters = query
     
     let status: OSStatus = SecItemDelete(query as CFDictionaryRef)
     
@@ -165,7 +179,9 @@ public class KeychainSwift {
   
   */
   public func clear() -> Bool {
-    let query = [ kSecClass as String : kSecClassGenericPassword ]
+    var query: [String: NSObject] = [ kSecClass as String : kSecClassGenericPassword ]
+    query = addAccessGroupWhenPresent(query)
+    lastQueryParameters = query
     
     let status: OSStatus = SecItemDelete(query as CFDictionaryRef)
     
@@ -175,6 +191,14 @@ public class KeychainSwift {
   /// Returns the key with currently set prefix.
   func keyWithPrefix(key: String) -> String {
     return "\(keyPrefix)\(key)"
+  }
+  
+  func addAccessGroupWhenPresent(items: [String: NSObject]) -> [String: NSObject] {
+    guard let accessGroup = accessGroup else { return items }
+    
+    var result: [String: NSObject] = items
+    result[KeychainSwiftConstants.accessGroup] = accessGroup
+    return result
   }
 }
 
@@ -310,6 +334,7 @@ public struct KeychainSwiftConstants {
   public static var valueData: String { return toString(kSecValueData) }
   public static var returnData: String { return toString(kSecReturnData) }
   public static var matchLimit: String { return toString(kSecMatchLimit) }
+  public static var accessGroup: String { return toString(kSecAttrAccessGroup) }
 
   /**
   
