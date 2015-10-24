@@ -88,6 +88,27 @@ You can use `.AccessibleAfterFirstUnlock` if you need your app to access the key
 
 See the list of all available [access options](https://github.com/exchangegroup/keychain-swift/blob/master/KeychainSwift/KeychainSwiftAccessOptions.swift).
 
+### Sharing keychain items
+
+In order to share keychain items between apps they need to have common *Keychain Groups* registered in *Capabilities > Keychain Sharing* settings.
+
+### Keychain access groups
+
+Use `accessGroup` property to specify an access group that will be used to access keychain items. When access group value is nil all application access groups are being accessed. Access group name is used by all functions: set, get, delete and clear.
+
+In the following example we specify an access group "CS671JRA62.com.myapp.KeychainGroup" that will be used to set, get and delete an item "my key". If there are "my key" items in different access groups they will not be affected unless `accessGroup` property is set to nil.
+
+```Swift
+let keychain = KeychainSwift()
+keychain.accessGroup = "CS671JRA62.com.myapp.KeychainGroup"
+
+keychain.set("hello world", forKey: "my key")
+keychain.get("my key")
+keychain.delete("my key")
+keychain.clear()
+```
+
+
 ### Setting key prefix
 
 One can pass a `keyPrefix` argument when initializing a `KeychainSwift` object. The string passed in `keyPrefix` argument will be used as a prefix to **all the keys** used in `set`, `get`, `getData` and `delete` methods. I use the prefixed keychain in tests. This prevents the tests from changing the Keychain keys that are used when the app is launched manually.

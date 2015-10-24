@@ -8,6 +8,7 @@ public struct KeychainSwiftConstants {
   public static var valueData: String { return toString(kSecValueData) }
   public static var returnData: String { return toString(kSecReturnData) }
   public static var matchLimit: String { return toString(kSecMatchLimit) }
+  public static var accessGroup: String { return toString(kSecAttrAccessGroup) }
 
   /**
   
