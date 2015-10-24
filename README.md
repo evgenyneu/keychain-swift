@@ -84,7 +84,7 @@ By default the `.AccessibleWhenUnlocked` option is used. It is one of the most r
 KeychainSwift().set("Hello world", forKey: "key 1", withAccess: .AccessibleWhenUnlocked)
 ```
 
-You can use `.AccessibleAfterFirstUnlock` if you need your app to access the keychain item while in the background.  It may be needed for the Apple Watch apps. Note that it is less secure than the `.AccessibleWhenUnlocked` option.
+You can use `.AccessibleAfterFirstUnlock` if you need your app to access the keychain item while in the background. Note that it is less secure than the `.AccessibleWhenUnlocked` option.
 
 See the list of all available [access options](https://github.com/exchangegroup/keychain-swift/blob/master/KeychainSwift/KeychainSwiftAccessOptions.swift).
 
