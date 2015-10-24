@@ -90,7 +90,7 @@ See the list of all available [access options](https://github.com/exchangegroup/
 
 ### Sharing keychain items
 
-In order to share keychain items between apps they need to have common *Keychain Groups* registered in *Capabilities > Keychain Sharing* settings.
+In order to share keychain items between apps they need to have common *Keychain Groups* registered in *Capabilities > Keychain Sharing* settings. As of watchOS 2.0 there is no way of sharing a keychain item between the watch and its paired device: https://forums.developer.apple.com/thread/5938
 
 ### Keychain access groups
 
