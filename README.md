@@ -124,7 +124,7 @@ keychain.set("hello world", forKey: "hello")
 
 ### Verify successful operation
 
-`set`, `delete` and `clear` method return true when the Keychain operation is successful.
+`set`, `delete` and `clear` methods return true when the Keychain operation is successful.
 
 ```Swift
 if keychain.set("hello world", forKey: "my key") {
