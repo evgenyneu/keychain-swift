@@ -54,13 +54,13 @@ Add `import KeychainSwift` to your source code if you used Carthage or CocoaPods
 ```Swift
 let keychain = KeychainSwift()
 
-keychain.set("hello world", forKey: "my key")
+keychain.set("hello world", forKey: "my key") // Returns true on success
 
 keychain.get("my key")
 
-keychain.delete("my key")
+keychain.delete("my key") // Returns true on success
 
-keychain.clear() // delete everything from app's Keychain
+keychain.clear() // Delete everything from app's Keychain
 ```
 
 In addition to strings one can set/get `NSData` objects.
