@@ -62,6 +62,8 @@ public class KeychainSwift {
   */
   public func set(value: NSData, forKey key: String,
     withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+    
+    delete(key) // Delete any existing key before saving it
 
     let accessible = access?.value ?? KeychainSwiftAccessOptions.defaultOption.value
       
@@ -76,8 +78,6 @@ public class KeychainSwift {
       
     query = addAccessGroupWhenPresent(query)
     lastQueryParameters = query
-          
-    SecItemDelete(query as CFDictionaryRef)
     
     let status: OSStatus = SecItemAdd(query as CFDictionaryRef, nil)
     
