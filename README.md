@@ -54,11 +54,11 @@ Add `import KeychainSwift` to your source code if you used Carthage or CocoaPods
 ```Swift
 let keychain = KeychainSwift()
 
-keychain.set("hello world", forKey: "my key") // Returns true on success
+keychain.set("hello world", forKey: "my key")
 
 keychain.get("my key")
 
-keychain.delete("my key") // Returns true on success
+keychain.delete("my key")
 
 keychain.clear() // Delete everything from app's Keychain
 ```
@@ -120,6 +120,18 @@ Note that `clear` method still clears everything from the Keychain regardless of
 let keychain = KeychainSwift(keyPrefix: "myTestKey_")
 keychain.set("hello world", forKey: "hello")
 // Value will be stored under "myTestKey_hello" key
+```
+
+### Verify successful operation
+
+`set`, `delete` and `clear` method return true when the Keychain operation is successful.
+
+```Swift
+if keychain.set("hello world", forKey: "my key") {
+  // Keychain item is saved successfully
+} else {
+  // Report error
+}
 ```
 
 ## Demo app
