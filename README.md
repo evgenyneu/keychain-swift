@@ -122,7 +122,7 @@ keychain.set("hello world", forKey: "hello")
 // Value will be stored under "myTestKey_hello" key
 ```
 
-### Verify successful operation
+### Check if operation was successful
 
 One can verify if `set`, `delete` and `clear` methods finished successfully by checking their return values. Those methods return `true` on success and `false` on error.
 
