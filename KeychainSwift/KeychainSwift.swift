@@ -9,6 +9,9 @@ A collection of helper functions for saving text and data in the keychain.
 public class KeychainSwift {
   
   var lastQueryParameters: [String: NSObject]? // Used by the unit tests
+  
+  /// Contains result code from the last operation. Value is noErr (0) for a successful result.
+  public var lastResultCode: OSStatus = noErr
 
   var keyPrefix = "" // Can be useful in test.
   
@@ -37,6 +40,8 @@ public class KeychainSwift {
   - parameter key: Key under which the text value is stored in the keychain.
   - parameter value: Text string to be written to the keychain.
   - parameter withAccess: Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
+   
+   - returns: True if the text was successfully written to the keychain.
 
   */
   public func set(value: String, forKey key: String,
@@ -79,9 +84,9 @@ public class KeychainSwift {
     query = addAccessGroupWhenPresent(query)
     lastQueryParameters = query
     
-    let status: OSStatus = SecItemAdd(query as CFDictionaryRef, nil)
+    lastResultCode = SecItemAdd(query as CFDictionaryRef, nil)
     
-    return status == noErr
+    return lastResultCode == noErr
   }
 
   /**
@@ -93,10 +98,12 @@ public class KeychainSwift {
   
   */
   public func get(key: String) -> String? {
-    if let data = getData(key),
-      let currentString = NSString(data: data, encoding: NSUTF8StringEncoding) as? String {
-
-      return currentString
+    if let data = getData(key) {
+      if let currentString = NSString(data: data, encoding: NSUTF8StringEncoding) as? String {
+        return currentString
+      }
+      
+      lastResultCode = -67853 // errSecInvalidEncoding
     }
 
     return nil
@@ -124,11 +131,11 @@ public class KeychainSwift {
     
     var result: AnyObject?
     
-    let status = withUnsafeMutablePointer(&result) {
+    lastResultCode = withUnsafeMutablePointer(&result) {
       SecItemCopyMatching(query, UnsafeMutablePointer($0))
     }
     
-    if status == noErr { return result as? NSData }
+    if lastResultCode == noErr { return result as? NSData }
     
     return nil
   }
@@ -151,9 +158,9 @@ public class KeychainSwift {
     query = addAccessGroupWhenPresent(query)
     lastQueryParameters = query
     
-    let status: OSStatus = SecItemDelete(query as CFDictionaryRef)
+    lastResultCode = SecItemDelete(query as CFDictionaryRef)
     
-    return status == noErr
+    return lastResultCode == noErr
   }
 
   /**
@@ -168,9 +175,9 @@ public class KeychainSwift {
     query = addAccessGroupWhenPresent(query)
     lastQueryParameters = query
     
-    let status: OSStatus = SecItemDelete(query as CFDictionaryRef)
+    lastResultCode = SecItemDelete(query as CFDictionaryRef)
     
-    return status == noErr
+    return lastResultCode == noErr
   }
   
   /// Returns the key with currently set prefix.
