@@ -20,11 +20,11 @@ There are three ways you can add KeychainSwift to your Xcode project.
 
 **Add source (iOS 7+)**
 
-Simply add [KeychainSwiftDistrib.swift](https://github.com/exchangegroup/keychain-swift/blob/master/Distrib/KeychainSwiftDistrib.swift) file into your Xcode project.
+Simply add [KeychainSwiftDistrib.swift](https://github.com/marketplacer/keychain-swift/blob/master/Distrib/KeychainSwiftDistrib.swift) file into your Xcode project.
 
 **Setup with Carthage (iOS 8+)**
 
-Alternatively, add `github "exchangegroup/keychain-swift" ~> 3.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "marketplacer/keychain-swift" ~> 3.0` to your Cartfile and run `carthage update`.
 
 **Setup with CocoaPods (iOS 8+)**
 
@@ -45,7 +45,7 @@ Here is how to use KeychainSwift in a *WatchKit extension* with CocoaPods.
 
 **Setup in Swift 1.2 project**
 
-Use the [previous version of the library](https://github.com/exchangegroup/keychain-swift/wiki/Swift-1.2-setup).
+Use the [previous version of the library](https://github.com/marketplacer/keychain-swift/wiki/Swift-1.2-setup).
 
 ## Usage
 
@@ -86,7 +86,7 @@ KeychainSwift().set("Hello world", forKey: "key 1", withAccess: .AccessibleWhenU
 
 You can use `.AccessibleAfterFirstUnlock` if you need your app to access the keychain item while in the background. Note that it is less secure than the `.AccessibleWhenUnlocked` option.
 
-See the list of all available [access options](https://github.com/exchangegroup/keychain-swift/blob/master/KeychainSwift/KeychainSwiftAccessOptions.swift).
+See the list of all available [access options](https://github.com/marketplacer/keychain-swift/blob/master/KeychainSwift/KeychainSwiftAccessOptions.swift).
 
 ### Sharing keychain items
 
@@ -143,7 +143,7 @@ if keychain.lastResultCode != noErr { /* Report error */ }
 
 ## Demo app
 
-<img src="https://raw.githubusercontent.com/exchangegroup/keychain-swift/master/graphics/keychain-swift-demo.png" alt="Sacing and reading text from Keychaing in iOS and Swift" width="320">
+<img src="https://raw.githubusercontent.com/marketplacer/keychain-swift/master/graphics/keychain-swift-demo.png" alt="Sacing and reading text from Keychaing in iOS and Swift" width="320">
 
 ## Alternative solutions
 
