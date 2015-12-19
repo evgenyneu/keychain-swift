@@ -96,7 +96,7 @@ There is no way of sharing a keychain item between the watchOS 2.0 and its paire
 
 #### Specifying Keychain access group
 
-Use `accessGroup` property to specify an access group that will be used to access keychain items. When access group value is nil all application access groups are being accessed. Access group name is used by all functions: set, get, delete and clear.
+Use `accessGroup` property to specify an access group that will be used to access keychain items that are shared between apps. When access group value is nil all application access groups are being accessed. Access group name is used by all functions: set, get, delete and clear.
 
 In the following example we specify an access group "CS671JRA62.com.myapp.KeychainGroup" that will be used to set, get and delete an item "my key". If there are "my key" items in different access groups they will not be affected unless `accessGroup` property is set to nil.
 
