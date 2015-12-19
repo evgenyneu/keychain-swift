@@ -92,11 +92,7 @@ See the list of all available [access options](https://github.com/marketplacer/k
 
 In order to share keychain items between apps they need to have common *Keychain Groups* registered in *Capabilities > Keychain Sharing* settings. [This tutorial](http://evgenii.com/blog/sharing-keychain-in-ios/) shows how to set it up.
 
-There is no way of sharing a keychain item between the watchOS 2.0 and its paired device: https://forums.developer.apple.com/thread/5938
-
-#### Specifying Keychain access group
-
-Use `accessGroup` property to specify an access group that will be used to access keychain items that are shared between apps. In the following example we specify an access group "CS671JRA62.com.myapp.KeychainGroup" that will be used to set, get and delete an item "my key". If there are "my key" items in different access groups they will not be affected unless `accessGroup` property is set to nil.
+Use `accessGroup` property to access shared keychain items. In the following example we specify an access group "CS671JRA62.com.myapp.KeychainGroup" that will be used to set, get and delete an item "my key". If there are "my key" items in different access groups they will not be affected unless `accessGroup` property is set to nil.
 
 ```Swift
 let keychain = KeychainSwift()
@@ -107,6 +103,8 @@ keychain.get("my key")
 keychain.delete("my key")
 keychain.clear()
 ```
+
+*Note*: there is no way of sharing a keychain item between the watchOS 2.0 and its paired device: https://forums.developer.apple.com/thread/5938
 
 ### Setting key prefix
 
