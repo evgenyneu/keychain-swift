@@ -108,7 +108,7 @@ keychain.delete("my key")
 keychain.clear()
 ```
 
-Note that you will need to enable Keychain sharing in your apps and set your own unique access group. The access group needs to be the same in all your apps that share Keychain items. [This tutorial](http://evgenii.com/blog/sharing-keychain-in-ios/) shows how to do it.
+Note that you will need to enable Keychain sharing in your apps and use your own unique access group. This access group needs to be the same in all your apps that share Keychain items. [This tutorial](http://evgenii.com/blog/sharing-keychain-in-ios/) shows how to do it.
 
 ### Setting key prefix
 
