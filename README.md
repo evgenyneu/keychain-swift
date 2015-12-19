@@ -94,13 +94,13 @@ In order to share keychain items between apps they need to have common *Keychain
 
 ### Keychain access groups
 
-Use `accessGroup` property to specify an access group that will be used to access keychain items. When access group value is nil all application access groups are being accessed. Access group name is used by all functions: set, get, delete and clear.
+Use `accessGroup` property to specify an access group that will be used to access keychain items. It can be used to share Keychain items between your apps. When access group value is nil all application access groups are being accessed. Access group name is used by all functions: set, get, delete and clear.
 
-In the following example we specify an access group "CS671JRA62.com.myapp.KeychainGroup" that will be used to set, get and delete an item "my key". If there are "my key" items in different access groups they will not be affected unless `accessGroup` property is set to nil.
+In the following example we specify an access group "CS671JRA62.com.myapp.KeychainGroup" that will be used to set, get and delete an item "my key". If there are "my key" items in different access groups they will not be affected unless `accessGroup` property is set to nil. Note that you will need to enable Keychain sharing in your apps and set your own unique access group, same in all your apps that share the items. [This tutorial](http://evgenii.com/blog/sharing-keychain-in-ios/) shows how to do it.
 
 ```Swift
 let keychain = KeychainSwift()
-keychain.accessGroup = "CS671JRA62.com.myapp.KeychainGroup"
+keychain.accessGroup = "CS671JRA62.com.myapp.KeychainGroup" 
 
 keychain.set("hello world", forKey: "my key")
 keychain.get("my key")
