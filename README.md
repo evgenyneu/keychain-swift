@@ -94,7 +94,7 @@ In order to share keychain items between apps they need to have common *Keychain
 
 There is no way of sharing a keychain item between the watchOS 2.0 and its paired device: https://forums.developer.apple.com/thread/5938
 
-### Keychain access groups
+#### Specifying keychain access group
 
 Use `accessGroup` property to specify an access group that will be used to access keychain items. It can be used to share Keychain items between your apps. When access group value is nil all application access groups are being accessed. Access group name is used by all functions: set, get, delete and clear.
 
