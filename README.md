@@ -148,7 +148,7 @@ if keychain.lastResultCode != noErr { /* Report error */ }
 
 ## Alternative solutions
 
-Here are some other Keychain libraries for iOS.
+Here are some other Keychain libraries.
 
 * [DanielTomlinson/Latch](https://github.com/DanielTomlinson/Latch)
 * [jrendel/SwiftKeychainWrapper](https://github.com/jrendel/SwiftKeychainWrapper)
