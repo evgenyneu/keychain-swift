@@ -37,6 +37,7 @@ public class KeychainSwift {
   */
   public var accessGroup: String?
   
+  /// Instantiate a KeychainSwift object
   public init() { }
   
   /**
@@ -90,7 +91,7 @@ public class KeychainSwift {
     let prefixedKey = keyWithPrefix(key)
       
     var query = [
-      KeychainSwiftConstants.klass       : KeychainSwiftConstants.classGenericPassword,
+      KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.valueData   : value,
       KeychainSwiftConstants.accessible  : accessible
@@ -102,6 +103,25 @@ public class KeychainSwift {
     lastResultCode = SecItemAdd(query as CFDictionaryRef, nil)
     
     return lastResultCode == noErr
+  }
+
+  /**
+
+  Stores the boolean value in the keychain item under the given key.
+
+  - parameter key: Key under which the value is stored in the keychain.
+  - parameter value: Boolean to be written to the keychain.
+  - parameter withAccess: Value that indicates when your app needs access to the value in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
+
+  - returns: True if the value was successfully written to the keychain.
+
+  */
+  public func set(value: Bool, forKey key: String,
+    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+
+    var localValue = value
+    let data = NSData(bytes: &localValue, length: sizeof(Bool))
+    return set(data, forKey: key, withAccess: access)
   }
 
   /**
@@ -156,7 +176,22 @@ public class KeychainSwift {
   }
 
   /**
-  
+
+  Retrieves the boolean value from the keychain that corresponds to the given key.
+
+  - parameter key: The key that is used to read the keychain item.
+  - returns: The boolean value from the keychain. Returns nil if unable to read the item.
+
+  */
+  public func getBool(key: String) -> Bool? {
+    guard let data = getData(key) else { return nil }
+    var boolValue = false
+    data.getBytes(&boolValue, length: sizeof(Bool))
+    return boolValue
+  }
+
+  /**
+
   Deletes the single keychain item specified by the key.
   
   - parameter key: The key that is used to delete the keychain item.
@@ -334,22 +369,33 @@ public enum KeychainSwiftAccessOptions {
 import Foundation
 import Security
 
+/// Constants used by the library
 public struct KeychainSwiftConstants {
-  public static var klass: String { return toString(kSecClass) }
-  public static var classGenericPassword: String { return toString(kSecClassGenericPassword) }
-  public static var attrAccount: String { return toString(kSecAttrAccount) }
-  public static var valueData: String { return toString(kSecValueData) }
-  public static var returnData: String { return toString(kSecReturnData) }
-  public static var matchLimit: String { return toString(kSecMatchLimit) }
+  /// Specifies a Keychain access group. Used for sharing Keychain items between apps.
   public static var accessGroup: String { return toString(kSecAttrAccessGroup) }
-
+  
   /**
-  
-  A value that indicates when your app needs access to the data in a keychain item. The default value is AccessibleWhenUnlocked. For a list of possible values, see KeychainSwiftAccessOptions.
-  
-  */
+   
+   A value that indicates when your app needs access to the data in a keychain item. The default value is AccessibleWhenUnlocked. For a list of possible values, see KeychainSwiftAccessOptions.
+   
+   */
   public static var accessible: String { return toString(kSecAttrAccessible) }
-
+  
+  /// Used for specifying a String key when setting/getting a Keychain value.
+  public static var attrAccount: String { return toString(kSecAttrAccount) }
+  
+  /// An item class key used to construct a Keychain search dictionary.
+  public static var klass: String { return toString(kSecClass) }
+  
+  /// Specifies the number of values returned from the keychain. The library only supports single values.
+  public static var matchLimit: String { return toString(kSecMatchLimit) }
+  
+  /// A return data type used to get the data from the Keychain.
+  public static var returnData: String { return toString(kSecReturnData) }
+  
+  /// Used for specifying a value when setting a Keychain value.
+  public static var valueData: String { return toString(kSecValueData) }
+  
   static func toString(value: CFStringRef) -> String {
     return value as String
   }

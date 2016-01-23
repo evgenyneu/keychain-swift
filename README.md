@@ -51,19 +51,28 @@ Use the [previous version of the library](https://github.com/marketplacer/keycha
 
 Add `import KeychainSwift` to your source code if you used Carthage or CocoaPods setup methods.
 
+#### String values
+
 ```Swift
 let keychain = KeychainSwift()
 
 keychain.set("hello world", forKey: "my key")
 
 keychain.get("my key")
-
-keychain.delete("my key")
-
-keychain.clear() // Delete everything from app's Keychain
 ```
 
-In addition to strings one can set/get `NSData` objects.
+#### Boolean values
+
+
+```Swift
+let keychain = KeychainSwift()
+
+keychain.set(true, forKey: "my key")
+
+keychain.getBool("my key")
+```
+
+#### NSData values
 
 ```Swift
 let keychain = KeychainSwift()
@@ -71,6 +80,14 @@ let keychain = KeychainSwift()
 keychain.set(nsDataObject, forKey: "my key")
 
 keychain.getData("my key")
+```
+
+#### Removing keys from Keychain
+
+```Swift
+keychain.delete("my key")
+
+keychain.clear() // Delete everything from app's Keychain
 ```
 
 ## Advanced options
@@ -157,7 +174,8 @@ Here are some other Keychain libraries.
 ## Credits
 
 * The code is based on this example: [https://gist.github.com/s-aska/e7ad24175fb7b04f78e7](https://gist.github.com/s-aska/e7ad24175fb7b04f78e7)
-* Huge thanks to [pepibumur](https://github.com/pepibumur) for adding OS X, watchOS and tvOS support.
+* Thanks to [glyuck](https://github.com/glyuck) for taming booleans.
+* Thanks to [pepibumur](https://github.com/pepibumur) for adding OS X, watchOS and tvOS support.
 
 ## License
 

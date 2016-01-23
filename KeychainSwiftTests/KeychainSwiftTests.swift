@@ -56,11 +56,34 @@ class keychainTests: XCTestCase {
     XCTAssertEqual(KeychainSwiftAccessOptions.AccessibleWhenUnlocked.value, accessValue!)
   }
 
+  // MARK: - Set bool
+  // -----------------------
+
+  func testSetBool() {
+    XCTAssertTrue(obj.set(true, forKey: "key bool"))
+    XCTAssertTrue(obj.getBool("key bool")!)
+    XCTAssertTrue(obj.set(false, forKey: "key bool"))
+    XCTAssertFalse(obj.getBool("key bool")!)
+  }
+
+  func testSetBool_usesAccessibleWhenUnlockedByDefault() {
+    XCTAssertTrue(obj.set(false, forKey: "key bool"))
+    let accessValue = obj.lastQueryParameters?[KeychainSwiftConstants.accessible] as? String
+    XCTAssertEqual(KeychainSwiftAccessOptions.AccessibleWhenUnlocked.value, accessValue!)
+  }
+
   // MARK: - Get
   // -----------------------
 
   func testGet_returnNilWhenValueNotSet() {
     XCTAssert(obj.get("key 1") == nil)
+  }
+
+  // MARK: - Get bool
+  // -----------------------
+
+  func testGetBool_returnNilWhenValueNotSet() {
+    XCTAssert(obj.getBool("some bool key") == nil)
   }
 
   // MARK: - Delete
