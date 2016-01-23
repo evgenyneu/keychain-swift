@@ -22,6 +22,7 @@ public class KeychainSwift {
   */
   public var accessGroup: String?
   
+  /// Instantiate a KeychainSwift object
   public init() { }
   
   /**
@@ -75,7 +76,7 @@ public class KeychainSwift {
     let prefixedKey = keyWithPrefix(key)
       
     var query = [
-      KeychainSwiftConstants.klass       : KeychainSwiftConstants.classGenericPassword,
+      KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.valueData   : value,
       KeychainSwiftConstants.accessible  : accessible
@@ -168,9 +169,7 @@ public class KeychainSwift {
 
   */
   public func getBool(key: String) -> Bool? {
-    guard let data = getData(key) else {
-      return nil
-    }
+    guard let data = getData(key) else { return nil }
     var boolValue = false
     data.getBytes(&boolValue, length: sizeof(Bool))
     return boolValue
