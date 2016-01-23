@@ -90,6 +90,25 @@ public class KeychainSwift {
   }
 
   /**
+
+  Stores the boolean value in the keychain item under the given key.
+
+  - parameter key: Key under which the value is stored in the keychain.
+  - parameter value: Boolean to be written to the keychain.
+  - parameter withAccess: Value that indicates when your app needs access to the value in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
+
+  - returns: True if the value was successfully written to the keychain.
+
+  */
+  public func set(value: Bool, forKey key: String,
+    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+
+    var localValue = value
+    let data = NSData(bytes: &localValue, length: sizeof(Bool))
+    return set(data, forKey: key, withAccess: access)
+  }
+
+  /**
   
   Retrieves the text value from the keychain that corresponds to the given key.
   
@@ -141,7 +160,24 @@ public class KeychainSwift {
   }
 
   /**
-  
+
+  Retrieves the boolean value from the keychain that corresponds to the given key.
+
+  - parameter key: The key that is used to read the keychain item.
+  - returns: The boolean value from the keychain. Returns nil if unable to read the item.
+
+  */
+  public func getBool(key: String) -> Bool? {
+    guard let data = getData(key) else {
+      return nil
+    }
+    var boolValue = false
+    data.getBytes(&boolValue, length: sizeof(Bool))
+    return boolValue
+  }
+
+  /**
+
   Deletes the single keychain item specified by the key.
   
   - parameter key: The key that is used to delete the keychain item.
