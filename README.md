@@ -87,7 +87,7 @@ keychain.getData("my key")
 ```Swift
 keychain.delete("my key") // Remove single key
 
-keychain.clear() // Delete everything from app's Keychain
+keychain.clear() // Delete everything from app's Keychain. Does not work on OS X.
 ```
 
 ## Advanced options
