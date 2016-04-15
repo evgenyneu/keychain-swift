@@ -47,6 +47,10 @@ Here is how to use KeychainSwift in a *WatchKit extension* with CocoaPods.
 
 Use the [previous version of the library](https://github.com/marketplacer/keychain-swift/wiki/Swift-1.2-setup).
 
+**iOS 7 support**
+
+Use [iOS 7 compatible](https://github.com/marketplacer/keychain-swift/blob/iOS7/Distrib/KeychainSwiftDistrib.swift) version of the library.
+
 ## Usage
 
 Add `import KeychainSwift` to your source code if you used Carthage or CocoaPods setup methods.

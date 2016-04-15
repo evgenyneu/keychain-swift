@@ -1,8 +1,8 @@
 # KeychainSwift version history
 
-## 3.1.0 (2016-04-15)
+## 3.0.13 (2016-04-15)
 
-Added iOS 7 support.
+Added iOS 7 support (https://github.com/marketplacer/keychain-swift/blob/iOS7/Distrib/KeychainSwiftDistrib.swift)
 
 ## 3.0.11 (2016-01-24)
 
