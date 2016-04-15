@@ -171,11 +171,12 @@ Here are some other Keychain libraries.
 * [s-aska/KeyClip](https://github.com/s-aska/KeyClip)
 * [yankodimitrov/SwiftKeychain](https://github.com/yankodimitrov/SwiftKeychain)
 
-## Credits
+## Thanks 👍
 
 * The code is based on this example: [https://gist.github.com/s-aska/e7ad24175fb7b04f78e7](https://gist.github.com/s-aska/e7ad24175fb7b04f78e7)
 * Thanks to [glyuck](https://github.com/glyuck) for taming booleans.
 * Thanks to [pepibumur](https://github.com/pepibumur) for adding OS X, watchOS and tvOS support.
+* Thanks to [ezura](https://github.com/ezura) for iOS 7 support.
 
 ## License
 

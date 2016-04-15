@@ -1,5 +1,9 @@
 # KeychainSwift version history
 
+## 3.0.12 (2016-04-15)
+
+Added iOS 7 support.
+
 ## 3.0.11 (2016-01-24)
 
 Added methods for setting/getting booleans.
