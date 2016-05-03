@@ -18,3 +18,4 @@ DerivedData
 *.xcuserstate
 .DS_Store
 Carthage/Checkouts
+Carthage/Build
