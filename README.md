@@ -9,10 +9,14 @@
 
 This is a collection of helper functions for saving text and data in the Keychain.
  As you probably noticed Apple's keychain API is a bit verbose. This library was designed to provide shorter syntax for accomplishing a simple task: reading/writing text values for specified keys.
-
+ 
 ## What's Keychain?
 
 Keychain is a secure storage. You can store all kind of sensitive data in it: user passwords, credit card numbers, secret tokens etc. Once stored in Keychain this information is only available to your app, other apps can't see it. Besides that, operating system makes sure this information is kept and processed securely. For example, text stored in Keychain can not be extracted from iPhone backup or from its file system. Apple recommends storing only small amount of data in the Keychain. If you need to secure something big you can encrypt it manually, save to a file and store the key in the Keychain.
+
+## Known serious issue
+
+It [has been reported](https://github.com/marketplacer/keychain-swift/issues/15) that the library sometimes returns `nil` value. The issue seems to be random and hard to reproduce. 
 
 ## Setup
 
