@@ -14,9 +14,6 @@ This is a collection of helper functions for saving text and data in the Keychai
 
 Keychain is a secure storage. You can store all kind of sensitive data in it: user passwords, credit card numbers, secret tokens etc. Once stored in Keychain this information is only available to your app, other apps can't see it. Besides that, operating system makes sure this information is kept and processed securely. For example, text stored in Keychain can not be extracted from iPhone backup or from its file system. Apple recommends storing only small amount of data in the Keychain. If you need to secure something big you can encrypt it manually, save to a file and store the key in the Keychain.
 
-## Known serious issue
-
-It [has been reported](https://github.com/marketplacer/keychain-swift/issues/15) that the library sometimes returns `nil` value. The issue seems to be random and hard to reproduce. 
 
 ## Setup
 
@@ -162,6 +159,10 @@ To get a specific failure reason use the `lastResultCode` property containing re
 keychain.set("hello world", forKey: "my key")
 if keychain.lastResultCode != noErr { /* Report error */ }
 ```
+
+## Known serious issue
+
+It [has been reported](https://github.com/marketplacer/keychain-swift/issues/15) that the library sometimes returns `nil`  instead of the stored Keychain value. The issue seems to be random and hard to reproduce. It may be connected with [the Keychain issue] reported on Apple developer forums. If you experienced this problem feel free to create an issue so we can discuss it and find solutions of workarounds.
 
 ## Demo app
 
