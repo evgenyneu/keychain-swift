@@ -88,8 +88,8 @@ public class KeychainSwift {
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.valueData   : value,
-      KeychainSwiftConstants.accessible  : accessible,
-      KeychainSwiftConstants.attrSynchronizable: true
+      KeychainSwiftConstants.accessible  : accessible //,
+//      KeychainSwiftConstants.attrSynchronizable: false
     ]
       
     query = addAccessGroupWhenPresent(query)
@@ -154,8 +154,8 @@ public class KeychainSwift {
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.returnData  : kCFBooleanTrue,
-      KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne,
-      KeychainSwiftConstants.attrSynchronizable: kSecAttrSynchronizableAny
+      KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne //,
+//      KeychainSwiftConstants.attrSynchronizable: kSecAttrSynchronizableAny
     ]
     
     query = addAccessGroupWhenPresent(query)
@@ -200,8 +200,8 @@ public class KeychainSwift {
 
     var query: [String: NSObject] = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
-      KeychainSwiftConstants.attrAccount : prefixedKey,
-      KeychainSwiftConstants.attrSynchronizable: kSecAttrSynchronizableAny
+      KeychainSwiftConstants.attrAccount : prefixedKey //,
+//      KeychainSwiftConstants.attrSynchronizable: kSecAttrSynchronizableAny
     ]
     
     query = addAccessGroupWhenPresent(query)
@@ -239,6 +239,14 @@ public class KeychainSwift {
     
     var result: [String: NSObject] = items
     result[KeychainSwiftConstants.accessGroup] = accessGroup
+    return result
+  }
+  
+  /// Adds kSecAttrSynchronizable: kSecAttrSynchronizableAny items to the dictionary when the `synchronizable` property is true.
+  func addSynchronizableIfRequired(items: [String: NSObject]) -> [String: NSObject] {
+    if !synchronizable { return items }
+    var result: [String: NSObject] = items
+    result[KeychainSwiftConstants.attrSynchronizable] = kSecAttrSynchronizableAny
     return result
   }
 }
