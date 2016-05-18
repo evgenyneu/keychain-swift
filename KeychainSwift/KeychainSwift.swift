@@ -41,15 +41,16 @@ public class KeychainSwift {
   - parameter key: Key under which the text value is stored in the keychain.
   - parameter value: Text string to be written to the keychain.
   - parameter withAccess: Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
+  - parameter synchronize: Value indicating if keychain item should be synced over iCloud
    
    - returns: True if the text was successfully written to the keychain.
 
   */
   public func set(value: String, forKey key: String,
-    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+                  withAccess access: KeychainSwiftAccessOptions? = nil, synchronize: Bool = false) -> Bool {
     
     if let value = value.dataUsingEncoding(NSUTF8StringEncoding) {
-      return set(value, forKey: key, withAccess: access)
+      return set(value, forKey: key, withAccess: access, synchronize: synchronize)
     }
     
     return false
@@ -62,12 +63,13 @@ public class KeychainSwift {
   - parameter key: Key under which the data is stored in the keychain.
   - parameter value: Data to be written to the keychain.
   - parameter withAccess: Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
+  - parameter synchronize: Value indicating if keychain item should be synced over iCloud
   
   - returns: True if the text was successfully written to the keychain.
   
   */
   public func set(value: NSData, forKey key: String,
-    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+    withAccess access: KeychainSwiftAccessOptions? = nil, synchronize: Bool = false) -> Bool {
     
     delete(key) // Delete any existing key before saving it
 
@@ -79,7 +81,8 @@ public class KeychainSwift {
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.valueData   : value,
-      KeychainSwiftConstants.accessible  : accessible
+      KeychainSwiftConstants.accessible  : accessible,
+      KeychainSwiftConstants.attrSynchronizable: synchronize
     ]
       
     query = addAccessGroupWhenPresent(query)
@@ -97,16 +100,17 @@ public class KeychainSwift {
   - parameter key: Key under which the value is stored in the keychain.
   - parameter value: Boolean to be written to the keychain.
   - parameter withAccess: Value that indicates when your app needs access to the value in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
+  - parameter synchronize: Value indicating if keychain item should be synced over iCloud
 
   - returns: True if the value was successfully written to the keychain.
 
   */
   public func set(value: Bool, forKey key: String,
-    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+    withAccess access: KeychainSwiftAccessOptions? = nil, synchronize: Bool = false) -> Bool {
 
     var localValue = value
     let data = NSData(bytes: &localValue, length: sizeof(Bool))
-    return set(data, forKey: key, withAccess: access)
+    return set(data, forKey: key, withAccess: access, synchronize: synchronize)
   }
 
   /**
@@ -144,7 +148,9 @@ public class KeychainSwift {
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.returnData  : kCFBooleanTrue,
-      KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne ]
+      KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne,
+      KeychainSwiftConstants.attrSynchronizable: kSecAttrSynchronizableAny
+    ]
     
     query = addAccessGroupWhenPresent(query)
     lastQueryParameters = query
@@ -188,7 +194,9 @@ public class KeychainSwift {
 
     var query: [String: NSObject] = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
-      KeychainSwiftConstants.attrAccount : prefixedKey ]
+      KeychainSwiftConstants.attrAccount : prefixedKey,
+      KeychainSwiftConstants.attrSynchronizable: kSecAttrSynchronizableAny
+    ]
     
     query = addAccessGroupWhenPresent(query)
     lastQueryParameters = query
