@@ -22,6 +22,15 @@ public class KeychainSwift {
   */
   public var accessGroup: String?
   
+  
+  /**
+   
+  Specifies whether the items can be synchronized with other devices. Setting this property to true will
+   add the item to other devices with the `set` method, obtain synchronizable items with `get` command. Deleting synchronizable items will remove them from all devices.
+   
+  */
+  public var synchronizable: Bool = false
+  
   /// Instantiate a KeychainSwift object
   public init() { }
   
@@ -41,16 +50,15 @@ public class KeychainSwift {
   - parameter key: Key under which the text value is stored in the keychain.
   - parameter value: Text string to be written to the keychain.
   - parameter withAccess: Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
-  - parameter synchronize: Value indicating if keychain item should be synced over iCloud
    
    - returns: True if the text was successfully written to the keychain.
 
   */
   public func set(value: String, forKey key: String,
-                  withAccess access: KeychainSwiftAccessOptions? = nil, synchronize: Bool = false) -> Bool {
+                  withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
     
     if let value = value.dataUsingEncoding(NSUTF8StringEncoding) {
-      return set(value, forKey: key, withAccess: access, synchronize: synchronize)
+      return set(value, forKey: key, withAccess: access)
     }
     
     return false
@@ -63,13 +71,12 @@ public class KeychainSwift {
   - parameter key: Key under which the data is stored in the keychain.
   - parameter value: Data to be written to the keychain.
   - parameter withAccess: Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
-  - parameter synchronize: Value indicating if keychain item should be synced over iCloud
   
   - returns: True if the text was successfully written to the keychain.
   
   */
   public func set(value: NSData, forKey key: String,
-    withAccess access: KeychainSwiftAccessOptions? = nil, synchronize: Bool = false) -> Bool {
+    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
     
     delete(key) // Delete any existing key before saving it
 
@@ -82,7 +89,7 @@ public class KeychainSwift {
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.valueData   : value,
       KeychainSwiftConstants.accessible  : accessible,
-      KeychainSwiftConstants.attrSynchronizable: synchronize
+      KeychainSwiftConstants.attrSynchronizable: true
     ]
       
     query = addAccessGroupWhenPresent(query)
@@ -100,17 +107,16 @@ public class KeychainSwift {
   - parameter key: Key under which the value is stored in the keychain.
   - parameter value: Boolean to be written to the keychain.
   - parameter withAccess: Value that indicates when your app needs access to the value in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
-  - parameter synchronize: Value indicating if keychain item should be synced over iCloud
 
   - returns: True if the value was successfully written to the keychain.
 
   */
   public func set(value: Bool, forKey key: String,
-    withAccess access: KeychainSwiftAccessOptions? = nil, synchronize: Bool = false) -> Bool {
+    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
 
     var localValue = value
     let data = NSData(bytes: &localValue, length: sizeof(Bool))
-    return set(data, forKey: key, withAccess: access, synchronize: synchronize)
+    return set(data, forKey: key, withAccess: access)
   }
 
   /**
