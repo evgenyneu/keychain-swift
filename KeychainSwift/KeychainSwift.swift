@@ -88,11 +88,11 @@ public class KeychainSwift {
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.valueData   : value,
-      KeychainSwiftConstants.accessible  : accessible //,
-//      KeychainSwiftConstants.attrSynchronizable: false
+      KeychainSwiftConstants.accessible  : accessible
     ]
       
     query = addAccessGroupWhenPresent(query)
+    query = addSynchronizableIfRequired(query)
     lastQueryParameters = query
     
     lastResultCode = SecItemAdd(query as CFDictionaryRef, nil)
@@ -154,11 +154,11 @@ public class KeychainSwift {
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.returnData  : kCFBooleanTrue,
-      KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne //,
-//      KeychainSwiftConstants.attrSynchronizable: kSecAttrSynchronizableAny
+      KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne
     ]
     
     query = addAccessGroupWhenPresent(query)
+    query = addSynchronizableIfRequired(query)
     lastQueryParameters = query
     
     var result: AnyObject?
@@ -200,11 +200,11 @@ public class KeychainSwift {
 
     var query: [String: NSObject] = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
-      KeychainSwiftConstants.attrAccount : prefixedKey //,
-//      KeychainSwiftConstants.attrSynchronizable: kSecAttrSynchronizableAny
+      KeychainSwiftConstants.attrAccount : prefixedKey
     ]
     
     query = addAccessGroupWhenPresent(query)
+    query = addSynchronizableIfRequired(query)
     lastQueryParameters = query
     
     lastResultCode = SecItemDelete(query as CFDictionaryRef)
@@ -222,6 +222,7 @@ public class KeychainSwift {
   public func clear() -> Bool {
     var query: [String: NSObject] = [ kSecClass as String : kSecClassGenericPassword ]
     query = addAccessGroupWhenPresent(query)
+    query = addSynchronizableIfRequired(query)
     lastQueryParameters = query
     
     lastResultCode = SecItemDelete(query as CFDictionaryRef)
