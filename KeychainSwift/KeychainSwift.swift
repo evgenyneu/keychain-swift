@@ -243,7 +243,7 @@ public class KeychainSwift {
     return result
   }
   
-  /// Adds kSecAttrSynchronizable: kSecAttrSynchronizableAny items to the dictionary when the `synchronizable` property is true.
+  /// Adds kSecAttrSynchronizable: kSecAttrSynchronizableAny` item to the dictionary when the `synchronizable` property is true.
   func addSynchronizableIfRequired(items: [String: NSObject]) -> [String: NSObject] {
     if !synchronizable { return items }
     var result: [String: NSObject] = items
