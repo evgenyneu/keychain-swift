@@ -123,7 +123,7 @@ Set `synchronizable` property to `true` to enable keychain items synchronization
 
 Setting `synchronizable` property to `true` will add the item to other devices with the `set` method and obtain synchronizable items with the `get` command. Deleting a synchronizable item will remove it from all devices.
 
-Note that you do not need to enable iCloud or Keychain Sharing capabilities in your app's target for this feature to work.
+Note that you do NOT need to enable iCloud or Keychain Sharing capabilities in your app's target for this feature to work.
 
 ```Swift
 // First device
