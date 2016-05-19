@@ -15,6 +15,9 @@ public struct KeychainSwiftConstants {
   
   /// Used for specifying a String key when setting/getting a Keychain value.
   public static var attrAccount: String { return toString(kSecAttrAccount) }
+
+  /// Used for specifying synchronization of keychain items between devices.
+  public static var attrSynchronizable: String { return toString(kSecAttrSynchronizable) }
   
   /// An item class key used to construct a Keychain search dictionary.
   public static var klass: String { return toString(kSecClass) }

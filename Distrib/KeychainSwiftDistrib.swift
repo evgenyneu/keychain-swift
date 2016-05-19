@@ -37,6 +37,15 @@ public class KeychainSwift {
   */
   public var accessGroup: String?
   
+  
+  /**
+   
+  Specifies whether the items can be synchronized with other devices. Setting this property to true will
+   add the item to other devices with the `set` method, obtain synchronizable items with `get` command. Deleting synchronizable items will remove them from all devices.
+   
+  */
+  public var synchronizable: Bool = false
+  
   /// Instantiate a KeychainSwift object
   public init() { }
   
@@ -61,7 +70,7 @@ public class KeychainSwift {
 
   */
   public func set(value: String, forKey key: String,
-    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+                  withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
     
     if let value = value.dataUsingEncoding(NSUTF8StringEncoding) {
       return set(value, forKey: key, withAccess: access)
@@ -98,6 +107,7 @@ public class KeychainSwift {
     ]
       
     query = addAccessGroupWhenPresent(query)
+    query = addSynchronizableIfRequired(query)
     lastQueryParameters = query
     
     lastResultCode = SecItemAdd(query as CFDictionaryRef, nil)
@@ -159,9 +169,11 @@ public class KeychainSwift {
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.returnData  : kCFBooleanTrue,
-      KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne ]
+      KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne
+    ]
     
     query = addAccessGroupWhenPresent(query)
+    query = addSynchronizableIfRequired(query)
     lastQueryParameters = query
     
     var result: AnyObject?
@@ -203,9 +215,11 @@ public class KeychainSwift {
 
     var query: [String: NSObject] = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
-      KeychainSwiftConstants.attrAccount : prefixedKey ]
+      KeychainSwiftConstants.attrAccount : prefixedKey
+    ]
     
     query = addAccessGroupWhenPresent(query)
+    query = addSynchronizableIfRequired(query)
     lastQueryParameters = query
     
     lastResultCode = SecItemDelete(query as CFDictionaryRef)
@@ -223,6 +237,7 @@ public class KeychainSwift {
   public func clear() -> Bool {
     var query: [String: NSObject] = [ kSecClass as String : kSecClassGenericPassword ]
     query = addAccessGroupWhenPresent(query)
+    query = addSynchronizableIfRequired(query)
     lastQueryParameters = query
     
     lastResultCode = SecItemDelete(query as CFDictionaryRef)
@@ -240,6 +255,14 @@ public class KeychainSwift {
     
     var result: [String: NSObject] = items
     result[KeychainSwiftConstants.accessGroup] = accessGroup
+    return result
+  }
+  
+  /// Adds kSecAttrSynchronizable: kSecAttrSynchronizableAny` item to the dictionary when the `synchronizable` property is true.
+  func addSynchronizableIfRequired(items: [String: NSObject]) -> [String: NSObject] {
+    if !synchronizable { return items }
+    var result: [String: NSObject] = items
+    result[KeychainSwiftConstants.attrSynchronizable] = kSecAttrSynchronizableAny
     return result
   }
 }
@@ -383,6 +406,9 @@ public struct KeychainSwiftConstants {
   
   /// Used for specifying a String key when setting/getting a Keychain value.
   public static var attrAccount: String { return toString(kSecAttrAccount) }
+
+  /// Used for specifying synchronization of keychain items between devices.
+  public static var attrSynchronizable: String { return toString(kSecAttrSynchronizable) }
   
   /// An item class key used to construct a Keychain search dictionary.
   public static var klass: String { return toString(kSecClass) }

@@ -1,5 +1,9 @@
 # KeychainSwift version history
 
+## 3.0.15 (2016-05-19)
+
+Added the ability to sychronize items on multiple devices (thank you, [mikaoj](https://github.com/mikaoj)).
+
 ## 3.0.13 (2016-04-15)
 
 Added iOS 7 support (https://github.com/marketplacer/keychain-swift/blob/iOS7/Distrib/KeychainSwiftDistrib.swift)
