@@ -115,6 +115,8 @@ See the list of all available [access options](https://github.com/marketplacer/k
 
 Set `synchronizable` property to `true` to enable keychain items synchronization across user's multiple devices. In order for keychain synchronization to work the user must enable "Keychain" in iCloud settings on the device. Setting `synchronizable` to `true` will add the item to other devices with the `set` method and obtain synchronizable items with the `get` command. Deleting a synchronizable item will remove it from all devices.
 
+Note that you do not need to enable iCloud or Keychain Sharing capabilities in your app's target for this feature to work.
+
 ```Swift
 // First device
 let keychain = KeychainSwift()
@@ -203,6 +205,7 @@ Here are some other Keychain libraries.
 * Thanks to [glyuck](https://github.com/glyuck) for taming booleans.
 * Thanks to [pepibumur](https://github.com/pepibumur) for adding OS X, watchOS and tvOS support.
 * Thanks to [ezura](https://github.com/ezura) for iOS 7 support.
+* Thanks to [mikaoj](https://github.com/mikaoj) for adding keychain synchronization.
 
 ## License
 
