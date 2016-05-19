@@ -138,9 +138,9 @@ keychain.get("my key") // Returns "hello world"
 ```
 
 
-<h3 id="keychain_access_groups">Sharing keychain items with other apps on the same device</h3>
+<h3 id="keychain_access_groups">Sharing keychain items with other apps</h3>
 
-In order to share keychain items between apps they need to have common *Keychain Groups* registered in *Capabilities > Keychain Sharing* settings. [This tutorial](http://evgenii.com/blog/sharing-keychain-in-ios/) shows how to set it up.
+In order to share keychain items between apps on the same device they need to have common *Keychain Groups* registered in *Capabilities > Keychain Sharing* settings. [This tutorial](http://evgenii.com/blog/sharing-keychain-in-ios/) shows how to set it up.
 
 Use `accessGroup` property to access shared keychain items. In the following example we specify an access group "CS671JRA62.com.myapp.KeychainGroup" that will be used to set, get and delete an item "my key".
 
