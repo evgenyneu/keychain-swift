@@ -13,7 +13,7 @@ This is a collection of helper functions for saving text and data in the Keychai
  * <a href="#usage">Get/set string, boolean and NSData Keychain items</a>.
  * <a href="#keychain_item_access">Specify item access security level</a>.
  * <a href="#keychain_synchronization">Synchronize items through iCloud</a>.
- * Share Keychain items with other apps.
+ * <a href="#keychain_access_groups">Share Keychain items with other apps</a>.
 
 ## What's Keychain?
 
@@ -135,7 +135,8 @@ keychain.synchronizable = true
 keychain.get("my key") // Returns "hello world"
 ```
 
-### Sharing keychain items with other apps
+
+<h3 id="keychain_access_groups">Sharing keychain items with other apps</h3>
 
 In order to share keychain items between apps they need to have common *Keychain Groups* registered in *Capabilities > Keychain Sharing* settings. [This tutorial](http://evgenii.com/blog/sharing-keychain-in-ios/) shows how to set it up.
 
