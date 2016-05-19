@@ -8,7 +8,12 @@
 [carthage]: https://github.com/Carthage/Carthage
 
 This is a collection of helper functions for saving text and data in the Keychain.
- As you probably noticed Apple's keychain API is a bit verbose. This library was designed to provide shorter syntax for accomplishing a simple task: reading/writing text values for specified keys.
+ As you probably noticed Apple's keychain API is a bit verbose. This library was designed to provide shorter syntax for accomplishing a simple task: reading/writing text values for specified keys. The Keychain library includes the following features: 
+ 
+ * <a href="#usage">Get/set string, boolean and NSData Keychain items</a>.
+ * Specify item access security level.
+ * Synchornize items through iCloud.
+ * Share Keychain items with other apps.
 
 ## What's Keychain?
 
@@ -52,7 +57,7 @@ Use the [previous version of the library](https://github.com/marketplacer/keycha
 
 Use [iOS 7 compatible](https://github.com/marketplacer/keychain-swift/blob/iOS7/Distrib/KeychainSwiftDistrib.swift) version of the library.
 
-## Usage
+<h2 id="usage">Usage</h2>
 
 Add `import KeychainSwift` to your source code if you used Carthage or CocoaPods setup methods.
 
