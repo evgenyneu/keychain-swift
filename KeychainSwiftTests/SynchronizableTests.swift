@@ -16,17 +16,30 @@ class SynchronizableTests: XCTestCase {
   
   // MARK: - addSynchronizableIfRequired
   
-  func testAddSynchronizableGroup() {
+  func testAddSynchronizableGroup_addItemsFalse() {
     let items: [String: NSObject] = [
       "one": "two"
     ]
     
     obj.synchronizable = true
-    let result = obj.addSynchronizableIfRequired(items)
+    let result = obj.addSynchronizableIfRequired(items, addingItems: false)
     
     XCTAssertEqual(2, result.count)
     XCTAssertEqual("two", result["one"])
     XCTAssertEqual(kSecAttrSynchronizableAny, result["sync"])
+  }
+  
+  func testAddSynchronizableGroup_addItemsTrue() {
+    let items: [String: NSObject] = [
+      "one": "two"
+    ]
+    
+    obj.synchronizable = true
+    let result = obj.addSynchronizableIfRequired(items, addingItems: true)
+    
+    XCTAssertEqual(2, result.count)
+    XCTAssertEqual("two", result["one"])
+    XCTAssertEqual(true, result["sync"])
   }
   
   func testAddSynchronizableGroup_nil() {
@@ -34,7 +47,7 @@ class SynchronizableTests: XCTestCase {
       "one": "two"
     ]
     
-    let result = obj.addSynchronizableIfRequired(items)
+    let result = obj.addSynchronizableIfRequired(items, addingItems: false)
     
     XCTAssertEqual(1, result.count)
     XCTAssertEqual("two", result["one"])
@@ -45,7 +58,7 @@ class SynchronizableTests: XCTestCase {
   func testSet() {
     obj.synchronizable = true
     obj.set("hello :)", forKey: "key 1")
-    XCTAssertEqual(kSecAttrSynchronizableAny, obj.lastQueryParameters?["sync"])
+    XCTAssertEqual(true, obj.lastQueryParameters?["sync"])
   }
   
   func testSet_doNotSetSynchronizable() {
