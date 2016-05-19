@@ -185,7 +185,7 @@ It [has been reported](https://github.com/marketplacer/keychain-swift/issues/15)
 
 ## Demo app
 
-<img src="https://raw.githubusercontent.com/marketplacer/keychain-swift/master/graphics/keychain-swift-demo-2.png" alt="Keychain Swift demo app" width="320">
+<img src="https://raw.githubusercontent.com/marketplacer/keychain-swift/master/graphics/keychain-swift-demo-3.png" alt="Keychain Swift demo app" width="320">
 
 ## Alternative solutions
 
