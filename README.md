@@ -12,7 +12,7 @@ This is a collection of helper functions for saving text and data in the Keychai
  
  * <a href="#usage">Get/set string, boolean and NSData Keychain items</a>.
  * <a href="#keychain_item_access">Specify item access security level</a>.
- * Synchornize items through iCloud.
+ * <a href="#keychain_synchronization">Synchronize items through iCloud</a>.
  * Share Keychain items with other apps.
 
 ## What's Keychain?
@@ -102,7 +102,6 @@ keychain.clear() // Delete everything from app's Keychain. Does not work on OS X
 
 ## Advanced options
 
-<h3 id="keychain_item_access">Keychain item access</h3>
 
 Use `withAccess` parameter to specify the security level of the keychain storage.
 By default the `.AccessibleWhenUnlocked` option is used. It is one of the most restrictive options and provides good data protection.
@@ -116,7 +115,7 @@ You can use `.AccessibleAfterFirstUnlock` if you need your app to access the key
 See the list of all available [access options](https://github.com/marketplacer/keychain-swift/blob/master/KeychainSwift/KeychainSwiftAccessOptions.swift).
 
 
-### Synchronizing keychain items with other devices
+<h3 id="keychain_synchronization">Synchronizing keychain items with other devices</h3>
 
 Set `synchronizable` property to `true` to enable keychain items synchronization across user's multiple devices. The synchronization will work for users who have the "Keychain" enabled in the iCloud settings on their devices.
 
