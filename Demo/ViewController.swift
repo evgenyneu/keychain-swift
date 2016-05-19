@@ -20,6 +20,8 @@ class ViewController: UIViewController {
   }
   
   @IBAction func onSaveTapped(sender: AnyObject) {
+    closeKeyboard()
+    
     if let text = textField.text {
       keychain.synchronizable = synchronizableSwitch.on
       keychain.set(text, forKey: TegKeychainDemo_keyName)
@@ -28,12 +30,16 @@ class ViewController: UIViewController {
   }
   
   @IBAction func onDeleteTapped(sender: AnyObject) {
+    closeKeyboard()
+
     keychain.synchronizable = synchronizableSwitch.on
     keychain.delete(TegKeychainDemo_keyName)
     updateValueLabel()
   }
   
   @IBAction func onGetTapped(sender: AnyObject) {
+    closeKeyboard()
+
     updateValueLabel()
   }
   
@@ -47,4 +53,11 @@ class ViewController: UIViewController {
     }
   }
   
+  private func closeKeyboard() {
+    textField.resignFirstResponder()
+  }
+  
+  @IBAction func didTapView(sender: AnyObject) {
+    closeKeyboard()
+  }
 }

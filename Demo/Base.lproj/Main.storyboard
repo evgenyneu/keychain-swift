@@ -70,6 +70,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="QP7-SR-8QJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Qi-WJ-pvW"/>
                             <constraint firstItem="w7p-LD-g9j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="50" id="5De-mx-U8l"/>
@@ -88,6 +89,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="NDv-PR-OK3" secondAttribute="trailing" constant="16" id="vAI-Yb-Kci"/>
                             <constraint firstItem="xkp-Od-gCQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="zhk-dr-xC7"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="zaZ-rL-hDm" appends="YES" id="k9q-L3-0Ey"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="synchronizableSwitch" destination="w7p-LD-g9j" id="xKt-Tv-MBN"/>
@@ -96,6 +100,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="zaZ-rL-hDm">
+                    <connections>
+                        <action selector="didTapView:" destination="BYZ-38-t0r" id="zEX-BD-Laa"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>
