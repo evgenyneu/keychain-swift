@@ -103,6 +103,8 @@ keychain.clear() // Delete everything from app's Keychain. Does not work on OS X
 ## Advanced options
 
 
+<h3 id="keychain_item_access">Keychain item access</h3>
+
 Use `withAccess` parameter to specify the security level of the keychain storage.
 By default the `.AccessibleWhenUnlocked` option is used. It is one of the most restrictive options and provides good data protection.
 
