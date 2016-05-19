@@ -40,8 +40,8 @@ public class KeychainSwift {
   
   /**
    
-  Specifies whether the items can be synchronized with other devices. Setting this property to true will
-   add the item to other devices with the `set` method, obtain synchronizable items with `get` command. Deleting synchronizable items will remove them from all devices.
+  Specifies whether the items can be synchronized with other devices through iCloud. Setting this property to true will
+   add the item to other devices with the `set` method and obtain synchronizable items with the `get` command. Deleting synchronizable items will remove them from all devices. In order for keychain synchronization to work the user must enable "Keychain" in iCloud settings.
    
   */
   public var synchronizable: Bool = false
@@ -107,7 +107,7 @@ public class KeychainSwift {
     ]
       
     query = addAccessGroupWhenPresent(query)
-    query = addSynchronizableIfRequired(query)
+    query = addSynchronizableIfRequired(query, addingItems: true)
     lastQueryParameters = query
     
     lastResultCode = SecItemAdd(query as CFDictionaryRef, nil)
@@ -173,7 +173,7 @@ public class KeychainSwift {
     ]
     
     query = addAccessGroupWhenPresent(query)
-    query = addSynchronizableIfRequired(query)
+    query = addSynchronizableIfRequired(query, addingItems: false)
     lastQueryParameters = query
     
     var result: AnyObject?
@@ -219,7 +219,7 @@ public class KeychainSwift {
     ]
     
     query = addAccessGroupWhenPresent(query)
-    query = addSynchronizableIfRequired(query)
+    query = addSynchronizableIfRequired(query, addingItems: false)
     lastQueryParameters = query
     
     lastResultCode = SecItemDelete(query as CFDictionaryRef)
@@ -237,7 +237,7 @@ public class KeychainSwift {
   public func clear() -> Bool {
     var query: [String: NSObject] = [ kSecClass as String : kSecClassGenericPassword ]
     query = addAccessGroupWhenPresent(query)
-    query = addSynchronizableIfRequired(query)
+    query = addSynchronizableIfRequired(query, addingItems: false)
     lastQueryParameters = query
     
     lastResultCode = SecItemDelete(query as CFDictionaryRef)
@@ -258,11 +258,20 @@ public class KeychainSwift {
     return result
   }
   
-  /// Adds kSecAttrSynchronizable: kSecAttrSynchronizableAny` item to the dictionary when the `synchronizable` property is true.
-  func addSynchronizableIfRequired(items: [String: NSObject]) -> [String: NSObject] {
+  /**
+ 
+  Adds kSecAttrSynchronizable: kSecAttrSynchronizableAny` item to the dictionary when the `synchronizable` property is true.
+   
+   - parameter items: The dictionary where the kSecAttrSynchronizable items will be added when requested.
+   - parameter addingItems: Use `true` when the dictionary will be used with `SecItemAdd` method (adding a keychain item). For getting and deleting items, use `false`.
+   
+   - returns: the dictionary with kSecAttrSynchronizable item added if it was requested. Otherwise, it returns the original dictionary.
+ 
+  */
+  func addSynchronizableIfRequired(items: [String: NSObject], addingItems: Bool) -> [String: NSObject] {
     if !synchronizable { return items }
     var result: [String: NSObject] = items
-    result[KeychainSwiftConstants.attrSynchronizable] = kSecAttrSynchronizableAny
+    result[KeychainSwiftConstants.attrSynchronizable] = addingItems == true ? true : kSecAttrSynchronizableAny
     return result
   }
 }
