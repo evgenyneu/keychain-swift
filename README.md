@@ -11,7 +11,7 @@ This is a collection of helper functions for saving text and data in the Keychai
  As you probably noticed Apple's keychain API is a bit verbose. This library was designed to provide shorter syntax for accomplishing a simple task: reading/writing text values for specified keys. The Keychain library includes the following features: 
  
  * <a href="#usage">Get/set string, boolean and NSData Keychain items</a>.
- * Specify item access security level.
+ * <a href="#keychain_item_access">Specify item access security level</a>.
  * Synchornize items through iCloud.
  * Share Keychain items with other apps.
 
@@ -102,7 +102,7 @@ keychain.clear() // Delete everything from app's Keychain. Does not work on OS X
 
 ## Advanced options
 
-### Keychain item access
+<h3 id="keychain_item_access">Keychain item access</h3>
 
 Use `withAccess` parameter to specify the security level of the keychain storage.
 By default the `.AccessibleWhenUnlocked` option is used. It is one of the most restrictive options and provides good data protection.
