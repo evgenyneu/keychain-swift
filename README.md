@@ -37,6 +37,7 @@ Alternatively, add `github "marketplacer/keychain-swift" ~> 3.0` to your Cartfil
 If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
+    target 'Your target name'
     pod 'KeychainSwift', '~> 3.0'
 
 Here is how to use KeychainSwift in a *WatchKit extension* with CocoaPods.
