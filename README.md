@@ -18,10 +18,10 @@ keychain.get("my key")
  
  The Keychain library includes the following features: 
  
- * <a href="#usage">Get, set and delete string, boolean and NSData Keychain items</a>.
- * <a href="#keychain_item_access">Specify item access security level</a>.
- * <a href="#keychain_synchronization">Synchronize items through iCloud</a>.
- * <a href="#keychain_access_groups">Share Keychain items with other apps</a>.
+ * <a href="#usage">Get, set and delete string, boolean and NSData Keychain items</a>
+ * <a href="#keychain_item_access">Specify item access security level</a>
+ * <a href="#keychain_synchronization">Synchronize items through iCloud</a>
+ * <a href="#keychain_access_groups">Share Keychain items with other apps</a>
 
 ## What's Keychain?
 
