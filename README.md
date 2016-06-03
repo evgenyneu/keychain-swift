@@ -11,14 +11,14 @@ This is a collection of helper functions for saving text and data in the Keychai
  As you probably noticed Apple's keychain API is a bit verbose. This library was designed to provide shorter syntax for accomplishing a simple task: reading/writing text values for specified keys:
  
  ```Swift
- let keychain = KeychainSwift()
+let keychain = KeychainSwift()
 keychain.set("hello world", forKey: "my key")
 keychain.get("my key")
  ```
  
  The Keychain library includes the following features: 
  
- * <a href="#usage">Get/set string, boolean and NSData Keychain items</a>.
+ * <a href="#usage">Get, set and delete string, boolean and NSData Keychain items</a>.
  * <a href="#keychain_item_access">Specify item access security level</a>.
  * <a href="#keychain_synchronization">Synchronize items through iCloud</a>.
  * <a href="#keychain_access_groups">Share Keychain items with other apps</a>.
