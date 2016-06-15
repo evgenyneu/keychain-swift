@@ -1,4 +1,4 @@
-# Helper functions for storing text in Keychain for iOS, OS X, tvOS and WatchOS
+# Helper functions for storing text in Keychain for iOS, macOS, tvOS and WatchOS
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)][carthage]
 [![CocoaPods Version](https://img.shields.io/cocoapods/v/KeychainSwift.svg?style=flat)][cocoadocs]
@@ -18,7 +18,7 @@ keychain.get("my key")
 
  The Keychain library includes the following features:
 
- * <a href="#usage">Get, set and delete string, boolean and NSData Keychain items</a>
+ * <a href="#usage">Get, set and delete string, boolean and Data Keychain items</a>
  * <a href="#keychain_item_access">Specify item access security level</a>
  * <a href="#keychain_synchronization">Synchronize items through iCloud</a>
  * <a href="#keychain_access_groups">Share Keychain items with other apps</a>
@@ -83,12 +83,12 @@ keychain.set(true, forKey: "my key")
 keychain.getBool("my key")
 ```
 
-#### NSData values
+#### Data values
 
 ```Swift
 let keychain = KeychainSwift()
 
-keychain.set(nsDataObject, forKey: "my key")
+keychain.set(dataObject, forKey: "my key")
 
 keychain.getData("my key")
 ```
@@ -98,7 +98,7 @@ keychain.getData("my key")
 ```Swift
 keychain.delete("my key") // Remove single key
 
-keychain.clear() // Delete everything from app's Keychain. Does not work on OS X.
+keychain.clear() // Delete everything from app's Keychain. Does not work on macOS.
 ```
 
 ## Advanced options
@@ -213,9 +213,12 @@ Here are some other Keychain libraries.
 
 * The code is based on this example: [https://gist.github.com/s-aska/e7ad24175fb7b04f78e7](https://gist.github.com/s-aska/e7ad24175fb7b04f78e7)
 * Thanks to [glyuck](https://github.com/glyuck) for taming booleans.
-* Thanks to [pepibumur](https://github.com/pepibumur) for adding OS X, watchOS and tvOS support.
+* Thanks to [pepibumur](https://github.com/pepibumur) for adding macOS, watchOS and tvOS support.
 * Thanks to [ezura](https://github.com/ezura) for iOS 7 support.
 * Thanks to [mikaoj](https://github.com/mikaoj) for adding keychain synchronization.
+* Thanks to [tcirwin](https://github.com/tcirwin) for adding Swift 3.0 support.
+
+
 
 ## License
 
