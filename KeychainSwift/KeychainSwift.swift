@@ -116,9 +116,9 @@ public class KeychainSwift {
   @discardableResult
   public func set(_ value: Bool, forKey key: String,
     withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
-
-    var bits = unsafeBitCast(value, to: UInt8.self)
-    let data = Data(bytes: &bits, count: sizeof(Bool))
+  
+    let bytes: [UInt8] = value ? [1] : [0]
+    let data = Data(bytes: bytes)
 
     return set(data, forKey: key, withAccess: access)
   }
@@ -133,6 +133,7 @@ public class KeychainSwift {
   */
   public func get(_ key: String) -> String? {
     if let data = getData(key) {
+      
       if let currentString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as? String {
         return currentString
       }
@@ -186,9 +187,8 @@ public class KeychainSwift {
   */
   public func getBool(_ key: String) -> Bool? {
     guard let data = getData(key) else { return nil }
-    var boolValue = false
-    (data as NSData).getBytes(&boolValue, length: sizeof(Bool))
-    return boolValue
+    guard let firstBit = data.first else { return nil }
+    return firstBit == 1
   }
 
   /**
