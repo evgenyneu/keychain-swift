@@ -444,12 +444,14 @@
 					};
 					7ED6C96B1B1C118F00FE8090 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 					7ED6C9761B1C118F00FE8090 = {
 						CreatedOnToolsVersion = 6.4;
 					};
 					7ED6C99C1B1C133500FE8090 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -879,6 +881,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -897,6 +900,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -944,6 +948,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marketplacer.KeychainSwiftDemo;
 				PRODUCT_NAME = "Keychain Swift";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -956,6 +961,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.marketplacer.KeychainSwiftDemo;
 				PRODUCT_NAME = "Keychain Swift";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
