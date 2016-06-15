@@ -48,7 +48,7 @@ class AccessGroupTests: XCTestCase {
   
   func testGet() {
     obj.accessGroup = "123.my.test.group"
-    obj.get("key 1")
+    _ = obj.get("key 1")
     XCTAssertEqual("123.my.test.group", obj.lastQueryParameters?["agrp"])
   }
   

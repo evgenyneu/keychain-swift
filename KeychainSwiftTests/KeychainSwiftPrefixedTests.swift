@@ -43,19 +43,19 @@ class KeychainWithPrefixTests: XCTestCase {
   func testSetData() {
     let key = "key 123"
     
-    let dataPrefixed = "prefixed".dataUsingEncoding(NSUTF8StringEncoding)!
-    let dataNonPrefixed = "non prefixed".dataUsingEncoding(NSUTF8StringEncoding)!
+    let dataPrefixed = "prefixed".data(using: String.Encoding.utf8)!
+    let dataNonPrefixed = "non prefixed".data(using: String.Encoding.utf8)!
     
     XCTAssertTrue(prefixed.set(dataPrefixed, forKey: key))
     XCTAssertTrue(nonPrefixed.set(dataNonPrefixed, forKey: key))
 
     
     let dataFromKeychainPrefixed = prefixed.getData(key)!
-    let textFromKeychainPrefixed = NSString(data: dataFromKeychainPrefixed, encoding:NSUTF8StringEncoding) as! String
+    let textFromKeychainPrefixed = String(data: dataFromKeychainPrefixed, encoding: .utf8)!
     XCTAssertEqual("prefixed", textFromKeychainPrefixed)
     
     let dataFromKeychainNonPrefixed = nonPrefixed.getData(key)!
-    let textFromKeychainNonPrefixed = NSString(data: dataFromKeychainNonPrefixed, encoding:NSUTF8StringEncoding) as! String
+    let textFromKeychainNonPrefixed = String(data: dataFromKeychainNonPrefixed, encoding: .utf8)!
     XCTAssertEqual("non prefixed", textFromKeychainNonPrefixed)
   }
   

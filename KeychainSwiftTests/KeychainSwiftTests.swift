@@ -25,35 +25,35 @@ class keychainTests: XCTestCase {
     XCTAssertTrue(obj.set("hello :)", forKey: "key 1"))
     
     let accessValue = obj.lastQueryParameters?[KeychainSwiftConstants.accessible] as? String
-    XCTAssertEqual(KeychainSwiftAccessOptions.AccessibleWhenUnlocked.value, accessValue!)
+    XCTAssertEqual(KeychainSwiftAccessOptions.accessibleWhenUnlocked.value, accessValue!)
   }
   
   func testSetWithAccessOption() {
-    obj.set("hello :)", forKey: "key 1", withAccess: .AccessibleAfterFirstUnlock)
+    obj.set("hello :)", forKey: "key 1", withAccess: .accessibleAfterFirstUnlock)
     let accessValue = obj.lastQueryParameters?[KeychainSwiftConstants.accessible] as? String
-    XCTAssertEqual(KeychainSwiftAccessOptions.AccessibleAfterFirstUnlock.value, accessValue!)
+    XCTAssertEqual(KeychainSwiftAccessOptions.accessibleAfterFirstUnlock.value, accessValue!)
   }
   
   // MARK: - Set data
   // -----------------------
   
   func testSetData() {
-    let data = "hello world".dataUsingEncoding(NSUTF8StringEncoding)!
+    let data = "hello world".data(using: String.Encoding.utf8)!
     
     XCTAssertTrue(obj.set(data, forKey: "key 123"))
     
     let dataFromKeychain = obj.getData("key 123")!
-    let textFromKeychain = NSString(data: dataFromKeychain, encoding:NSUTF8StringEncoding) as! String
+    let textFromKeychain = String(data: dataFromKeychain, encoding:String.Encoding.utf8)!
     XCTAssertEqual("hello world", textFromKeychain)
   }
   
   func testSetData_usesAccessibleWhenUnlockedByDefault() {
-    let data = "hello world".dataUsingEncoding(NSUTF8StringEncoding)!
+    let data = "hello world".data(using: String.Encoding.utf8)!
     
     obj.set(data, forKey: "key 123")
     
     let accessValue = obj.lastQueryParameters?[KeychainSwiftConstants.accessible] as? String
-    XCTAssertEqual(KeychainSwiftAccessOptions.AccessibleWhenUnlocked.value, accessValue!)
+    XCTAssertEqual(KeychainSwiftAccessOptions.accessibleWhenUnlocked.value, accessValue!)
   }
 
   // MARK: - Set bool
@@ -69,7 +69,7 @@ class keychainTests: XCTestCase {
   func testSetBool_usesAccessibleWhenUnlockedByDefault() {
     XCTAssertTrue(obj.set(false, forKey: "key bool"))
     let accessValue = obj.lastQueryParameters?[KeychainSwiftConstants.accessible] as? String
-    XCTAssertEqual(KeychainSwiftAccessOptions.AccessibleWhenUnlocked.value, accessValue!)
+    XCTAssertEqual(KeychainSwiftAccessOptions.accessibleWhenUnlocked.value, accessValue!)
   }
 
   // MARK: - Get
