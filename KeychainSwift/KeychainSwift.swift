@@ -80,22 +80,22 @@ public class KeychainSwift {
   public func set(_ value: Data, forKey key: String,
     withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
     
-    _ = delete(key) // Delete any existing key before saving it
+    delete(key) // Delete any existing key before saving it
 
     let accessible = access?.value ?? KeychainSwiftAccessOptions.defaultOption.value
       
     let prefixedKey = keyWithPrefix(key)
       
-    var query = [
+    var query: [String : NSObject] = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.valueData   : value,
       KeychainSwiftConstants.accessible  : accessible
     ]
       
-    query = addAccessGroupWhenPresent(query as! [String : NSObject])
-    query = addSynchronizableIfRequired(query as! [String : NSObject], addingItems: true)
-    lastQueryParameters = query as? [String: NSObject]
+    query = addAccessGroupWhenPresent(query)
+    query = addSynchronizableIfRequired(query, addingItems: true)
+    lastQueryParameters = query
     
     lastResultCode = SecItemAdd(query as CFDictionary, nil)
     
