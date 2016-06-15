@@ -9,15 +9,15 @@
 
 This is a collection of helper functions for saving text and data in the Keychain.
  As you probably noticed Apple's keychain API is a bit verbose. This library was designed to provide shorter syntax for accomplishing a simple task: reading/writing text values for specified keys:
- 
+
  ```Swift
 let keychain = KeychainSwift()
 keychain.set("hello world", forKey: "my key")
 keychain.get("my key")
  ```
- 
- The Keychain library includes the following features: 
- 
+
+ The Keychain library includes the following features:
+
  * <a href="#usage">Get, set and delete string, boolean and NSData Keychain items</a>
  * <a href="#keychain_item_access">Specify item access security level</a>
  * <a href="#keychain_synchronization">Synchronize items through iCloud</a>
@@ -32,35 +32,27 @@ Keychain is a secure storage. You can store all kind of sensitive data in it: us
 
 There are three ways you can add KeychainSwift to your Xcode project.
 
-**Add source (iOS 7+)**
+#### Add source (iOS 7+)
 
 Simply add [KeychainSwiftDistrib.swift](https://github.com/marketplacer/keychain-swift/blob/master/Distrib/KeychainSwiftDistrib.swift) file into your Xcode project.
 
-**Setup with Carthage (iOS 8+)**
+#### Setup with Carthage (iOS 8+)
 
-Alternatively, add `github "marketplacer/keychain-swift" ~> 3.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "marketplacer/keychain-swift" ~> 4.0` to your Cartfile and run `carthage update`.
 
-**Setup with CocoaPods (iOS 8+)**
+#### Setup with CocoaPods (iOS 8+)
 
 If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     target 'Your target name'
-    pod 'KeychainSwift', '~> 3.0'
-
-Here is how to use KeychainSwift in a *WatchKit extension* with CocoaPods.
-
-    use_frameworks!
-
-    target 'YourWatchApp Extension Target Name' do
-      platform :watchos, '2.0'
-      pod 'KeychainSwift', '~> 3.0'
-    end
+    pod 'KeychainSwift', '~> 4.0'
 
 
-**Setup in Swift 1.2 project**
+#### Legacy Swift versions
 
-Use the [previous version of the library](https://github.com/marketplacer/keychain-swift/wiki/Swift-1.2-setup).
+Setup a [previous version](https://github.com/marketplacer/keychain-swift/wiki/Legacy-Swift-versions) of the library if you use an older version of Swift.
+
 
 **iOS 7 support**
 
