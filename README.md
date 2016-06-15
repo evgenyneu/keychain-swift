@@ -107,13 +107,13 @@ keychain.clear() // Delete everything from app's Keychain. Does not work on macO
 <h3 id="keychain_item_access">Keychain item access</h3>
 
 Use `withAccess` parameter to specify the security level of the keychain storage.
-By default the `.AccessibleWhenUnlocked` option is used. It is one of the most restrictive options and provides good data protection.
+By default the `.accessibleWhenUnlocked` option is used. It is one of the most restrictive options and provides good data protection.
 
 ```
-KeychainSwift().set("Hello world", forKey: "key 1", withAccess: .AccessibleWhenUnlocked)
+KeychainSwift().set("Hello world", forKey: "key 1", withAccess: .accessibleWhenUnlocked)
 ```
 
-You can use `.AccessibleAfterFirstUnlock` if you need your app to access the keychain item while in the background. Note that it is less secure than the `.AccessibleWhenUnlocked` option.
+You can use `.accessibleAfterFirstUnlock` if you need your app to access the keychain item while in the background. Note that it is less secure than the `.accessibleWhenUnlocked` option.
 
 See the list of all available [access options](https://github.com/marketplacer/keychain-swift/blob/master/KeychainSwift/KeychainSwiftAccessOptions.swift).
 
