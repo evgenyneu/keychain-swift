@@ -311,9 +311,9 @@
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
-		232B4C791BC29950001F2B7A /* KeychainSwift-OSX */ = {
+		232B4C791BC29950001F2B7A /* KeychainSwift-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 232B4C7F1BC29950001F2B7A /* Build configuration list for PBXNativeTarget "KeychainSwift-OSX" */;
+			buildConfigurationList = 232B4C7F1BC29950001F2B7A /* Build configuration list for PBXNativeTarget "KeychainSwift-macOS" */;
 			buildPhases = (
 				232B4C751BC29950001F2B7A /* Sources */,
 				232B4C761BC29950001F2B7A /* Frameworks */,
@@ -324,7 +324,7 @@
 			);
 			dependencies = (
 			);
-			name = "KeychainSwift-OSX";
+			name = "KeychainSwift-macOS";
 			productName = "KeychainSwift-OSX";
 			productReference = 232B4C7A1BC29950001F2B7A /* KeychainSwift.framework */;
 			productType = "com.apple.product-type.framework";
@@ -427,7 +427,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Marketplacer;
 				TargetAttributes = {
 					232B4C791BC29950001F2B7A = {
@@ -444,12 +444,14 @@
 					};
 					7ED6C96B1B1C118F00FE8090 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 					7ED6C9761B1C118F00FE8090 = {
 						CreatedOnToolsVersion = 6.4;
 					};
 					7ED6C99C1B1C133500FE8090 = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -467,7 +469,7 @@
 			projectRoot = "";
 			targets = (
 				7ED6C96B1B1C118F00FE8090 /* KeychainSwift */,
-				232B4C791BC29950001F2B7A /* KeychainSwift-OSX */,
+				232B4C791BC29950001F2B7A /* KeychainSwift-macOS */,
 				232B4C891BC29984001F2B7A /* KeychainSwift-watchOS */,
 				23E7855F1BDA410C00B7564A /* KeychainSwift-tvOS */,
 				7ED6C9761B1C118F00FE8090 /* KeychainSwiftTests */,
@@ -639,10 +641,11 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.KeychainSwift-OSX";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.KeychainSwift-macOS";
 				PRODUCT_NAME = KeychainSwift;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -660,10 +663,12 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.KeychainSwift-OSX";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.KeychainSwift-macOS";
 				PRODUCT_NAME = KeychainSwift;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -683,6 +688,7 @@
 				PRODUCT_NAME = KeychainSwift;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -703,6 +709,8 @@
 				PRODUCT_NAME = KeychainSwift;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -724,6 +732,7 @@
 				PRODUCT_NAME = KeychainSwift;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -744,6 +753,8 @@
 				PRODUCT_NAME = KeychainSwift;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -876,6 +887,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -893,6 +905,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -924,6 +938,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "KeychainSwiftTests/KeychainSwiftTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -939,6 +954,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marketplacer.KeychainSwiftDemo;
 				PRODUCT_NAME = "Keychain Swift";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -950,13 +966,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marketplacer.KeychainSwiftDemo;
 				PRODUCT_NAME = "Keychain Swift";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		232B4C7F1BC29950001F2B7A /* Build configuration list for PBXNativeTarget "KeychainSwift-OSX" */ = {
+		232B4C7F1BC29950001F2B7A /* Build configuration list for PBXNativeTarget "KeychainSwift-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				232B4C801BC29950001F2B7A /* Debug */,

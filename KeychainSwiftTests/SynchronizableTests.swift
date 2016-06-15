@@ -70,12 +70,12 @@ class SynchronizableTests: XCTestCase {
   
   func testGet() {
     obj.synchronizable = true
-    obj.get("key 1")
+    _ = obj.get("key 1")
     XCTAssertEqual(kSecAttrSynchronizableAny, obj.lastQueryParameters?["sync"])
   }
   
   func testGet_doNotSetSynchronizable() {
-    obj.get("key 1")
+    _ = obj.get("key 1")
     XCTAssertNil(obj.lastQueryParameters?["sync"])
   }
   

@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
   s.name        = "KeychainSwift"
-  s.version     = "3.0.16"
+  s.version     = "4.0.0"
   s.license     = { :type => "MIT" }
   s.homepage    = "https://github.com/marketplacer/keychain-swift"
   s.summary     = "A library for saving text and data in the Keychain with Swift."
   s.description = <<-DESC
                 This is a collection of helper functions for saving text and data in the Keychain.
 
-                * Write and read text and NSData with simple functions.
+                * Write and read text and Data with simple functions.
                 * Specify optional access rule for the keychain item.
                 * Limit operations to a specific access group.
                 DESC

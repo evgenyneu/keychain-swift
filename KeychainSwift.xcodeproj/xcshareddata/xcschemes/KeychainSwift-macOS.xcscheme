@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "232B4C791BC29950001F2B7A"
                BuildableName = "KeychainSwift.framework"
-               BlueprintName = "KeychainSwift-OSX"
+               BlueprintName = "KeychainSwift-macOS"
                ReferencedContainer = "container:KeychainSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,7 +47,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "232B4C791BC29950001F2B7A"
             BuildableName = "KeychainSwift.framework"
-            BlueprintName = "KeychainSwift-OSX"
+            BlueprintName = "KeychainSwift-macOS"
             ReferencedContainer = "container:KeychainSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,7 +65,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "232B4C791BC29950001F2B7A"
             BuildableName = "KeychainSwift.framework"
-            BlueprintName = "KeychainSwift-OSX"
+            BlueprintName = "KeychainSwift-macOS"
             ReferencedContainer = "container:KeychainSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
