@@ -28,7 +28,7 @@ keychain.get("my key")
 Keychain is a secure storage. You can store all kind of sensitive data in it: user passwords, credit card numbers, secret tokens etc. Once stored in Keychain this information is only available to your app, other apps can't see it. Besides that, operating system makes sure this information is kept and processed securely. For example, text stored in Keychain can not be extracted from iPhone backup or from its file system. Apple recommends storing only small amount of data in the Keychain. If you need to secure something big you can encrypt it manually, save to a file and store the key in the Keychain.
 
 
-## Setup
+## Setup (Swift 3.0)
 
 There are three ways you can add KeychainSwift to your Xcode project.
 
@@ -49,7 +49,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
     pod 'KeychainSwift', '~> 4.0'
 
 
-#### Legacy Swift versions
+## Legacy Swift versions
 
 Setup a [previous version](https://github.com/marketplacer/keychain-swift/wiki/Legacy-Swift-versions) of the library if you use an older version of Swift.
 
