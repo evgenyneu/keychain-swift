@@ -32,13 +32,15 @@ Keychain is a secure storage. You can store all kind of sensitive data in it: us
 
 There are three ways you can add KeychainSwift to your Xcode project.
 
+Note: Keychain currently does not work at all on iOS 10 / Xcode 8. Use iOS 9 from Xcode 8 instead.
+
 #### Add source (iOS 7+)
 
 Simply add [KeychainSwiftDistrib.swift](https://github.com/marketplacer/keychain-swift/blob/master/Distrib/KeychainSwiftDistrib.swift) file into your Xcode project.
 
 #### Setup with Carthage (iOS 8+)
 
-Alternatively, add `github "marketplacer/keychain-swift" ~> 4.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "marketplacer/keychain-swift" ~> 5.0` to your Cartfile and run `carthage update`.
 
 #### Setup with CocoaPods (iOS 8+)
 
@@ -46,7 +48,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     target 'Your target name'
-    pod 'KeychainSwift', '~> 4.0'
+    pod 'KeychainSwift', '~> 5.0'
 
 
 ## Legacy Swift versions
