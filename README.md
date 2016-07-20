@@ -32,7 +32,7 @@ Keychain is a secure storage. You can store all kind of sensitive data in it: us
 
 There are three ways you can add KeychainSwift to your Xcode project.
 
-Note: Keychain currently does not work at all on iOS 10 / Xcode 8. Use iOS 9 from Xcode 8 instead.
+Note: Keychain currently [does not work](http://stackoverflow.com/questions/38456471/secitemadd-always-returns-error-34018-in-xcode-8-beta-3-in-ios-10-simulator) at all on iOS 10 / Xcode 8. Use iOS 9 with Xcode 8 instead.
 
 #### Add source (iOS 7+)
 
