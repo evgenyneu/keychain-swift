@@ -1,4 +1,3 @@
-import UIKit
 import XCTest
 
 class SynchronizableTests: XCTestCase {

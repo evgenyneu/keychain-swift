@@ -1,7 +1,6 @@
-import UIKit
 import XCTest
 
-class keychainTests: XCTestCase {
+class KeychainSwiftTests: XCTestCase {
   
   var obj: KeychainSwift!
   
@@ -103,18 +102,5 @@ class keychainTests: XCTestCase {
     obj.delete("key 1")
     
     XCTAssertEqual("hello two", obj.get("key 2")!)
-  }
-
-  // MARK: - Clear
-  // -----------------------
-
-  func testClear() {
-    obj.set("hello :)", forKey: "key 1")
-    obj.set("hello two", forKey: "key 2")
-    
-    obj.clear()
-    
-    XCTAssert(obj.get("key 1") == nil)
-    XCTAssert(obj.get("key 2") == nil)
   }
 }
