@@ -23,6 +23,10 @@
 		7E3A6B691D3F62CC007C5B1F /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98E1B1C128100FE8090 /* KeychainSwiftAccessOptions.swift */; };
 		7E3A6B6A1D3F62CC007C5B1F /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98F1B1C128100FE8090 /* TegKeychainConstants.swift */; };
 		7E3A6B6D1D3F6431007C5B1F /* ClearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3A6B6C1D3F6431007C5B1F /* ClearTests.swift */; };
+		7E3A6B711D3F66C0007C5B1F /* AccessGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E87495E1BDB83D00045CF75 /* AccessGroupTests.swift */; };
+		7E3A6B721D3F66C0007C5B1F /* KeychainSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C9941B1C12A200FE8090 /* KeychainSwiftTests.swift */; };
+		7E3A6B731D3F66C0007C5B1F /* KeychainSwiftPrefixedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E7C4C1B81A3EC00D1C3B9 /* KeychainSwiftPrefixedTests.swift */; };
+		7E3A6B741D3F66C0007C5B1F /* SynchronizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E282DD61CED212500B55133 /* SynchronizableTests.swift */; };
 		7E87495F1BDB83D00045CF75 /* AccessGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E87495E1BDB83D00045CF75 /* AccessGroupTests.swift */; };
 		7ED6C9721B1C118F00FE8090 /* KeychainSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED6C9711B1C118F00FE8090 /* KeychainSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7ED6C9781B1C118F00FE8090 /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED6C96C1B1C118F00FE8090 /* KeychainSwift.framework */; };
@@ -623,9 +627,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E3A6B631D3F62C2007C5B1F /* macOS_Tests.swift in Sources */,
+				7E3A6B711D3F66C0007C5B1F /* AccessGroupTests.swift in Sources */,
+				7E3A6B741D3F66C0007C5B1F /* SynchronizableTests.swift in Sources */,
 				7E3A6B691D3F62CC007C5B1F /* KeychainSwiftAccessOptions.swift in Sources */,
 				7E3A6B6A1D3F62CC007C5B1F /* TegKeychainConstants.swift in Sources */,
 				7E3A6B681D3F62CC007C5B1F /* KeychainSwift.swift in Sources */,
+				7E3A6B721D3F66C0007C5B1F /* KeychainSwiftTests.swift in Sources */,
+				7E3A6B731D3F66C0007C5B1F /* KeychainSwiftPrefixedTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
