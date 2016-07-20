@@ -14,16 +14,7 @@ class ViewController: UIViewController {
   let keychain = KeychainSwift()
   
   override func viewDidLoad() {
-    @IBOutlet weak var textField: NSTextField!
-    @IBOutlet weak var textField: NSTextField!
-    @IBOutlet weak var textField: NSTextField!
-    @IBOutlet weak var synchronizableButton: NSButton!
     super.viewDidLoad()
-    @IBOutlet weak var errorLabel: NSTextField!
-    @IBOutlet weak var errorLabel: NSTextField!
-    @IBOutlet weak var errorLabel: NSTextField!
-    @IBOutlet weak var synchronizableButton: NSButton!
-    @IBOutlet weak var sybchronizableButton: NSButton!
     
     updateValueLabel()
   }

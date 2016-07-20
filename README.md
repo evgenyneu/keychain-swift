@@ -126,6 +126,7 @@ Setting `synchronizable` property to `true` will add the item to other devices w
 
 Note that you do NOT need to enable iCloud or Keychain Sharing capabilities in your app's target for this feature to work.
 
+
 ```Swift
 // First device
 let keychain = KeychainSwift()
@@ -137,6 +138,8 @@ let keychain = KeychainSwift()
 keychain.synchronizable = true
 keychain.get("my key") // Returns "hello world"
 ```
+
+We could not get the Keychain synchronization work on macOS.
 
 
 <h3 id="keychain_access_groups">Sharing keychain items with other apps</h3>
