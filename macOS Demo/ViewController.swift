@@ -27,6 +27,7 @@ class ViewController: NSViewController {
     super.viewDidLoad()
 
     updateValueLabel()
+    errorLabel.stringValue = ""
   }
 
   override var representedObject: AnyObject? {

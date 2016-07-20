@@ -262,7 +262,7 @@ public class KeychainSwift {
   func addSynchronizableIfRequired(_ items: [String: NSObject], addingItems: Bool) -> [String: NSObject] {
     if !synchronizable { return items }
     var result: [String: NSObject] = items
-    result[KeychainSwiftConstants.attrSynchronizable] = kSecAttrSynchronizableAny //addingItems == true ? true : kSecAttrSynchronizableAny
+    result[KeychainSwiftConstants.attrSynchronizable] = addingItems == true ? true : kSecAttrSynchronizableAny
     return result
   }
 }
