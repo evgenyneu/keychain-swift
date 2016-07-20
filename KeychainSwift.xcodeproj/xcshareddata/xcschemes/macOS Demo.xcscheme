@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7ED6C96B1B1C118F00FE8090"
-               BuildableName = "KeychainSwift.framework"
-               BlueprintName = "KeychainSwift"
+               BlueprintIdentifier = "7E3A6B7A1D3F6779007C5B1F"
+               BuildableName = "macOS Demo.app"
+               BlueprintName = "macOS Demo"
                ReferencedContainer = "container:KeychainSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,23 +28,13 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7ED6C9761B1C118F00FE8090"
-               BuildableName = "KeychainSwiftTests.xctest"
-               BlueprintName = "KeychainSwiftTests"
-               ReferencedContainer = "container:KeychainSwift.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7ED6C96B1B1C118F00FE8090"
-            BuildableName = "KeychainSwift.framework"
-            BlueprintName = "KeychainSwift"
+            BlueprintIdentifier = "7E3A6B7A1D3F6779007C5B1F"
+            BuildableName = "macOS Demo.app"
+            BlueprintName = "macOS Demo"
             ReferencedContainer = "container:KeychainSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -61,15 +51,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7ED6C96B1B1C118F00FE8090"
-            BuildableName = "KeychainSwift.framework"
-            BlueprintName = "KeychainSwift"
+            BlueprintIdentifier = "7E3A6B7A1D3F6779007C5B1F"
+            BuildableName = "macOS Demo.app"
+            BlueprintName = "macOS Demo"
             ReferencedContainer = "container:KeychainSwift.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -79,15 +70,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7ED6C96B1B1C118F00FE8090"
-            BuildableName = "KeychainSwift.framework"
-            BlueprintName = "KeychainSwift"
+            BlueprintIdentifier = "7E3A6B7A1D3F6779007C5B1F"
+            BuildableName = "macOS Demo.app"
+            BlueprintName = "macOS Demo"
             ReferencedContainer = "container:KeychainSwift.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

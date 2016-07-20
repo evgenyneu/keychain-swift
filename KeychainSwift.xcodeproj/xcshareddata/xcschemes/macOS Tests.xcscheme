@@ -9,14 +9,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7ED6C96B1B1C118F00FE8090"
-               BuildableName = "KeychainSwift.framework"
-               BlueprintName = "KeychainSwift"
+               BlueprintIdentifier = "7E3A6B5F1D3F62C2007C5B1F"
+               BuildableName = "macOS Tests.xctest"
+               BlueprintName = "macOS Tests"
                ReferencedContainer = "container:KeychainSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,22 +32,13 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7ED6C9761B1C118F00FE8090"
-               BuildableName = "KeychainSwiftTests.xctest"
-               BlueprintName = "KeychainSwiftTests"
+               BlueprintIdentifier = "7E3A6B5F1D3F62C2007C5B1F"
+               BuildableName = "macOS Tests.xctest"
+               BlueprintName = "macOS Tests"
                ReferencedContainer = "container:KeychainSwift.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7ED6C96B1B1C118F00FE8090"
-            BuildableName = "KeychainSwift.framework"
-            BlueprintName = "KeychainSwift"
-            ReferencedContainer = "container:KeychainSwift.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -64,9 +55,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7ED6C96B1B1C118F00FE8090"
-            BuildableName = "KeychainSwift.framework"
-            BlueprintName = "KeychainSwift"
+            BlueprintIdentifier = "7E3A6B5F1D3F62C2007C5B1F"
+            BuildableName = "macOS Tests.xctest"
+            BlueprintName = "macOS Tests"
             ReferencedContainer = "container:KeychainSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +73,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7ED6C96B1B1C118F00FE8090"
-            BuildableName = "KeychainSwift.framework"
-            BlueprintName = "KeychainSwift"
+            BlueprintIdentifier = "7E3A6B5F1D3F62C2007C5B1F"
+            BuildableName = "macOS Tests.xctest"
+            BlueprintName = "macOS Tests"
             ReferencedContainer = "container:KeychainSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

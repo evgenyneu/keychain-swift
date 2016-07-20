@@ -20,20 +20,6 @@
                ReferencedContainer = "container:KeychainSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7ED6C9B01B1C133500FE8090"
-               BuildableName = "DemoTests.xctest"
-               BlueprintName = "DemoTests"
-               ReferencedContainer = "container:KeychainSwift.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -42,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7ED6C9B01B1C133500FE8090"
-               BuildableName = "DemoTests.xctest"
-               BlueprintName = "DemoTests"
-               ReferencedContainer = "container:KeychainSwift.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

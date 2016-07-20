@@ -43,6 +43,8 @@ public class KeychainSwift {
   Specifies whether the items can be synchronized with other devices through iCloud. Setting this property to true will
    add the item to other devices with the `set` method and obtain synchronizable items with the `get` command. Deleting synchronizable items will remove them from all devices. In order for keychain synchronization to work the user must enable "Keychain" in iCloud settings.
    
+  Does not work on macOS.
+   
   */
   public var synchronizable: Bool = false
   
