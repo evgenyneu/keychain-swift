@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7ED6C99C1B1C133500FE8090"
-               BuildableName = "Demo.app"
+               BuildableName = "Keychain Swift.app"
                BlueprintName = "Demo"
                ReferencedContainer = "container:KeychainSwift.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7ED6C99C1B1C133500FE8090"
-            BuildableName = "Demo.app"
+            BuildableName = "Keychain Swift.app"
             BlueprintName = "Demo"
             ReferencedContainer = "container:KeychainSwift.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7ED6C99C1B1C133500FE8090"
-            BuildableName = "Demo.app"
+            BuildableName = "Keychain Swift.app"
             BlueprintName = "Demo"
             ReferencedContainer = "container:KeychainSwift.xcodeproj">
          </BuildableReference>
@@ -99,7 +99,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7ED6C99C1B1C133500FE8090"
-            BuildableName = "Demo.app"
+            BuildableName = "Keychain Swift.app"
             BlueprintName = "Demo"
             ReferencedContainer = "container:KeychainSwift.xcodeproj">
          </BuildableReference>
