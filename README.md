@@ -68,9 +68,7 @@ Add `import KeychainSwift` to your source code if you used Carthage or CocoaPods
 
 ```Swift
 let keychain = KeychainSwift()
-
 keychain.set("hello world", forKey: "my key")
-
 keychain.get("my key")
 ```
 
@@ -79,9 +77,7 @@ keychain.get("my key")
 
 ```Swift
 let keychain = KeychainSwift()
-
 keychain.set(true, forKey: "my key")
-
 keychain.getBool("my key")
 ```
 
@@ -89,9 +85,7 @@ keychain.getBool("my key")
 
 ```Swift
 let keychain = KeychainSwift()
-
 keychain.set(dataObject, forKey: "my key")
-
 keychain.getData("my key")
 ```
 
@@ -99,7 +93,6 @@ keychain.getData("my key")
 
 ```Swift
 keychain.delete("my key") // Remove single key
-
 keychain.clear() // Delete everything from app's Keychain. Does not work on macOS.
 ```
 
