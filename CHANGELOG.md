@@ -1,5 +1,9 @@
 # KeychainSwift version history
 
+## 5.0.0 (2016-08-13)
+
+Update to Xcode 8 beta 4/5.
+
 ## 3.0.15 (2016-05-19)
 
 Added the ability to sychronize items on multiple devices (thank you, [mikaoj](https://github.com/mikaoj)).

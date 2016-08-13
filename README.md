@@ -7,7 +7,7 @@
 [cocoadocs]: http://cocoadocs.org/docsets/KeychainSwift
 [carthage]: https://github.com/Carthage/Carthage
 
-**Important**: KeychainSwift currently [does not work](http://stackoverflow.com/questions/38456471/secitemadd-always-returns-error-34018-in-xcode-8-beta-3-in-ios-10-simulator) at all on iOS 10 / Xcode 8. If you use Xcode 8 you will need to run your app in an iOS 9 simulator or device.
+**⚠️ Xcode 8 warning ⚠️**: Keychain currently does not work on iOS 10 / Xcode 8. To make it work please enable *Keychain Sharing* in *Capabilities* tab. See this [stackoverflow answer](http://stackoverflow.com/questions/38456471/secitemadd-always-returns-error-34018-in-xcode-8-beta-3-in-ios-10-simulator) for details.
 
 This is a collection of helper functions for saving text and data in the Keychain.
  As you probably noticed Apple's keychain API is a bit verbose. This library was designed to provide shorter syntax for accomplishing a simple task: reading/writing text values for specified keys:
@@ -40,7 +40,7 @@ Simply add [KeychainSwiftDistrib.swift](https://github.com/marketplacer/keychain
 
 #### Setup with Carthage (iOS 8+)
 
-Alternatively, add `github "marketplacer/keychain-swift" ~> 4.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "marketplacer/keychain-swift" ~> 5.0` to your Cartfile and run `carthage update`.
 
 #### Setup with CocoaPods (iOS 8+)
 
@@ -48,7 +48,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     target 'Your target name'
-    pod 'KeychainSwift', '~> 4.0'
+    pod 'KeychainSwift', git: 'https://github.com/marketplacer/keychain-swift.git', tag: '5.0.0'
 
 
 ## Legacy Swift versions
