@@ -23,7 +23,7 @@ A collection of helper functions for saving text and data in the keychain.
 */
 public class KeychainSwift {
   
-  var lastQueryParameters: [String: NSObject]? // Used by the unit tests
+  var lastQueryParameters: [String: Any]? // Used by the unit tests
   
   /// Contains result code from the last operation. Value is noErr (0) for a successful result.
   public var lastResultCode: OSStatus = noErr
@@ -103,7 +103,7 @@ public class KeychainSwift {
       
     let prefixedKey = keyWithPrefix(key)
       
-    var query: [String : NSObject] = [
+    var query: [String : Any] = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.valueData   : value,
@@ -172,7 +172,7 @@ public class KeychainSwift {
   public func getData(_ key: String) -> Data? {
     let prefixedKey = keyWithPrefix(key)
     
-    var query: [String: NSObject] = [
+    var query: [String: Any] = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.returnData  : kCFBooleanTrue,
@@ -185,8 +185,8 @@ public class KeychainSwift {
     
     var result: AnyObject?
     
-    lastResultCode = withUnsafeMutablePointer(&result) {
-      SecItemCopyMatching(query, UnsafeMutablePointer($0))
+    lastResultCode = withUnsafeMutablePointer(to: &result) {
+      SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
     }
     
     if lastResultCode == noErr { return result as? Data }
@@ -220,7 +220,7 @@ public class KeychainSwift {
   public func delete(_ key: String) -> Bool {
     let prefixedKey = keyWithPrefix(key)
 
-    var query: [String: NSObject] = [
+    var query: [String: Any] = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey
     ]
@@ -243,7 +243,7 @@ public class KeychainSwift {
   */
   @discardableResult
   public func clear() -> Bool {
-    var query: [String: NSObject] = [ kSecClass as String : kSecClassGenericPassword ]
+    var query: [String: Any] = [ kSecClass as String : kSecClassGenericPassword ]
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
     lastQueryParameters = query
@@ -258,10 +258,10 @@ public class KeychainSwift {
     return "\(keyPrefix)\(key)"
   }
   
-  func addAccessGroupWhenPresent(_ items: [String: NSObject]) -> [String: NSObject] {
+  func addAccessGroupWhenPresent(_ items: [String: Any]) -> [String: Any] {
     guard let accessGroup = accessGroup else { return items }
     
-    var result: [String: NSObject] = items
+    var result: [String: Any] = items
     result[KeychainSwiftConstants.accessGroup] = accessGroup
     return result
   }
@@ -276,9 +276,9 @@ public class KeychainSwift {
    - returns: the dictionary with kSecAttrSynchronizable item added if it was requested. Otherwise, it returns the original dictionary.
  
   */
-  func addSynchronizableIfRequired(_ items: [String: NSObject], addingItems: Bool) -> [String: NSObject] {
+  func addSynchronizableIfRequired(_ items: [String: Any], addingItems: Bool) -> [String: Any] {
     if !synchronizable { return items }
-    var result: [String: NSObject] = items
+    var result: [String: Any] = items
     result[KeychainSwiftConstants.attrSynchronizable] = addingItems == true ? true : kSecAttrSynchronizableAny
     return result
   }

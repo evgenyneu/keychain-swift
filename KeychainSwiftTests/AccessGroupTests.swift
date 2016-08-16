@@ -16,7 +16,7 @@ class AccessGroupTests: XCTestCase {
   // MARK: - Add access group
   
   func testAddAccessGroup() {
-    let items: [String: NSObject] = [
+    let items: [String: Any] = [
       "one": "two"
     ]
     
@@ -29,7 +29,7 @@ class AccessGroupTests: XCTestCase {
   }
   
   func testAddAccessGroup_nil() {
-    let items: [String: NSObject] = [
+    let items: [String: Any] = [
       "one": "two"
     ]
     

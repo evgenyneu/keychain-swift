@@ -16,7 +16,7 @@ class SynchronizableTests: XCTestCase {
   // MARK: - addSynchronizableIfRequired
   
   func testAddSynchronizableGroup_addItemsFalse() {
-    let items: [String: NSObject] = [
+    let items: [String: Any] = [
       "one": "two"
     ]
     
@@ -29,7 +29,7 @@ class SynchronizableTests: XCTestCase {
   }
   
   func testAddSynchronizableGroup_addItemsTrue() {
-    let items: [String: NSObject] = [
+    let items: [String: Any] = [
       "one": "two"
     ]
     
@@ -42,7 +42,7 @@ class SynchronizableTests: XCTestCase {
   }
   
   func testAddSynchronizableGroup_nil() {
-    let items: [String: NSObject] = [
+    let items: [String: Any] = [
       "one": "two"
     ]
     
