@@ -29,12 +29,12 @@ class ViewController: NSViewController {
     updateValueLabel()
     errorLabel.stringValue = ""
   }
-
-  override var representedObject: AnyObject? {
-    didSet {
-    // Update the view, if already loaded.
-    }
-  }
+	
+//  override var representedObject: Any? {
+//    didSet {
+//    // Update the view, if already loaded.
+//    }
+//  }
 
   @IBAction func onSaveTapped(_ sender: AnyObject) {
     keychain.synchronizable = synchronizableButton.state == NSOnState

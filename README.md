@@ -40,7 +40,7 @@ Simply add [KeychainSwiftDistrib.swift](https://github.com/marketplacer/keychain
 
 #### Setup with Carthage (iOS 8+)
 
-Alternatively, add `github "marketplacer/keychain-swift" ~> 5.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "marketplacer/keychain-swift" ~> 6.0` to your Cartfile and run `carthage update`.
 
 #### Setup with CocoaPods (iOS 8+)
 
@@ -48,7 +48,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     target 'Your target name'
-    pod 'KeychainSwift', git: 'https://github.com/marketplacer/keychain-swift.git', tag: '5.0.0'
+    pod 'KeychainSwift', git: 'https://github.com/marketplacer/keychain-swift.git', tag: '6.0.0'
 
 
 ## Legacy Swift versions
