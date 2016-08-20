@@ -24,8 +24,8 @@ class SynchronizableTests: XCTestCase {
     let result = obj.addSynchronizableIfRequired(items, addingItems: false)
     
     XCTAssertEqual(2, result.count)
-    XCTAssertEqual("two", result["one"])
-    XCTAssertEqual(kSecAttrSynchronizableAny, result["sync"])
+    XCTAssertEqual("two", result["one"] as! String)
+    XCTAssertEqual(kSecAttrSynchronizableAny as String, result["sync"] as! String)
   }
   
   func testAddSynchronizableGroup_addItemsTrue() {
@@ -37,8 +37,8 @@ class SynchronizableTests: XCTestCase {
     let result = obj.addSynchronizableIfRequired(items, addingItems: true)
     
     XCTAssertEqual(2, result.count)
-    XCTAssertEqual("two", result["one"])
-    XCTAssertEqual(true, result["sync"])
+    XCTAssertEqual("two", result["one"] as! String)
+    XCTAssertEqual(true, result["sync"] as! Bool)
   }
   
   func testAddSynchronizableGroup_nil() {
@@ -49,7 +49,7 @@ class SynchronizableTests: XCTestCase {
     let result = obj.addSynchronizableIfRequired(items, addingItems: false)
     
     XCTAssertEqual(1, result.count)
-    XCTAssertEqual("two", result["one"])
+    XCTAssertEqual("two", result["one"] as! String!)
   }
   
   // MARK: - Set
@@ -57,7 +57,7 @@ class SynchronizableTests: XCTestCase {
   func testSet() {
     obj.synchronizable = true
     obj.set("hello :)", forKey: "key 1")
-    XCTAssertEqual(true, obj.lastQueryParameters?["sync"])
+    XCTAssertEqual(true, obj.lastQueryParameters?["sync"] as! Bool)
   }
   
   func testSet_doNotSetSynchronizable() {
@@ -70,7 +70,7 @@ class SynchronizableTests: XCTestCase {
   func testGet() {
     obj.synchronizable = true
     _ = obj.get("key 1")
-    XCTAssertEqual(kSecAttrSynchronizableAny, obj.lastQueryParameters?["sync"])
+    XCTAssertEqual(kSecAttrSynchronizableAny as String, obj.lastQueryParameters?["sync"] as! String)
   }
   
   func testGet_doNotSetSynchronizable() {
@@ -83,7 +83,7 @@ class SynchronizableTests: XCTestCase {
   func testDelete() {
     obj.synchronizable = true
     obj.delete("key 1")
-    XCTAssertEqual(kSecAttrSynchronizableAny, obj.lastQueryParameters?["sync"])
+    XCTAssertEqual(kSecAttrSynchronizableAny as String, obj.lastQueryParameters?["sync"] as! String)
   }
   
   func testDelete_doNotSetSynchronizable() {
@@ -96,7 +96,7 @@ class SynchronizableTests: XCTestCase {
   func testClear() {
     obj.synchronizable = true
     obj.clear()
-    XCTAssertEqual(kSecAttrSynchronizableAny, obj.lastQueryParameters?["sync"])
+    XCTAssertEqual(kSecAttrSynchronizableAny as String, obj.lastQueryParameters?["sync"] as! String)
   }
   
   func testClear_doNotSetSynchronizable() {
