@@ -215,7 +215,7 @@ Here are some other Keychain libraries.
 * Thanks to [ezura](https://github.com/ezura) for iOS 7 support.
 * Thanks to [mikaoj](https://github.com/mikaoj) for adding keychain synchronization.
 * Thanks to [tcirwin](https://github.com/tcirwin) for adding Swift 3.0 support.
-
+* Thanks to [Tulleb](https://github.com/Tulleb) for adding Xcode 8 beta 6 support.
 
 
 ## License
