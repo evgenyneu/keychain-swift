@@ -1,5 +1,9 @@
 # KeychainSwift version history
 
+## 6.0.0 (2016-08-20)
+
+Update to Xcode 8 beta 6 (thanks, [Tulleb](https://github.com/Tulleb)).
+
 ## 5.0.0 (2016-08-13)
 
 Update to Xcode 8 beta 4/5.
