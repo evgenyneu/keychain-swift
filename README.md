@@ -48,7 +48,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     target 'Your target name'
-    pod 'KeychainSwift', git: 'https://github.com/marketplacer/keychain-swift.git', tag: '6.0.0'
+    pod 'KeychainSwift', '~> 6.0'
 
 
 ## Legacy Swift versions
