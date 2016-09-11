@@ -6,12 +6,12 @@ import Foundation
 A collection of helper functions for saving text and data in the keychain.
 
 */
-public class KeychainSwift {
+open class KeychainSwift {
   
   var lastQueryParameters: [String: Any]? // Used by the unit tests
   
   /// Contains result code from the last operation. Value is noErr (0) for a successful result.
-  public var lastResultCode: OSStatus = noErr
+  open var lastResultCode: OSStatus = noErr
 
   var keyPrefix = "" // Can be useful in test.
   
@@ -20,7 +20,7 @@ public class KeychainSwift {
   Specify an access group that will be used to access keychain items. Access groups can be used to share keychain items between applications. When access group value is nil all application access groups are being accessed. Access group name is used by all functions: set, get, delete and clear.
 
   */
-  public var accessGroup: String?
+  open var accessGroup: String?
   
   
   /**
@@ -31,7 +31,7 @@ public class KeychainSwift {
   Does not work on macOS.
    
   */
-  public var synchronizable: Bool = false
+  open var synchronizable: Bool = false
   
   /// Instantiate a KeychainSwift object
   public init() { }
@@ -57,7 +57,7 @@ public class KeychainSwift {
 
   */
   @discardableResult
-  public func set(_ value: String, forKey key: String,
+  open func set(_ value: String, forKey key: String,
                   withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
     
     if let value = value.data(using: String.Encoding.utf8) {
@@ -79,7 +79,7 @@ public class KeychainSwift {
   
   */
   @discardableResult
-  public func set(_ value: Data, forKey key: String,
+  open func set(_ value: Data, forKey key: String,
     withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
     
     delete(key) // Delete any existing key before saving it
@@ -116,7 +116,7 @@ public class KeychainSwift {
 
   */
   @discardableResult
-  public func set(_ value: Bool, forKey key: String,
+  open func set(_ value: Bool, forKey key: String,
     withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
   
     let bytes: [UInt8] = value ? [1] : [0]
@@ -133,7 +133,7 @@ public class KeychainSwift {
   - returns: The text value from the keychain. Returns nil if unable to read the item.
   
   */
-  public func get(_ key: String) -> String? {
+  open func get(_ key: String) -> String? {
     if let data = getData(key) {
       
       if let currentString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as? String {
@@ -154,7 +154,7 @@ public class KeychainSwift {
   - returns: The text value from the keychain. Returns nil if unable to read the item.
   
   */
-  public func getData(_ key: String) -> Data? {
+  open func getData(_ key: String) -> Data? {
     let prefixedKey = keyWithPrefix(key)
     
     var query: [String: Any] = [
@@ -187,7 +187,7 @@ public class KeychainSwift {
   - returns: The boolean value from the keychain. Returns nil if unable to read the item.
 
   */
-  public func getBool(_ key: String) -> Bool? {
+  open func getBool(_ key: String) -> Bool? {
     guard let data = getData(key) else { return nil }
     guard let firstBit = data.first else { return nil }
     return firstBit == 1
@@ -202,7 +202,7 @@ public class KeychainSwift {
   
   */
   @discardableResult
-  public func delete(_ key: String) -> Bool {
+  open func delete(_ key: String) -> Bool {
     let prefixedKey = keyWithPrefix(key)
 
     var query: [String: Any] = [
@@ -227,7 +227,7 @@ public class KeychainSwift {
   
   */
   @discardableResult
-  public func clear() -> Bool {
+  open func clear() -> Bool {
     var query: [String: Any] = [ kSecClass as String : kSecClassGenericPassword ]
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
