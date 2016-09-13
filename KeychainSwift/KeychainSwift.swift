@@ -212,7 +212,7 @@ open class KeychainSwift {
         
     if lastResultCode == noErr { return keys }
         
-    return keys
+    return nil
   }
 
   /**
