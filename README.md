@@ -199,9 +199,9 @@ It [has been reported](https://github.com/marketplacer/keychain-swift/issues/15)
 
 Xcode 8 introduced additional hoops that one needs to jump through in order to run the unit test:
 
-1. Enable signing in both your app and test target.
-1. Enable *Keychain Sharing* in the *Capabilities* tab of your app target.
-1. Select your as *Host Application* in the test target.
+1. Enable signing in both the demo app and the test target.
+1. Enable *Keychain Sharing* in the *Capabilities* tab of the demo app target.
+1. Select the demo app as *Host Application* in the test target.
 
 The process is shown in more details in [this article](http://evgenii.com/blog/testing-a-keychain-library-in-xcode/).
 
