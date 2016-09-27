@@ -178,6 +178,42 @@ open class KeychainSwift {
     
     return nil
   }
+    
+  /**
+     
+  Return all saved keys in Keychain
+     
+  - returns: The String array with saved keys
+     
+  */
+  open func getAllKeys() -> [String]? {
+        
+    var query: [String: Any] = [ kSecClass as String : kSecClassGenericPassword ]
+    query = addAccessGroupWhenPresent(query)
+    query = addSynchronizableIfRequired(query, addingItems: false)
+    query[kSecMatchLimit as String] = kSecMatchLimitAll
+    query[kSecReturnAttributes as String] = true
+    lastQueryParameters = query
+        
+    var result: AnyObject?
+    var keys = [String]()
+        
+    lastResultCode = withUnsafeMutablePointer(to: &result) {
+        SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
+    }
+        
+    if let items = result as? [[String: AnyObject]] {
+        for item in items {
+            if let key = item[String(kSecAttrAccount)] as? String {
+                keys.append(key)
+            }
+        }
+    }
+        
+    if lastResultCode == noErr { return keys }
+        
+    return nil
+  }
 
   /**
 
