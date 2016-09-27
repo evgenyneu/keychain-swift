@@ -22,6 +22,13 @@ open class KeychainSwift {
   */
   open var accessGroup: String?
   
+  /**
+  
+   Service name (shows up in Keychain Access)
+  
+  */
+  open var serviceName: String?
+  
   
   /**
    
@@ -97,6 +104,7 @@ open class KeychainSwift {
       
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: true)
+    query = addServiceNameWhenPresent(query)
     lastQueryParameters = query
     
     lastResultCode = SecItemAdd(query as CFDictionary, nil)
@@ -166,6 +174,7 @@ open class KeychainSwift {
     
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
+    query = addServiceNameWhenPresent(query)
     lastQueryParameters = query
     
     var result: AnyObject?
@@ -248,6 +257,14 @@ open class KeychainSwift {
     
     var result: [String: Any] = items
     result[KeychainSwiftConstants.accessGroup] = accessGroup
+    return result
+  }
+  
+  func addServiceNameWhenPresent(_ items: [String: Any]) -> [String: Any] {
+    guard let serviceName = serviceName else { return items }
+
+    var result: [String: Any] = items
+    result[KeychainSwiftConstants.serviceName] = serviceName
     return result
   }
   
