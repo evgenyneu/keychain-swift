@@ -51,6 +51,23 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
     pod 'KeychainSwift', '~> 6.0'
 
 
+#### Setup with Swift Package Manager
+
+Add the following text to your Package.swift file and run `swift build`.
+
+```Swift
+import PackageDescription
+
+let package = Package(
+    name: "KeychainSwift",
+    dependencies: [
+        .Package(url: "https://github.com/marketplacer/keychain-swift.git",
+                 versions: Version(7,0,0)..<Version(8,0,0))
+    ]
+)
+```
+
+
 ## Legacy Swift versions
 
 Setup a [previous version](https://github.com/marketplacer/keychain-swift/wiki/Legacy-Swift-versions) of the library if you use an older version of Swift.
@@ -220,6 +237,7 @@ Here are some other Keychain libraries.
 ## Thanks 👍
 
 * The code is based on this example: [https://gist.github.com/s-aska/e7ad24175fb7b04f78e7](https://gist.github.com/s-aska/e7ad24175fb7b04f78e7)
+* Thanks to [diogoguimaraes](https://github.com/diogoguimaraes) for adding Swift Package Manager setup option.
 * Thanks to [glyuck](https://github.com/glyuck) for taming booleans.
 * Thanks to [pepibumur](https://github.com/pepibumur) for adding macOS, watchOS and tvOS support.
 * Thanks to [ezura](https://github.com/ezura) for iOS 7 support.
