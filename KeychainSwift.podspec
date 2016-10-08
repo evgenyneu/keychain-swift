@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.authors     = { "Evgenii Neumerzhitckii" => "sausageskin@gmail.com" }
   s.source      = { :git => "https://github.com/marketplacer/keychain-swift.git", :tag => s.version }
   s.screenshots  = "https://raw.githubusercontent.com/marketplacer/keychain-swift/master/graphics/keychain-swift-demo-3.png"
-  s.source_files = "KeychainSwift/*.swift"
+  s.source_files = "Sources/*.swift"
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.10"
   s.watchos.deployment_target = "2.0"
