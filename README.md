@@ -40,7 +40,7 @@ Simply add [KeychainSwiftDistrib.swift](https://github.com/marketplacer/keychain
 
 #### Setup with Carthage (iOS 8+)
 
-Alternatively, add `github "marketplacer/keychain-swift" ~> 6.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "marketplacer/keychain-swift" ~> 7.0` to your Cartfile and run `carthage update`.
 
 #### Setup with CocoaPods (iOS 8+)
 
@@ -48,7 +48,24 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     target 'Your target name'
-    pod 'KeychainSwift', '~> 6.0'
+    pod 'KeychainSwift', '~> 7.0'
+
+
+#### Setup with Swift Package Manager
+
+Add the following text to your Package.swift file and run `swift build`.
+
+```Swift
+import PackageDescription
+
+let package = Package(
+    name: "KeychainSwift",
+    dependencies: [
+        .Package(url: "https://github.com/marketplacer/keychain-swift.git",
+                 versions: Version(7,0,0)..<Version(8,0,0))
+    ]
+)
+```
 
 
 ## Legacy Swift versions
@@ -220,6 +237,7 @@ Here are some other Keychain libraries.
 ## Thanks 👍
 
 * The code is based on this example: [https://gist.github.com/s-aska/e7ad24175fb7b04f78e7](https://gist.github.com/s-aska/e7ad24175fb7b04f78e7)
+* Thanks to [diogoguimaraes](https://github.com/diogoguimaraes) for adding Swift Package Manager setup option.
 * Thanks to [glyuck](https://github.com/glyuck) for taming booleans.
 * Thanks to [pepibumur](https://github.com/pepibumur) for adding macOS, watchOS and tvOS support.
 * Thanks to [ezura](https://github.com/ezura) for iOS 7 support.

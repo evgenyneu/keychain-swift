@@ -19,3 +19,7 @@ DerivedData
 .DS_Store
 Carthage/Checkouts
 Carthage/Build
+
+# Swift package manager
+.build/
+Packages/
