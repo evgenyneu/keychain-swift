@@ -79,7 +79,7 @@ Use [iOS 7 compatible](https://github.com/marketplacer/keychain-swift/blob/iOS7/
 
 <h2 id="usage">Usage</h2>
 
-Add `import KeychainSwift` to your source code if you used Carthage or CocoaPods setup methods.
+Add `import KeychainSwift` to your source code unless you used the file setup method.
 
 #### String values
 
