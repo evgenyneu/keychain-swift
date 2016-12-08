@@ -11,6 +11,8 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var synchronizableSwitch: UISwitch!
   
+  @IBOutlet weak var userPresenceSwitch: UISwitch!
+  
   let keychain = KeychainSwift()
   
   override func viewDidLoad() {
@@ -24,8 +26,10 @@ class ViewController: UIViewController {
     
     if let text = textField.text {
       keychain.synchronizable = synchronizableSwitch.isOn
-      keychain.set(text, forKey: TegKeychainDemo_keyName)
-      updateValueLabel()
+      let saved = keychain.set(text,
+                               forKey: TegKeychainDemo_keyName,
+                               withControlFlags: userPresenceSwitch.isOn ? .userPresence : nil)
+      updateValueLabel(withSaved: saved ? text : "Failed to save")
     }
   }
   
@@ -43,10 +47,15 @@ class ViewController: UIViewController {
     updateValueLabel()
   }
   
-  private func updateValueLabel() {
+  private func updateValueLabel(withSaved saved: String? = nil) {
+    guard saved == nil else {
+      valueLabel.text = "Saved: " + saved!
+      return
+    }
+    
     keychain.synchronizable = synchronizableSwitch.isOn
     
-    if let value = keychain.get(TegKeychainDemo_keyName) {
+    if let value = keychain.get(TegKeychainDemo_keyName, prompt: "Please, authenticate") {
       valueLabel.text = "In Keychain: \(value)"
     } else {
       valueLabel.text = "no value in keychain"

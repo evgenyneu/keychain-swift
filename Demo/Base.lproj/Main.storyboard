@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,6 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWK-Bu-8u4">
+                                <rect key="frame" x="102" y="184" width="171" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" title="Delete from Keychain">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -29,6 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4T-JG-Zbo">
+                                <rect key="frame" x="120" y="131" width="134" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" title="Save in Keychain">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,21 +43,27 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDv-PR-OK3">
+                                <rect key="frame" x="24" y="317" width="319" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hello World!" borderStyle="roundedRect" placeholder="Text to save in KeychainSwift" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xkp-Od-gCQ">
+                                <rect key="frame" x="16" y="54" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="w7p-LD-g9j"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="w7p-LD-g9j">
+                                <rect key="frame" x="243" y="225" width="51" height="31"/>
+                            </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Synchronizable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZ7-Ub-QmV">
+                                <rect key="frame" x="108" y="230" width="118" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QP7-SR-8QJ">
+                                <rect key="frame" x="114" y="264" width="147" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" title="Get from Keychain">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -61,24 +72,37 @@
                                     <action selector="onGetTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OdD-Mn-cTm"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Presence Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkE-IS-UjV">
+                                <rect key="frame" x="50" y="97" width="185" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f5y-33-IxW">
+                                <rect key="frame" x="243" y="92" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="QP7-SR-8QJ" firstAttribute="top" secondItem="w7p-LD-g9j" secondAttribute="bottom" constant="8" symbolic="YES" id="04r-bK-2ew"/>
                             <constraint firstItem="QP7-SR-8QJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Qi-WJ-pvW"/>
-                            <constraint firstItem="w7p-LD-g9j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="50" id="5De-mx-U8l"/>
-                            <constraint firstItem="w7p-LD-g9j" firstAttribute="top" secondItem="hWK-Bu-8u4" secondAttribute="bottom" constant="20" id="BMz-4l-Y3k"/>
+                            <constraint firstItem="w7p-LD-g9j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="80" id="5De-mx-U8l"/>
+                            <constraint firstItem="w7p-LD-g9j" firstAttribute="top" secondItem="hWK-Bu-8u4" secondAttribute="bottom" constant="8" symbolic="YES" id="BMz-4l-Y3k"/>
                             <constraint firstItem="NDv-PR-OK3" firstAttribute="top" secondItem="QP7-SR-8QJ" secondAttribute="bottom" constant="20" id="HOc-KB-LXB"/>
+                            <constraint firstItem="b4T-JG-Zbo" firstAttribute="top" secondItem="f5y-33-IxW" secondAttribute="bottom" constant="8" symbolic="YES" id="HUP-2U-TPp"/>
                             <constraint firstItem="pZ7-Ub-QmV" firstAttribute="centerY" secondItem="w7p-LD-g9j" secondAttribute="centerY" id="Iau-2m-FSy"/>
+                            <constraint firstItem="f5y-33-IxW" firstAttribute="leading" secondItem="OkE-IS-UjV" secondAttribute="trailing" constant="8" symbolic="YES" id="RjS-cV-l6d"/>
                             <constraint firstAttribute="centerX" secondItem="hWK-Bu-8u4" secondAttribute="centerX" id="VJ4-XC-zFq"/>
+                            <constraint firstItem="f5y-33-IxW" firstAttribute="leading" secondItem="w7p-LD-g9j" secondAttribute="leading" id="ZsB-Nk-fsa"/>
                             <constraint firstAttribute="centerX" secondItem="b4T-JG-Zbo" secondAttribute="centerX" id="cbI-es-jn6"/>
                             <constraint firstItem="NDv-PR-OK3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="f2v-aI-fuD"/>
-                            <constraint firstItem="QP7-SR-8QJ" firstAttribute="top" secondItem="w7p-LD-g9j" secondAttribute="bottom" constant="40" id="fPe-Dn-3wy"/>
-                            <constraint firstItem="b4T-JG-Zbo" firstAttribute="top" secondItem="xkp-Od-gCQ" secondAttribute="bottom" constant="24" id="hTO-Zq-9F4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xkp-Od-gCQ" secondAttribute="trailing" id="jW7-wf-Lg2"/>
+                            <constraint firstItem="f5y-33-IxW" firstAttribute="top" secondItem="xkp-Od-gCQ" secondAttribute="bottom" constant="8" symbolic="YES" id="kYK-9H-hDf"/>
                             <constraint firstItem="hWK-Bu-8u4" firstAttribute="top" secondItem="b4T-JG-Zbo" secondAttribute="bottom" constant="20" id="oVb-ZZ-R8a"/>
                             <constraint firstItem="w7p-LD-g9j" firstAttribute="leading" secondItem="pZ7-Ub-QmV" secondAttribute="trailing" constant="17" id="rR7-DW-fh2"/>
                             <constraint firstItem="xkp-Od-gCQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="sBp-QB-I3r"/>
+                            <constraint firstItem="f5y-33-IxW" firstAttribute="centerY" secondItem="OkE-IS-UjV" secondAttribute="centerY" id="uvq-97-TaP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NDv-PR-OK3" secondAttribute="trailing" constant="16" id="vAI-Yb-Kci"/>
                             <constraint firstItem="xkp-Od-gCQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="zhk-dr-xC7"/>
                         </constraints>
@@ -89,6 +113,7 @@
                     <connections>
                         <outlet property="synchronizableSwitch" destination="w7p-LD-g9j" id="xKt-Tv-MBN"/>
                         <outlet property="textField" destination="xkp-Od-gCQ" id="lld-hT-WbW"/>
+                        <outlet property="userPresenceSwitch" destination="f5y-33-IxW" id="FjC-Ip-COI"/>
                         <outlet property="valueLabel" destination="NDv-PR-OK3" id="O2G-6d-xCJ"/>
                     </connections>
                 </viewController>
