@@ -67,16 +67,18 @@ open class KeychainSwift {
   - parameter key: Key under which the text value is stored in the keychain.
   - parameter value: Text string to be written to the keychain.
   - parameter withAccess: Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
-   
-   - returns: True if the text was successfully written to the keychain.
+  - parameter withControlFlags: SecAccessControlCreateFlags that identifies access control object constraint or policy.
+     
+  - returns: True if the text was successfully written to the keychain.
 
   */
   @discardableResult
   open func set(_ value: String, forKey key: String,
-                  withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+                withAccess access: KeychainSwiftAccessOptions? = nil,
+                withControlFlags flags: SecAccessControlCreateFlags? = nil) -> Bool {
     
     if let value = value.data(using: String.Encoding.utf8) {
-      return set(value, forKey: key, withAccess: access)
+      return set(value, forKey: key, withAccess: access, withControlFlags: flags)
     }
     
     return false
@@ -89,27 +91,28 @@ open class KeychainSwift {
   - parameter key: Key under which the data is stored in the keychain.
   - parameter value: Data to be written to the keychain.
   - parameter withAccess: Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
-  
+  - parameter withControlFlags: SecAccessControlCreateFlags that identifies access control object constraint or policy.
+     
   - returns: True if the text was successfully written to the keychain.
   
   */
   @discardableResult
   open func set(_ value: Data, forKey key: String,
-    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+                withAccess access: KeychainSwiftAccessOptions? = nil,
+                withControlFlags flags: SecAccessControlCreateFlags? = nil) -> Bool {
     
     delete(key) // Delete any existing key before saving it
 
-    let accessible = access?.value ?? KeychainSwiftAccessOptions.defaultOption.value
+    let accessible = access ?? KeychainSwiftAccessOptions.defaultOption
       
     let prefixedKey = keyWithPrefix(key)
       
     var query: [String : Any] = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
-      KeychainSwiftConstants.valueData   : value,
-      KeychainSwiftConstants.accessible  : accessible
+      KeychainSwiftConstants.valueData   : value
     ]
-      
+    query = addAccessible(accessible, withControl: flags, to: query)
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: true)
     lastQueryParameters = query
@@ -118,7 +121,7 @@ open class KeychainSwift {
     
     return lastResultCode == noErr
   }
-
+  
   /**
 
   Stores the boolean value in the keychain item under the given key.
@@ -126,18 +129,20 @@ open class KeychainSwift {
   - parameter key: Key under which the value is stored in the keychain.
   - parameter value: Boolean to be written to the keychain.
   - parameter withAccess: Value that indicates when your app needs access to the value in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
-
+  - parameter withControlFlags: SecAccessControlCreateFlags that identifies access control object constraint or policy.
+     
   - returns: True if the value was successfully written to the keychain.
 
   */
   @discardableResult
   open func set(_ value: Bool, forKey key: String,
-    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+                withAccess access: KeychainSwiftAccessOptions? = nil,
+                withControlFlags flags: SecAccessControlCreateFlags? = nil) -> Bool {
   
     let bytes: [UInt8] = value ? [1] : [0]
     let data = Data(bytes: bytes)
 
-    return set(data, forKey: key, withAccess: access)
+    return set(data, forKey: key, withAccess: access, withControlFlags: flags)
   }
 
   /**
@@ -145,11 +150,13 @@ open class KeychainSwift {
   Retrieves the text value from the keychain that corresponds to the given key.
   
   - parameter key: The key that is used to read the keychain item.
+  - parameter prompt: String describing the operation for which the app is attempting to authenticate. When performing user authentication, the system includes the string in the user prompt. The app is responsible for text localization.
+  
   - returns: The text value from the keychain. Returns nil if unable to read the item.
   
   */
-  open func get(_ key: String) -> String? {
-    if let data = getData(key) {
+  open func get(_ key: String, prompt: String?=nil) -> String? {
+    if let data = getData(key, prompt: prompt) {
       
       if let currentString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as? String {
         return currentString
@@ -166,10 +173,12 @@ open class KeychainSwift {
   Retrieves the data from the keychain that corresponds to the given key.
   
   - parameter key: The key that is used to read the keychain item.
+  - parameter prompt: String describing the operation for which the app is attempting to authenticate. When performing user authentication, the system includes the string in the user prompt. The app is responsible for text localization.
+   
   - returns: The text value from the keychain. Returns nil if unable to read the item.
   
   */
-  open func getData(_ key: String) -> Data? {
+  open func getData(_ key: String, prompt: String?=nil) -> Data? {
     let prefixedKey = keyWithPrefix(key)
     
     var query: [String: Any] = [
@@ -178,7 +187,7 @@ open class KeychainSwift {
       KeychainSwiftConstants.returnData  : kCFBooleanTrue,
       KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne
     ]
-    
+    query = addPromptIfProvided(query, prompt: prompt)
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
     lastQueryParameters = query
@@ -199,11 +208,13 @@ open class KeychainSwift {
   Retrieves the boolean value from the keychain that corresponds to the given key.
 
   - parameter key: The key that is used to read the keychain item.
+  - parameter prompt: String describing the operation for which the app is attempting to authenticate. When performing user authentication, the system includes the string in the user prompt. The app is responsible for text localization.
+   
   - returns: The boolean value from the keychain. Returns nil if unable to read the item.
 
   */
-  open func getBool(_ key: String) -> Bool? {
-    guard let data = getData(key) else { return nil }
+  open func getBool(_ key: String, prompt: String?=nil) -> Bool? {
+    guard let data = getData(key, prompt: prompt) else { return nil }
     guard let firstBit = data.first else { return nil }
     return firstBit == 1
   }
@@ -280,6 +291,51 @@ open class KeychainSwift {
     if !synchronizable { return items }
     var result: [String: Any] = items
     result[KeychainSwiftConstants.attrSynchronizable] = addingItems == true ? true : kSecAttrSynchronizableAny
+    return result
+  }
+  
+  /**
+ 
+  Adds `kSecAttrAccessControl` if flags are provided or kSecAttrAccessible if not.
+   
+   - parameter flags: `SecAccessControlCreateFlags` stands for access control flags. If not provided, `access control` item will not be included into dictionary, but `accessible` item will be.
+   - parameter items: The dictionary where the `kSecAttrAccessControl` or `kSecAttrAccessible` items will be added.
+   
+   - returns: the dictionary with `kSecAttrAccessControl` or `kSecAttrAccessible` item depending on wheather flags were profided.
+   
+  */
+  func addAccessible(_ accessible: KeychainSwiftAccessOptions,
+                             withControl flags: SecAccessControlCreateFlags?,
+                             to items: [String : Any]) -> [String : Any] {
+    var result: [String: Any] = items
+    
+    if let flags = flags, let accessControl = SecAccessControlCreateWithFlags(kCFAllocatorDefault,
+                                                                              accessible.rawValue,
+                                                                              flags,
+                                                                              nil) {
+      result[KeychainSwiftConstants.accessControl] = accessControl
+    } else {
+      result[KeychainSwiftConstants.accessible] = accessible.value
+    }
+    
+    return result
+  }
+  
+  /**
+   
+   Adds `kSecUseOperationPrompt` if provided.
+   
+   - parameter prompt: String describing the operation for which the app is attempting to authenticate. When performing user authentication, the system includes the string in the user prompt. The app is responsible for text localization.
+   - parameter items: The dictionary where the `kSecAttrAccessControl` or `kSecAttrAccessible` items will be added.
+   
+   - returns: the dictionary with `kSecUseOperationPrompt` if provided. Otherwise, it returns the original dictionary.
+   
+   */
+  func addPromptIfProvided(_ items: [String : Any], prompt: String?) -> [String : Any] {
+    guard let prompt = prompt else { return items }
+    
+    var result: [String: Any] = items
+    result[KeychainSwiftConstants.prompt] = prompt
     return result
   }
 }
@@ -370,27 +426,31 @@ public enum KeychainSwiftAccessOptions {
   }
   
   var value: String {
+    return toString(self.rawValue)
+  }
+  
+  var rawValue : CFString {
     switch self {
     case .accessibleWhenUnlocked:
-      return toString(kSecAttrAccessibleWhenUnlocked)
+      return kSecAttrAccessibleWhenUnlocked
       
     case .accessibleWhenUnlockedThisDeviceOnly:
-      return toString(kSecAttrAccessibleWhenUnlockedThisDeviceOnly)
+      return kSecAttrAccessibleWhenUnlockedThisDeviceOnly
       
     case .accessibleAfterFirstUnlock:
-      return toString(kSecAttrAccessibleAfterFirstUnlock)
+      return kSecAttrAccessibleAfterFirstUnlock
       
     case .accessibleAfterFirstUnlockThisDeviceOnly:
-      return toString(kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly)
+      return kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
       
     case .accessibleAlways:
-      return toString(kSecAttrAccessibleAlways)
+      return kSecAttrAccessibleAlways
       
     case .accessibleWhenPasscodeSetThisDeviceOnly:
-      return toString(kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly)
+      return kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly
       
     case .accessibleAlwaysThisDeviceOnly:
-      return toString(kSecAttrAccessibleAlwaysThisDeviceOnly)
+      return kSecAttrAccessibleAlwaysThisDeviceOnly
     }
   }
   
@@ -421,6 +481,9 @@ public struct KeychainSwiftConstants {
    */
   public static var accessible: String { return toString(kSecAttrAccessible) }
   
+  /// Used for specifing access control policy or constraint
+  public static var accessControl: String { return toString(kSecAttrAccessControl) }
+  
   /// Used for specifying a String key when setting/getting a Keychain value.
   public static var attrAccount: String { return toString(kSecAttrAccount) }
 
@@ -438,6 +501,9 @@ public struct KeychainSwiftConstants {
   
   /// Used for specifying a value when setting a Keychain value.
   public static var valueData: String { return toString(kSecValueData) }
+  
+  /// Used for specifying a string describing the operation for which the app is attempting to authenticate.
+  public static var prompt: String { return toString(kSecUseOperationPrompt) }
   
   static func toString(_ value: CFString) -> String {
     return value as String

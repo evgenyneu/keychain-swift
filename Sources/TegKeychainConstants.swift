@@ -13,6 +13,9 @@ public struct KeychainSwiftConstants {
    */
   public static var accessible: String { return toString(kSecAttrAccessible) }
   
+  /// Used for specifing access control policy or constraint
+  public static var accessControl: String { return toString(kSecAttrAccessControl) }
+  
   /// Used for specifying a String key when setting/getting a Keychain value.
   public static var attrAccount: String { return toString(kSecAttrAccount) }
 
@@ -30,6 +33,9 @@ public struct KeychainSwiftConstants {
   
   /// Used for specifying a value when setting a Keychain value.
   public static var valueData: String { return toString(kSecValueData) }
+  
+  /// Used for specifying a string describing the operation for which the app is attempting to authenticate.
+  public static var prompt: String { return toString(kSecUseOperationPrompt) }
   
   static func toString(_ value: CFString) -> String {
     return value as String

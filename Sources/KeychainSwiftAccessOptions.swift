@@ -77,27 +77,31 @@ public enum KeychainSwiftAccessOptions {
   }
   
   var value: String {
+    return toString(self.rawValue)
+  }
+  
+  var rawValue : CFString {
     switch self {
     case .accessibleWhenUnlocked:
-      return toString(kSecAttrAccessibleWhenUnlocked)
+      return kSecAttrAccessibleWhenUnlocked
       
     case .accessibleWhenUnlockedThisDeviceOnly:
-      return toString(kSecAttrAccessibleWhenUnlockedThisDeviceOnly)
+      return kSecAttrAccessibleWhenUnlockedThisDeviceOnly
       
     case .accessibleAfterFirstUnlock:
-      return toString(kSecAttrAccessibleAfterFirstUnlock)
+      return kSecAttrAccessibleAfterFirstUnlock
       
     case .accessibleAfterFirstUnlockThisDeviceOnly:
-      return toString(kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly)
+      return kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
       
     case .accessibleAlways:
-      return toString(kSecAttrAccessibleAlways)
+      return kSecAttrAccessibleAlways
       
     case .accessibleWhenPasscodeSetThisDeviceOnly:
-      return toString(kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly)
+      return kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly
       
     case .accessibleAlwaysThisDeviceOnly:
-      return toString(kSecAttrAccessibleAlwaysThisDeviceOnly)
+      return kSecAttrAccessibleAlwaysThisDeviceOnly
     }
   }
   
