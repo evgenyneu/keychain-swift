@@ -252,7 +252,7 @@ Before submitting a pull request please note that this library is not a full fea
 
 ## Feedback is welcome
 
-If you notice any issue, got stuck or just want to chat feel free to create an issue. I will be happy to help you. 
+If you notice any issue, got stuck or just want to chat feel free to create an issue. We will be happy to help you. 
 
 ## License
 
