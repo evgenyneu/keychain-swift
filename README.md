@@ -245,13 +245,14 @@ Here are some other Keychain libraries.
 * Thanks to [tcirwin](https://github.com/tcirwin) for adding Swift 3.0 support.
 * Thanks to [Tulleb](https://github.com/Tulleb) for adding Xcode 8 beta 6 support.
 
-## Feedback is welcome
-
-If you notice any issue, got stuck or just want to chat feel free to create an issue. I will be happy to help you. 
 
 ## Submitting a pull request
 
 Before submitting a pull request please note that this library is not a full featured wrapper around Keychain API. The purpose of this project is to do few things and do them well. There are many excellent [alternative solutions](#alternative-solutions) that provide additional features to people who need them. This project, in contrast, is a single-purpose tool and sacrifices functionality in favor of the ease of use.
+
+## Feedback is welcome
+
+If you notice any issue, got stuck or just want to chat feel free to create an issue. I will be happy to help you. 
 
 ## License
 
