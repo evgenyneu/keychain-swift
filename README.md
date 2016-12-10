@@ -251,7 +251,7 @@ If you notice any issue, got stuck or just want to chat feel free to create an i
 
 ## Submitting a pull request
 
-Before submitting a pull request please note that this library is not a full featured wrapper around Keychain API. The purpose of this project is to do few things and do them well. There are many [excellent alternative](https://github.com/marketplacer/keychain-swift#alternative-solutions) libraries that provide additional features to people who need them. This project, in contrast, is a single-purpose tool and sacrifices functionality in favor of the ease of use.
+Before submitting a pull request please note that this library is not a full featured wrapper around Keychain API. The purpose of this project is to do few things and do them well. There are many [excellent alternative](#alternative-solutions) libraries that provide additional features to people who need them. This project, in contrast, is a single-purpose tool and sacrifices functionality in favor of the ease of use.
 
 ## License
 
