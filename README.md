@@ -204,6 +204,10 @@ keychain.set("hello world", forKey: "my key")
 if keychain.lastResultCode != noErr { /* Report error */ }
 ```
 
+## Using KeychainSwift from Objective-C
+
+[This manual](https://github.com/evgenyneu/Auk/wiki/Using-Auk-in-Objective-C-project) describes how to use KeychainSwift in Objective-C apps.
+
 ## Known serious issue
 
 It [has been reported](https://github.com/marketplacer/keychain-swift/issues/15) that the library sometimes returns `nil`  instead of the stored Keychain value. The issue seems to be random and hard to reproduce. It may be connected with [the Keychain issue](https://forums.developer.apple.com/thread/4743) reported on Apple developer forums. If you experienced this problem feel free to create an issue so we can discuss it and find solutions.

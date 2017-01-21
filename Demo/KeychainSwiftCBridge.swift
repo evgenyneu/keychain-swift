@@ -1,3 +1,7 @@
+import Security
+import Foundation
+import KeychainSwift // You might need to remove these imports in your project
+
 /**
  
  This file can be used in your ObjC project if you want to use KeychainSwift Swift library.
@@ -18,6 +22,8 @@
  KeychainSwiftCBridge *keychain = [[KeychainSwiftCBridge alloc] init];
  [keychain set:@"Hello World" forKey:@"my key"];
  NSString *value = [keychain get:@"my key"];
+ 
+ 3. You might need to remove `import KeychainSwift` import from this file in your project.
  
  */
 @objc public class KeychainSwiftCBridge: NSObject {
