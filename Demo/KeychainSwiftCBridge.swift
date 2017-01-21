@@ -25,7 +25,7 @@ import KeychainSwift // You might need to remove this import in your project
  
  3. You might need to remove `import KeychainSwift` import from this file in your project.
  
- */
+*/
 @objc public class KeychainSwiftCBridge: NSObject {
   let keychain = KeychainSwift()
   
@@ -51,13 +51,11 @@ import KeychainSwift // You might need to remove this import in your project
   
   @discardableResult
   open func setData(_ value: Data, forKey key: String) -> Bool {
-    
     return keychain.set(value, forKey: key)
   }
   
   @discardableResult
   open func setBool(_ value: Bool, forKey key: String) -> Bool {
-    
     return keychain.set(value, forKey: key)
   }
   
