@@ -61,6 +61,13 @@
 			remoteGlobalIDString = 232B4C791BC29950001F2B7A;
 			remoteInfo = "KeychainSwift-macOS";
 		};
+		7EC243561E3301D600C771BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7ED6C9631B1C118F00FE8090 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7ED6C99C1B1C133500FE8090;
+			remoteInfo = Demo;
+		};
 		7ED6C9791B1C118F00FE8090 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7ED6C9631B1C118F00FE8090 /* Project object */;
@@ -518,6 +525,7 @@
 			);
 			dependencies = (
 				7ED6C97A1B1C118F00FE8090 /* PBXTargetDependency */,
+				7EC243571E3301D600C771BE /* PBXTargetDependency */,
 			);
 			name = KeychainSwiftTests;
 			productName = KeychainSwiftTests;
@@ -586,6 +594,7 @@
 					7ED6C9761B1C118F00FE8090 = {
 						CreatedOnToolsVersion = 6.4;
 						ProvisioningStyle = Manual;
+						TestTargetID = 7ED6C99C1B1C133500FE8090;
 					};
 					7ED6C99C1B1C133500FE8090 = {
 						CreatedOnToolsVersion = 6.4;
@@ -780,6 +789,11 @@
 			isa = PBXTargetDependency;
 			target = 232B4C791BC29950001F2B7A /* KeychainSwift-macOS */;
 			targetProxy = 7E3A6B8C1D3F67B1007C5B1F /* PBXContainerItemProxy */;
+		};
+		7EC243571E3301D600C771BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7ED6C99C1B1C133500FE8090 /* Demo */;
+			targetProxy = 7EC243561E3301D600C771BE /* PBXContainerItemProxy */;
 		};
 		7ED6C97A1B1C118F00FE8090 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1212,6 +1226,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Tests/KeychainSwiftTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Keychain Swift.app/Keychain Swift";
 			};
 			name = Debug;
 		};
@@ -1227,6 +1242,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Tests/KeychainSwiftTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Keychain Swift.app/Keychain Swift";
 			};
 			name = Release;
 		};
