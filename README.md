@@ -206,7 +206,7 @@ if keychain.lastResultCode != noErr { /* Report error */ }
 
 ## Using KeychainSwift from Objective-C
 
-[This manual](https://github.com/evgenyneu/Auk/wiki/Using-Auk-in-Objective-C-project) describes how to use KeychainSwift in Objective-C apps.
+[This manual](https://github.com/marketplacer/keychain-swift/wiki/Using-KeychainSwift-in-Objective-C-project) describes how to use KeychainSwift in Objective-C apps.
 
 ## Known serious issue
 
