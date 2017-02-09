@@ -32,6 +32,8 @@ open class KeychainSwift {
    
   */
   open var synchronizable: Bool = false
+
+  private let readLock = NSLock()
   
   /// Instantiate a KeychainSwift object
   public init() { }
@@ -155,6 +157,8 @@ open class KeychainSwift {
   
   */
   open func getData(_ key: String) -> Data? {
+    readLock.lock()
+    defer { readLock.unlock() }
     let prefixedKey = keyWithPrefix(key)
     
     var query: [String: Any] = [
