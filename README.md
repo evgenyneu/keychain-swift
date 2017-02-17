@@ -127,7 +127,7 @@ KeychainSwift().set("Hello world", forKey: "key 1", withAccess: .accessibleWhenU
 
 You can use `.accessibleAfterFirstUnlock` if you need your app to access the keychain item while in the background. Note that it is less secure than the `.accessibleWhenUnlocked` option.
 
-See the list of all available [access options](https://github.com/marketplacer/keychain-swift/blob/master/KeychainSwift/KeychainSwiftAccessOptions.swift).
+See the list of all available [access options](https://github.com/marketplacer/keychain-swift/blob/master/Sources/KeychainSwiftAccessOptions.swift).
 
 
 <h3 id="keychain_synchronization">Synchronizing keychain items with other devices</h3>
