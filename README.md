@@ -5,8 +5,6 @@
 [![License](https://img.shields.io/cocoapods/l/KeychainSwift.svg?style=flat)](http://cocoadocs.org/docsets/KeychainSwift)
 [![Platform](https://img.shields.io/cocoapods/p/KeychainSwift.svg?style=flat)](http://cocoadocs.org/docsets/KeychainSwift)
 
-**⚠️ Xcode 8 warning ⚠️**: Keychain currently does not work in iOS 10 simulator in Xcode 8.0/8.1 unless *Keychain Sharing* is enabled in *Capabilities* tab. See this [stackoverflow answer](http://stackoverflow.com/a/38543243/297131) for details. This issue has been fixed in Xcode 8.2.
-
 This is a collection of helper functions for saving text and data in the Keychain.
  As you probably noticed Apple's keychain API is a bit verbose. This library was designed to provide shorter syntax for accomplishing a simple task: reading/writing text values for specified keys:
 
