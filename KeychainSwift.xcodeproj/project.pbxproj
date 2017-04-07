@@ -11,14 +11,12 @@
 		0961A40C1E894421007958F6 /* AccessGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4011E894421007958F6 /* AccessGroupTests.swift */; };
 		0961A40D1E894421007958F6 /* ClearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4021E894421007958F6 /* ClearTests.swift */; };
 		0961A40E1E894421007958F6 /* ClearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4021E894421007958F6 /* ClearTests.swift */; };
-		0961A40F1E894421007958F6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0961A4031E894421007958F6 /* Info.plist */; };
 		0961A4101E894421007958F6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0961A4031E894421007958F6 /* Info.plist */; };
 		0961A4111E894421007958F6 /* KeychainSwiftPrefixedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4041E894421007958F6 /* KeychainSwiftPrefixedTests.swift */; };
 		0961A4121E894421007958F6 /* KeychainSwiftPrefixedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4041E894421007958F6 /* KeychainSwiftPrefixedTests.swift */; };
 		0961A4131E894421007958F6 /* KeychainSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4061E894421007958F6 /* KeychainSwiftTests.swift */; };
 		0961A4141E894421007958F6 /* KeychainSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4061E894421007958F6 /* KeychainSwiftTests.swift */; };
 		0961A4151E894421007958F6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0961A4081E894421007958F6 /* Info.plist */; };
-		0961A4161E894421007958F6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0961A4081E894421007958F6 /* Info.plist */; };
 		0961A4171E894421007958F6 /* macOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4091E894421007958F6 /* macOS_Tests.swift */; };
 		0961A4181E894421007958F6 /* macOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4091E894421007958F6 /* macOS_Tests.swift */; };
 		0961A4191E894421007958F6 /* SynchronizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A40A1E894421007958F6 /* SynchronizableTests.swift */; };
@@ -557,7 +555,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Marketplacer;
 				TargetAttributes = {
 					232B4C791BC29950001F2B7A = {
@@ -653,7 +651,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0961A4161E894421007958F6 /* Info.plist in Resources */,
 				0961A4101E894421007958F6 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -679,7 +676,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0961A4151E894421007958F6 /* Info.plist in Resources */,
-				0961A40F1E894421007958F6 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
