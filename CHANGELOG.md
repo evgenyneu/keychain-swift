@@ -1,5 +1,9 @@
 # KeychainSwift version history
 
+## 8.0.3 (2017-04-08)
+
+Fixed Package Manager setup ([maxkramerbcgdv](https://github.com/maxkramerbcgdv)).
+
 ## 8.0.0 (2017-04-08)
 
 Added Swif 3.1 support ([CraigSiemens](https://github.com/CraigSiemens)).

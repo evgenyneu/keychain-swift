@@ -245,6 +245,7 @@ Here are some other Keychain libraries.
 * Thanks to [tcirwin](https://github.com/tcirwin) for adding Swift 3.0 support.
 * Thanks to [Tulleb](https://github.com/Tulleb) for adding Xcode 8 beta 6 support.
 * Thanks to [CraigSiemens](https://github.com/CraigSiemens) for adding Swift 3.1 support.
+* Thanks to [maxkramerbcgdv](https://github.com/maxkramerbcgdv) for fixing Package Manager setup in Xcode 8.2.
 
 
 ## Submitting a pull request
