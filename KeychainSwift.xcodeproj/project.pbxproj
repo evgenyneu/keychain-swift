@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0961A40B1E894421007958F6 /* AccessGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4011E894421007958F6 /* AccessGroupTests.swift */; };
+		0961A40C1E894421007958F6 /* AccessGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4011E894421007958F6 /* AccessGroupTests.swift */; };
+		0961A40D1E894421007958F6 /* ClearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4021E894421007958F6 /* ClearTests.swift */; };
+		0961A40E1E894421007958F6 /* ClearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4021E894421007958F6 /* ClearTests.swift */; };
+		0961A40F1E894421007958F6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0961A4031E894421007958F6 /* Info.plist */; };
+		0961A4101E894421007958F6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0961A4031E894421007958F6 /* Info.plist */; };
+		0961A4111E894421007958F6 /* KeychainSwiftPrefixedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4041E894421007958F6 /* KeychainSwiftPrefixedTests.swift */; };
+		0961A4121E894421007958F6 /* KeychainSwiftPrefixedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4041E894421007958F6 /* KeychainSwiftPrefixedTests.swift */; };
+		0961A4131E894421007958F6 /* KeychainSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4061E894421007958F6 /* KeychainSwiftTests.swift */; };
+		0961A4141E894421007958F6 /* KeychainSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4061E894421007958F6 /* KeychainSwiftTests.swift */; };
+		0961A4151E894421007958F6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0961A4081E894421007958F6 /* Info.plist */; };
+		0961A4161E894421007958F6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0961A4081E894421007958F6 /* Info.plist */; };
+		0961A4171E894421007958F6 /* macOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4091E894421007958F6 /* macOS_Tests.swift */; };
+		0961A4181E894421007958F6 /* macOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A4091E894421007958F6 /* macOS_Tests.swift */; };
+		0961A4191E894421007958F6 /* SynchronizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A40A1E894421007958F6 /* SynchronizableTests.swift */; };
+		0961A41A1E894421007958F6 /* SynchronizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0961A40A1E894421007958F6 /* SynchronizableTests.swift */; };
 		232B4C821BC2995D001F2B7A /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98D1B1C128100FE8090 /* KeychainSwift.swift */; };
 		232B4C831BC2995D001F2B7A /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98E1B1C128100FE8090 /* KeychainSwiftAccessOptions.swift */; };
 		232B4C841BC2995D001F2B7A /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98F1B1C128100FE8090 /* TegKeychainConstants.swift */; };
@@ -16,30 +32,20 @@
 		23E785681BDA415000B7564A /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98D1B1C128100FE8090 /* KeychainSwift.swift */; };
 		23E785691BDA415000B7564A /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98E1B1C128100FE8090 /* KeychainSwiftAccessOptions.swift */; };
 		23E7856A1BDA415000B7564A /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98F1B1C128100FE8090 /* TegKeychainConstants.swift */; };
-		2B7E7C4D1B81A3EC00D1C3B9 /* KeychainSwiftPrefixedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E7C4C1B81A3EC00D1C3B9 /* KeychainSwiftPrefixedTests.swift */; };
-		7E282DD71CED212500B55133 /* SynchronizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E282DD61CED212500B55133 /* SynchronizableTests.swift */; };
-		7E3A6B631D3F62C2007C5B1F /* macOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3A6B621D3F62C2007C5B1F /* macOS_Tests.swift */; };
 		7E3A6B681D3F62CC007C5B1F /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98D1B1C128100FE8090 /* KeychainSwift.swift */; };
 		7E3A6B691D3F62CC007C5B1F /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98E1B1C128100FE8090 /* KeychainSwiftAccessOptions.swift */; };
 		7E3A6B6A1D3F62CC007C5B1F /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98F1B1C128100FE8090 /* TegKeychainConstants.swift */; };
-		7E3A6B6D1D3F6431007C5B1F /* ClearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3A6B6C1D3F6431007C5B1F /* ClearTests.swift */; };
-		7E3A6B711D3F66C0007C5B1F /* AccessGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E87495E1BDB83D00045CF75 /* AccessGroupTests.swift */; };
-		7E3A6B721D3F66C0007C5B1F /* KeychainSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C9941B1C12A200FE8090 /* KeychainSwiftTests.swift */; };
-		7E3A6B731D3F66C0007C5B1F /* KeychainSwiftPrefixedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7E7C4C1B81A3EC00D1C3B9 /* KeychainSwiftPrefixedTests.swift */; };
-		7E3A6B741D3F66C0007C5B1F /* SynchronizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E282DD61CED212500B55133 /* SynchronizableTests.swift */; };
 		7E3A6B7E1D3F6779007C5B1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3A6B7D1D3F6779007C5B1F /* AppDelegate.swift */; };
 		7E3A6B801D3F6779007C5B1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3A6B7F1D3F6779007C5B1F /* ViewController.swift */; };
 		7E3A6B821D3F6779007C5B1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E3A6B811D3F6779007C5B1F /* Assets.xcassets */; };
 		7E3A6B851D3F6779007C5B1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E3A6B831D3F6779007C5B1F /* Main.storyboard */; };
 		7E3A6B8A1D3F67B1007C5B1F /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232B4C7A1BC29950001F2B7A /* KeychainSwift.framework */; };
 		7E3A6B8B1D3F67B1007C5B1F /* KeychainSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 232B4C7A1BC29950001F2B7A /* KeychainSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7E87495F1BDB83D00045CF75 /* AccessGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E87495E1BDB83D00045CF75 /* AccessGroupTests.swift */; };
 		7ED6C9721B1C118F00FE8090 /* KeychainSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ED6C9711B1C118F00FE8090 /* KeychainSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7ED6C9781B1C118F00FE8090 /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED6C96C1B1C118F00FE8090 /* KeychainSwift.framework */; };
 		7ED6C9901B1C128100FE8090 /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98D1B1C128100FE8090 /* KeychainSwift.swift */; };
 		7ED6C9911B1C128100FE8090 /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98E1B1C128100FE8090 /* KeychainSwiftAccessOptions.swift */; };
 		7ED6C9921B1C128100FE8090 /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98F1B1C128100FE8090 /* TegKeychainConstants.swift */; };
-		7ED6C9951B1C12A200FE8090 /* KeychainSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C9941B1C12A200FE8090 /* KeychainSwiftTests.swift */; };
 		7ED6C9961B1C12B100FE8090 /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98D1B1C128100FE8090 /* KeychainSwift.swift */; };
 		7ED6C9971B1C12B300FE8090 /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98E1B1C128100FE8090 /* KeychainSwiftAccessOptions.swift */; };
 		7ED6C9981B1C12B500FE8090 /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98F1B1C128100FE8090 /* TegKeychainConstants.swift */; };
@@ -110,34 +116,34 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0961A4011E894421007958F6 /* AccessGroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccessGroupTests.swift; path = KeychainSwiftTests/AccessGroupTests.swift; sourceTree = "<group>"; };
+		0961A4021E894421007958F6 /* ClearTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClearTests.swift; path = KeychainSwiftTests/ClearTests.swift; sourceTree = "<group>"; };
+		0961A4031E894421007958F6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KeychainSwiftTests/Info.plist; sourceTree = "<group>"; };
+		0961A4041E894421007958F6 /* KeychainSwiftPrefixedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeychainSwiftPrefixedTests.swift; path = KeychainSwiftTests/KeychainSwiftPrefixedTests.swift; sourceTree = "<group>"; };
+		0961A4051E894421007958F6 /* KeychainSwiftTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KeychainSwiftTests-Bridging-Header.h"; path = "KeychainSwiftTests/KeychainSwiftTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		0961A4061E894421007958F6 /* KeychainSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeychainSwiftTests.swift; path = KeychainSwiftTests/KeychainSwiftTests.swift; sourceTree = "<group>"; };
+		0961A4081E894421007958F6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0961A4091E894421007958F6 /* macOS_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = macOS_Tests.swift; sourceTree = "<group>"; };
+		0961A40A1E894421007958F6 /* SynchronizableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SynchronizableTests.swift; path = KeychainSwiftTests/SynchronizableTests.swift; sourceTree = "<group>"; };
 		232B4C7A1BC29950001F2B7A /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		232B4C8A1BC29984001F2B7A /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23E785601BDA410C00B7564A /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B7E7C4C1B81A3EC00D1C3B9 /* KeychainSwiftPrefixedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftPrefixedTests.swift; sourceTree = "<group>"; };
-		7E282DD61CED212500B55133 /* SynchronizableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynchronizableTests.swift; sourceTree = "<group>"; };
 		7E3A6B601D3F62C2007C5B1F /* macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E3A6B621D3F62C2007C5B1F /* macOS_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOS_Tests.swift; sourceTree = "<group>"; };
-		7E3A6B641D3F62C2007C5B1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E3A6B6C1D3F6431007C5B1F /* ClearTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearTests.swift; sourceTree = "<group>"; };
 		7E3A6B7B1D3F6779007C5B1F /* macOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3A6B7D1D3F6779007C5B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E3A6B7F1D3F6779007C5B1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7E3A6B811D3F6779007C5B1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E3A6B841D3F6779007C5B1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E3A6B861D3F6779007C5B1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E87495E1BDB83D00045CF75 /* AccessGroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessGroupTests.swift; sourceTree = "<group>"; };
 		7ED6C96C1B1C118F00FE8090 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED6C9701B1C118F00FE8090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ED6C9711B1C118F00FE8090 /* KeychainSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainSwift.h; sourceTree = "<group>"; };
 		7ED6C9771B1C118F00FE8090 /* KeychainSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeychainSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7ED6C97D1B1C118F00FE8090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ED6C9881B1C125000FE8090 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7ED6C98B1B1C126D00FE8090 /* keychain-swift-demo-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keychain-swift-demo-3.png"; sourceTree = "<group>"; };
 		7ED6C98D1B1C128100FE8090 /* KeychainSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwift.swift; sourceTree = "<group>"; };
 		7ED6C98E1B1C128100FE8090 /* KeychainSwiftAccessOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftAccessOptions.swift; sourceTree = "<group>"; };
 		7ED6C98F1B1C128100FE8090 /* TegKeychainConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TegKeychainConstants.swift; sourceTree = "<group>"; };
-		7ED6C9931B1C12A200FE8090 /* KeychainSwiftTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeychainSwiftTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		7ED6C9941B1C12A200FE8090 /* KeychainSwiftTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftTests.swift; sourceTree = "<group>"; };
 		7ED6C99D1B1C133500FE8090 /* Keychain Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Keychain Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED6C9A01B1C133500FE8090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ED6C9A11B1C133500FE8090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -213,13 +219,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7E3A6B611D3F62C2007C5B1F /* macOS Tests */ = {
+		0961A4071E894421007958F6 /* macOS Tests */ = {
 			isa = PBXGroup;
 			children = (
-				7E3A6B621D3F62C2007C5B1F /* macOS_Tests.swift */,
-				7E3A6B641D3F62C2007C5B1F /* Info.plist */,
+				0961A4081E894421007958F6 /* Info.plist */,
+				0961A4091E894421007958F6 /* macOS_Tests.swift */,
 			);
-			path = "macOS Tests";
+			name = "macOS Tests";
+			path = "KeychainSwiftTests/macOS Tests";
 			sourceTree = "<group>";
 		};
 		7E3A6B7C1D3F6779007C5B1F /* macOS Demo */ = {
@@ -287,24 +294,16 @@
 		7ED6C97B1B1C118F00FE8090 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				7E87495E1BDB83D00045CF75 /* AccessGroupTests.swift */,
-				7E3A6B6C1D3F6431007C5B1F /* ClearTests.swift */,
-				7ED6C9941B1C12A200FE8090 /* KeychainSwiftTests.swift */,
-				2B7E7C4C1B81A3EC00D1C3B9 /* KeychainSwiftPrefixedTests.swift */,
-				7ED6C9931B1C12A200FE8090 /* KeychainSwiftTests-Bridging-Header.h */,
-				7E282DD61CED212500B55133 /* SynchronizableTests.swift */,
-				7E3A6B611D3F62C2007C5B1F /* macOS Tests */,
-				7ED6C97C1B1C118F00FE8090 /* Supporting Files */,
+				0961A4011E894421007958F6 /* AccessGroupTests.swift */,
+				0961A4021E894421007958F6 /* ClearTests.swift */,
+				0961A4031E894421007958F6 /* Info.plist */,
+				0961A4041E894421007958F6 /* KeychainSwiftPrefixedTests.swift */,
+				0961A4051E894421007958F6 /* KeychainSwiftTests-Bridging-Header.h */,
+				0961A4061E894421007958F6 /* KeychainSwiftTests.swift */,
+				0961A4071E894421007958F6 /* macOS Tests */,
+				0961A40A1E894421007958F6 /* SynchronizableTests.swift */,
 			);
 			path = Tests;
-			sourceTree = "<group>";
-		};
-		7ED6C97C1B1C118F00FE8090 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7ED6C97D1B1C118F00FE8090 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		7ED6C98A1B1C126D00FE8090 /* graphics */ = {
@@ -654,6 +653,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0961A4161E894421007958F6 /* Info.plist in Resources */,
+				0961A4101E894421007958F6 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +678,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0961A4151E894421007958F6 /* Info.plist in Resources */,
+				0961A40F1E894421007958F6 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,14 +730,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E3A6B631D3F62C2007C5B1F /* macOS_Tests.swift in Sources */,
-				7E3A6B711D3F66C0007C5B1F /* AccessGroupTests.swift in Sources */,
-				7E3A6B741D3F66C0007C5B1F /* SynchronizableTests.swift in Sources */,
 				7E3A6B691D3F62CC007C5B1F /* KeychainSwiftAccessOptions.swift in Sources */,
+				0961A4181E894421007958F6 /* macOS_Tests.swift in Sources */,
+				0961A40E1E894421007958F6 /* ClearTests.swift in Sources */,
+				0961A41A1E894421007958F6 /* SynchronizableTests.swift in Sources */,
 				7E3A6B6A1D3F62CC007C5B1F /* TegKeychainConstants.swift in Sources */,
 				7E3A6B681D3F62CC007C5B1F /* KeychainSwift.swift in Sources */,
-				7E3A6B721D3F66C0007C5B1F /* KeychainSwiftTests.swift in Sources */,
-				7E3A6B731D3F66C0007C5B1F /* KeychainSwiftPrefixedTests.swift in Sources */,
+				0961A4121E894421007958F6 /* KeychainSwiftPrefixedTests.swift in Sources */,
+				0961A4141E894421007958F6 /* KeychainSwiftTests.swift in Sources */,
+				0961A40C1E894421007958F6 /* AccessGroupTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,14 +765,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B7E7C4D1B81A3EC00D1C3B9 /* KeychainSwiftPrefixedTests.swift in Sources */,
 				7ED6C9971B1C12B300FE8090 /* KeychainSwiftAccessOptions.swift in Sources */,
-				7E282DD71CED212500B55133 /* SynchronizableTests.swift in Sources */,
+				0961A4171E894421007958F6 /* macOS_Tests.swift in Sources */,
+				0961A40D1E894421007958F6 /* ClearTests.swift in Sources */,
+				0961A4191E894421007958F6 /* SynchronizableTests.swift in Sources */,
 				7ED6C9961B1C12B100FE8090 /* KeychainSwift.swift in Sources */,
-				7E87495F1BDB83D00045CF75 /* AccessGroupTests.swift in Sources */,
-				7E3A6B6D1D3F6431007C5B1F /* ClearTests.swift in Sources */,
 				7ED6C9981B1C12B500FE8090 /* TegKeychainConstants.swift in Sources */,
-				7ED6C9951B1C12A200FE8090 /* KeychainSwiftTests.swift in Sources */,
+				0961A4111E894421007958F6 /* KeychainSwiftPrefixedTests.swift in Sources */,
+				0961A4131E894421007958F6 /* KeychainSwiftTests.swift in Sources */,
+				0961A40B1E894421007958F6 /* AccessGroupTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -983,7 +988,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = "Tests/macOS Tests/Info.plist";
+				INFOPLIST_FILE = "Tests/KeychainSwiftTests/macOS Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.evgenii.macOS-Tests";
@@ -1001,7 +1006,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Tests/macOS Tests/Info.plist";
+				INFOPLIST_FILE = "Tests/KeychainSwiftTests/macOS Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.evgenii.macOS-Tests";
@@ -1219,11 +1224,11 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Tests/KeychainSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Tests/KeychainSwiftTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tests/KeychainSwiftTests/KeychainSwiftTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Keychain Swift.app/Keychain Swift";
@@ -1235,11 +1240,11 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Tests/KeychainSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Tests/KeychainSwiftTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tests/KeychainSwiftTests/KeychainSwiftTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Keychain Swift.app/Keychain Swift";
