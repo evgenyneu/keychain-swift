@@ -40,7 +40,7 @@ Simply add [KeychainSwiftDistrib.swift](https://github.com/marketplacer/keychain
 
 #### Setup with Carthage (iOS 8+)
 
-Alternatively, add `github "marketplacer/keychain-swift" ~> 7.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "marketplacer/keychain-swift" ~> 8.0` to your Cartfile and run `carthage update`.
 
 #### Setup with CocoaPods (iOS 8+)
 
@@ -48,7 +48,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     target 'Your target name'
-    pod 'KeychainSwift', '~> 7.0'
+    pod 'KeychainSwift', '~> 8.0'
 
 
 #### Setup with Swift Package Manager
@@ -62,7 +62,7 @@ let package = Package(
     name: "KeychainSwift",
     dependencies: [
         .Package(url: "https://github.com/marketplacer/keychain-swift.git",
-                 versions: Version(7,0,0)..<Version(8,0,0))
+                 versions: Version(8,0,0)..<Version(9,0,0))
     ]
 )
 ```
@@ -248,6 +248,7 @@ Here are some other Keychain libraries.
 * Thanks to [mikaoj](https://github.com/mikaoj) for adding keychain synchronization.
 * Thanks to [tcirwin](https://github.com/tcirwin) for adding Swift 3.0 support.
 * Thanks to [Tulleb](https://github.com/Tulleb) for adding Xcode 8 beta 6 support.
+* Thanks to [CraigSiemens](https://github.com/CraigSiemens) for adding Swift 3.1 support.
 
 
 ## Submitting a pull request
