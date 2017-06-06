@@ -69,7 +69,7 @@ let package = Package(
 
 * *File:* [KeychainSwiftDistrib.swift](https://github.com/marketplacer/keychain-swift/blob/swift-4.0/Distrib/KeychainSwiftDistrib.swift)
 * *Carthage:* `github "marketplacer/keychain-swift" "swift-4.0"`
-* *CocoaPods:* `pod 'KeychainSwift', :git => 'https://github.com/marketplacer/keychain-swift.git', :branch => 'swift-4.0'`
+* *CocoaPods:* `pod 'KeychainSwift', git: 'https://github.com/marketplacer/keychain-swift.git', branch: 'swift-4.0'`
 
 
 ## Legacy Swift versions
