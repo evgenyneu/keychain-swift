@@ -1,4 +1,4 @@
-Please consider submitting the following information:
+Please consider submitting the following information (if relevant):
 
 * Library setup method: file, Carthage, CocoaPods or Swift Package Manager.
 * Version of the library. Example: 8.0.
