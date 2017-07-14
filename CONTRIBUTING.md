@@ -8,7 +8,7 @@ Thank you for contributing to Keychain Swift library. Feel free to create an iss
 * Library setup method: file, Carthage, CocoaPods or Swift Package Manager.
 * Version of the library, if known. Example: 8.0.
 * Xcode version. Example: 8.3.3.
-* iOS version: Example: 10.3.2.
+* iOS version. Example: 10.3.2.
 
 ## Submitting a pull request
 
