@@ -201,7 +201,7 @@ if keychain.set("hello world", forKey: "my key") {
 }
 ```
 
-To get a specific failure reason use the `lastResultCode` property containing result code for the last operation. See [Keychain Services Result Codes](https://developer.apple.com/library/mac/documentation/Security/Reference/keychainservices/#//apple_ref/doc/uid/TP30000898-CH5g-CJBEABHG).
+To get a specific failure reason use the `lastResultCode` property containing result code for the last operation. See [Keychain Result Codes](https://developer.apple.com/documentation/security/1542001-security_framework_result_codes).
 
 ```Swift
 keychain.set("hello world", forKey: "my key")
