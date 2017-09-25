@@ -103,4 +103,13 @@ class KeychainSwiftTests: XCTestCase {
     
     XCTAssertEqual("hello two", obj.get("key 2")!)
   }
+	
+  //MARK: - Presence
+  // --------------------
+  func testPresence() {
+	obj.clear()
+	obj.set("hello", forKey: "key 1")
+	XCTAssert(obj.isInKeychain(key: "key 1") == true)
+	XCTAssert(obj.isInKeychain(key: "key 2") == false)
+  }
 }
