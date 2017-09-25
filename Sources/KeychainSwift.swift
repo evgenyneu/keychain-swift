@@ -267,4 +267,16 @@ open class KeychainSwift {
     result[KeychainSwiftConstants.attrSynchronizable] = addingItems == true ? true : kSecAttrSynchronizableAny
     return result
   }
+	
+  /**
+	
+  Returns the the presence of the provided key in the keychain.
+	
+  - parameter key: The key to be searched in the keychain.
+  - returns: True if value was found in the Keychain
+	
+  */
+  open func isInKeychain(key: String) -> Bool {
+	return getData(key) != nil
+  }
 }
