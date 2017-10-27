@@ -1,5 +1,18 @@
 # KeychainSwift version history
 
+## 9.0.0 (2017-09-23)
+
+Update to Swift 4.0.
+
+## 8.0.3 (2017-04-08)
+
+Fixed Package Manager setup ([maxkramerbcgdv](https://github.com/maxkramerbcgdv)).
+
+## 8.0.0 (2017-04-08)
+
+Added Swif 3.1 support ([CraigSiemens](https://github.com/CraigSiemens)).
+
+
 ## 7.0.0 (2016-10-08)
 
 Swift package manager support ([diogoguimaraes](https://github.com/diogoguimaraes)).

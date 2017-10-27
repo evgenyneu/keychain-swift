@@ -29,7 +29,7 @@ class ViewController: NSViewController {
     updateValueLabel()
     errorLabel.stringValue = ""
   }
-	
+  
 //  override var representedObject: Any? {
 //    didSet {
 //    // Update the view, if already loaded.
@@ -37,7 +37,7 @@ class ViewController: NSViewController {
 //  }
 
   @IBAction func onSaveTapped(_ sender: AnyObject) {
-    keychain.synchronizable = synchronizableButton.state == NSOnState
+    keychain.synchronizable = synchronizableButton.state == NSControl.StateValue.on
     keychain.set(textField.stringValue, forKey: TegKeychainDemo_keyName)
     errorLabel.stringValue = "Result code: \(keychain.lastResultCode)"
     updateValueLabel()
@@ -45,7 +45,7 @@ class ViewController: NSViewController {
   
   
   @IBAction func onDeleteTapped(_ sender: AnyObject) {
-    keychain.synchronizable = synchronizableButton.state == NSOnState
+    keychain.synchronizable = synchronizableButton.state == NSControl.StateValue.on
     keychain.delete(TegKeychainDemo_keyName)
     errorLabel.stringValue = "Result code: \(keychain.lastResultCode)"
     updateValueLabel()
@@ -56,7 +56,7 @@ class ViewController: NSViewController {
   }
   
   private func updateValueLabel() {
-    keychain.synchronizable = synchronizableButton.state == NSOnState
+    keychain.synchronizable = synchronizableButton.state == NSControl.StateValue.on
 
     if let value = keychain.get(TegKeychainDemo_keyName) {
       valueLabel.stringValue = "In Keychain: \(value)"
