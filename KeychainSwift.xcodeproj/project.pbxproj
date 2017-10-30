@@ -19,7 +19,6 @@
 		5085669B1FA34EB1004208ED /* AccessGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508566911FA34EB1004208ED /* AccessGroupTests.swift */; };
 		5085669C1FA34EB1004208ED /* AccessGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508566911FA34EB1004208ED /* AccessGroupTests.swift */; };
 		5085669D1FA34EB1004208ED /* ClearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508566921FA34EB1004208ED /* ClearTests.swift */; };
-		5085669E1FA34EB1004208ED /* ClearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508566921FA34EB1004208ED /* ClearTests.swift */; };
 		508566A11FA34EB1004208ED /* KeychainSwiftPrefixedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508566941FA34EB1004208ED /* KeychainSwiftPrefixedTests.swift */; };
 		508566A21FA34EB1004208ED /* KeychainSwiftPrefixedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508566941FA34EB1004208ED /* KeychainSwiftPrefixedTests.swift */; };
 		508566A31FA34EB1004208ED /* KeychainSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508566961FA34EB1004208ED /* KeychainSwiftTests.swift */; };
@@ -56,7 +55,6 @@
 		7ED6C9C01B1C13AA00FE8090 /* KeychainSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED6C96C1B1C118F00FE8090 /* KeychainSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7EE5B9A11E32F6D400AA56FF /* KeychainSwiftCBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE5B9A01E32F6D400AA56FF /* KeychainSwiftCBridge.swift */; };
 		C7E1DE4C1E4B7C9F003818F6 /* ConcurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1DE4A1E4B7C9F003818F6 /* ConcurrencyTests.swift */; };
-		C7E1DE4D1E4B7CAB003818F6 /* ConcurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1DE4A1E4B7C9F003818F6 /* ConcurrencyTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -225,6 +223,7 @@
 			children = (
 				508566911FA34EB1004208ED /* AccessGroupTests.swift */,
 				508566921FA34EB1004208ED /* ClearTests.swift */,
+				C7E1DE4A1E4B7C9F003818F6 /* ConcurrencyTests.swift */,
 				508566931FA34EB1004208ED /* Info.plist */,
 				508566941FA34EB1004208ED /* KeychainSwiftPrefixedTests.swift */,
 				508566951FA34EB1004208ED /* KeychainSwiftTests-Bridging-Header.h */,
@@ -309,7 +308,6 @@
 		7ED6C97B1B1C118F00FE8090 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				C7E1DE4A1E4B7C9F003818F6 /* ConcurrencyTests.swift */,
 				508566901FA34EB1004208ED /* KeychainSwiftTests */,
 			);
 			path = Tests;
@@ -743,8 +741,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7E1DE4D1E4B7CAB003818F6 /* ConcurrencyTests.swift in Sources */,
-				5085669E1FA34EB1004208ED /* ClearTests.swift in Sources */,
 				508566AA1FA34EB1004208ED /* SynchronizableTests.swift in Sources */,
 				7E3A6B691D3F62CC007C5B1F /* KeychainSwiftAccessOptions.swift in Sources */,
 				508566A41FA34EB1004208ED /* KeychainSwiftTests.swift in Sources */,
