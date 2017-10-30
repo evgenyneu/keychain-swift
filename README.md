@@ -49,16 +49,21 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
 #### Setup with Swift Package Manager
 
-Add the following text to your Package.swift file and run `swift build`.
+Here is an example of a Package.swift file.
 
 ```Swift
 import PackageDescription
 
 let package = Package(
-    name: "KeychainSwift",
+    name: "MyApp",
     dependencies: [
-        .Package(url: "https://github.com/evgenyneu/keychain-swift.git",
-                 versions: Version(10,0,0)..<Version(11,0,0))
+        .package(url: "https://github.com/evgenyneu/keychain-swift.git", from: "10.0.0"),
+    ],
+    targets: [
+        on.
+        .target(
+            name: "MyApp",
+            dependencies: ["KeychainSwift"]),
     ]
 )
 ```
