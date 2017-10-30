@@ -1,5 +1,11 @@
 # KeychainSwift version history
 
+
+## 10.0.0 (2017-10-30)
+
+Fixed a crash in `getData` when called simultaneously from different threads ([details](https://github.com/evgenyneu/keychain-swift/pull/68)).
+
+
 ## 9.0.0 (2017-09-23)
 
 Update to Swift 4.0.
