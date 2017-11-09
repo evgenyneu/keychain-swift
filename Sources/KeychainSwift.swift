@@ -33,7 +33,7 @@ open class KeychainSwift {
   */
   open var synchronizable: Bool = false
 
-  private let readLock = NSLock()
+  private let queue = DispatchQueue(label: "evgenyneu/keychain-swift")
   
   /// Instantiate a KeychainSwift object
   public init() { }
@@ -59,14 +59,9 @@ open class KeychainSwift {
 
   */
   @discardableResult
-  open func set(_ value: String, forKey key: String,
-                  withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
-    
-    if let value = value.data(using: String.Encoding.utf8) {
-      return set(value, forKey: key, withAccess: access)
-    }
-    
-    return false
+  open func set(_ value: String, forKey key: String, withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+    guard let value = value.data(using: .utf8) else { return false }
+    return set(value, forKey: key, withAccess: access)
   }
 
   /**
@@ -81,16 +76,14 @@ open class KeychainSwift {
   
   */
   @discardableResult
-  open func set(_ value: Data, forKey key: String,
-    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
-    
+  open func set(_ value: Data, forKey key: String, withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
     delete(key) // Delete any existing key before saving it
 
     let accessible = access?.value ?? KeychainSwiftAccessOptions.defaultOption.value
       
     let prefixedKey = keyWithPrefix(key)
       
-    var query: [String : Any] = [
+    var query: [String: Any] = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.valueData   : value,
@@ -118,9 +111,7 @@ open class KeychainSwift {
 
   */
   @discardableResult
-  open func set(_ value: Bool, forKey key: String,
-    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
-  
+  open func set(_ value: Bool, forKey key: String, withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
     let bytes: [UInt8] = value ? [1] : [0]
     let data = Data(bytes: bytes)
 
@@ -136,16 +127,14 @@ open class KeychainSwift {
   
   */
   open func get(_ key: String) -> String? {
-    if let data = getData(key) {
+    guard let data = getData(key) else { return nil }
       
-      if let currentString = String(data: data, encoding: .utf8) {
-        return currentString
-      }
-      
+    guard let currentString = String(data: data, encoding: .utf8) else {
       lastResultCode = -67853 // errSecInvalidEncoding
+      return nil
     }
-
-    return nil
+    
+    return currentString
   }
 
   /**
@@ -157,33 +146,32 @@ open class KeychainSwift {
   
   */
   open func getData(_ key: String) -> Data? {
-    // The lock prevents the code to be run simlultaneously
-    // from multiple threads which may result in crashing
-    readLock.lock()
-    defer { readLock.unlock() }
-    
-    let prefixedKey = keyWithPrefix(key)
-    
-    var query: [String: Any] = [
-      KeychainSwiftConstants.klass       : kSecClassGenericPassword,
-      KeychainSwiftConstants.attrAccount : prefixedKey,
-      KeychainSwiftConstants.returnData  : kCFBooleanTrue,
-      KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne
-    ]
-    
-    query = addAccessGroupWhenPresent(query)
-    query = addSynchronizableIfRequired(query, addingItems: false)
-    lastQueryParameters = query
-    
     var result: AnyObject?
     
-    lastResultCode = withUnsafeMutablePointer(to: &result) {
-      SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
+    // The lock prevents the code to be run simlultaneously
+    // from multiple threads which may result in crashing
+    queue.sync {
+      let prefixedKey = keyWithPrefix(key)
+    
+      var query: [String: Any] = [
+        KeychainSwiftConstants.klass       : kSecClassGenericPassword,
+        KeychainSwiftConstants.attrAccount : prefixedKey,
+        KeychainSwiftConstants.returnData  : kCFBooleanTrue,
+        KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne
+      ]
+    
+      query = addAccessGroupWhenPresent(query)
+      query = addSynchronizableIfRequired(query, addingItems: false)
+      lastQueryParameters = query
+    
+      lastResultCode = withUnsafeMutablePointer(to: &result) {
+        SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
+      }
     }
     
-    if lastResultCode == noErr { return result as? Data }
+    guard lastResultCode == noErr else { return nil }
     
-    return nil
+    return result as? Data
   }
 
   /**
@@ -235,7 +223,7 @@ open class KeychainSwift {
   */
   @discardableResult
   open func clear() -> Bool {
-    var query: [String: Any] = [ kSecClass as String : kSecClassGenericPassword ]
+    var query: [String: Any] = [kSecClass as String: kSecClassGenericPassword]
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
     lastQueryParameters = query
@@ -271,7 +259,7 @@ open class KeychainSwift {
   func addSynchronizableIfRequired(_ items: [String: Any], addingItems: Bool) -> [String: Any] {
     if !synchronizable { return items }
     var result: [String: Any] = items
-    result[KeychainSwiftConstants.attrSynchronizable] = addingItems == true ? true : kSecAttrSynchronizableAny
+    result[KeychainSwiftConstants.attrSynchronizable] = addingItems ? true : kSecAttrSynchronizableAny
     return result
   }
 }
