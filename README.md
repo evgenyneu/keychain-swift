@@ -217,16 +217,6 @@ It [has been reported](https://github.com/evgenyneu/keychain-swift/issues/15) th
 
 <img src="https://raw.githubusercontent.com/evgenyneu/keychain-swift/master/graphics/keychain-swift-demo-3.png" alt="Keychain Swift demo app" width="320">
 
-## Running Keychain unit tests
-
-Xcode 8 introduced additional hoops that one needs to jump through in order to run the unit test:
-
-1. Enable signing in both the demo app and the test target.
-1. Enable *Keychain Sharing* in the *Capabilities* tab of the demo app target.
-1. Select the demo app as *Host Application* in the test target.
-
-The process is shown in more details in [this article](http://evgenii.com/blog/testing-a-keychain-library-in-xcode/).
-
 ## Alternative solutions
 
 Here are some other Keychain libraries.
