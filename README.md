@@ -28,7 +28,7 @@ Keychain is a secure storage. You can store all kind of sensitive data in it: us
 
 ## Setup
 
-There are three ways you can add KeychainSwift to your Xcode project.
+There are four ways you can add KeychainSwift to your project.
 
 #### Add source (iOS 7+)
 
