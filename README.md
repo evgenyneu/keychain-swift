@@ -74,11 +74,7 @@ let package = Package(
 Setup a [previous version](https://github.com/evgenyneu/keychain-swift/wiki/Legacy-Swift-versions) of the library if you use an older version of Swift.
 
 
-**iOS 7 support**
-
-Use [iOS 7 compatible](https://github.com/evgenyneu/keychain-swift/blob/iOS7/Distrib/KeychainSwiftDistrib.swift) version of the library.
-
-<h2 id="usage">Usage</h2>
+## Usage
 
 Add `import KeychainSwift` to your source code unless you used the file setup method.
 
