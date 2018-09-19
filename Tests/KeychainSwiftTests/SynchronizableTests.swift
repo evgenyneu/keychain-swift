@@ -49,7 +49,7 @@ class SynchronizableTests: XCTestCase {
     let result = obj.addSynchronizableIfRequired(items, addingItems: false)
     
     XCTAssertEqual(1, result.count)
-    XCTAssertEqual("two", result["one"] as! String!)
+    XCTAssertEqual("two", result["one"] as! String)
   }
   
   // MARK: - Set
