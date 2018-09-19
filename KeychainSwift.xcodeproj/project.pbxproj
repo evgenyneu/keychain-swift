@@ -23,8 +23,6 @@
 		508566A21FA34EB1004208ED /* KeychainSwiftPrefixedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508566941FA34EB1004208ED /* KeychainSwiftPrefixedTests.swift */; };
 		508566A31FA34EB1004208ED /* KeychainSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508566961FA34EB1004208ED /* KeychainSwiftTests.swift */; };
 		508566A41FA34EB1004208ED /* KeychainSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508566961FA34EB1004208ED /* KeychainSwiftTests.swift */; };
-		508566A51FA34EB1004208ED /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 508566981FA34EB1004208ED /* Info.plist */; };
-		508566A61FA34EB1004208ED /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 508566981FA34EB1004208ED /* Info.plist */; };
 		508566A71FA34EB1004208ED /* macOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508566991FA34EB1004208ED /* macOS_Tests.swift */; };
 		508566A81FA34EB1004208ED /* macOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508566991FA34EB1004208ED /* macOS_Tests.swift */; };
 		508566A91FA34EB1004208ED /* SynchronizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085669A1FA34EB1004208ED /* SynchronizableTests.swift */; };
@@ -564,7 +562,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Marketplacer;
 				TargetAttributes = {
 					232B4C791BC29950001F2B7A = {
@@ -600,17 +598,17 @@
 					};
 					7ED6C96B1B1C118F00FE8090 = {
 						CreatedOnToolsVersion = 6.4;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 					};
 					7ED6C9761B1C118F00FE8090 = {
 						CreatedOnToolsVersion = 6.4;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 						ProvisioningStyle = Manual;
 						TestTargetID = 7ED6C99C1B1C133500FE8090;
 					};
 					7ED6C99C1B1C133500FE8090 = {
 						CreatedOnToolsVersion = 6.4;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 					};
 				};
 			};
@@ -666,7 +664,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				508566A61FA34EB1004208ED /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,7 +687,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				508566A51FA34EB1004208ED /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1114,12 +1110,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1172,12 +1170,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1226,8 +1226,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marketplacer.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1247,8 +1246,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -1267,8 +1265,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tests/KeychainSwiftTests/KeychainSwiftTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Keychain Swift.app/Keychain Swift";
 			};
 			name = Debug;
@@ -1284,8 +1281,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tests/KeychainSwiftTests/KeychainSwiftTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Keychain Swift.app/Keychain Swift";
 			};
 			name = Release;
@@ -1302,8 +1298,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marketplacer.KeychainSwiftDemo;
 				PRODUCT_NAME = "Keychain Swift";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -1316,8 +1311,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.marketplacer.KeychainSwiftDemo;
 				PRODUCT_NAME = "Keychain Swift";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
