@@ -1,8 +1,14 @@
 # KeychainSwift version history
 
+## 12.0.0 (2018-09-19)
+
+Update to Swift 4.2 ([beny](https://github.com/beny)).
+
+
 ## 11.0.0 (2018-03-31)
 
 Added Swift language version to the podspec file for CocoaPods.
+
 
 ## 10.0.0 (2017-10-30)
 
