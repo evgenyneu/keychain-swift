@@ -1,5 +1,11 @@
 # KeychainSwift version history
 
+
+## 13.0.0 (2018-10-23)
+
+Increased watchOS deployment target to 3.0 ([xuaninbox](https://github.com/xuaninbox)).
+
+
 ## 12.0.0 (2018-09-19)
 
 Update to Swift 4.2 ([beny](https://github.com/beny)).
