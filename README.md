@@ -221,7 +221,6 @@ Here are some other Keychain libraries.
 * [jrendel/SwiftKeychainWrapper](https://github.com/jrendel/SwiftKeychainWrapper)
 * [kishikawakatsumi/KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess)
 * [matthewpalmer/Locksmith](https://github.com/matthewpalmer/Locksmith)
-* [phuonglm86/SwiftyKey](https://github.com/phuonglm86/SwiftyKey)
 * [s-aska/KeyClip](https://github.com/s-aska/KeyClip)
 * [yankodimitrov/SwiftKeychain](https://github.com/yankodimitrov/SwiftKeychain)
 
