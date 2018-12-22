@@ -209,6 +209,13 @@ if keychain.lastResultCode != noErr { /* Report error */ }
 
 It [has been reported](https://github.com/evgenyneu/keychain-swift/issues/15) that the library sometimes returns `nil`  instead of the stored Keychain value. The issue seems to be random and hard to reproduce. It may be connected with [the Keychain issue](https://forums.developer.apple.com/thread/4743) reported on Apple developer forums. If you experienced this problem feel free to create an issue so we can discuss it and find solutions.
 
+
+## Video tutorial
+
+Thanks to Alex Nagy from [rebeloper.com](https://rebeloper.com/) for creating this two-part [video tutorial](https://www.youtube.com/watch?v=1R-VIzjD4yo&list=PL_csAAO9PQ8bLfPF7JsnF-t4q63WKZ9O9).
+
+<a href="https://www.youtube.com/watch?v=1R-VIzjD4yo&list=PL_csAAO9PQ8bLfPF7JsnF-t4q63WKZ9O9" target="_blank"><img src='keychain_swift_video_tutorial.jpg' width='450' alt='Keychain Swift video tutorial'></a>
+
 ## Demo app
 
 <img src="https://raw.githubusercontent.com/evgenyneu/keychain-swift/master/graphics/keychain-swift-demo-3.png" alt="Keychain Swift demo app" width="320">
