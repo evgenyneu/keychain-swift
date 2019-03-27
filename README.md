@@ -103,6 +103,13 @@ keychain.set(dataObject, forKey: "my key")
 keychain.getData("my key")
 ```
 
+#### Reference to value
+
+```Swift
+let keychain = KeychainSwift()
+keychain.set(dataObject, forKey: "my key")
+keychain.getData("my key", isReference: true)
+
 #### Removing keys from Keychain
 
 ```Swift
