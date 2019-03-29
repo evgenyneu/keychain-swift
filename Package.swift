@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "KeychainSwift"
+    name: "KeychainSwift",
     products: [
         .library(name: "KeychainSwift", targets: ["KeychainSwift"]),
     ],
