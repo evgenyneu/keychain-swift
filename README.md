@@ -246,6 +246,7 @@ Here are some other Keychain libraries.
 * Thanks to [elikohen](https://github.com/elikohen) for fixing concurrency issues.
 * Thanks to [beny](https://github.com/beny) for adding Swift 4.2 support.
 * Thanks to [xuaninbox](https://github.com/xuaninbox) for fixing watchOS deployment target for Xcode 10.
+* Thanks to [schayes04](https://github.com/schayes04) for adding Swift 5.0 support.
 
 
 

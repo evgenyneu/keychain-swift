@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name        = "KeychainSwift"
-  s.version     = "13.0.0"
+  s.version     = "14.0.0"
   s.license     = { :type => "MIT" }
   s.homepage    = "https://github.com/evgenyneu/keychain-swift"
   s.summary     = "A library for saving text and data in the Keychain with Swift."
@@ -19,5 +19,5 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.10"
   s.watchos.deployment_target = "3.0"
   s.tvos.deployment_target = "9.0"
-  s.swift_version = "4.2"
+  s.swift_version = "5.0"
 end
