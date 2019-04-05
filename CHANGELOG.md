@@ -1,6 +1,12 @@
 # KeychainSwift version history
 
 
+
+## 14.0.0 (2019-04-03)
+
+Update to Swift 5.0 ([schayes04](https://github.com/schayes04)).
+
+
 ## 13.0.0 (2018-10-23)
 
 Increased watchOS deployment target to 3.0 ([xuaninbox](https://github.com/xuaninbox)).
