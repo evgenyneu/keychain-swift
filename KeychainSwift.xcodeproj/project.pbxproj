@@ -27,6 +27,7 @@
 		508566A81FA34EB1004208ED /* macOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508566991FA34EB1004208ED /* macOS_Tests.swift */; };
 		508566A91FA34EB1004208ED /* SynchronizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085669A1FA34EB1004208ED /* SynchronizableTests.swift */; };
 		508566AA1FA34EB1004208ED /* SynchronizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085669A1FA34EB1004208ED /* SynchronizableTests.swift */; };
+		58F9C89B21FC82E300B5430B /* KeychainSwiftItemClassOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F9C89A21FC82E300B5430B /* KeychainSwiftItemClassOptions.swift */; };
 		7E3A6B681D3F62CC007C5B1F /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98D1B1C128100FE8090 /* KeychainSwift.swift */; };
 		7E3A6B691D3F62CC007C5B1F /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98E1B1C128100FE8090 /* KeychainSwiftAccessOptions.swift */; };
 		7E3A6B6A1D3F62CC007C5B1F /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98F1B1C128100FE8090 /* TegKeychainConstants.swift */; };
@@ -124,6 +125,7 @@
 		508566981FA34EB1004208ED /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		508566991FA34EB1004208ED /* macOS_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = macOS_Tests.swift; sourceTree = "<group>"; };
 		5085669A1FA34EB1004208ED /* SynchronizableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynchronizableTests.swift; sourceTree = "<group>"; };
+		58F9C89A21FC82E300B5430B /* KeychainSwiftItemClassOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainSwiftItemClassOptions.swift; sourceTree = "<group>"; };
 		7E3A6B601D3F62C2007C5B1F /* macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3A6B7B1D3F6779007C5B1F /* macOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3A6B7D1D3F6779007C5B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			children = (
 				7ED6C98D1B1C128100FE8090 /* KeychainSwift.swift */,
 				7ED6C98E1B1C128100FE8090 /* KeychainSwiftAccessOptions.swift */,
+				58F9C89A21FC82E300B5430B /* KeychainSwiftItemClassOptions.swift */,
 				7ED6C98F1B1C128100FE8090 /* TegKeychainConstants.swift */,
 				7ED6C9711B1C118F00FE8090 /* KeychainSwift.h */,
 				7ED6C96F1B1C118F00FE8090 /* Supporting Files */,
@@ -761,6 +764,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F9C89B21FC82E300B5430B /* KeychainSwiftItemClassOptions.swift in Sources */,
 				7ED6C9911B1C128100FE8090 /* KeychainSwiftAccessOptions.swift in Sources */,
 				7ED6C9901B1C128100FE8090 /* KeychainSwift.swift in Sources */,
 				7ED6C9921B1C128100FE8090 /* TegKeychainConstants.swift in Sources */,

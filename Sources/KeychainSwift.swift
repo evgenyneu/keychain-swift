@@ -53,6 +53,7 @@ open class KeychainSwift {
   
   - parameter key: Key under which the text value is stored in the keychain.
   - parameter value: Text string to be written to the keychain.
+  - parameter withClass: Value that specifies the class of a keychain item.
   - parameter withAccess: Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
    
    - returns: True if the text was successfully written to the keychain.
@@ -60,10 +61,11 @@ open class KeychainSwift {
   */
   @discardableResult
   open func set(_ value: String, forKey key: String,
-                  withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+                withClass classOption: KeychainSwiftItemClassOptions = .defaultOption,
+                withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
     
     if let value = value.data(using: String.Encoding.utf8) {
-      return set(value, forKey: key, withAccess: access)
+        return set(value, forKey: key, withClass: classOption, withAccess: access)
     }
     
     return false
@@ -75,6 +77,7 @@ open class KeychainSwift {
   
   - parameter key: Key under which the data is stored in the keychain.
   - parameter value: Data to be written to the keychain.
+  - parameter withClass: Value that specifies the class of a keychain item.
   - parameter withAccess: Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
   
   - returns: True if the text was successfully written to the keychain.
@@ -82,6 +85,7 @@ open class KeychainSwift {
   */
   @discardableResult
   open func set(_ value: Data, forKey key: String,
+    withClass classOption: KeychainSwiftItemClassOptions = .defaultOption,
     withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
     
     delete(key) // Delete any existing key before saving it
@@ -89,9 +93,11 @@ open class KeychainSwift {
     let accessible = access?.value ?? KeychainSwiftAccessOptions.defaultOption.value
       
     let prefixedKey = keyWithPrefix(key)
+    
+    let itemClass: CFString = classOption.value
       
     var query: [String : Any] = [
-      KeychainSwiftConstants.klass       : kSecClassGenericPassword,
+      KeychainSwiftConstants.klass       : itemClass,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.valueData   : value,
       KeychainSwiftConstants.accessible  : accessible
@@ -112,6 +118,7 @@ open class KeychainSwift {
 
   - parameter key: Key under which the value is stored in the keychain.
   - parameter value: Boolean to be written to the keychain.
+  - parameter withClass: Value that specifies the class of a keychain item.
   - parameter withAccess: Value that indicates when your app needs access to the value in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
 
   - returns: True if the value was successfully written to the keychain.
@@ -119,12 +126,13 @@ open class KeychainSwift {
   */
   @discardableResult
   open func set(_ value: Bool, forKey key: String,
+    withClass classOption: KeychainSwiftItemClassOptions = .defaultOption,
     withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
   
     let bytes: [UInt8] = value ? [1] : [0]
     let data = Data(bytes)
 
-    return set(data, forKey: key, withAccess: access)
+    return set(data, forKey: key, withClass: classOption, withAccess: access)
   }
 
   /**
@@ -132,11 +140,12 @@ open class KeychainSwift {
   Retrieves the text value from the keychain that corresponds to the given key.
   
   - parameter key: The key that is used to read the keychain item.
+  - parameter ofClass: Value that specifies the class of a keychain item.
   - returns: The text value from the keychain. Returns nil if unable to read the item.
   
   */
-  open func get(_ key: String) -> String? {
-    if let data = getData(key) {
+  open func get(_ key: String, ofClass classOption: KeychainSwiftItemClassOptions = .defaultOption) -> String? {
+    if let data = getData(key, ofClass: classOption) {
       
       if let currentString = String(data: data, encoding: .utf8) {
         return currentString
@@ -153,19 +162,22 @@ open class KeychainSwift {
   Retrieves the data from the keychain that corresponds to the given key.
   
   - parameter key: The key that is used to read the keychain item.
+  - parameter ofClass: Value that specifies the class of a keychain item.
   - returns: The text value from the keychain. Returns nil if unable to read the item.
   
   */
-  open func getData(_ key: String) -> Data? {
+    open func getData(_ key: String, ofClass classOption: KeychainSwiftItemClassOptions = .defaultOption) -> Data? {
     // The lock prevents the code to be run simlultaneously
     // from multiple threads which may result in crashing
     readLock.lock()
     defer { readLock.unlock() }
     
     let prefixedKey = keyWithPrefix(key)
+        
+    let itemClass = classOption.value
     
     var query: [String: Any] = [
-      KeychainSwiftConstants.klass       : kSecClassGenericPassword,
+      KeychainSwiftConstants.klass       : itemClass,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.returnData  : kCFBooleanTrue!,
       KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne
@@ -191,11 +203,12 @@ open class KeychainSwift {
   Retrieves the boolean value from the keychain that corresponds to the given key.
 
   - parameter key: The key that is used to read the keychain item.
+  - parameter ofClass: Value that specifies the class of a keychain item.
   - returns: The boolean value from the keychain. Returns nil if unable to read the item.
 
   */
-  open func getBool(_ key: String) -> Bool? {
-    guard let data = getData(key) else { return nil }
+    open func getBool(_ key: String, ofClass classOption: KeychainSwiftItemClassOptions = .defaultOption) -> Bool? {
+    guard let data = getData(key, ofClass: classOption) else { return nil }
     guard let firstBit = data.first else { return nil }
     return firstBit == 1
   }
@@ -205,15 +218,18 @@ open class KeychainSwift {
   Deletes the single keychain item specified by the key.
   
   - parameter key: The key that is used to delete the keychain item.
+  - parameter ofClass: Value that specifies the class of a keychain item.
   - returns: True if the item was successfully deleted.
   
   */
   @discardableResult
-  open func delete(_ key: String) -> Bool {
+    open func delete(_ key: String, ofClass classOption: KeychainSwiftItemClassOptions = .defaultOption) -> Bool {
     let prefixedKey = keyWithPrefix(key)
+    
+    let itemClass = classOption.value
 
     var query: [String: Any] = [
-      KeychainSwiftConstants.klass       : kSecClassGenericPassword,
+      KeychainSwiftConstants.klass       : itemClass,
       KeychainSwiftConstants.attrAccount : prefixedKey
     ]
     
@@ -230,12 +246,16 @@ open class KeychainSwift {
   
   Deletes all Keychain items used by the app. Note that this method deletes all items regardless of the prefix settings used for initializing the class.
   
+  - parameter itemsOfClass: Value that specifies the class of a keychain item.
   - returns: True if the keychain items were successfully deleted.
   
   */
   @discardableResult
-  open func clear() -> Bool {
-    var query: [String: Any] = [ kSecClass as String : kSecClassGenericPassword ]
+  open func clear(itemsOfClass classOption: KeychainSwiftItemClassOptions = .defaultOption) -> Bool {
+    
+    let itemClass = classOption.value
+    
+    var query: [String: Any] = [ kSecClass as String : itemClass ]
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
     lastQueryParameters = query
