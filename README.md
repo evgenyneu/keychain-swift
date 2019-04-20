@@ -52,18 +52,19 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 Here is an example of a Package.swift file.
 
 ```Swift
+// swift-tools-version:4.0
 import PackageDescription
 
 let package = Package(
     name: "MyApp",
     dependencies: [
-        .package(url: "https://github.com/evgenyneu/keychain-swift.git", from: "14.0.0"),
+        .package(url: "https://github.com/evgenyneu/keychain-swift.git", from: "14.0.0")
     ],
     targets: [
-        on.
         .target(
             name: "MyApp",
-            dependencies: ["KeychainSwift"]),
+            dependencies: ["KeychainSwift"],
+            path: "Sources")
     ]
 )
 ```
