@@ -32,7 +32,7 @@ public struct KeychainSwiftConstants {
   public static var valueData: String { return toString(kSecValueData) }
     
   /// Used for specifying a reference when setting a Keychain value.
-  public static var returnRefernce: String { return toString(kSecReturnPersistentRef) }
+  public static var returnReference: String { return toString(kSecReturnPersistentRef) }
   
   static func toString(_ value: CFString) -> String {
     return value as String
