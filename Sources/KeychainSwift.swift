@@ -153,11 +153,11 @@ open class KeychainSwift {
   Retrieves the data from the keychain that corresponds to the given key.
   
   - parameter key: The key that is used to read the keychain item.
-  - parameter isReference: Flag is used to determine the returning value (reference to the value or value)
+  - parameter asReference: If true, returns the data as reference (needed for things like NEVPNProtocol).
   - returns: The text value from the keychain. Returns nil if unable to read the item.
   
   */
-  open func getData(_ key: String, isReference: Bool = false) -> Data? {
+  open func getData(_ key: String, asReference: Bool = false) -> Data? {
     // The lock prevents the code to be run simlultaneously
     // from multiple threads which may result in crashing
     readLock.lock()
@@ -171,8 +171,8 @@ open class KeychainSwift {
       KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne
     ]
     
-    if isReference {
-      query[KeychainSwiftConstants.returnRefernce] = kCFBooleanTrue
+    if asReference {
+      query[KeychainSwiftConstants.returnReference] = kCFBooleanTrue
     } else {
       query[KeychainSwiftConstants.returnData] =  kCFBooleanTrue
     }

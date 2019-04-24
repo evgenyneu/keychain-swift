@@ -36,7 +36,7 @@ Simply add [KeychainSwiftDistrib.swift](https://github.com/evgenyneu/keychain-sw
 
 #### Setup with Carthage (iOS 8+)
 
-Alternatively, add `github "evgenyneu/keychain-swift" ~> 14.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "evgenyneu/keychain-swift" ~> 15.0` to your Cartfile and run `carthage update`.
 
 #### Setup with CocoaPods (iOS 8+)
 
@@ -44,7 +44,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     target 'Your target name'
-    pod 'KeychainSwift', '~> 14.0'
+    pod 'KeychainSwift', '~> 15.0'
 
 
 #### Setup with Swift Package Manager
@@ -58,7 +58,7 @@ import PackageDescription
 let package = Package(
     name: "MyApp",
     dependencies: [
-        .package(url: "https://github.com/evgenyneu/keychain-swift.git", from: "14.0.0")
+        .package(url: "https://github.com/evgenyneu/keychain-swift.git", from: "15.0.0")
     ],
     targets: [
         .target(
@@ -102,14 +102,6 @@ keychain.getBool("my key")
 let keychain = KeychainSwift()
 keychain.set(dataObject, forKey: "my key")
 keychain.getData("my key")
-```
-
-#### Reference to value
-
-```Swift
-let keychain = KeychainSwift()
-keychain.set(dataObject, forKey: "my key")
-keychain.getData("my key", isReference: true)
 ```
 
 #### Removing keys from Keychain
@@ -210,6 +202,16 @@ keychain.set("hello world", forKey: "my key")
 if keychain.lastResultCode != noErr { /* Report error */ }
 ```
 
+### Returning data as reference
+
+Use the `asReference: true` parameter to return the data as reference, which is needed for  [NEVPNProtocol](https://developer.apple.com/documentation/networkextension/nevpnprotocol).
+
+```Swift
+let keychain = KeychainSwift()
+keychain.set(dataObject, forKey: "my key")
+keychain.getData("my key", asReference: true)
+```
+
 ## Using KeychainSwift from Objective-C
 
 [This manual](https://github.com/evgenyneu/keychain-swift/wiki/Using-KeychainSwift-in-Objective-C-project) describes how to use KeychainSwift in Objective-C apps.
@@ -256,6 +258,7 @@ Here are some other Keychain libraries.
 * Thanks to [beny](https://github.com/beny) for adding Swift 4.2 support.
 * Thanks to [xuaninbox](https://github.com/xuaninbox) for fixing watchOS deployment target for Xcode 10.
 * Thanks to [schayes04](https://github.com/schayes04) for adding Swift 5.0 support.
+* Thanks to [mediym41](https://github.com/mediym41) for adding ability to return data as reference.
 
 
 

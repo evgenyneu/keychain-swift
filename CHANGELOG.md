@@ -1,5 +1,8 @@
 # KeychainSwift version history
 
+## 15.0.0 (2019-04-24)
+
+Added ability to return data as reference ([mediym41](https://github.com/mediym41)).
 
 
 ## 14.0.0 (2019-04-03)
