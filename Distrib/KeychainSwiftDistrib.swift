@@ -168,10 +168,11 @@ open class KeychainSwift {
   Retrieves the data from the keychain that corresponds to the given key.
   
   - parameter key: The key that is used to read the keychain item.
+  - parameter asReference: If true, returns the data as reference (needed for things like NEVPNProtocol).
   - returns: The text value from the keychain. Returns nil if unable to read the item.
   
   */
-  open func getData(_ key: String) -> Data? {
+  open func getData(_ key: String, asReference: Bool = false) -> Data? {
     // The lock prevents the code to be run simlultaneously
     // from multiple threads which may result in crashing
     readLock.lock()
@@ -182,9 +183,14 @@ open class KeychainSwift {
     var query: [String: Any] = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
-      KeychainSwiftConstants.returnData  : kCFBooleanTrue!,
       KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne
     ]
+    
+    if asReference {
+      query[KeychainSwiftConstants.returnReference] = kCFBooleanTrue
+    } else {
+      query[KeychainSwiftConstants.returnData] =  kCFBooleanTrue
+    }
     
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
@@ -196,7 +202,9 @@ open class KeychainSwift {
       SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
     }
     
-    if lastResultCode == noErr { return result as? Data }
+    if lastResultCode == noErr {
+      return result as? Data
+    }
     
     return nil
   }
@@ -330,6 +338,9 @@ public struct KeychainSwiftConstants {
   
   /// Used for specifying a value when setting a Keychain value.
   public static var valueData: String { return toString(kSecValueData) }
+    
+  /// Used for returning a reference to the data from the keychain
+  public static var returnReference: String { return toString(kSecReturnPersistentRef) }
   
   static func toString(_ value: CFString) -> String {
     return value as String
