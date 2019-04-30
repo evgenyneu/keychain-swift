@@ -1,10 +1,10 @@
 ## ❗️Known critical issues❗️
 
-It [has been reported](https://github.com/evgenyneu/keychain-swift/issues/15) that the library sometimes returns `nil`  instead of the stored Keychain value. The issue seems to be random and hard to reproduce. It may be connected with [the Keychain issue](https://forums.developer.apple.com/thread/4743) reported on Apple developer forums.
+It [has been reported](https://github.com/evgenyneu/keychain-swift/issues/15) that the library sometimes returns `nil`  instead of the stored Keychain value. It may be connected with [the Keychain issue](https://forums.developer.apple.com/thread/4743) reported on Apple developer forums.
 
 In addition, [users experienced](https://github.com/evgenyneu/keychain-swift/issues/98) random crashes when storing text in Keychain.
 
-If you experienced these problems feel free to create an issue so we can find solutions.
+Boths issues are random and hard to reproduce. If you experienced these problems feel free to create an issue so we can find solutions.
 
 # Helper functions for storing text in Keychain for iOS, macOS, tvOS and WatchOS
 
