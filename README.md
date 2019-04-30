@@ -1,6 +1,8 @@
-## ❗️❗️❗️Known serious issue ❗️❗️❗️
+## ❗️❗️❗️Known serious issues ❗️❗️❗️
 
 It [has been reported](https://github.com/evgenyneu/keychain-swift/issues/15) that the library sometimes returns `nil`  instead of the stored Keychain value. The issue seems to be random and hard to reproduce. It may be connected with [the Keychain issue](https://forums.developer.apple.com/thread/4743) reported on Apple developer forums. If you experienced this problem feel free to create an issue so we can discuss it and find solutions.
+
+In addition, [users experienced](https://github.com/evgenyneu/keychain-swift/issues/98) random carashes when storing text in Keychain.
 
 # Helper functions for storing text in Keychain for iOS, macOS, tvOS and WatchOS
 
