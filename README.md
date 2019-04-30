@@ -4,7 +4,7 @@
 
 1. In addition, [users experienced](https://github.com/evgenyneu/keychain-swift/issues/98) random crashes when storing text in Keychain.
 
-Boths issues are random and hard to reproduce. If you experienced these problems feel free to create an issue and share your story, so we can find solutions.
+Both issues are random and hard to reproduce. If you experienced these problems feel free to create an issue and share your story, so we can find solutions.
 
 # Helper functions for storing text in Keychain for iOS, macOS, tvOS and WatchOS
 
