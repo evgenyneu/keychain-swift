@@ -1,8 +1,8 @@
 ## ❗️Known critical issues❗️
 
-It [has been reported](https://github.com/evgenyneu/keychain-swift/issues/15) that the library sometimes returns `nil`  instead of the stored Keychain value. It may be connected with [the Keychain issue](https://forums.developer.apple.com/thread/4743) reported on Apple developer forums.
+1. It [has been reported](https://github.com/evgenyneu/keychain-swift/issues/15) that the library sometimes returns `nil`  instead of the stored Keychain value. It may be connected with [the Keychain issue](https://forums.developer.apple.com/thread/4743) reported on Apple developer forums.
 
-In addition, [users experienced](https://github.com/evgenyneu/keychain-swift/issues/98) random crashes when storing text in Keychain.
+1. In addition, [users experienced](https://github.com/evgenyneu/keychain-swift/issues/98) random crashes when storing text in Keychain.
 
 Boths issues are random and hard to reproduce. If you experienced these problems feel free to create an issue so we can find solutions.
 
