@@ -26,6 +26,8 @@ class ConcurrencyTests: XCTestCase {
     func testConcurrencyDoesntCrash() {
 
         let expectation = self.expectation(description: "Wait for write loop")
+        let expectation2 = self.expectation(description: "Wait for write loop")
+
 
         let dataToWrite = "{ asdf ñlk BNALSKDJFÑLAKSJDFÑLKJ ZÑCLXKJ ÑALSKDFJÑLKASJDFÑLKJASDÑFLKJAÑSDLKFJÑLKJ}"
         obj.set(dataToWrite, forKey: "test-key")
@@ -71,6 +73,62 @@ class ConcurrencyTests: XCTestCase {
                 }, timeoutWith: nil)
             }
         }
+      
+        let deleteQueue = DispatchQueue(label: "deleteQueue", attributes: [])
+        deleteQueue.async {
+          for _ in 0..<400 {
+            let _: Bool = synchronize( { completion in
+              let result = self.obj.delete("test-key")
+              DispatchQueue.global(qos: .background).async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(5)) {
+                  completion(result)
+                }
+              }
+            }, timeoutWith: false)
+          }
+        }
+      
+        let deleteQueue2 = DispatchQueue(label: "deleteQueue2", attributes: [])
+        deleteQueue2.async {
+          for _ in 0..<400 {
+            let _: Bool = synchronize( { completion in
+              let result = self.obj.delete("test-key")
+              DispatchQueue.global(qos: .background).async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(5)) {
+                  completion(result)
+                }
+              }
+            }, timeoutWith: false)
+          }
+        }
+      
+        let clearQueue = DispatchQueue(label: "clearQueue", attributes: [])
+        clearQueue.async {
+          for _ in 0..<400 {
+            let _: Bool = synchronize( { completion in
+              let result = self.obj.clear()
+              DispatchQueue.global(qos: .background).async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(5)) {
+                  completion(result)
+                }
+              }
+            }, timeoutWith: false)
+          }
+        }
+      
+        let clearQueue2 = DispatchQueue(label: "clearQueue2", attributes: [])
+        clearQueue2.async {
+          for _ in 0..<400 {
+            let _: Bool = synchronize( { completion in
+              let result = self.obj.clear()
+              DispatchQueue.global(qos: .background).async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(5)) {
+                  completion(result)
+                }
+              }
+            }, timeoutWith: false)
+          }
+        }
 
         let writeQueue = DispatchQueue(label: "WriteQueue", attributes: [])
         writeQueue.async {
@@ -89,14 +147,32 @@ class ConcurrencyTests: XCTestCase {
             }
             expectation.fulfill()
         }
+      
+        let writeQueue2 = DispatchQueue(label: "WriteQueue2", attributes: [])
+        writeQueue2.async {
+          for _ in 0..<500 {
+            let written: Bool = synchronize({ completion in
+              DispatchQueue.global(qos: .background).async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(5)) {
+                  let result = self.obj.set(dataToWrite, forKey: "test-key")
+                  completion(result)
+                }
+              }
+            }, timeoutWith: false)
+            if written {
+              writes = writes + 1
+            }
+          }
+          expectation2.fulfill()
+        }
 
         for _ in 0..<1000 {
             self.obj.set(dataToWrite, forKey: "test-key")
             let _ = self.obj.get("test-key")
         }
-        self.waitForExpectations(timeout: 20, handler: nil)
+        self.waitForExpectations(timeout: 30, handler: nil)
 
-        XCTAssertEqual(500, writes)
+        XCTAssertEqual(1000, writes)
     }
 }
 
