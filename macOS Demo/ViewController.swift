@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  macOS Demo
-//
-//  Created by Evgenii on 20/07/2016.
-//  Copyright © 2016 Marketplacer. All rights reserved.
-//
-
 import Cocoa
 import KeychainSwift
 

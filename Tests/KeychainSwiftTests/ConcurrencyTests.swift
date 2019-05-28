@@ -3,7 +3,6 @@
 //  KeychainSwift
 //
 //  Created by Eli Kohen on 08/02/2017.
-//  Copyright © 2017 Marketplacer. All rights reserved.
 //
 
 import XCTest

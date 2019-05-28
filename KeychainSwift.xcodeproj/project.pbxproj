@@ -563,7 +563,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = Marketplacer;
+				ORGANIZATIONNAME = "Evgenii Neumerzhitckii";
 				TargetAttributes = {
 					232B4C791BC29950001F2B7A = {
 						CreatedOnToolsVersion = 7.0.1;
