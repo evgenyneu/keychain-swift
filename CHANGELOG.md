@@ -1,5 +1,10 @@
 # KeychainSwift version history
 
+## 16.0.0 (2019-05-28)
+
+Made all methods (get, set, delete and clear) thread-safe to prevent crashing when called from different threads.
+
+
 ## 15.0.0 (2019-04-24)
 
 Added ability to return data as reference ([mediym41](https://github.com/mediym41)).
