@@ -1,3 +1,11 @@
+## ❗️Known critical issues❗️
+
+1. It [has been reported](https://github.com/evgenyneu/keychain-swift/issues/15) that the library sometimes returns `nil`  instead of the stored Keychain value. It may be connected with [the Keychain issue](https://forums.developer.apple.com/thread/4743) reported on Apple developer forums.
+
+1. In addition, [users experienced](https://github.com/evgenyneu/keychain-swift/issues/98) random crashes when storing text in Keychain.
+
+Both issues are random and hard to reproduce. If you experienced these problems feel free to create an issue and share your story, so we can find solutions.
+
 # Helper functions for storing text in Keychain for iOS, macOS, tvOS and WatchOS
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -215,10 +223,6 @@ keychain.getData("my key", asReference: true)
 ## Using KeychainSwift from Objective-C
 
 [This manual](https://github.com/evgenyneu/keychain-swift/wiki/Using-KeychainSwift-in-Objective-C-project) describes how to use KeychainSwift in Objective-C apps.
-
-## Known serious issue
-
-It [has been reported](https://github.com/evgenyneu/keychain-swift/issues/15) that the library sometimes returns `nil`  instead of the stored Keychain value. The issue seems to be random and hard to reproduce. It may be connected with [the Keychain issue](https://forums.developer.apple.com/thread/4743) reported on Apple developer forums. If you experienced this problem feel free to create an issue so we can discuss it and find solutions.
 
 
 ## Video tutorial
