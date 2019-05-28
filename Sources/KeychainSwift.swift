@@ -234,7 +234,7 @@ open class KeychainSwift {
   
   /**
    
-  Same as delete but is only accessed internally, since it is not thread safe.
+  Same as `delete` but is only accessed internally, since it is not thread safe.
    
    - parameter key: The key that is used to delete the keychain item.
    - returns: True if the item was successfully deleted.
