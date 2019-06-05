@@ -1,4 +1,4 @@
-## ❗️Known critical issue❗️
+## ❗️Known critical issue - call to action❗️
 
 It [has been reported](https://github.com/evgenyneu/keychain-swift/issues/15) that the library sometimes returns `nil`  instead of the stored Keychain value. It may be connected with [the Keychain issue](https://forums.developer.apple.com/thread/4743) reported on Apple developer forums.
 
