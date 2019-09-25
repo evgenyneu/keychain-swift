@@ -1,4 +1,5 @@
 import XCTest
+@testable import KeychainSwift
 
 class ClearTests: XCTestCase {
   
