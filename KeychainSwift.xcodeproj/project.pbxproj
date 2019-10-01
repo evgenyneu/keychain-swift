@@ -27,9 +27,6 @@
 		508566A81FA34EB1004208ED /* macOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508566991FA34EB1004208ED /* macOS_Tests.swift */; };
 		508566A91FA34EB1004208ED /* SynchronizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085669A1FA34EB1004208ED /* SynchronizableTests.swift */; };
 		508566AA1FA34EB1004208ED /* SynchronizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085669A1FA34EB1004208ED /* SynchronizableTests.swift */; };
-		7E3A6B681D3F62CC007C5B1F /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98D1B1C128100FE8090 /* KeychainSwift.swift */; };
-		7E3A6B691D3F62CC007C5B1F /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98E1B1C128100FE8090 /* KeychainSwiftAccessOptions.swift */; };
-		7E3A6B6A1D3F62CC007C5B1F /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6C98F1B1C128100FE8090 /* TegKeychainConstants.swift */; };
 		7E3A6B7E1D3F6779007C5B1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3A6B7D1D3F6779007C5B1F /* AppDelegate.swift */; };
 		7E3A6B801D3F6779007C5B1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3A6B7F1D3F6779007C5B1F /* ViewController.swift */; };
 		7E3A6B821D3F6779007C5B1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E3A6B811D3F6779007C5B1F /* Assets.xcassets */; };
@@ -83,6 +80,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 7ED6C96B1B1C118F00FE8090;
 			remoteInfo = KeychainSwift;
+		};
+		BF4250102343FE8400F7B44C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7ED6C9631B1C118F00FE8090 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 232B4C791BC29950001F2B7A;
+			remoteInfo = "KeychainSwift-macOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -474,6 +478,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				BF4250112343FE8400F7B44C /* PBXTargetDependency */,
 			);
 			name = "macOS Tests";
 			productName = "macOS Tests";
@@ -738,11 +743,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				508566AA1FA34EB1004208ED /* SynchronizableTests.swift in Sources */,
-				7E3A6B691D3F62CC007C5B1F /* KeychainSwiftAccessOptions.swift in Sources */,
 				508566A41FA34EB1004208ED /* KeychainSwiftTests.swift in Sources */,
-				7E3A6B6A1D3F62CC007C5B1F /* TegKeychainConstants.swift in Sources */,
 				508566A21FA34EB1004208ED /* KeychainSwiftPrefixedTests.swift in Sources */,
-				7E3A6B681D3F62CC007C5B1F /* KeychainSwift.swift in Sources */,
 				508566A81FA34EB1004208ED /* macOS_Tests.swift in Sources */,
 				5085669C1FA34EB1004208ED /* AccessGroupTests.swift in Sources */,
 			);
@@ -816,6 +818,11 @@
 			isa = PBXTargetDependency;
 			target = 7ED6C96B1B1C118F00FE8090 /* KeychainSwift */;
 			targetProxy = 7ED6C9C11B1C13AA00FE8090 /* PBXContainerItemProxy */;
+		};
+		BF4250112343FE8400F7B44C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 232B4C791BC29950001F2B7A /* KeychainSwift-macOS */;
+			targetProxy = BF4250102343FE8400F7B44C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

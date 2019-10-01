@@ -10,5 +10,10 @@ let package = Package(
     ],
     targets: [
         .target(name: "KeychainSwift", dependencies: [], path: "Sources"),
+        .testTarget(
+            name: "KeychainSwiftTests", 
+            dependencies: ["KeychainSwift"],
+            exclude: ["ClearTests.swift"]
+        )
     ]
 )

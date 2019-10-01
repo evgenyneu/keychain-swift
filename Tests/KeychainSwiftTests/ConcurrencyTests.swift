@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import KeychainSwift
 
 class ConcurrencyTests: XCTestCase {
 
