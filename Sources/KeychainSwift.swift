@@ -266,7 +266,6 @@ open class KeychainSwift {
   
   */
   @discardableResult
-  @available(macOS, unavailable, message: "Not implemented on macOS, call delete for every key.")
   open func clear() -> Bool {
     // The lock prevents the code to be run simlultaneously
     // from multiple threads which may result in crashing
