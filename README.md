@@ -36,7 +36,7 @@ Simply add [KeychainSwiftDistrib.swift](https://github.com/evgenyneu/keychain-sw
 
 #### Setup with Carthage (iOS 8+)
 
-Alternatively, add `github "evgenyneu/keychain-swift" ~> 16.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "evgenyneu/keychain-swift" ~> 17.0` to your Cartfile and run `carthage update`.
 
 #### Setup with CocoaPods (iOS 8+)
 
@@ -44,7 +44,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     target 'Your target name'
-    pod 'KeychainSwift', '~> 16.0'
+    pod 'KeychainSwift', '~> 17.0'
 
 
 #### Setup with Swift Package Manager
@@ -58,7 +58,7 @@ import PackageDescription
 let package = Package(
     name: "MyApp",
     dependencies: [
-        .package(url: "https://github.com/evgenyneu/keychain-swift.git", from: "16.0.0")
+        .package(url: "https://github.com/evgenyneu/keychain-swift.git", from: "17.0.0")
     ],
     targets: [
         .target(
@@ -258,6 +258,7 @@ Here are some other Keychain libraries.
 * Thanks to [xuaninbox](https://github.com/xuaninbox) for fixing watchOS deployment target for Xcode 10.
 * Thanks to [schayes04](https://github.com/schayes04) for adding Swift 5.0 support.
 * Thanks to [mediym41](https://github.com/mediym41) for adding ability to return data as reference.
+* Thanks to [AnthonyOliveri](https://github.com/AnthonyOliveri) for adding ability to run unit tests from Swift Package Manager.
 
 
 

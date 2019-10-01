@@ -1,5 +1,11 @@
 # KeychainSwift version history
 
+
+## 17.0.0 (2019-10-02)
+
+Added ability to run unit test from Swift Package Manager (https://github.com/evgenyneu/keychain-swift/pull/113).
+
+
 ## 16.0.0 (2019-05-28)
 
 Made all methods (get, set, delete and clear) thread-safe to prevent crashing when called from different threads.
