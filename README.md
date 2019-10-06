@@ -2,6 +2,7 @@
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods Version](https://img.shields.io/cocoapods/v/KeychainSwift.svg?style=flat)](http://cocoadocs.org/docsets/KeychainSwift)
+[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 [![License](https://img.shields.io/cocoapods/l/KeychainSwift.svg?style=flat)](http://cocoadocs.org/docsets/KeychainSwift)
 [![Platform](https://img.shields.io/cocoapods/p/KeychainSwift.svg?style=flat)](http://cocoadocs.org/docsets/KeychainSwift)
 
@@ -49,25 +50,8 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
 #### Setup with Swift Package Manager
 
-Here is an example of a Package.swift file.
-
-```Swift
-// swift-tools-version:4.0
-import PackageDescription
-
-let package = Package(
-    name: "MyApp",
-    dependencies: [
-        .package(url: "https://github.com/evgenyneu/keychain-swift.git", from: "17.0.0")
-    ],
-    targets: [
-        .target(
-            name: "MyApp",
-            dependencies: ["KeychainSwift"],
-            path: "Sources")
-    ]
-)
-```
+* In Xcode 11+ select *File > Packages > Add Package Dependency...*.
+* Enter this project's URL: https://github.com/evgenyneu/keychain-swift.git
 
 
 ## Legacy Swift versions
