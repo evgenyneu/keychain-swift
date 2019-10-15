@@ -8,10 +8,23 @@ A collection of helper functions for saving text and data in the keychain.
 */
 open class KeychainSwift {
   
-  var lastQueryParameters: [String: Any]? // Used by the unit tests
-  
+   private var lastQueryParametersAtomic: Atomic<[String: Any]?> = Atomic([:])// Used by the unit tests
+     var lastQueryParameters:[String: Any]? {
+        get {
+            return lastQueryParametersAtomic.value
+        }
+        set {
+            lastQueryParametersAtomic.mutate {$0 = newValue}
+        }
+    }
+
   /// Contains result code from the last operation. Value is noErr (0) for a successful result.
-  open var lastResultCode: OSStatus = noErr
+  private let lastResultCodeAtomic: Atomic<OSStatus> = Atomic<OSStatus>(noErr)
+   open var lastResultCode: OSStatus {
+        get {
+            return lastResultCodeAtomic.value
+        }
+    }
 
   var keyPrefix = "" // Can be useful in test.
   
@@ -32,9 +45,6 @@ open class KeychainSwift {
    
   */
   open var synchronizable: Bool = false
-
-  private let lock = NSLock()
-
   
   /// Instantiate a KeychainSwift object
   public init() { }
@@ -85,12 +95,7 @@ open class KeychainSwift {
   open func set(_ value: Data, forKey key: String,
     withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
     
-    // The lock prevents the code to be run simlultaneously
-    // from multiple threads which may result in crashing
-    lock.lock()
-    defer { lock.unlock() }
-    
-    deleteNoLock(key) // Delete any existing key before saving it
+    delete(key) // Delete any existing key before saving it
 
     let accessible = access?.value ?? KeychainSwiftAccessOptions.defaultOption.value
       
@@ -105,11 +110,12 @@ open class KeychainSwift {
       
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: true)
-    lastQueryParameters = query
+    lastQueryParametersAtomic.mutate {$0 = query}
     
-    lastResultCode = SecItemAdd(query as CFDictionary, nil)
+    let res = SecItemAdd(query as CFDictionary, nil)
+    lastResultCodeAtomic.mutate {$0 = res}
     
-    return lastResultCode == noErr
+    return res == noErr
   }
 
   /**
@@ -148,7 +154,7 @@ open class KeychainSwift {
         return currentString
       }
       
-      lastResultCode = -67853 // errSecInvalidEncoding
+      lastResultCodeAtomic.mutate {$0 = -67853} // errSecInvalidEncoding
     }
 
     return nil
@@ -164,10 +170,6 @@ open class KeychainSwift {
   
   */
   open func getData(_ key: String, asReference: Bool = false) -> Data? {
-    // The lock prevents the code to be run simlultaneously
-    // from multiple threads which may result in crashing
-    lock.lock()
-    defer { lock.unlock() }
     
     let prefixedKey = keyWithPrefix(key)
     
@@ -185,15 +187,15 @@ open class KeychainSwift {
     
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
-    lastQueryParameters = query
+    lastQueryParametersAtomic.mutate {$0 = query}
     
     var result: AnyObject?
-    
-    lastResultCode = withUnsafeMutablePointer(to: &result) {
-      SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
+    let res = withUnsafeMutablePointer(to: &result) {
+    SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
     }
+    lastResultCodeAtomic.mutate {$0 = res }
     
-    if lastResultCode == noErr {
+    if res == noErr {
       return result as? Data
     }
     
@@ -224,24 +226,6 @@ open class KeychainSwift {
   */
   @discardableResult
   open func delete(_ key: String) -> Bool {
-    // The lock prevents the code to be run simlultaneously
-    // from multiple threads which may result in crashing
-    lock.lock()
-    defer { lock.unlock() }
-    
-    return deleteNoLock(key)
-  }
-  
-  /**
-   
-  Same as `delete` but is only accessed internally, since it is not thread safe.
-   
-   - parameter key: The key that is used to delete the keychain item.
-   - returns: True if the item was successfully deleted.
-   
-   */
-  @discardableResult
-  func deleteNoLock(_ key: String) -> Bool {
     let prefixedKey = keyWithPrefix(key)
     
     var query: [String: Any] = [
@@ -251,11 +235,12 @@ open class KeychainSwift {
     
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
-    lastQueryParameters = query
+    lastQueryParametersAtomic.mutate {$0 = query}
     
-    lastResultCode = SecItemDelete(query as CFDictionary)
+    let res = SecItemDelete(query as CFDictionary)
+    lastResultCodeAtomic.mutate {$0 = res}
     
-    return lastResultCode == noErr
+    return res == noErr
   }
 
   /**
@@ -267,19 +252,14 @@ open class KeychainSwift {
   */
   @discardableResult
   open func clear() -> Bool {
-    // The lock prevents the code to be run simlultaneously
-    // from multiple threads which may result in crashing
-    lock.lock()
-    defer { lock.unlock() }
-    
     var query: [String: Any] = [ kSecClass as String : kSecClassGenericPassword ]
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
-    lastQueryParameters = query
+    lastQueryParametersAtomic.mutate {$0 = query}
     
-    lastResultCode = SecItemDelete(query as CFDictionary)
+    lastResultCodeAtomic.mutate {$0 = SecItemDelete(query as CFDictionary)}
     
-    return lastResultCode == noErr
+    return lastResultCodeAtomic.value == noErr
   }
   
   /// Returns the key with currently set prefix.
@@ -311,4 +291,24 @@ open class KeychainSwift {
     result[KeychainSwiftConstants.attrSynchronizable] = addingItems == true ? true : kSecAttrSynchronizableAny
     return result
   }
+}
+
+final class Atomic<A> {
+    private let queue = DispatchQueue(label: "Atomic serial queue")
+    private var _value: A
+    init(_ value: A) {
+        self._value = value
+    }
+
+    var value: A {
+        get {
+            return queue.sync { self._value }
+        }
+    }
+
+    func mutate(_ transform: (inout A) -> ()) {
+        queue.sync {
+            transform(&self._value)
+        }
+    }
 }
