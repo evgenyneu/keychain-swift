@@ -78,6 +78,20 @@ class KeychainSwiftTests: XCTestCase {
   func testGet_returnNilWhenValueNotSet() {
     XCTAssert(obj.get("key 1") == nil)
   }
+    
+  func testGet_usesAccessibleWhenUnlockedByDefault() {
+    obj.set("hello :)", forKey: "key 1")
+    XCTAssertTrue(obj.get("key 1") != nil)
+    let accessValue = obj.lastQueryParameters?[KeychainSwiftConstants.accessible] as? String
+    XCTAssertEqual(KeychainSwiftAccessOptions.accessibleWhenUnlocked.value, accessValue!)
+  }
+    
+  func testGet_withAccessOption() {
+    obj.set("hello :)", forKey: "key 1", withAccess: .accessibleAfterFirstUnlock)
+    XCTAssertTrue(obj.get("key 1", withAccess: .accessibleAfterFirstUnlock) != nil)
+    let accessValue = obj.lastQueryParameters?[KeychainSwiftConstants.accessible] as? String
+    XCTAssertEqual(KeychainSwiftAccessOptions.accessibleAfterFirstUnlock.value, accessValue!)
+  }
 
   // MARK: - Get bool
   // -----------------------

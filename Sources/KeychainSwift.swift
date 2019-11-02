@@ -141,8 +141,8 @@ open class KeychainSwift {
   - returns: The text value from the keychain. Returns nil if unable to read the item.
   
   */
-  open func get(_ key: String) -> String? {
-    if let data = getData(key) {
+  open func get(_ key: String, withAccess access: KeychainSwiftAccessOptions? = nil) -> String? {
+    if let data = getData(key, withAccess: access) {
       
       if let currentString = String(data: data, encoding: .utf8) {
         return currentString
@@ -163,18 +163,21 @@ open class KeychainSwift {
   - returns: The text value from the keychain. Returns nil if unable to read the item.
   
   */
-  open func getData(_ key: String, asReference: Bool = false) -> Data? {
+  open func getData(_ key: String, asReference: Bool = false, withAccess access: KeychainSwiftAccessOptions? = nil) -> Data? {
     // The lock prevents the code to be run simlultaneously
     // from multiple threads which may result in crashing
     lock.lock()
     defer { lock.unlock() }
+    
+    let accessible = access?.value ?? KeychainSwiftAccessOptions.defaultOption.value
     
     let prefixedKey = keyWithPrefix(key)
     
     var query: [String: Any] = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
-      KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne
+      KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne,
+      KeychainSwiftConstants.accessible  : accessible
     ]
     
     if asReference {
@@ -208,8 +211,8 @@ open class KeychainSwift {
   - returns: The boolean value from the keychain. Returns nil if unable to read the item.
 
   */
-  open func getBool(_ key: String) -> Bool? {
-    guard let data = getData(key) else { return nil }
+  open func getBool(_ key: String, withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool? {
+    guard let data = getData(key, withAccess: access) else { return nil }
     guard let firstBit = data.first else { return nil }
     return firstBit == 1
   }
