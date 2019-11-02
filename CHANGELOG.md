@@ -1,6 +1,11 @@
 # KeychainSwift version history
 
 
+## 18.0.0 (2019-11-03)
+
+Removed deprecated `kSecAttrAccessibleAlways` and `kSecAttrAccessibleAlwaysThisDeviceOnly` access options (https://github.com/evgenyneu/keychain-swift/pull/122).
+
+
 ## 17.0.0 (2019-10-02)
 
 Added ability to run unit test from Swift Package Manager (https://github.com/evgenyneu/keychain-swift/pull/113).
