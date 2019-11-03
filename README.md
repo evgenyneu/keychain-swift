@@ -243,6 +243,7 @@ Here are some other Keychain libraries.
 * Thanks to [schayes04](https://github.com/schayes04) for adding Swift 5.0 support.
 * Thanks to [mediym41](https://github.com/mediym41) for adding ability to return data as reference.
 * Thanks to [AnthonyOliveri](https://github.com/AnthonyOliveri) for adding ability to run unit tests from Swift Package Manager.
+* Thanks to [philippec](https://github.com/philippec) for removing deprecated access options.
 
 
 
