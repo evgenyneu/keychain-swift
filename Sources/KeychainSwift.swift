@@ -169,16 +169,17 @@ open class KeychainSwift {
     lock.lock()
     defer { lock.unlock() }
     
-    let accessible = access?.value ?? KeychainSwiftAccessOptions.defaultOption.value
-    
     let prefixedKey = keyWithPrefix(key)
     
     var query: [String: Any] = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne,
-      KeychainSwiftConstants.accessible  : accessible
     ]
+    
+    if let access = access {
+      query[KeychainSwiftConstants.accessible] = access.value
+    }
     
     if asReference {
       query[KeychainSwiftConstants.returnReference] = kCFBooleanTrue

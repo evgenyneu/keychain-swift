@@ -83,7 +83,7 @@ class KeychainSwiftTests: XCTestCase {
     obj.set("hello :)", forKey: "key 1")
     XCTAssertTrue(obj.get("key 1") != nil)
     let accessValue = obj.lastQueryParameters?[KeychainSwiftConstants.accessible] as? String
-    XCTAssertEqual(KeychainSwiftAccessOptions.accessibleWhenUnlocked.value, accessValue!)
+    XCTAssert(accessValue == nil)
   }
     
   func testGet_withAccessOption() {
