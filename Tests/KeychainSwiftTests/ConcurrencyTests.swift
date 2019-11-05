@@ -133,17 +133,17 @@ class ConcurrencyTests: XCTestCase {
         let writeQueue = DispatchQueue(label: "WriteQueue", attributes: [])
         writeQueue.async {
             for _ in 0..<500 {
-                let written: Bool = synchronize({ completion in
+                synchronize({ completion in
                     DispatchQueue.global(qos: .background).async {
                         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(5)) {
                             let result = self.obj.set(dataToWrite, forKey: "test-key")
+                            if result {
+                                writes += 1
+                            }
                             completion(result)
                         }
                     }
                 }, timeoutWith: false)
-                if written {
-                    writes = writes + 1
-                }
             }
             expectation.fulfill()
         }
@@ -151,17 +151,17 @@ class ConcurrencyTests: XCTestCase {
         let writeQueue2 = DispatchQueue(label: "WriteQueue2", attributes: [])
         writeQueue2.async {
           for _ in 0..<500 {
-            let written: Bool = synchronize({ completion in
+            synchronize({ completion in
               DispatchQueue.global(qos: .background).async {
                 DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(5)) {
                   let result = self.obj.set(dataToWrite, forKey: "test-key")
+                    if result {
+                        writes += 1
+                    }
                   completion(result)
                 }
               }
             }, timeoutWith: false)
-            if written {
-              writes = writes + 1
-            }
           }
           expectation2.fulfill()
         }
@@ -179,6 +179,7 @@ class ConcurrencyTests: XCTestCase {
 
 // Synchronizes a asynch closure
 // Ref: https://forums.developer.apple.com/thread/11519
+@discardableResult
 func synchronize<ResultType>(_ asynchClosure: (_ completion: @escaping (ResultType) -> ()) -> Void,
                         timeout: DispatchTime = DispatchTime.distantFuture, timeoutWith: @autoclosure @escaping () -> ResultType) -> ResultType {
     let sem = DispatchSemaphore(value: 0)
