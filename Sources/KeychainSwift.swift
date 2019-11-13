@@ -85,7 +85,7 @@ open class KeychainSwift {
   open func set(_ value: Data, forKey key: String,
     withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
     
-    // The lock prevents the code to be run simlultaneously
+    // The lock prevents the code to be run simultaneously
     // from multiple threads which may result in crashing
     lock.lock()
     defer { lock.unlock() }
@@ -164,7 +164,7 @@ open class KeychainSwift {
   
   */
   open func getData(_ key: String, asReference: Bool = false) -> Data? {
-    // The lock prevents the code to be run simlultaneously
+    // The lock prevents the code to be run simultaneously
     // from multiple threads which may result in crashing
     lock.lock()
     defer { lock.unlock() }
@@ -224,7 +224,7 @@ open class KeychainSwift {
   */
   @discardableResult
   open func delete(_ key: String) -> Bool {
-    // The lock prevents the code to be run simlultaneously
+    // The lock prevents the code to be run simultaneously
     // from multiple threads which may result in crashing
     lock.lock()
     defer { lock.unlock() }
@@ -267,7 +267,7 @@ open class KeychainSwift {
   */
   @discardableResult
   open func clear() -> Bool {
-    // The lock prevents the code to be run simlultaneously
+    // The lock prevents the code to be run simultaneously
     // from multiple threads which may result in crashing
     lock.lock()
     defer { lock.unlock() }
