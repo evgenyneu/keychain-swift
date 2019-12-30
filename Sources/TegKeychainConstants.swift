@@ -34,6 +34,12 @@ public struct KeychainSwiftConstants {
   /// Used for returning a reference to the data from the keychain
   public static var returnReference: String { return toString(kSecReturnPersistentRef) }
   
+  /// A key whose value is a Boolean indicating whether or not to return item attributes
+  public static var returnAttributes : String { return toString(kSecReturnAttributes) }
+    
+  /// A value that corresponds to matching an unlimited number of items
+  public static var secMatchLimitAll : String { return toString(kSecMatchLimitAll) }
+    
   static func toString(_ value: CFString) -> String {
     return value as String
   }
