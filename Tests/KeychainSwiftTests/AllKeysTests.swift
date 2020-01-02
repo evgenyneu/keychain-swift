@@ -31,10 +31,10 @@ class AllKeysTests: XCTestCase {
         self.obj!.set("\(enumerator.offset)", forKey: enumerator.element)
     }
     
-    XCTAssertEqual(["one", "two"], obj.allKeys())
+    XCTAssertEqual(["one", "two"], obj.allKeys)
     
     obj.clear()
-    XCTAssertEqual(obj.allKeys(), [])
+    XCTAssertEqual(obj.allKeys, [])
     
   }
   

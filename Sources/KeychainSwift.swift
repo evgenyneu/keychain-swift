@@ -237,7 +237,7 @@ open class KeychainSwift {
      
      - returns: An string array with all keys on keychain
      */
-    open func allKeys() -> [String] {
+    public var allKeys: [String] {
         var query: [String: Any] = [
             KeychainSwiftConstants.klass : kSecClassGenericPassword,
             KeychainSwiftConstants.returnData : true,
