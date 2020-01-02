@@ -50,6 +50,8 @@
 		7ED6C9C01B1C13AA00FE8090 /* KeychainSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED6C96C1B1C118F00FE8090 /* KeychainSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7EE5B9A11E32F6D400AA56FF /* KeychainSwiftCBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE5B9A01E32F6D400AA56FF /* KeychainSwiftCBridge.swift */; };
 		C7E1DE4C1E4B7C9F003818F6 /* ConcurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1DE4A1E4B7C9F003818F6 /* ConcurrencyTests.swift */; };
+		F271A1AE23BE071800FCC3B9 /* AllKeysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F271A1AD23BE071800FCC3B9 /* AllKeysTests.swift */; };
+		F271A1AF23BE082500FCC3B9 /* AllKeysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F271A1AD23BE071800FCC3B9 /* AllKeysTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +157,7 @@
 		7ED6C9C91B1C16EE00FE8090 /* KeychainSwiftDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftDistrib.swift; sourceTree = "<group>"; };
 		7EE5B9A01E32F6D400AA56FF /* KeychainSwiftCBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainSwiftCBridge.swift; sourceTree = "<group>"; };
 		C7E1DE4A1E4B7C9F003818F6 /* ConcurrencyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrencyTests.swift; sourceTree = "<group>"; };
+		F271A1AD23BE071800FCC3B9 /* AllKeysTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllKeysTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +235,7 @@
 				508566961FA34EB1004208ED /* KeychainSwiftTests.swift */,
 				508566971FA34EB1004208ED /* macOS Tests */,
 				5085669A1FA34EB1004208ED /* SynchronizableTests.swift */,
+				F271A1AD23BE071800FCC3B9 /* AllKeysTests.swift */,
 			);
 			path = KeychainSwiftTests;
 			sourceTree = "<group>";
@@ -743,6 +747,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				508566AA1FA34EB1004208ED /* SynchronizableTests.swift in Sources */,
+				F271A1AF23BE082500FCC3B9 /* AllKeysTests.swift in Sources */,
 				508566A41FA34EB1004208ED /* KeychainSwiftTests.swift in Sources */,
 				508566A21FA34EB1004208ED /* KeychainSwiftPrefixedTests.swift in Sources */,
 				508566A81FA34EB1004208ED /* macOS_Tests.swift in Sources */,
@@ -782,6 +787,7 @@
 				5085669B1FA34EB1004208ED /* AccessGroupTests.swift in Sources */,
 				7ED6C9981B1C12B500FE8090 /* TegKeychainConstants.swift in Sources */,
 				5085669D1FA34EB1004208ED /* ClearTests.swift in Sources */,
+				F271A1AE23BE071800FCC3B9 /* AllKeysTests.swift in Sources */,
 				508566A31FA34EB1004208ED /* KeychainSwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
