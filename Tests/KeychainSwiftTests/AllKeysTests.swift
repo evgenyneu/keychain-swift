@@ -37,6 +37,4 @@ class AllKeysTests: XCTestCase {
     XCTAssertEqual(obj.allKeys, [])
     
   }
-  
-
 }
