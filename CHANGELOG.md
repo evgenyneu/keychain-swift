@@ -1,6 +1,11 @@
 # KeychainSwift version history
 
 
+## 19.0.0 (2020-01-04)
+
+Added `allKeys` property that returns all key names ([lucasmpaim](https://github.com/lucasmpaim)).
+
+
 ## 18.0.0 (2019-11-03)
 
 Removed deprecated `kSecAttrAccessibleAlways` and `kSecAttrAccessibleAlwaysThisDeviceOnly` access options (https://github.com/evgenyneu/keychain-swift/pull/122).

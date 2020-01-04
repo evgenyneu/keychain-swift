@@ -37,7 +37,7 @@ Simply add [KeychainSwiftDistrib.swift](https://github.com/evgenyneu/keychain-sw
 
 #### Setup with Carthage (iOS 8+)
 
-Alternatively, add `github "evgenyneu/keychain-swift" ~> 18.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "evgenyneu/keychain-swift" ~> 19.0` to your Cartfile and run `carthage update`.
 
 #### Setup with CocoaPods (iOS 8+)
 
@@ -45,7 +45,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     target 'Your target name'
-    pod 'KeychainSwift', '~> 18.0'
+    pod 'KeychainSwift', '~> 19.0'
 
 
 #### Setup with Swift Package Manager
@@ -95,8 +95,14 @@ keychain.delete("my key") // Remove single key
 keychain.clear() // Delete everything from app's Keychain. Does not work on macOS.
 ```
 
-## Advanced options
+#### Return all keys
 
+```Swift
+let keychain = KeychainSwift()
+keychain.allKeys // Returns the names of all keys
+```
+
+## Advanced options
 
 <h3 id="keychain_item_access">Keychain item access</h3>
 
@@ -244,6 +250,7 @@ Here are some other Keychain libraries.
 * Thanks to [mediym41](https://github.com/mediym41) for adding ability to return data as reference.
 * Thanks to [AnthonyOliveri](https://github.com/AnthonyOliveri) for adding ability to run unit tests from Swift Package Manager.
 * Thanks to [philippec](https://github.com/philippec) for removing deprecated access options.
+* Thanks to [lucasmpaim](https://github.com/lucasmpaim) for adding ability to return the names of all keys.
 
 
 
