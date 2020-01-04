@@ -233,6 +233,38 @@ open class KeychainSwift {
   }
   
   /**
+  Return all keys from keychain
+   
+  - returns: An string array with all keys from the keychain.
+   
+  */
+  public var allKeys: [String] {
+    var query: [String: Any] = [
+      KeychainSwiftConstants.klass : kSecClassGenericPassword,
+      KeychainSwiftConstants.returnData : true,
+      KeychainSwiftConstants.returnAttributes: true,
+      KeychainSwiftConstants.returnReference: true,
+      KeychainSwiftConstants.matchLimit: KeychainSwiftConstants.secMatchLimitAll
+    ]
+  
+    query = addAccessGroupWhenPresent(query)
+    query = addSynchronizableIfRequired(query, addingItems: false)
+
+    var result: AnyObject?
+
+    let lastResultCode = withUnsafeMutablePointer(to: &result) {
+      SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
+    }
+    
+    if lastResultCode == noErr {
+      return (result as? [[String: Any]])?.compactMap {
+        $0[KeychainSwiftConstants.attrAccount] as? String } ?? []
+    }
+    
+    return []
+  }
+    
+  /**
    
   Same as `delete` but is only accessed internally, since it is not thread safe.
    

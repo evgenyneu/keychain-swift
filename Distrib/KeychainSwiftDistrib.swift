@@ -100,7 +100,7 @@ open class KeychainSwift {
   open func set(_ value: Data, forKey key: String,
     withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
     
-    // The lock prevents the code to be run simlultaneously
+    // The lock prevents the code to be run simultaneously
     // from multiple threads which may result in crashing
     lock.lock()
     defer { lock.unlock() }
@@ -179,7 +179,7 @@ open class KeychainSwift {
   
   */
   open func getData(_ key: String, asReference: Bool = false) -> Data? {
-    // The lock prevents the code to be run simlultaneously
+    // The lock prevents the code to be run simultaneously
     // from multiple threads which may result in crashing
     lock.lock()
     defer { lock.unlock() }
@@ -239,7 +239,7 @@ open class KeychainSwift {
   */
   @discardableResult
   open func delete(_ key: String) -> Bool {
-    // The lock prevents the code to be run simlultaneously
+    // The lock prevents the code to be run simultaneously
     // from multiple threads which may result in crashing
     lock.lock()
     defer { lock.unlock() }
@@ -247,6 +247,38 @@ open class KeychainSwift {
     return deleteNoLock(key)
   }
   
+  /**
+  Return all keys from keychain
+   
+  - returns: An string array with all keys from the keychain.
+   
+  */
+  public var allKeys: [String] {
+    var query: [String: Any] = [
+      KeychainSwiftConstants.klass : kSecClassGenericPassword,
+      KeychainSwiftConstants.returnData : true,
+      KeychainSwiftConstants.returnAttributes: true,
+      KeychainSwiftConstants.returnReference: true,
+      KeychainSwiftConstants.matchLimit: KeychainSwiftConstants.secMatchLimitAll
+    ]
+  
+    query = addAccessGroupWhenPresent(query)
+    query = addSynchronizableIfRequired(query, addingItems: false)
+
+    var result: AnyObject?
+
+    let lastResultCode = withUnsafeMutablePointer(to: &result) {
+      SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
+    }
+    
+    if lastResultCode == noErr {
+      return (result as? [[String: Any]])?.compactMap {
+        $0[KeychainSwiftConstants.attrAccount] as? String } ?? []
+    }
+    
+    return []
+  }
+    
   /**
    
   Same as `delete` but is only accessed internally, since it is not thread safe.
@@ -282,7 +314,7 @@ open class KeychainSwift {
   */
   @discardableResult
   open func clear() -> Bool {
-    // The lock prevents the code to be run simlultaneously
+    // The lock prevents the code to be run simultaneously
     // from multiple threads which may result in crashing
     lock.lock()
     defer { lock.unlock() }
@@ -371,6 +403,12 @@ public struct KeychainSwiftConstants {
   /// Used for returning a reference to the data from the keychain
   public static var returnReference: String { return toString(kSecReturnPersistentRef) }
   
+  /// A key whose value is a Boolean indicating whether or not to return item attributes
+  public static var returnAttributes : String { return toString(kSecReturnAttributes) }
+    
+  /// A value that corresponds to matching an unlimited number of items
+  public static var secMatchLimitAll : String { return toString(kSecMatchLimitAll) }
+    
   static func toString(_ value: CFString) -> String {
     return value as String
   }
