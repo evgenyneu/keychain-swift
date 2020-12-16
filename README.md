@@ -110,7 +110,8 @@ Use `withAccess` parameter to specify the security level of the keychain storage
 By default the `.accessibleWhenUnlocked` option is used. It is one of the most restrictive options and provides good data protection.
 
 ```
-KeychainSwift().set("Hello world", forKey: "key 1", withAccess: .accessibleWhenUnlocked)
+let keychain = KeychainSwift()
+keychain.set("Hello world", forKey: "key 1", withAccess: .accessibleWhenUnlocked)
 ```
 
 You can use `.accessibleAfterFirstUnlock` if you need your app to access the keychain item while in the background. Note that it is less secure than the `.accessibleWhenUnlocked` option.
