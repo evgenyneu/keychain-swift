@@ -15,6 +15,9 @@ public struct KeychainSwiftConstants {
   
   /// Used for specifying a String key when setting/getting a Keychain value.
   public static var attrAccount: String { return toString(kSecAttrAccount) }
+    
+  /// Specifies service name, which is displayed as 'Name' in macOS Keychain.app
+  public static var attrService: String { return toString(kSecAttrService) }
 
   /// Used for specifying synchronization of keychain items between devices.
   public static var attrSynchronizable: String { return toString(kSecAttrSynchronizable) }
