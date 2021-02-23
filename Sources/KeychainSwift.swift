@@ -21,7 +21,13 @@ open class KeychainSwift {
 
   */
   open var accessGroup: String?
-  
+    
+  /**
+     
+  Specify service. Usually it's bundle identified or website name. Displayed as 'Name' in macOS Keychain.app.
+     
+  */
+  open var service: String?
   
   /**
    
@@ -105,6 +111,7 @@ open class KeychainSwift {
       
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: true)
+    query = addServiceIfRequired(query)
     lastQueryParameters = query
     
     lastResultCode = SecItemAdd(query as CFDictionary, nil)
@@ -185,6 +192,7 @@ open class KeychainSwift {
     
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
+    query = addServiceIfRequired(query)
     lastQueryParameters = query
     
     var result: AnyObject?
@@ -249,6 +257,7 @@ open class KeychainSwift {
   
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
+    query = addServiceIfRequired(query)
 
     var result: AnyObject?
 
@@ -283,6 +292,7 @@ open class KeychainSwift {
     
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
+    query = addServiceIfRequired(query)
     lastQueryParameters = query
     
     lastResultCode = SecItemDelete(query as CFDictionary)
@@ -307,6 +317,7 @@ open class KeychainSwift {
     var query: [String: Any] = [ kSecClass as String : kSecClassGenericPassword ]
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
+    query = addServiceIfRequired(query)
     lastQueryParameters = query
     
     lastResultCode = SecItemDelete(query as CFDictionary)
@@ -341,6 +352,13 @@ open class KeychainSwift {
     if !synchronizable { return items }
     var result: [String: Any] = items
     result[KeychainSwiftConstants.attrSynchronizable] = addingItems == true ? true : kSecAttrSynchronizableAny
+    return result
+  }
+
+  func addServiceIfRequired(_ items: [String: Any]) -> [String: Any] {
+    guard let service = service else { return items }
+    var result: [String: Any] = items
+    result[KeychainSwiftConstants.attrService] = service
     return result
   }
 }
