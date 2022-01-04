@@ -50,7 +50,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
 #### Setup with Swift Package Manager
 
-* In Xcode 11+ select *File > Add Packages.
+* In Xcode select *File > Add Packages*.
 * Enter this project's URL: https://github.com/evgenyneu/keychain-swift.git
 
 
