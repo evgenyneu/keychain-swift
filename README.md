@@ -37,7 +37,7 @@ Simply add [KeychainSwiftDistrib.swift](https://github.com/evgenyneu/keychain-sw
 
 #### Setup with Carthage (iOS 8+)
 
-Alternatively, add `github "evgenyneu/keychain-swift" ~> 19.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "evgenyneu/keychain-swift" ~> 20.0` to your Cartfile and run `carthage update`.
 
 #### Setup with CocoaPods (iOS 8+)
 
@@ -45,12 +45,12 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 
     use_frameworks!
     target 'Your target name'
-    pod 'KeychainSwift', '~> 19.0'
+    pod 'KeychainSwift', '~> 20.0'
 
 
 #### Setup with Swift Package Manager
 
-* In Xcode 11+ select *File > Packages > Add Package Dependency...*.
+* In Xcode 11+ select *File > Add Packages.
 * Enter this project's URL: https://github.com/evgenyneu/keychain-swift.git
 
 

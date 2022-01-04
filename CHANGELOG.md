@@ -1,5 +1,8 @@
 # KeychainSwift version history
 
+## 20.0.0 (2021-01-04)
+
+Update to Xcode 13.
 
 ## 19.0.0 (2020-01-04)
 

@@ -1,4 +1,4 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.5
 import PackageDescription
 
 let package = Package(
@@ -9,9 +9,14 @@ let package = Package(
     dependencies: [
     ],
     targets: [
-        .target(name: "KeychainSwift", dependencies: [], path: "Sources"),
+        .target(
+          name: "KeychainSwift",
+          dependencies: [],
+          path: "Sources",
+          exclude: ["Info.plist"]
+        ),
         .testTarget(
-            name: "KeychainSwiftTests", 
+            name: "KeychainSwiftTests",
             dependencies: ["KeychainSwift"],
             exclude: ["ClearTests.swift"]
         )
