@@ -52,19 +52,20 @@ open class KeychainSwift {
   
   Stores the text value in the keychain item under the given key.
   
-  - parameter key: Key under which the text value is stored in the keychain.
-  - parameter value: Text string to be written to the keychain.
-  - parameter withAccess: Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
+- parameter key: Key under which the text value is stored in the keychain.
+- parameter value: Text string to be written to the keychain.
+- parameter withAccess: Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
+- parameter withControlFlag: Value that indicates when your value in keychain can be read and written.
    
    - returns: True if the text was successfully written to the keychain.
 
   */
   @discardableResult
   open func set(_ value: String, forKey key: String,
-                  withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+                withAccess access: KeychainSwiftAccessOptions? = nil, withControlFlag controlFlag: KeychainSwiftAccessControlFlag? = nil) -> Bool {
     
     if let value = value.data(using: String.Encoding.utf8) {
-      return set(value, forKey: key, withAccess: access)
+      return set(value, forKey: key, withAccess: access, withControlFlag: controlFlag)
     }
     
     return false
@@ -74,16 +75,17 @@ open class KeychainSwift {
   
   Stores the data in the keychain item under the given key.
   
-  - parameter key: Key under which the data is stored in the keychain.
-  - parameter value: Data to be written to the keychain.
-  - parameter withAccess: Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
+- parameter key: Key under which the data is stored in the keychain.
+- parameter value: Data to be written to the keychain.
+- parameter withAccess: Value that indicates when your app needs access to the text in the keychain item. By default the .AccessibleWhenUnlocked option is used that permits the data to be accessed only while the device is unlocked by the user.
+- parameter withControlFlag: Value that indicates when your value in keychain can be read and written.
   
   - returns: True if the text was successfully written to the keychain.
   
   */
   @discardableResult
   open func set(_ value: Data, forKey key: String,
-    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+                withAccess access: KeychainSwiftAccessOptions? = nil, withControlFlag controlFlag: KeychainSwiftAccessControlFlag? = nil) -> Bool {
     
     // The lock prevents the code to be run simultaneously
     // from multiple threads which may result in crashing
@@ -95,12 +97,16 @@ open class KeychainSwift {
     let accessible = access?.value ?? KeychainSwiftAccessOptions.defaultOption.value
       
     let prefixedKey = keyWithPrefix(key)
+    var accessWithFlag:Any = access as Any
+    if let control = controlFlag{
+        accessWithFlag = SecAccessControlCreateWithFlags(nil, accessible as CFString, control.value, nil) as Any
+    }
       
     var query: [String : Any] = [
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.valueData   : value,
-      KeychainSwiftConstants.accessible  : accessible
+      KeychainSwiftConstants.accessible  : accessWithFlag
     ]
       
     query = addAccessGroupWhenPresent(query)
