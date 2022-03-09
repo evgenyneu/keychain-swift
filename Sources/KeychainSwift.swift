@@ -131,12 +131,12 @@ open class KeychainSwift {
   */
   @discardableResult
   open func set(_ value: Bool, forKey key: String,
-    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+    withAccess access: KeychainSwiftAccessOptions? = nil, withControlFlag controlFlag: KeychainSwiftAccessControlFlag? = nil) -> Bool {
   
     let bytes: [UInt8] = value ? [1] : [0]
     let data = Data(bytes)
 
-    return set(data, forKey: key, withAccess: access)
+    return set(data, forKey: key, withAccess: access,withControlFlag: controlFlag)
   }
 
   /**
