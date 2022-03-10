@@ -97,7 +97,7 @@ open class KeychainSwift {
     let accessible = access?.value ?? KeychainSwiftAccessOptions.defaultOption.value
       
     let prefixedKey = keyWithPrefix(key)
-    var accessWithFlag:Any = access as Any
+    var accessWithFlag:Any = accessible as Any
     if let control = controlFlag{
         accessWithFlag = SecAccessControlCreateWithFlags(nil, accessible as CFString, control.value, nil) as Any
     }
