@@ -98,16 +98,27 @@ open class KeychainSwift {
       
     let prefixedKey = keyWithPrefix(key)
     var accessWithFlag:Any = accessible as Any
+    
+    var query: [String : Any]
+      
     if let control = controlFlag{
         accessWithFlag = SecAccessControlCreateWithFlags(nil, accessible as CFString, control.value, nil) as Any
+        query = [
+        KeychainSwiftConstants.klass       : kSecClassGenericPassword,
+        KeychainSwiftConstants.attrAccount : prefixedKey,
+        KeychainSwiftConstants.valueData   : value,
+        KeychainSwiftConstants.accessControl  : accessWithFlag
+        ]
+    }else{
+        query = [
+        KeychainSwiftConstants.klass       : kSecClassGenericPassword,
+        KeychainSwiftConstants.attrAccount : prefixedKey,
+        KeychainSwiftConstants.valueData   : value,
+        KeychainSwiftConstants.accessible  : accessible
+        ]
     }
+    
       
-    var query: [String : Any] = [
-      KeychainSwiftConstants.klass       : kSecClassGenericPassword,
-      KeychainSwiftConstants.attrAccount : prefixedKey,
-      KeychainSwiftConstants.valueData   : value,
-      KeychainSwiftConstants.accessible  : accessWithFlag
-    ]
       
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: true)
