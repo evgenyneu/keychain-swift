@@ -6,6 +6,9 @@ public struct KeychainSwiftConstants {
   /// Specifies a Keychain access group. Used for sharing Keychain items between apps.
   public static var accessGroup: String { return toString(kSecAttrAccessGroup) }
   
+  /// A key whose value is a string indicating the item's service.
+  public static var service: String { return toString(kSecAttrService) }
+
   /**
    
    A value that indicates when your app needs access to the data in a keychain item. The default value is AccessibleWhenUnlocked. For a list of possible values, see KeychainSwiftAccessOptions.

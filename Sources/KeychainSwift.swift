@@ -16,6 +16,11 @@ open class KeychainSwift {
   var keyPrefix = "" // Can be useful in test.
   
   /**
+   A key whose value is a string indicating the item's service.
+   */
+  open var serviceName: String?
+  
+  /**
 
   Specify an access group that will be used to access keychain items. Access groups can be used to share keychain items between applications. When access group value is nil all application access groups are being accessed. Access group name is used by all functions: set, get, delete and clear.
 
@@ -102,7 +107,8 @@ open class KeychainSwift {
       KeychainSwiftConstants.valueData   : value,
       KeychainSwiftConstants.accessible  : accessible
     ]
-      
+    
+    query = addServiceWhenPresent(query)
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: true)
     lastQueryParameters = query
@@ -324,6 +330,14 @@ open class KeychainSwift {
     
     var result: [String: Any] = items
     result[KeychainSwiftConstants.accessGroup] = accessGroup
+    return result
+  }
+  
+  func addServiceWhenPresent(_ items: [String: Any]) -> [String: Any] {
+    guard let serviceName = serviceName else { return items }
+    
+    var result: [String: Any] = items
+    result[KeychainSwiftConstants.service] = serviceName
     return result
   }
   
