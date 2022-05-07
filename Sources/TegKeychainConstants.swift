@@ -8,7 +8,11 @@ public struct KeychainSwiftConstants {
   
   /// A key whose value is a string indicating the item's service.
   public static var service: String { return toString(kSecAttrService) }
-
+  
+  /// A key whose value indicates whether to treat macOS keychain items like iOS keychain items.
+  @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+  public static var useDataProtection: String { return toString(kSecUseDataProtectionKeychain) }
+  
   /**
    
    A value that indicates when your app needs access to the data in a keychain item. The default value is AccessibleWhenUnlocked. For a list of possible values, see KeychainSwiftAccessOptions.
