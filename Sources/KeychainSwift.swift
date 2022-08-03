@@ -21,7 +21,12 @@ open class KeychainSwift {
 
   */
   open var accessGroup: String?
-  
+
+	/**
+	 ServiceName is used for the kSecAttrService property to uniquely identify this keychain accessor.
+	 If no 	service name is specified, default to using the bundleIdentifier.
+	 */
+	open var serviceName: String?
   
   /**
    
@@ -38,6 +43,11 @@ open class KeychainSwift {
   
   /// Instantiate a KeychainSwift object
   public init() { }
+
+	/// Instantiate a KeychainSwift object for a serviceName
+	public init(serviceName: String) {
+		self.serviceName = serviceName
+	}
   
   /**
   
@@ -62,7 +72,7 @@ open class KeychainSwift {
   @discardableResult
   open func set(_ value: String, forKey key: String,
                   withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
-    
+
     if let value = value.data(using: String.Encoding.utf8) {
       return set(value, forKey: key, withAccess: access)
     }
@@ -100,8 +110,12 @@ open class KeychainSwift {
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.valueData   : value,
-      KeychainSwiftConstants.accessible  : accessible
+      KeychainSwiftConstants.accessible  : accessible,
     ]
+
+		if let serviceName = serviceName {
+			query[KeychainSwiftConstants.secAttrService] = serviceName
+		}
       
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: true)
@@ -176,6 +190,10 @@ open class KeychainSwift {
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.matchLimit  : kSecMatchLimitOne
     ]
+
+		if let serviceName = serviceName {
+			query[KeychainSwiftConstants.secAttrService] = serviceName
+		}
     
     if asReference {
       query[KeychainSwiftConstants.returnReference] = kCFBooleanTrue

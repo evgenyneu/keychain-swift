@@ -39,6 +39,9 @@ public struct KeychainSwiftConstants {
     
   /// A value that corresponds to matching an unlimited number of items
   public static var secMatchLimitAll : String { return toString(kSecMatchLimitAll) }
+
+	/// A key whose value is a string indicating the item's service
+	public static var secAttrService : String { return toString(kSecAttrService) }
     
   static func toString(_ value: CFString) -> String {
     return value as String
