@@ -40,6 +40,10 @@ public struct KeychainSwiftConstants {
   /// A value that corresponds to matching an unlimited number of items
   public static var secMatchLimitAll : String { return toString(kSecMatchLimitAll) }
     
+  /// A key whose value indicates whether to treat macOS keychain items like iOS keychain items.
+  @available(iOS 13.0, macOS 10.15, *)
+  public static var secUseDataProtectionKeychain : String { return toString(kSecUseDataProtectionKeychain ) }
+    
   static func toString(_ value: CFString) -> String {
     return value as String
   }
