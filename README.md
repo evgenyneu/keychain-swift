@@ -48,11 +48,18 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
     pod 'KeychainSwift', '~> 20.0'
 
 
-#### Setup with Swift Package Manager
+#### Setup with Swift Package Manager (in project)
 
 * In Xcode select *File > Add Packages*.
 * Enter this project's URL: https://github.com/evgenyneu/keychain-swift.git
 
+#### Setup with Swift Package Manager (in Swift Package)
+
+If you're using KeychainSwift in a Swift package, make sure to specify a `name`. This is because SPM cannot automatically resolve a name for a package that has a different Target name in its `Package.swift` (namely `KeychainSwift`) that differs from the repo link (`keychain-swift`)
+
+```
+.package(name: "KeychainSwift", url: "https://github.com/evgenyneu/keychain-swift.git", from: "20.0.0")
+```
 
 ## Legacy Swift versions
 
