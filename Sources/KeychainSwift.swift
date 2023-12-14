@@ -21,8 +21,10 @@ open class KeychainSwift {
 
   */
   open var accessGroup: String?
-  
-  
+  /**
+      A a value that indicates whether to store the data in a keychain available to anyone who uses the device. for tvOS only
+  */
+  open var userIndependentKeychain: Bool = true
   /**
    
   Specifies whether the items can be synchronized with other devices through iCloud. Setting this property to true will
@@ -101,8 +103,14 @@ open class KeychainSwift {
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.valueData   : value,
       KeychainSwiftConstants.accessible  : accessible
+      
     ]
       
+    #if os(tvOS)
+      if let key = KeychainSwiftConstants.userIndependentKeychain {
+          query[key]  = userIndependentKeychain ? kCFBooleanTrue : kCFBooleanFalse
+      }
+    #endif
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: true)
     lastQueryParameters = query
