@@ -190,7 +190,12 @@ open class KeychainSwift {
     } else {
       query[KeychainSwiftConstants.returnData] =  kCFBooleanTrue
     }
-    
+#if os(tvOS)
+  if let key = KeychainSwiftConstants.userIndependentKeychain {
+      query[key]  = userIndependentKeychain ? kCFBooleanTrue : kCFBooleanFalse
+  }
+#endif
+
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
     lastQueryParameters = query
@@ -254,6 +259,12 @@ open class KeychainSwift {
       KeychainSwiftConstants.returnReference: true,
       KeychainSwiftConstants.matchLimit: KeychainSwiftConstants.secMatchLimitAll
     ]
+#if os(tvOS)
+  if let key = KeychainSwiftConstants.userIndependentKeychain {
+      query[key]  = userIndependentKeychain ? kCFBooleanTrue : kCFBooleanFalse
+  }
+#endif
+
   
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
@@ -288,7 +299,12 @@ open class KeychainSwift {
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey
     ]
-    
+#if os(tvOS)
+  if let key = KeychainSwiftConstants.userIndependentKeychain {
+      query[key]  = userIndependentKeychain ? kCFBooleanTrue : kCFBooleanFalse
+  }
+#endif
+
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
     lastQueryParameters = query
@@ -315,6 +331,12 @@ open class KeychainSwift {
     var query: [String: Any] = [ kSecClass as String : kSecClassGenericPassword ]
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
+#if os(tvOS)
+  if let key = KeychainSwiftConstants.userIndependentKeychain {
+      query[key]  = userIndependentKeychain ? kCFBooleanTrue : kCFBooleanFalse
+  }
+#endif
+
     lastQueryParameters = query
     
     lastResultCode = SecItemDelete(query as CFDictionary)
