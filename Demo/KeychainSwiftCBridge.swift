@@ -26,7 +26,7 @@ import KeychainSwift // You might need to remove this import in your project
  3. You might need to remove `import KeychainSwift` import from this file in your project.
  
 */
-@objc public class KeychainSwiftCBridge: NSObject {
+@objcMembers public class KeychainSwiftCBridge: NSObject {
   let keychain = KeychainSwift()
   
   open var lastResultCode: OSStatus {
