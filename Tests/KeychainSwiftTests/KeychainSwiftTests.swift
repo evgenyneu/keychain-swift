@@ -33,6 +33,13 @@ class KeychainSwiftTests: XCTestCase {
     let accessValue = obj.lastQueryParameters?[KeychainSwiftConstants.accessible] as? String
     XCTAssertEqual(KeychainSwiftAccessOptions.accessibleAfterFirstUnlock.value, accessValue!)
   }
+    
+  func testSetWithAccessControlFlag() {
+    obj.set("hello :)", forKey: "key 1", withAccess: .accessibleAfterFirstUnlock, withControlFlag: .userPresence)
+      let accessValue = (obj.lastQueryParameters?[KeychainSwiftConstants.accessible]) as! SecAccessControl
+      let checkAccessValue = SecAccessControlCreateWithFlags(nil, (KeychainSwiftAccessOptions.accessibleAfterFirstUnlock.value) as CFString, .userPresence, nil)!
+      XCTAssertEqual(checkAccessValue, accessValue)
+  }
   
   // MARK: - Set data
   // -----------------------

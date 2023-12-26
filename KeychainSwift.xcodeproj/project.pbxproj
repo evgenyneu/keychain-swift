@@ -27,6 +27,11 @@
 		508566A81FA34EB1004208ED /* macOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508566991FA34EB1004208ED /* macOS_Tests.swift */; };
 		508566A91FA34EB1004208ED /* SynchronizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085669A1FA34EB1004208ED /* SynchronizableTests.swift */; };
 		508566AA1FA34EB1004208ED /* SynchronizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085669A1FA34EB1004208ED /* SynchronizableTests.swift */; };
+		667F3ACD27D8F89500E0BBF1 /* KeychainSwiftAccessControlFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F3ACC27D8F89500E0BBF1 /* KeychainSwiftAccessControlFlag.swift */; };
+		667F3ACE27D8F89500E0BBF1 /* KeychainSwiftAccessControlFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F3ACC27D8F89500E0BBF1 /* KeychainSwiftAccessControlFlag.swift */; };
+		667F3ACF27D8F8A300E0BBF1 /* KeychainSwiftAccessControlFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F3ACC27D8F89500E0BBF1 /* KeychainSwiftAccessControlFlag.swift */; };
+		667F3AD027D8F8A400E0BBF1 /* KeychainSwiftAccessControlFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F3ACC27D8F89500E0BBF1 /* KeychainSwiftAccessControlFlag.swift */; };
+		667F3AD127D8F8A500E0BBF1 /* KeychainSwiftAccessControlFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F3ACC27D8F89500E0BBF1 /* KeychainSwiftAccessControlFlag.swift */; };
 		7E3A6B7E1D3F6779007C5B1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3A6B7D1D3F6779007C5B1F /* AppDelegate.swift */; };
 		7E3A6B801D3F6779007C5B1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3A6B7F1D3F6779007C5B1F /* ViewController.swift */; };
 		7E3A6B821D3F6779007C5B1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E3A6B811D3F6779007C5B1F /* Assets.xcassets */; };
@@ -130,6 +135,7 @@
 		508566981FA34EB1004208ED /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		508566991FA34EB1004208ED /* macOS_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = macOS_Tests.swift; sourceTree = "<group>"; };
 		5085669A1FA34EB1004208ED /* SynchronizableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SynchronizableTests.swift; sourceTree = "<group>"; };
+		667F3ACC27D8F89500E0BBF1 /* KeychainSwiftAccessControlFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainSwiftAccessControlFlag.swift; sourceTree = "<group>"; };
 		7E3A6B601D3F62C2007C5B1F /* macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3A6B7B1D3F6779007C5B1F /* macOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E3A6B7D1D3F6779007C5B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -299,6 +305,7 @@
 				7ED6C98F1B1C128100FE8090 /* TegKeychainConstants.swift */,
 				7ED6C9711B1C118F00FE8090 /* KeychainSwift.h */,
 				7ED6C96F1B1C118F00FE8090 /* Supporting Files */,
+				667F3ACC27D8F89500E0BBF1 /* KeychainSwiftAccessControlFlag.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -717,6 +724,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				232B4C821BC2995D001F2B7A /* KeychainSwift.swift in Sources */,
+				667F3ACE27D8F89500E0BBF1 /* KeychainSwiftAccessControlFlag.swift in Sources */,
 				232B4C831BC2995D001F2B7A /* KeychainSwiftAccessOptions.swift in Sources */,
 				232B4C841BC2995D001F2B7A /* TegKeychainConstants.swift in Sources */,
 			);
@@ -727,6 +735,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				232B4C921BC29991001F2B7A /* KeychainSwift.swift in Sources */,
+				667F3ACF27D8F8A300E0BBF1 /* KeychainSwiftAccessControlFlag.swift in Sources */,
 				232B4C931BC29991001F2B7A /* KeychainSwiftAccessOptions.swift in Sources */,
 				232B4C941BC29991001F2B7A /* TegKeychainConstants.swift in Sources */,
 			);
@@ -737,6 +746,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23E785681BDA415000B7564A /* KeychainSwift.swift in Sources */,
+				667F3AD027D8F8A400E0BBF1 /* KeychainSwiftAccessControlFlag.swift in Sources */,
 				23E785691BDA415000B7564A /* KeychainSwiftAccessOptions.swift in Sources */,
 				23E7856A1BDA415000B7564A /* TegKeychainConstants.swift in Sources */,
 			);
@@ -769,6 +779,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ED6C9911B1C128100FE8090 /* KeychainSwiftAccessOptions.swift in Sources */,
+				667F3ACD27D8F89500E0BBF1 /* KeychainSwiftAccessControlFlag.swift in Sources */,
 				7ED6C9901B1C128100FE8090 /* KeychainSwift.swift in Sources */,
 				7ED6C9921B1C128100FE8090 /* TegKeychainConstants.swift in Sources */,
 			);
@@ -783,6 +794,7 @@
 				7ED6C9971B1C12B300FE8090 /* KeychainSwiftAccessOptions.swift in Sources */,
 				C7E1DE4C1E4B7C9F003818F6 /* ConcurrencyTests.swift in Sources */,
 				7ED6C9961B1C12B100FE8090 /* KeychainSwift.swift in Sources */,
+				667F3AD127D8F8A500E0BBF1 /* KeychainSwiftAccessControlFlag.swift in Sources */,
 				508566A91FA34EB1004208ED /* SynchronizableTests.swift in Sources */,
 				5085669B1FA34EB1004208ED /* AccessGroupTests.swift in Sources */,
 				7ED6C9981B1C12B500FE8090 /* TegKeychainConstants.swift in Sources */,
@@ -1161,7 +1173,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1216,7 +1228,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
