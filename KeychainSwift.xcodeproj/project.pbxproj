@@ -137,6 +137,7 @@
 		7E3A6B811D3F6779007C5B1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E3A6B841D3F6779007C5B1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E3A6B861D3F6779007C5B1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E6EC4402B4900CC0064B6B1 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		7ED6C96C1B1C118F00FE8090 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED6C9701B1C118F00FE8090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ED6C9711B1C118F00FE8090 /* KeychainSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainSwift.h; sourceTree = "<group>"; };
@@ -299,6 +300,7 @@
 				7ED6C98F1B1C128100FE8090 /* TegKeychainConstants.swift */,
 				7ED6C9711B1C118F00FE8090 /* KeychainSwift.h */,
 				7ED6C96F1B1C118F00FE8090 /* Supporting Files */,
+				7E6EC4402B4900CC0064B6B1 /* PrivacyInfo.xcprivacy */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
