@@ -1,5 +1,9 @@
 # KeychainSwift version history
 
+## 21.0.0 (2024-01-20)
+
+Added privacy manifest (Sources/PrivacyInfo.xcprivacy).
+
 ## 20.0.0 (2021-01-04)
 
 Update to Xcode 13.
