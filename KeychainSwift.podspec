@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name        = "KeychainSwift"
-  s.version     = "21.0.0"
+  s.version     = "22.0.0"
   s.license     = { :type => "MIT" }
   s.homepage    = "https://github.com/evgenyneu/keychain-swift"
   s.summary     = "A library for saving text and data in the Keychain with Swift."
@@ -15,6 +15,7 @@ Pod::Spec.new do |s|
   s.source      = { :git => "https://github.com/evgenyneu/keychain-swift.git", :tag => s.version }
   s.screenshots  = "https://raw.githubusercontent.com/evgenyneu/keychain-swift/master/graphics/keychain-swift-demo-3.png"
   s.source_files = "Sources/*.swift"
+  s.resource = 'Sources/PrivacyInfo.xcprivacy'
   s.ios.deployment_target = "12.0"
   s.osx.deployment_target = "10.13"
   s.watchos.deployment_target = "4.0"
