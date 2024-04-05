@@ -1,5 +1,9 @@
 # KeychainSwift version history
 
+## 22.0.0 (2024-05-05)
+
+Added privacy manifest as a resource to CocoaPods Podspec file (https://github.com/evgenyneu/keychain-swift/pull/188).
+
 ## 21.0.0 (2024-01-20)
 
 Added privacy manifest (Sources/PrivacyInfo.xcprivacy).

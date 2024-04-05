@@ -37,7 +37,7 @@ Simply add [KeychainSwiftDistrib.swift](https://github.com/evgenyneu/keychain-sw
 
 #### Setup with Carthage (iOS 8+)
 
-Alternatively, add `github "evgenyneu/keychain-swift" ~> 21.0` to your Cartfile and run `carthage update`.
+Alternatively, add `github "evgenyneu/keychain-swift" ~> 22.0` to your Cartfile and run `carthage update`.
 
 #### Setup with CocoaPods (iOS 8+)
 
@@ -46,7 +46,7 @@ If you are using CocoaPods add this text to your Podfile and run `pod install`.
 ```
 use_frameworks!
 target 'Your target name'
-pod 'KeychainSwift', '~> 21.0'
+pod 'KeychainSwift', '~> 22.0'
 ```
 
 
@@ -60,7 +60,7 @@ pod 'KeychainSwift', '~> 21.0'
 If you're using KeychainSwift in a Swift package, make sure to specify a `name`. This is because SPM cannot automatically resolve a name for a package that has a different Target name in its `Package.swift` (namely `KeychainSwift`) that differs from the repo link (`keychain-swift`).
 
 ```
-.package(name: "KeychainSwift", url: "https://github.com/evgenyneu/keychain-swift.git", from: "21.0.0")
+.package(name: "KeychainSwift", url: "https://github.com/evgenyneu/keychain-swift.git", from: "22.0.0")
 ```
 
 ## Legacy Swift versions
