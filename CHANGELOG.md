@@ -1,5 +1,9 @@
 # KeychainSwift version history
 
+## 24.0.0 (2024-05-26)
+
+Added privacy manifest as a resource bundle to CocoaPods Podspec file.
+
 ## 23.0.0 (2024-05-26)
 
 Reverted PR #188 (https://github.com/evgenyneu/keychain-swift/pull/188) since it introduced the issue when installing the library with CocoaPods (https://github.com/evgenyneu/keychain-swift/issues/185#issuecomment-2078297077).
