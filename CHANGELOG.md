@@ -2,7 +2,7 @@
 
 ## 23.0.0 (2024-05-26)
 
-Rever PR #188 (https://github.com/evgenyneu/keychain-swift/pull/188) since it introduced the issue when installing the library with CocoaPods (https://github.com/evgenyneu/keychain-swift/issues/185#issuecomment-2078297077).
+Reverted PR #188 (https://github.com/evgenyneu/keychain-swift/pull/188) since it introduced the issue when installing the library with CocoaPods (https://github.com/evgenyneu/keychain-swift/issues/185#issuecomment-2078297077).
 
 ## 22.0.0 (2024-04-05)
 
