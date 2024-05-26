@@ -11,7 +11,9 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var synchronizableSwitch: UISwitch!
   
-  let keychain = KeychainSwift()
+    @IBOutlet weak var useAccessControlSwitch: UISwitch!
+    
+    let keychain = KeychainSwift()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,7 +26,14 @@ class ViewController: UIViewController {
     
     if let text = textField.text {
       keychain.synchronizable = synchronizableSwitch.isOn
-      keychain.set(text, forKey: TegKeychainDemo_keyName)
+        if useAccessControlSwitch.isOn {
+            keychain.set(text,
+                         forKey: TegKeychainDemo_keyName,
+                         withAccess: .accessibleWhenUnlocked,
+                         usingAccessControl: .userPresence)
+        } else {
+            keychain.set(text, forKey: TegKeychainDemo_keyName)
+        }
       updateValueLabel()
     }
   }

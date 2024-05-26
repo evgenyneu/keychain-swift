@@ -104,4 +104,26 @@ class KeychainSwiftTests: XCTestCase {
     
     XCTAssertEqual("hello two", obj.get("key 2")!)
   }
+    
+    
+      
+      
+   //MARK: - Access Control
+      func testSetDataWithAccessControl() {
+          let key = "keyAC"
+          let value = "with AccessControl"
+          
+          XCTAssertTrue(
+            obj.set(value,
+                    forKey: key,
+                    withAccess: .accessibleWhenUnlocked,
+                    usingAccessControl: .userPresence)
+          )
+          
+          
+          
+          XCTAssertEqual(value,
+                         obj.get(key))
+          
+      }
 }

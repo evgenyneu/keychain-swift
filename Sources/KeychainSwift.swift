@@ -61,10 +61,14 @@ open class KeychainSwift {
   */
   @discardableResult
   open func set(_ value: String, forKey key: String,
-                  withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+                withAccess access: KeychainSwiftAccessOptions? = nil,
+                usingAccessControl accessControl: SecAccessControlCreateFlags? = nil) -> Bool {
     
     if let value = value.data(using: String.Encoding.utf8) {
-      return set(value, forKey: key, withAccess: access)
+      return set(value,
+                 forKey: key,
+                 withAccess: access,
+                 usingAccessControl: accessControl)
     }
     
     return false
@@ -82,8 +86,10 @@ open class KeychainSwift {
   
   */
   @discardableResult
-  open func set(_ value: Data, forKey key: String,
-    withAccess access: KeychainSwiftAccessOptions? = nil) -> Bool {
+  open func set(_ value: Data, 
+                forKey key: String,
+                withAccess access: KeychainSwiftAccessOptions? = nil,
+                usingAccessControl accessControl: SecAccessControlCreateFlags? = nil) -> Bool {
     
     // The lock prevents the code to be run simultaneously
     // from multiple threads which may result in crashing
@@ -91,8 +97,6 @@ open class KeychainSwift {
     defer { lock.unlock() }
     
     deleteNoLock(key) // Delete any existing key before saving it
-
-    let accessible = access?.value ?? KeychainSwiftAccessOptions.defaultOption.value
       
     let prefixedKey = keyWithPrefix(key)
       
@@ -100,8 +104,19 @@ open class KeychainSwift {
       KeychainSwiftConstants.klass       : kSecClassGenericPassword,
       KeychainSwiftConstants.attrAccount : prefixedKey,
       KeychainSwiftConstants.valueData   : value,
-      KeychainSwiftConstants.accessible  : accessible
+      //KeychainSwiftConstants.accessible  : accessible
     ]
+      
+      let accessible = access ?? KeychainSwiftAccessOptions.defaultOption
+      if let accessControl,
+         let accessControlFlag = accessible.getAccessControl(withControl: accessControl) {
+          /// Setting accessControl with its its accessibility value.
+          query[KeychainSwiftConstants.accessControl] = accessControlFlag
+      } else {
+          /// Setting (just) accessible value into query.
+          query[KeychainSwiftConstants.accessible] = accessible.value
+      }
+      
       
     query = addAccessGroupWhenPresent(query)
     query = addSynchronizableIfRequired(query, addingItems: true)

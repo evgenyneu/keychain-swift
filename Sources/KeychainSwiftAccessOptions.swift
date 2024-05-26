@@ -1,4 +1,5 @@
 import Security
+import Foundation
 
 /**
 
@@ -59,25 +60,54 @@ public enum KeychainSwiftAccessOptions {
   }
   
   var value: String {
-    switch self {
-    case .accessibleWhenUnlocked:
-      return toString(kSecAttrAccessibleWhenUnlocked)
-      
-    case .accessibleWhenUnlockedThisDeviceOnly:
-      return toString(kSecAttrAccessibleWhenUnlockedThisDeviceOnly)
-      
-    case .accessibleAfterFirstUnlock:
-      return toString(kSecAttrAccessibleAfterFirstUnlock)
-      
-    case .accessibleAfterFirstUnlockThisDeviceOnly:
-      return toString(kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly)
-      
-    case .accessibleWhenPasscodeSetThisDeviceOnly:
-      return toString(kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly)
-    }
+      return toString(self.rawValue)
   }
   
   func toString(_ value: CFString) -> String {
     return KeychainSwiftConstants.toString(value)
   }
+}
+
+
+extension KeychainSwiftAccessOptions {
+    /// Setting RawValue as its CFString value.
+    var rawValue : CFString {
+        switch self {
+        case .accessibleWhenUnlocked:
+            return kSecAttrAccessibleWhenUnlocked
+        case .accessibleWhenUnlockedThisDeviceOnly:
+            return kSecAttrAccessibleWhenUnlockedThisDeviceOnly
+        case .accessibleAfterFirstUnlock:
+            return kSecAttrAccessibleAfterFirstUnlock
+        case .accessibleAfterFirstUnlockThisDeviceOnly:
+            return kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
+        case .accessibleWhenPasscodeSetThisDeviceOnly:
+            return kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly
+        }
+    }
+}
+
+extension KeychainSwiftAccessOptions {
+
+    
+    /// Craete and erturn an SecAccessControl, with indicated access control and access options.
+    /// - Parameter flags: Access control  value.
+    /// - Returns: Object used in query to keychain.
+    func getAccessControl(withControl flags: SecAccessControlCreateFlags) -> SecAccessControl? {
+        
+        var error : Unmanaged<CFError>? = nil
+        guard let accessControl = SecAccessControlCreateWithFlags(kCFAllocatorDefault,
+                                                                  self.rawValue,
+                                                                  flags,
+                                                                  &error) else {
+            #if DEBUG
+            if let error {
+                print("Error in creating flag:", error)
+            }
+            #endif
+            return nil
+        }
+        return accessControl
+        
+    }
 }
