@@ -13,6 +13,11 @@ public struct KeychainSwiftConstants {
    */
   public static var accessible: String { return toString(kSecAttrAccessible) }
   
+    
+  /// Used for specifying _kSecAttrAccessControl_ key indicating access control settings for the item.
+  public static var accessControl : String { return toString(kSecAttrAccessControl)}
+
+    
   /// Used for specifying a String key when setting/getting a Keychain value.
   public static var attrAccount: String { return toString(kSecAttrAccount) }
 
