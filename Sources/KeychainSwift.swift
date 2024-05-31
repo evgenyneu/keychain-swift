@@ -16,6 +16,11 @@ open class KeychainSwift {
   var keyPrefix = "" // Can be useful in test.
   
   /**
+   A key whose value is a string indicating the item's service.
+   */
+  open var serviceName: String?
+  
+  /**
 
   Specify an access group that will be used to access keychain items. Access groups can be used to share keychain items between applications. When access group value is nil all application access groups are being accessed. Access group name is used by all functions: set, get, delete and clear.
 
@@ -33,6 +38,17 @@ open class KeychainSwift {
   */
   open var synchronizable: Bool = false
 
+  /**
+   
+   A key whose value indicates whether to treat macOS keychain items like iOS keychain items.
+   
+   The data protection key affects operations only in macOS. Other platforms automatically behave as if the key is set to true, and ignore the key in the query dictionary. You can safely use the key on all platforms.
+   
+   It’s highly recommended that you set the value of this key to true for all keychain operations. This key helps to improve the portability of your code across platforms. Use it unless you specifically need access to items previously stored in a legacy keychain in macOS.
+   
+   */
+  open var isUseDataProtection: Bool = true
+  
   private let lock = NSLock()
 
   
@@ -102,8 +118,10 @@ open class KeychainSwift {
       KeychainSwiftConstants.valueData   : value,
       KeychainSwiftConstants.accessible  : accessible
     ]
-      
+    
+    query = addServiceWhenPresent(query)
     query = addAccessGroupWhenPresent(query)
+    query = addUseDataProtectionIfRequired(query)
     query = addSynchronizableIfRequired(query, addingItems: true)
     lastQueryParameters = query
     
@@ -184,6 +202,7 @@ open class KeychainSwift {
     }
     
     query = addAccessGroupWhenPresent(query)
+    query = addUseDataProtectionIfRequired(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
     lastQueryParameters = query
     
@@ -248,6 +267,7 @@ open class KeychainSwift {
     ]
   
     query = addAccessGroupWhenPresent(query)
+    query = addUseDataProtectionIfRequired(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
 
     var result: AnyObject?
@@ -282,6 +302,7 @@ open class KeychainSwift {
     ]
     
     query = addAccessGroupWhenPresent(query)
+    query = addUseDataProtectionIfRequired(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
     lastQueryParameters = query
     
@@ -306,6 +327,7 @@ open class KeychainSwift {
     
     var query: [String: Any] = [ kSecClass as String : kSecClassGenericPassword ]
     query = addAccessGroupWhenPresent(query)
+    query = addUseDataProtectionIfRequired(query)
     query = addSynchronizableIfRequired(query, addingItems: false)
     lastQueryParameters = query
     
@@ -325,6 +347,24 @@ open class KeychainSwift {
     var result: [String: Any] = items
     result[KeychainSwiftConstants.accessGroup] = accessGroup
     return result
+  }
+  
+  func addServiceWhenPresent(_ items: [String: Any]) -> [String: Any] {
+    guard let serviceName = serviceName else { return items }
+    
+    var result: [String: Any] = items
+    result[KeychainSwiftConstants.service] = serviceName
+    return result
+  }
+  
+  func addUseDataProtectionIfRequired(_ items: [String: Any]) -> [String: Any] {
+    if #available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *) {
+      var result: [String: Any] = items
+      result[KeychainSwiftConstants.useDataProtection] = isUseDataProtection ? kCFBooleanTrue : kCFBooleanFalse
+      return result
+    } else {
+      return items
+    }
   }
   
   /**
